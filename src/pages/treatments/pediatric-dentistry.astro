@@ -1,0 +1,439 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Pediatric Dentistry in Bangalore | Gentle Kids Dental Care | House of Dental";
+const pageDescription = "Gentle kids & pediatric dentistry in Bangalore at House of Dental. Painless cavity care, fluoride treatment & friendly visits for young smiles.";
+const canonicalUrl = "https://aurevadental.com/treatments/pediatric-dentistry";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%2C%20I%20would%20like%20to%20consult%20for%20Kids%20Dentistry%20at%20House%20of%20Dental.";
+
+const faqs = [
+  {
+    question: "At what age should my child first visit the dentist?",
+    answer: "The Indian Dental Association (IDA) and pediatric dental academies recommend bringing your child for their first check-up when their first baby tooth erupts or by their first birthday. Early visits normalize the dental clinic environment, establish proper oral hygiene habits, and detect early enamel demineralization before cavities develop."
+  },
+  {
+    question: "How do you help children who have dental anxiety or fear?",
+    answer: "Our Japandi studio is intentionally designed without scary medical odors or loud hospital noise. We practice 'Tell-Show-Do' communication, introduce dental instruments as fun, friendly tools, and maintain an unhurried, compassionate pace. Kids receive gentle care without intimidation."
+  },
+  {
+    question: "What are pit and fissure sealants and why are they recommended?",
+    answer: "Pit and fissure sealants are protective, biocompatible tooth-colored coatings painted into the deep chewing grooves of your child's permanent back molars. These seal out food debris and bacteria, reducing molar cavity risks by up to 80% during the critical cavity-prone elementary school years."
+  },
+  {
+    question: "What is the cost of pediatric dental treatments at House of Dental?",
+    answer: "Kids' consultations start at Rs. 500. Preventive fluoride varnishes range between Rs. 800 and Rs. 1,500. Pit and fissure sealants cost Rs. 1,500 to Rs. 2,500 per tooth. Complete cost outlines are provided upfront to parents before any treatment begins."
+  }
+];
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/#services" },
+  { name: "Pediatric Dentistry", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Pediatric & Kids Dentistry",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "PediatricDentistry"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/#services" class="hover:text-japandi-moss transition-colors">Treatments</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Pediatric Dentistry</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Gentle Child Care &bull; Hennur, Bengaluru
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Gentle, Fear-Free <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Kids Dentistry.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Nurturing healthy childhood smiles through kindness, patience, and prevention. Our calm Japandi sanctuary transforms dental checkups into positive, tear-free adventures for toddlers, children, and teens.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Kids & Pediatric Dentistry"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Kids Checkup</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 border border-japandi-clay bg-japandi-sand/50 hover:bg-japandi-sand text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <div class="pt-4 flex items-center gap-6 text-xs text-japandi-earth">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Zero-Fear Atmosphere</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Tell-Show-Do Protocol</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Open on Sundays</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 animate-slow-fade" style="animation-delay: 0.2s;">
+        <div class="bg-japandi-sand/60 border border-japandi-clay/50 rounded-[2.5rem] p-8 sm:p-10 shadow-lg shadow-japandi-charcoal/5 relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-40 h-40 bg-japandi-moss/10 rounded-full blur-2xl pointer-events-none"></div>
+          
+          <h3 class="text-xl font-serif text-japandi-charcoal font-medium mb-4">Our Child-First Philosophy</h3>
+          
+          <ul class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Painless Preventive Care:</strong> We emphasize sealants, fluoride shields, and early checkups to prevent cavities before they hurt.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Gentle Language:</strong> We avoid scary clinical jargon. Needles are 'sleepy drops' and X-rays are 'camera pictures.'</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Bite &amp; Growth Tracking:</strong> Early detection of crossbites, tongue thrusts, and crowding prevents complex orthodontics later.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Parental Partnership:</strong> Parents are always welcome chairside to support and comfort their child.</div>
+            </li>
+          </ul>
+
+          <div class="mt-8 pt-6 border-t border-japandi-clay/40 flex items-center justify-between text-xs">
+            <span class="text-japandi-earth">Ages Welcome</span>
+            <span class="font-serif text-base font-semibold text-japandi-charcoal">1 to 16 Years</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preventative Treatments Grid -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/25 border-t border-japandi-clay/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-14">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">Comprehensive Pediatric Services</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          Protecting Developing Teeth at Every Milestone
+        </h2>
+        <p class="text-sm text-japandi-earth font-light mt-3 leading-relaxed">
+          From the first baby tooth to permanent teen smiles, we provide preventative and restorative treatments engineered specifically for growing dental anatomy.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-japandi-cream/90 border border-japandi-clay/40 rounded-3xl p-8 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-full bg-japandi-sand flex items-center justify-center text-japandi-moss font-semibold text-sm mb-6">01</div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium mb-3">Fluoride Mineral Shields</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Quick, painted-on topical fluoride varnishes that remineralize microscopic enamel weak spots and protect against acid decay.
+          </p>
+        </div>
+
+        <div class="bg-japandi-cream/90 border border-japandi-clay/40 rounded-3xl p-8 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-full bg-japandi-sand flex items-center justify-center text-japandi-moss font-semibold text-sm mb-6">02</div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium mb-3">Pit &amp; Fissure Sealants</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Ultra-thin protective shields sealed into the deep grooves of permanent molars, reducing cavity formation by up to 80%.
+          </p>
+        </div>
+
+        <div class="bg-japandi-cream/90 border border-japandi-clay/40 rounded-3xl p-8 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-full bg-japandi-sand flex items-center justify-center text-japandi-moss font-semibold text-sm mb-6">03</div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium mb-3">Kids Tooth Fillings &amp; Pulpectomy</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            BPA-free tooth-colored fillings and gentle baby tooth nerve preservation (pulpectomy) with soothing local anesthesia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Child Care Roadmap -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-14">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">Child Experience</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          How We Make Visits Fun &amp; Tear-Free
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 01</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Warm Studio Welcome</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              We greet your child warmly, allowing them to explore our calm space without rushing to the dental chair.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Arrival</div>
+        </div>
+
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 02</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Tell-Show-Do Demo</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              We explain every step in playful language and demonstrate tools on their fingernail first so they feel in control.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Familiarization</div>
+        </div>
+
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 03</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Gentle, Quick Care</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              High-efficiency clinical techniques minimize chair time while delivering thorough examination and gentle cleaning.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Comfort Care</div>
+        </div>
+
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 04</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Praise &amp; Gold Star</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              Every little brave patient receives celebratory praise and a dental health badge to build lifelong oral pride.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Happy Smile</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Transparency -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-5xl mx-auto bg-japandi-sand/50 border border-japandi-clay/50 rounded-[2.5rem] p-8 sm:p-12">
+      <div class="max-w-2xl mb-8">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-2">Honest Pricing</p>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          Kids Dental Care Pricing
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+        <div class="space-y-4">
+          <p>
+            We believe pediatric dentistry should be transparent, accessible, and free of surprise dispensary charges:
+          </p>
+          <ul class="space-y-2 list-disc pl-5">
+            <li><strong class="text-japandi-charcoal font-medium">Kids Consultation &amp; Oral Screen:</strong> Rs. 500</li>
+            <li><strong class="text-japandi-charcoal font-medium">Fluoride Therapy (Full Mouth):</strong> Rs. 800 – Rs. 1,500</li>
+            <li><strong class="text-japandi-charcoal font-medium">Pit &amp; Fissure Sealant (Per Tooth):</strong> Rs. 1,500 – Rs. 2,500</li>
+            <li><strong class="text-japandi-charcoal font-medium">Kids Tooth Filling:</strong> Rs. 1,500 – Rs. 3,500</li>
+            <li><strong class="text-japandi-charcoal font-medium">Baby Tooth Pulpectomy:</strong> Rs. 3,500 – Rs. 6,000</li>
+          </ul>
+        </div>
+
+        <div class="bg-japandi-cream/80 border border-japandi-clay/40 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <h4 class="text-sm font-serif font-medium text-japandi-charcoal mb-2">Book Your Child's Visit</h4>
+            <p class="text-xs text-japandi-earth font-light mb-4">
+              Schedule a calm, friendly morning or weekend appointment with our team at Hennur Bande, Horamavu Agara Road.
+            </p>
+          </div>
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Kids & Pediatric Dentistry"
+            class="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors cursor-none"
+          >
+            Reserve Kids Slot
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Item FAQ Accordion -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/20 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-2">Parent Questions</p>
+        <h2 class="text-3xl font-serif text-japandi-charcoal font-medium">Pediatric Dentistry FAQ</h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <div class="faq-item bg-japandi-sand/45 border border-japandi-clay/45 rounded-2xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/50">
+            <button
+              type="button"
+              class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-none group"
+              aria-expanded="false"
+            >
+              <span class="text-base font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors">
+                {faq.question}
+              </span>
+              <div class="w-7 h-7 rounded-full bg-japandi-cream border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 faq-icon transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              <div class="pb-5 pt-1 border-t border-japandi-clay/20">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Treatments & Local Care in Hennur -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="space-y-1">
+        <h3 class="text-lg font-serif font-medium text-japandi-charcoal">Related Treatments &amp; Local Dental Care in Hennur</h3>
+        <p class="text-xs text-japandi-earth font-light">Explore complementary family and preventative care services at our Hennur studio:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-light">
+        <a href="/treatments/clear-aligners" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Teen Clear Aligners &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Invisible orthodontic trays for teens and young adults.</span>
+        </a>
+        <a href="/dentist-in-hennur" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Dentist in Hennur &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Meet our family dental surgeons Dr. Shweta &amp; Dr. Agniss.</span>
+        </a>
+        <a href="/dental-clinic-in-hennur" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Hennur Dental Studio &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Explore our child-friendly, stress-free Japandi clinic space.</span>
+        </a>
+        <a href="/contact" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Contact Clinic &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Get driving directions, clinic map &amp; parking info on Horamavu Agara Rd.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catchment Footer Note & Final Callout -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-sand/40 border-t border-japandi-clay/30 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Give Your Child the Gift of a Healthy, Fearless Smile</h3>
+      <p class="text-xs text-japandi-earth font-light max-w-xl mx-auto leading-relaxed">
+        Conveniently located for families across Hennur Bande, Horamavu Agara Road, Babusapalya, Kalyan Nagar, and North Bengaluru.
+      </p>
+      <div class="pt-3 flex items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+        >
+          Call: 09113563040
+        </a>
+        <button 
+          type="button"
+          data-open-booking
+          data-treatment="Kids & Pediatric Dentistry"
+          class="px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm cursor-none"
+        >
+          Book Child Visit
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function setupPageAccordions() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+      if (!toggle || !content) return;
+
+      const newBtn = toggle.cloneNode(true) as HTMLElement;
+      toggle.parentNode?.replaceChild(newBtn, toggle);
+
+      newBtn.addEventListener('click', () => {
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        items.forEach((other) => {
+          if (other !== item) {
+            const ob = other.querySelector('.faq-toggle');
+            const oc = other.querySelector('.faq-content') as HTMLElement;
+            const oi = other.querySelector('.faq-icon');
+            if (ob && oc) {
+              ob.setAttribute('aria-expanded', 'false');
+              oc.style.maxHeight = '0px';
+              oi?.classList.remove('rotate-45');
+            }
+          }
+        });
+
+        if (isExpanded) {
+          newBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          icon?.classList.remove('rotate-45');
+        } else {
+          newBtn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  setupPageAccordions();
+  document.addEventListener('astro:after-swap', setupPageAccordions);
+</script>

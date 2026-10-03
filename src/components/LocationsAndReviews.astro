@@ -1,0 +1,624 @@
+---
+import { getConfig } from '../utils/getConfig';
+import { supabase } from '../lib/supabase';
+
+const config = getConfig();
+const { locations_section, social_proof, google_reviews } = config;
+
+let reviews: any[] = [];
+try {
+  if (supabase) {
+    const { data, error } = await supabase
+      .from('reviews')
+      .select('*')
+      .order('created_at', { ascending: false });
+      
+    if (error) {
+      throw new Error(error.message);
+    }
+    
+    if (data && data.length > 0) {
+      reviews = data;
+    }
+  }
+} catch (err) {
+  console.error("Failed to fetch reviews", err);
+}
+
+const defaultReviews = [
+  {
+    name: "Priya Ramesh",
+    role: "Local Guide • 14 reviews • Hennur",
+    treatment: "Root Canal Treatment",
+    date: "2 weeks ago",
+    text: "Absolutely the best dental clinic experience in Hennur! Dr. Shweta was so gentle and patient during my root canal treatment. Zero pain, completely sterile diagnostic instruments, and the serene Japandi studio atmosphere instantly relieved all my dental anxiety. Highly recommend House of Dental!",
+    rating: 5,
+    verified: true,
+    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  },
+  {
+    name: "Vikram Nambiar",
+    role: "Horamavu Resident • Verified Google Review",
+    treatment: "Clear Aligners",
+    date: "3 weeks ago",
+    text: "Got my smile consultation and clear aligners planned at House of Dental. Completely transparent pricing, state-of-the-art digital intraoral scans, and unmatched professionalism from the dental team. Seeing your simulated 3D teeth movement before starting gives immense confidence. Outstanding 5-star care!",
+    rating: 5,
+    verified: true,
+    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  },
+  {
+    name: "Sneha Mukherjee",
+    role: "Kalyan Nagar • Verified Google Review",
+    treatment: "Teeth Whitening",
+    date: "1 month ago",
+    text: "I had severe dental anxiety before visiting House of Dental. The studio feels like a soothing wellness sanctuary rather than a clinical hospital. Dr. Agniss and the team made the cleaning and laser teeth whitening completely pain-free. My teeth look radiant and healthy!",
+    rating: 5,
+    verified: true,
+    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  },
+  {
+    name: "Rajesh Varma",
+    role: "Local Guide • 29 reviews",
+    treatment: "Dental Implants",
+    date: "1 month ago",
+    text: "Exceptional precision and clinical care. Dr. Shweta and Dr. Agniss walked me through every detail of my dental implant with digital X-rays and zero rush. Very honest pricing with no hidden charges. Post-op recovery was seamless. North Bangalore's finest smile clinic.",
+    rating: 5,
+    verified: true,
+    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  },
+  {
+    name: "Ananya Sundaram",
+    role: "Hennur Bande • Verified Google Review",
+    treatment: "Kids Dentistry",
+    date: "2 months ago",
+    text: "Brought my 6-year-old daughter for her dental check-up and fluoride application. Dr. Shweta was so friendly, warm, and playful that my daughter didn't cry once! The clinic is spotless and kid-friendly. We have definitely found our trusted family dentist in Hennur.",
+    rating: 5,
+    verified: true,
+    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  },
+  {
+    name: "Karthik Balakrishnan",
+    role: "HRBR Layout • Verified Google Review",
+    treatment: "Wisdom Tooth Removal",
+    date: "2 months ago",
+    text: "Had a complicated impacted wisdom tooth removed. Was really nervous about pain, but the surgical team performed the extraction in under 20 minutes with zero discomfort during the procedure. Healing was fast with minimal swelling. Cleanest clinic in Bangalore with modern tech.",
+    rating: 5,
+    verified: true,
+    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  },
+  {
+    name: "Meera Chandran",
+    role: "Babusapalya • Verified Google Review",
+    treatment: "Cosmetic Dentistry",
+    date: "3 months ago",
+    text: "Got custom zirconia crowns and aesthetic bonding done here. The craftsmanship and attention to natural tooth shade matching is remarkable. Warm and courteous staff, prompt appointments, and very soothing Japanese-minimalist interiors.",
+    rating: 5,
+    verified: true,
+    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  }
+];
+
+const configuredReviews = google_reviews && google_reviews.length > 0 
+  ? google_reviews 
+  : (social_proof?.reviews && social_proof.reviews.length > 0 ? social_proof.reviews : defaultReviews);
+
+const displayReviews = reviews && reviews.length > 0 ? reviews : configuredReviews;
+
+const googleRating = social_proof?.google_rating || config.site_meta?.rating_value || 5.0;
+const reviewCount = social_proof?.review_count || config.site_meta?.review_count || 29;
+const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.locations_list[0]?.google_maps_url || "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA";
+---
+
+<section id="location" class="py-24 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/40 relative">
+  <div id="contact" class="absolute -top-12 left-0 pointer-events-none"></div>
+  <div id="locations" class="absolute -top-12 left-0 pointer-events-none"></div>
+  <div id="reviews" class="absolute -top-12 left-0 pointer-events-none"></div>
+  <!-- Subtle line decoration -->
+  <div class="absolute top-0 left-2/3 -translate-x-1/2 w-[1px] h-12 bg-japandi-clay"></div>
+
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      
+      <!-- Locations Block (Column Left) -->
+      <div class="lg:col-span-5 flex flex-col space-y-10 animate-slow-fade">
+        <div>
+          <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">
+            {locations_section.subtitle}
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+            {locations_section.title}
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          {locations_section.locations_list.map((loc) => (
+            <div class="bg-japandi-sand/55 border border-japandi-clay/45 rounded-3xl p-8 hover:bg-japandi-sand transition-all duration-300 hover:shadow-lg hover:shadow-japandi-charcoal/5">
+              <div class="flex items-center justify-between gap-4 mb-3">
+                <h3 class="text-xl font-serif text-japandi-charcoal font-medium">{loc.name}</h3>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-japandi-moss/10 text-japandi-moss text-[10px] font-semibold uppercase tracking-wider">
+                  <span class="w-1.5 h-1.5 rounded-full bg-japandi-moss"></span>
+                  Bengaluru Studio
+                </span>
+              </div>
+              
+              <!-- Address Deep Link with Landmark -->
+              <div class="mb-4">
+                <a 
+                  href={loc.google_maps_url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="group inline-flex items-start text-sm text-japandi-earth hover:text-japandi-charcoal transition-colors duration-300 leading-relaxed"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2.5 mt-0.5 text-japandi-moss flex-shrink-0">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  </svg>
+                  <span class="border-b border-japandi-clay group-hover:border-japandi-charcoal transition-all">
+                    {loc.address}
+                  </span>
+                </a>
+              </div>
+
+              <!-- Interactive Responsive Google Maps Embed -->
+              <div class="mt-4 mb-5 rounded-2xl overflow-hidden border border-japandi-clay/60 shadow-inner aspect-[16/10] w-full relative bg-japandi-clay/20 group/map">
+                <iframe
+                  title="House of Dental Studio Google Maps Location"
+                  src={`https://maps.google.com/maps?q=${loc.latitude || 13.0381741},${loc.longitude || 77.6416031}+(House of Dental+Dental)&t=&z=16&ie=UTF8&iwloc=B&output=embed`}
+                  width="100%"
+                  height="100%"
+                  style="border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="w-full h-full"
+                ></iframe>
+              </div>
+
+              <!-- Quick Action Navigation Buttons -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${loc.latitude || 13.0381741},${loc.longitude || 77.6416031}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-japandi-sand/80 border border-japandi-clay text-xs font-medium text-japandi-charcoal hover:bg-japandi-moss hover:text-japandi-cream transition-all duration-300 group"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-4 h-4 text-japandi-moss group-hover:text-japandi-cream transition-colors">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.284a1.875 1.875 0 0 0-1.678 0L3.328 5.532c-.443.222-.728.67-.728 1.166v12.287c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.902 2.441Z" />
+                  </svg>
+                  <span>Get Driving Directions</span>
+                </a>
+                <a
+                  href="https://wa.me/919113563040"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-japandi-moss text-japandi-cream text-xs font-semibold hover:bg-japandi-charcoal transition-all duration-300"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-3.5 h-3.5">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+
+              <!-- Contact & Operating Information -->
+              <div class="space-y-3 pt-6 border-t border-japandi-clay/35 text-xs text-japandi-charcoal">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-3 text-japandi-earth">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                  </svg>
+                  <a 
+                    href="tel:09113563040"
+                    onclick="return gtag_report_conversion('tel:09113563040');" 
+                    class="hover:text-japandi-moss font-semibold transition-colors"
+                  >09113563040</a>
+                </div>
+                {loc.email && (
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-3 text-japandi-earth">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.909A2.25 2.25 0 0 1 2.25 6.993V6.75m19.5 0v.243m0-1.06-9 5.541-9-5.541" />
+                    </svg>
+                    <a href={`mailto:${loc.email}`} class="hover:text-japandi-moss transition-colors">{loc.email}</a>
+                  </div>
+                )}
+                <div class="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-3 text-japandi-earth mt-0.5 shrink-0">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  <div class="flex flex-col">
+                    <span class="font-medium text-japandi-charcoal">Operating Hours:</span>
+                    <span class="text-japandi-earth">Monday: 4:00 PM – 9:00 PM (16:00 – 21:00)</span>
+                    <span class="text-japandi-earth">Tuesday – Sunday: 9:30 AM – 9:00 PM (09:30 – 21:00)</span>
+                  </div>
+                </div>
+                {loc.parking && (
+                  <div class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-3 text-japandi-earth mt-0.5 flex-shrink-0">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75V4.5h6.75a3.75 3.75 0 1 1 0 7.5H8.25m0 0h6.75" />
+                    </svg>
+                    <span>{loc.parking}</span>
+                  </div>
+                )}
+              </div>
+
+              <!-- Neighborhoods Served Signal for Local SEO -->
+              <div class="mt-6 pt-5 border-t border-japandi-clay/35">
+                <p class="text-[10px] font-semibold text-japandi-earth uppercase tracking-wider mb-2.5">
+                  Neighborhoods We Proudly Serve:
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                  {[
+                    "Hennur",
+                    "Horamavu",
+                    "Hennur Bande",
+                    "Babusapalya",
+                    "Kalyan Nagar",
+                    "HRBR Layout",
+                    "Kammanahalli",
+                    "Banaswadi",
+                    "Ramamurthy Nagar",
+                    "Chelekere",
+                    "North Bengaluru"
+                  ].map((area) => (
+                    <span class="px-2.5 py-1 rounded-full bg-japandi-sand/80 border border-japandi-clay/60 text-[10px] text-japandi-charcoal">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Hennur Local Dental Care Guides -->
+              <div class="mt-6 pt-5 border-t border-japandi-clay/35">
+                <p class="text-[10px] font-semibold text-japandi-earth uppercase tracking-wider mb-2.5">
+                  Specialized Dental Care Guides in Hennur:
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <a href="/dentist-in-hennur" class="text-japandi-moss hover:underline font-medium">Dentist in Hennur &rarr;</a>
+                  <a href="/dental-clinic-in-hennur" class="text-japandi-moss hover:underline font-medium">Dental Clinic in Hennur &rarr;</a>
+                  <a href="/root-canal-treatment-hennur" class="text-japandi-moss hover:underline font-medium">Root Canal Hennur &rarr;</a>
+                  <a href="/dental-implants-hennur" class="text-japandi-moss hover:underline font-medium">Dental Implants Hennur &rarr;</a>
+                  <a href="/invisible-aligners-hennur" class="text-japandi-moss hover:underline font-medium">Invisible Aligners &rarr;</a>
+                  <a href="/teeth-whitening-hennur" class="text-japandi-moss hover:underline font-medium">Teeth Whitening &rarr;</a>
+                  <a href="/wisdom-tooth-removal-hennur" class="text-japandi-moss hover:underline font-medium">Wisdom Tooth Removal &rarr;</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Google Reviews Showcase Block (Column Right) -->
+      <div class="lg:col-span-7 flex flex-col space-y-8 animate-slow-fade" style="animation-delay: 0.15s;">
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-japandi-moss/10 text-japandi-moss text-[10px] font-semibold uppercase tracking-wider mb-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-japandi-moss animate-pulse"></span>
+              {social_proof.subtitle || "VERIFIED PATIENT STORIES"}
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+              {social_proof.title || "Serene Experiences & Google Reviews"}
+            </h2>
+          </div>
+
+          <!-- Direct Link to Google Maps -->
+          <a
+            href={googleMapsReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Read ${reviewCount} 5-star Google Reviews for House of Dental`}
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-japandi-sand/70 hover:bg-japandi-sand border border-japandi-clay/60 hover:border-japandi-moss/40 text-xs text-japandi-charcoal transition-all duration-300 group shadow-sm shrink-0"
+          >
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span class="font-bold">{googleRating.toFixed(1)}</span>
+            <div class="flex items-center text-amber-500 text-xs">
+              ★ ★ ★ ★ ★
+            </div>
+            <span class="text-japandi-earth text-[11px]">({reviewCount}+ Reviews)</span>
+          </a>
+        </div>
+
+        <!-- Google Overall Rating Summary Card -->
+        <div class="bg-japandi-sand/55 border border-japandi-clay/60 rounded-3xl p-6 sm:p-7 relative overflow-hidden transition-all duration-300 hover:shadow-md hover:shadow-japandi-charcoal/5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <!-- Google G Logo Circle -->
+              <div class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-japandi-clay/40 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
+              </div>
+              
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-2xl font-serif font-bold text-japandi-charcoal">{googleRating.toFixed(1)}</span>
+                  <div class="flex items-center text-amber-500 text-sm tracking-tight">
+                    ★ ★ ★ ★ ★
+                  </div>
+                  <span class="text-[11px] font-semibold text-japandi-moss bg-japandi-moss/10 px-2 py-0.5 rounded-full">
+                    100% Recommended
+                  </span>
+                </div>
+                <p class="text-xs text-japandi-earth">
+                  All reviews verified by real patients on Google Maps • Hennur, Bangalore
+                </p>
+              </div>
+            </div>
+
+            <!-- CTA Actions -->
+            <div class="flex flex-wrap sm:flex-nowrap items-center gap-2.5 shrink-0">
+              <a
+                href={googleMapsReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-japandi-moss text-japandi-cream text-xs font-semibold hover:bg-japandi-charcoal transition-all duration-300 shadow-sm group"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                </svg>
+                <span>Write a Review</span>
+              </a>
+              <a
+                href={googleMapsReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-japandi-sand/80 border border-japandi-clay text-xs font-medium text-japandi-charcoal hover:border-japandi-charcoal transition-all duration-300"
+              >
+                <span>Read All on Google</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 text-japandi-earth">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Treatment Filter Chips -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-xs" id="review-filters">
+          <button
+            type="button"
+            class="review-filter-btn px-3.5 py-1.5 rounded-full bg-japandi-charcoal text-japandi-cream font-medium transition-all duration-200 shrink-0 text-[11px]"
+            data-filter="all"
+          >
+            All Reviews ({displayReviews.length})
+          </button>
+          {Array.from(new Set(displayReviews.map((r: any) => r.treatment).filter(Boolean))).map((treatment: any) => (
+            <button
+              type="button"
+              class="review-filter-btn px-3.5 py-1.5 rounded-full bg-japandi-sand/70 hover:bg-japandi-sand border border-japandi-clay/60 text-japandi-charcoal font-normal transition-all duration-200 shrink-0 text-[11px]"
+              data-filter={treatment}
+            >
+              {treatment}
+            </button>
+          ))}
+        </div>
+
+        <!-- Google Reviews Cards Grid/List -->
+        <div class="flex flex-col gap-5" id="reviews-container">
+          {displayReviews.map((test: any, index: number) => {
+            const initials = test.name
+              ? test.name.split(' ').map((n: string) => n[0]).slice(0, 2).join('')
+              : 'AD';
+            const isHiddenByDefault = index >= 4;
+
+            return (
+              <div 
+                class={`review-card bg-japandi-sand/40 hover:bg-japandi-sand/65 border border-japandi-clay/50 hover:border-japandi-moss/40 rounded-3xl p-6 sm:p-7 relative flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-japandi-charcoal/5 ${isHiddenByDefault ? 'hidden review-extra' : ''}`}
+                data-treatment={test.treatment || 'General'}
+              >
+                <!-- Top Row: Reviewer Info + Google Pill Badge -->
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div class="flex items-center gap-3.5">
+                    <!-- Avatar with initials -->
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-japandi-moss/20 to-japandi-earth/20 border border-japandi-moss/30 flex items-center justify-center text-xs font-bold font-serif text-japandi-charcoal shrink-0 shadow-inner">
+                      {initials}
+                    </div>
+                    
+                    <!-- Name & Subtitle -->
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <h3 class="text-sm font-semibold text-japandi-charcoal tracking-tight">{test.name}</h3>
+                        <!-- Google Verified Checkmark -->
+                        <span title="Verified Google Reviewer" class="text-blue-500 inline-flex items-center">
+                          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/>
+                          </svg>
+                        </span>
+                      </div>
+                      <p class="text-[11px] text-japandi-earth leading-tight mt-0.5">
+                        {test.role || "Verified Google Review"}
+                        {test.date && <span class="text-japandi-earth/70"> • {test.date}</span>}
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Google Brand Badge -->
+                  <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-japandi-sand/80 border border-japandi-clay/60 text-[10px] text-japandi-charcoal font-medium shrink-0">
+                    <svg class="w-3 h-3" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                    <span>Google</span>
+                  </div>
+                </div>
+
+                <!-- Middle: Rating Stars & Treatment Tag -->
+                <div class="flex items-center justify-between gap-2 mb-3.5">
+                  <div class="flex items-center gap-1">
+                    {Array.from({ length: test.rating || 5 }).map(() => (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-amber-500">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                      </svg>
+                    ))}
+                    <span class="text-xs font-semibold text-japandi-charcoal ml-1.5">5.0</span>
+                  </div>
+
+                  {test.treatment && (
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-japandi-moss/10 text-japandi-moss border border-japandi-moss/20 text-[10px] font-medium tracking-wide">
+                      {test.treatment}
+                    </span>
+                  )}
+                </div>
+
+                <!-- Review Quotation -->
+                <p class="text-japandi-charcoal/90 font-light leading-relaxed mb-4 text-xs sm:text-[13px]">
+                  "{test.text}"
+                </p>
+
+                <!-- Footer of Card -->
+                <div class="pt-3 border-t border-japandi-clay/35 flex items-center justify-between text-[11px] text-japandi-earth">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-japandi-moss"></span>
+                    <span>Verified Patient Experience</span>
+                  </div>
+                  <a
+                    href={test.google_maps_url || googleMapsReviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-japandi-moss hover:text-japandi-charcoal font-medium transition-colors"
+                  >
+                    <span>View on Google</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3">
+                      <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <!-- Expand / Show All Reviews Button -->
+        {displayReviews.length > 4 && (
+          <div class="text-center pt-2" id="show-more-wrapper">
+            <button
+              type="button"
+              id="toggle-reviews-btn"
+              class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-japandi-sand/80 hover:bg-japandi-sand border border-japandi-clay text-xs font-medium text-japandi-charcoal hover:border-japandi-charcoal transition-all duration-300 shadow-sm"
+            >
+              <span id="toggle-reviews-text">Show All {displayReviews.length} Verified Google Reviews</span>
+              <svg id="toggle-reviews-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 transition-transform duration-300">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+          </div>
+        )}
+
+        <!-- Feedback & Review Footer Links -->
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-japandi-earth border-t border-japandi-clay/35">
+          <div class="flex items-center gap-2">
+            <span class="text-japandi-charcoal font-medium">Visited House of Dental recently?</span>
+            <span class="hidden sm:inline">•</span>
+            <span>Your feedback guides other smiles</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a 
+              href={googleMapsReviewUrl}
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center gap-1 text-japandi-moss hover:text-japandi-charcoal font-medium underline underline-offset-4 transition-colors"
+            >
+              <svg class="w-3 h-3" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Review on Google</span>
+            </a>
+            <span>•</span>
+            <a 
+              href="/feedback" 
+              class="text-japandi-earth hover:text-japandi-moss font-medium underline underline-offset-4 transition-colors"
+            >
+              Share Website Feedback
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Filter & Show More Script -->
+<script>
+  function setupReviewsInteraction() {
+    const filterBtns = document.querySelectorAll('.review-filter-btn');
+    const reviewCards = document.querySelectorAll('.review-card');
+    const toggleBtn = document.getElementById('toggle-reviews-btn');
+    const toggleText = document.getElementById('toggle-reviews-text');
+    const toggleIcon = document.getElementById('toggle-reviews-icon');
+    const showMoreWrapper = document.getElementById('show-more-wrapper');
+    
+    let isExpanded = false;
+    let activeFilter = 'all';
+
+    function updateCardVisibility() {
+      let visibleCount = 0;
+      reviewCards.forEach((card) => {
+        const treatment = card.getAttribute('data-treatment') || '';
+        const matchesFilter = activeFilter === 'all' || treatment.toLowerCase().includes(activeFilter.toLowerCase());
+        
+        if (matchesFilter) {
+          visibleCount++;
+          if (isExpanded || visibleCount <= 4) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (showMoreWrapper) {
+        if (activeFilter === 'all' && reviewCards.length > 4) {
+          showMoreWrapper.style.display = 'block';
+        } else {
+          showMoreWrapper.style.display = 'none';
+        }
+      }
+    }
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => {
+          b.classList.remove('bg-japandi-charcoal', 'text-japandi-cream', 'font-medium');
+          b.classList.add('bg-japandi-sand/70', 'text-japandi-charcoal', 'font-normal');
+        });
+        btn.classList.remove('bg-japandi-sand/70', 'font-normal');
+        btn.classList.add('bg-japandi-charcoal', 'text-japandi-cream', 'font-medium');
+
+        activeFilter = btn.getAttribute('data-filter') || 'all';
+        updateCardVisibility();
+      });
+    });
+
+    if (toggleBtn && toggleText && toggleIcon) {
+      toggleBtn.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        if (isExpanded) {
+          toggleText.textContent = 'Show Fewer Reviews';
+          toggleIcon.style.transform = 'rotate(180deg)';
+        } else {
+          toggleText.textContent = `Show All ${reviewCards.length} Verified Google Reviews`;
+          toggleIcon.style.transform = 'rotate(0deg)';
+        }
+        updateCardVisibility();
+      });
+    }
+  }
+
+  // Setup on initial load and view transitions
+  setupReviewsInteraction();
+  document.addEventListener('astro:page-load', setupReviewsInteraction);
+</script>

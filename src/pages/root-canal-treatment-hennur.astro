@@ -1,0 +1,388 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Root Canal Treatment in Hennur | House of Dental";
+const pageDescription = "Painless single-sitting root canal treatment in Hennur, Bangalore at House of Dental. Rotary endodontics, digital RVG & custom zirconia crowns. Call today.";
+const canonicalUrl = "https://aurevadental.com/root-canal-treatment-hennur";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20have%20tooth%20pain%20and%20would%20like%20to%20consult%20for%20Root%20Canal%20Treatment%20in%20Hennur.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/treatments/root-canal-treatment" },
+  { name: "Root Canal Treatment Hennur", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "Is root canal treatment really painless at your Hennur clinic?",
+    answer: "Yes, absolutely. Root canal treatment at House of Dental is virtually painless. We utilize computerized local anesthesia delivery and topical pre-numbing gels that neutralize the sting of standard injections. With high-precision rotary nickel-titanium instruments and apex locators, we ensure complete pulpal numbness and gentle canal cleaning without pressure or discomfort."
+  },
+  {
+    question: "Can a root canal be completed in a single sitting in Hennur?",
+    answer: "Yes. In approximately 70% to 80% of cases where pulpal inflammation has not progressed to acute periapical abscess or active pus drainage, our clinical dental team can complete the entire root canal—cleaning, disinfecting, and hermetic sealing—in a single 45 to 60-minute appointment. Severe or re-treatment infections may require a second visit with medicinal intracanal dressing to ensure complete sterile healing."
+  },
+  {
+    question: "How much does a Root Canal Treatment (RCT) cost at House of Dental in Hennur?",
+    answer: "At House of Dental, Root Canal Treatments range from Rs. 4,000 to Rs. 10,000 based on tooth position and complexity: Anterior front teeth (single canal): Rs. 4,000 to Rs. 6,000; Premolars (1–2 canals): Rs. 5,000 to Rs. 8,000; Molars (3–4 canals): Rs. 6,000 to Rs. 10,000. Re-RCT of previously failed procedures starts from Rs. 8,000. Complete transparent pricing is provided in writing before treatment."
+  },
+  {
+    question: "Why is a dental crown necessary after an RCT?",
+    answer: "A root canal removes the infected nerve and vascular tissue from inside the tooth, leaving the remaining tooth structure brittle over time. A customized CAD/CAM Zirconia or ceramic crown encapsulates the tooth, restoring normal chewing force and preventing catastrophic tooth fractures or micro-leakage reinfection."
+  },
+  {
+    question: "What are the warning signs that I need an emergency root canal?",
+    answer: "Key symptoms include persistent, throbbing toothache that worsens when lying down, intense lingering sensitivity to hot or cold drinks, pain while biting or chewing, localized swelling on the gums resembling a pimple (fistula), or darkened enamel discoloration following dental trauma."
+  },
+  {
+    question: "How do I care for my tooth immediately after a root canal?",
+    answer: "Avoid chewing hard or sticky foods on the treated side until your final permanent crown is cemented. Mild tenderness for 24 to 48 hours is completely normal and can be managed easily with standard anti-inflammatory medications prescribed by our dentists. Maintain gentle brushing and warm saline rinses."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Root Canal Treatment in Hennur",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "Endodontics"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/treatments/root-canal-treatment" class="hover:text-japandi-moss transition-colors">Root Canal Treatment</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Hennur</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Micro-Endodontics &bull; Hennur Bande, Bangalore
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Painless, Single-Sitting <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Root Canal in Hennur.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Save your natural tooth and eliminate severe toothache safely. At House of Dental on Horamavu Agara Road, our dental surgeons combine rotary nickel-titanium instrumentation, digital RVG diagnostics, and computerized anesthesia for a truly stress-free root canal treatment.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Root Canal Treatment - Hennur"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book RCT Consultation</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-japandi-earth border-t border-japandi-clay/30 w-full">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Single-Sitting Available</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Digital Apex Locator Precision</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Emergency Same-Day Relief</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Endodontic Excellence</span>
+            <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Save Your Natural Tooth</h3>
+            <p class="text-xs text-japandi-earth leading-relaxed font-light">
+              No artificial implant can perfectly replicate the natural sensory feedback of your real tooth root. A timely root canal stops bacterial infection, protects bone density, and preserves your natural smile for life.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">45-60 min</span>
+              <span class="text-[11px] text-japandi-earth">Average Treatment Time</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">98%+</span>
+              <span class="text-[11px] text-japandi-earth">Long-Term Clinical Success</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Transparent Pricing at Hennur:</p>
+            <p class="text-japandi-earth font-light">Starting from Rs. 4,000 for anterior teeth to Rs. 10,000 for complex multi-rooted molars. Digital X-rays &amp; consultation: Rs. 600.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth Clinical Guide: Root Canal Treatment in Hennur -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          Understanding Modern Root Canal Therapy (RCT) in Hennur
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Inside every tooth beneath the white enamel and hard dentin lies a soft vital tissue chamber called the dental pulp. The pulp contains nerves, blood vessels, and connective tissue essential during a tooth's growth. However, when deep bacterial decay, extensive cracks, repeated dental fillings, or physical trauma breach this chamber, bacteria multiply rapidly. This results in severe inflammation (pulpitis), intense throbbing pain, and eventually periapical bone abscesses.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Historically, teeth with infected pulp were extracted, leaving gaps that required costly bridges or implants. Root canal treatment is a biologically conservative therapy that eliminates the bacterial infection, thoroughly sterilizes the complex microscopic root canal anatomy, and seals the internal root with biocompatible materials—allowing you to keep your natural tooth for decades.
+        </p>
+      </div>
+
+      <!-- Step-by-Step Procedure Guide -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          The 5-Stage Painless RCT Protocol at House of Dental Hennur
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Here is exactly what happens during your root canal appointment at our Horamavu Agara Road clinic:
+        </p>
+
+        <div class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 1: High-Definition RVG Imaging &amp; Buffered Numbing</h4>
+            <p class="leading-relaxed">
+              We take high-resolution digital radiographs using our low-radiation RVG sensor to accurately map the curvature and number of your tooth's root canals. A topical numbing gel is gently applied to the gums, followed by a buffered computerized local anesthetic that renders the entire jaw completely numb within minutes.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 2: Sterile Rubber Dam Isolation &amp; Pulp Access</h4>
+            <p class="leading-relaxed">
+              We place a sterile dental dam sheet over the tooth. This isolates the tooth from oral saliva, prevents any bacterial contamination, and ensures none of the antiseptic rinsing liquids enter your mouth. A microscopic access opening is gently made through the crown to reach the infected pulp chamber.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 3: Electronic Apex Location &amp; Rotary NiTi Canal Shaping</h4>
+            <p class="leading-relaxed">
+              Using a digital electronic apex locator, we measure the exact microscopic length of each root canal with sub-millimeter precision. Motorized rotary nickel-titanium (NiTi) files then smoothly clean, debride, and contour the canals without manual file pressure, preserving the natural root walls.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 4: Ultrasonic Disinfection &amp; 3D Gutta-Percha Hermetic Seal</h4>
+            <p class="leading-relaxed">
+              Canals are flushed using warm antibacterial irrigants activated by ultrasonic vibration to dissolve deep microbial biofilm in microscopic side-canals. Once completely sterile and dried, the canals are obturated with thermoplastic gutta-percha and biocompatible resin sealer, creating an impermeable 3D seal.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 5: Core Rebuild &amp; High-Strength Zirconia Crown</h4>
+            <p class="leading-relaxed">
+              A high-strength composite core buildup is bonded inside the tooth to restore structural integrity. We then custom-design a precision CAD/CAM Zirconia or lithium disilicate crown to encase the tooth, ensuring it withstands maximum biting pressure without cracking.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical Comparison: Root Canal vs. Tooth Extraction -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Root Canal vs. Extraction: Why Saving Your Natural Tooth is Always Superior
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          When suffering from agonizing toothache, patients often ask if simply pulling the tooth is faster or cheaper. While tooth extraction may appear cheaper initially, the downstream anatomical and financial costs are substantially higher:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2.5">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Consequences of Tooth Extraction</h4>
+            <ul class="space-y-2 list-disc list-inside">
+              <li>Immediate bone loss: The jawbone where the tooth root was anchored shrinks by 25% to 40% in width within the first 12 months.</li>
+              <li>Shifting of neighboring teeth: Adjacent teeth tilt into the empty socket gap, disrupting bite alignment and triggering TMJ jaw pain.</li>
+              <li>Opposing tooth supra-eruption: The tooth above or below the gap drifts downward or upward, loosening and becoming vulnerable to decay.</li>
+              <li>Substantially higher future replacement costs: Replacing the missing gap requires a dental implant or 3-unit bridge costing 3x to 5x more.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2.5">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Advantages of Root Canal Therapy</h4>
+            <ul class="space-y-2 list-disc list-inside">
+              <li>100% natural proprioception: You preserve natural periodontal ligament fibers that provide tactile chewing sensation and bite feedback.</li>
+              <li>Permanent jawbone stability: The natural tooth root prevents localized alveolar bone resorption, maintaining youthful facial contours.</li>
+              <li>Full chewing efficiency: Once reinforced with a CAD/CAM zirconia crown, the tooth withstands full chewing forces for life.</li>
+              <li>Biologically conservative: Only infected pulp tissue is removed; your original enamel, dentin, and root structure remain intact.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post-Treatment Recovery and Home Care Timeline -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Post-RCT Care &amp; Recovery Timeline: What to Expect in 48 Hours
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Modern rotary root canal treatment causes minimal tissue trauma. Here is our recommended home care protocol following your procedure:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">First 2 to 4 Hours</span>
+            <p>Wait until local numbness completely dissipates before eating to prevent cheek or tongue biting. Avoid hot beverages while numb.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Days 1 to 3</span>
+            <p>Chew on the opposite side of your mouth until the permanent crown is placed. Mild ligament tenderness is normal and easily relieved by prescribed mild analgesics.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Crown Placement &amp; Beyond</span>
+            <p>Once the custom Zirconia crown is cemented, you can resume normal chewing of all foods. Brush twice daily and floss around the crown margins regularly.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local Catchment & Transit Guidance -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Emergency Root Canal Care in Hennur &amp; Surrounding Areas
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Acute dental pulpitis causes severe, unyielding pain that demands prompt attention. Located on the 2nd Floor of SLV Nilaya on Horamavu Agara Road (beside Nayara Petrol Bunk), House of Dental is conveniently accessible for immediate emergency triage across North-East Bangalore:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-1.5 font-light">
+          <li><strong>Hennur Bande &amp; Horamavu Agara Road:</strong> Less than 2 minutes away.</li>
+          <li><strong>Hennur Main Road &amp; Geddalahalli:</strong> 5 minutes via Hennur Bande Road.</li>
+          <li><strong>Horamavu, Babusapalya &amp; Kalkere:</strong> 6 to 8 minutes without navigating busy Ring Road traffic.</li>
+          <li><strong>Kalyan Nagar, HRBR Layout &amp; Kammanahalli:</strong> 10 minutes via Hennur Cross.</li>
+        </ul>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed pt-2">
+          We maintain dedicated emergency appointment slots daily and remain open on Sundays (9:30 AM to 9:00 PM) to ensure no patient suffers in pain over the weekend.
+        </p>
+      </div>
+
+      <!-- Internal Links to Related Treatment & Local Pages -->
+      <div class="p-6 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/50 space-y-4">
+        <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+          Explore Related Specialty Treatments &amp; Local Care Guides:
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
+          <a href="/treatments/root-canal-treatment" class="hover:underline">&bull; Main Root Canal Treatment Clinical Page</a>
+          <a href="/dental-implants-hennur" class="hover:underline">&bull; Dental Implants in Hennur (Tooth Replacement)</a>
+          <a href="/dentist-in-hennur" class="hover:underline">&bull; Best Dentist in Hennur Consultation</a>
+          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/wisdom-tooth-removal-hennur" class="hover:underline">&bull; Wisdom Tooth Extraction in Hennur</a>
+          <a href="/invisible-aligners-hennur" class="hover:underline">&bull; Invisible Clear Aligners in Hennur</a>
+          <a href="/contact" class="hover:underline">&bull; Contact Clinic &amp; Get Directions</a>
+          <a href="/blog" class="hover:underline">&bull; Dental Health Journal &amp; Guides</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Patient Clarity</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium">
+          Frequently Asked Questions About Root Canal Therapy in Hennur
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light max-w-xl mx-auto">
+          Clear, medically accurate answers to help you feel confident and prepared for your treatment.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div class="bg-japandi-sand/40 border border-japandi-clay/40 rounded-2xl p-6 space-y-2">
+            <h3 class="font-serif text-base sm:text-lg text-japandi-charcoal font-medium">
+              {faq.question}
+            </h3>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="pb-24 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+        Stop Tooth Pain Today. Save Your Natural Tooth.
+      </h2>
+      <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
+        Experience single-sitting, painless root canal treatment at House of Dental in Hennur. Same-day emergency appointments available.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button
+          type="button"
+          data-open-booking
+          data-treatment="Root Canal Treatment Consultation"
+          class="px-8 py-3.5 rounded-full bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow"
+        >
+          Book RCT Appointment
+        </button>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-japandi-cream/40 hover:border-japandi-cream text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-japandi-cream/70 font-light pt-2">
+        House of Dental &bull; 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149 &bull; Phone: 09113563040
+      </p>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+/* House of Dental – chisel cursor
+   Hotspot (3,3) = the cutting tip of the chisel.
+   image-set gives a sharp 64px version on retina screens. */
+
+html, body {
+  cursor: url("/chisel-cursor.png") 3 3,
+          url("/chisel-cursor.png") 3 3,
+          auto;
+}
+
+@supports (cursor: image-set(url("/chisel-cursor.png") 1x)) {
+  html, body {
+    cursor: image-set(
+      url("/chisel-cursor.png") 1x,
+      url("/chisel-cursor@2x.png") 2x
+    ) 3 3, auto;
+  }
+}
+
+/* Keep the normal hand/text cursors where users expect them */
+a, button, [role="button"], input[type="submit"] { cursor: pointer !important; }
+input[type="text"], input[type="email"], input[type="tel"], textarea { cursor: text !important; }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::selection {
+    background-color: var(--color-border);
+    color: var(--color-text-primary);
+  }
+
+  /* Transition for dynamic theme updates on other components */
+  div, section, footer, header, a, button, svg, input, textarea {
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Hide scrollbar for horizonal doctor gallery */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

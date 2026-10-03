@@ -1,0 +1,402 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Dental Implants in Hennur | House of Dental";
+const pageDescription = "Permanent, natural-looking dental implants in Hennur, Bangalore at House of Dental. Titanium & zirconia implants, bone grafting & flexible payment plans.";
+const canonicalUrl = "https://aurevadental.com/dental-implants-hennur";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20would%20like%20to%20consult%20for%20Dental%20Implants%20in%20Hennur.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/treatments/dental-implants" },
+  { name: "Dental Implants Hennur", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "How long do dental implants last?",
+    answer: "With proper oral hygiene and regular dental checkups, dental implants are designed to last 25 years to a lifetime. The biocompatible titanium or ceramic post permanently fuses with your living jawbone through osseointegration, creating a rock-solid foundation that never decays."
+  },
+  {
+    question: "Is the dental implant placement procedure painful?",
+    answer: "No. The procedure is performed under high-potency local anesthesia, ensuring that the surgical area is completely numb. Most patients report feeling only mild vibration and pressure during implant placement. Post-operative discomfort is comparable to or milder than a routine tooth extraction and is easily managed with mild analgesics."
+  },
+  {
+    question: "What is the cost of a dental implant in Hennur, Bangalore?",
+    answer: "At House of Dental, single-tooth dental implants typically range from Rs. 25,000 to Rs. 45,000 depending on the implant brand system (such as Osstem, Nobel Biocare, or Straumann) and whether customized zirconia abutments or bone grafting are needed. We offer transparent itemized treatment plans and flexible zero-interest EMI financing."
+  },
+  {
+    question: "Can I get dental implants if I have low bone density?",
+    answer: "Yes. For patients with bone loss resulting from long-standing tooth loss or periodontal disease, our implant specialists perform minimally invasive bone augmentation procedures, including particulate bone grafting, platelet-rich fibrin (PRF) therapy, and sinus lifts to regenerate sufficient bone volume prior to or during implant placement."
+  },
+  {
+    question: "How long does the entire dental implant treatment process take?",
+    answer: "The implant process typically spans 3 to 6 months. After the implant post is placed in the jaw, a healing period of 8 to 12 weeks allows osseointegration to occur. Once firmly integrated, an intraoral digital scan is taken to fabricate a customized CAD/CAM zirconia crown, which is permanently secured in place."
+  },
+  {
+    question: "Are dental implants better than fixed dental bridges?",
+    answer: "Yes, dental implants are vastly superior to conventional bridges because they do not require grinding down healthy adjacent teeth to serve as anchor crowns. Furthermore, dental implants stimulate natural jawbone density, stopping facial sagging and bone loss that inevitably occurs beneath bridges."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Dental Implants in Hennur",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "Implantology",
+  isSurgical: true
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/treatments/dental-implants" class="hover:text-japandi-moss transition-colors">Dental Implants</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Hennur</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Implantology &bull; Hennur Bande, Bangalore
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Permanent, Natural <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Dental Implants in Hennur.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Restore your full chewing power, clear speech, and youthful facial profile with permanent titanium and zirconia dental implants. At House of Dental, our clinical team delivers precision-guided implantology in our tranquil Japandi studio on Horamavu Agara Road.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Dental Implants Consultation - Hennur"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Implant Consultation</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-japandi-earth border-t border-japandi-clay/30 w-full">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Grade-4 Medical Titanium</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Computer-Guided Placement</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Flexible EMI Available</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Permanent Tooth Replacement</span>
+            <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">The Gold Standard in Dentistry</h3>
+            <p class="text-xs text-japandi-earth leading-relaxed font-light">
+              Dental implants replicate both the root and the crown of your tooth. Unlike removable dentures that slip or bridges that require cutting adjacent teeth, an implant integrates permanently with your bone.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">98.5%</span>
+              <span class="text-[11px] text-japandi-earth">Long-Term Osseointegration</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">25+ Yrs</span>
+              <span class="text-[11px] text-japandi-earth">Expected Clinical Lifespan</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Implant Studio in Hennur:</p>
+            <p class="text-japandi-earth font-light">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Bangalore 562149. Dedicated on-site patient parking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth Clinical Guide: Dental Implants in Hennur -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          Comprehensive Guide to Dental Implants in Hennur, Bangalore
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Losing an adult tooth—whether due to severe dental caries, accidental sports trauma, or advanced periodontal gum disease—impacts far more than aesthetic appearance. Each tooth root transmits essential mechanical chewing forces to the surrounding alveolar jawbone. When a tooth is extracted and left unreplaced, the absence of stimulation causes the jawbone to recede, resulting in collapsed facial contours, premature wrinkling around the lips, and shifting of remaining healthy teeth.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Dental implants are the only tooth replacement therapy recognized by modern dentistry that actively prevents bone resorption. By surgically inserting a biocompatible medical titanium or zirconia post directly into the jaw, your body's bone osteoblasts naturally attach to the microscopic porous surface through a biological phenomenon known as osseointegration. Once fully integrated, the implant serves as an anchor capable of supporting an individual crown, a multi-unit bridge, or an entire full-arch hybrid prosthesis.
+        </p>
+      </div>
+
+      <!-- Implant Configurations -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Implant Solutions Customized for Your Clinical Anatomy
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          At House of Dental in Hennur, we offer specialized implant modalities tailored to your unique clinical needs:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2.5">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Single Tooth Implants</h4>
+            <p class="leading-relaxed">
+              Ideal for replacing an isolated front or back missing tooth. A single titanium fixture is placed, topped by a customized ceramic abutment and a high-translucency Zirconia crown that blends seamlessly with surrounding natural teeth.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2.5">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Implant-Supported Bridges</h4>
+            <p class="leading-relaxed">
+              When three or four consecutive teeth are missing, placing two implants at each end allows a continuous ceramic bridge to span the gap without compromising adjacent natural healthy teeth as anchors.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2.5">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">All-on-4 / All-on-6 Full Arch</h4>
+            <p class="leading-relaxed">
+              For edentulous patients or those with failing dentition, four to six strategically angled implants support a fixed, non-removable full arch of teeth, eliminating loose dentures and restoring 100% chewing capability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Surgical Workflow -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          The 4-Step Dental Implant Journey at House of Dental Hennur
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          We combine computerized pre-surgical planning with minimally invasive techniques for rapid recovery:
+        </p>
+
+        <div class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 1: 3D CBCT Radiography &amp; Digital Planning</h4>
+            <p class="leading-relaxed">
+              We evaluate 3D bone volume, nerve pathways, and sinus floor proximity using high-resolution volumetric radiography. We calculate the exact trajectory, diameter, and depth of the implant before surgery commences.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 2: Gentle, Computer-Guided Placement</h4>
+            <p class="leading-relaxed">
+              Under complete local anesthesia, a microscopic osteotomy is prepared in the jawbone and the sterile titanium implant post is gently inserted. Dissolvable micro-sutures are placed, and you leave our clinic with clear post-operative guidance.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 3: Osseointegration Biological Healing (8 to 12 Weeks)</h4>
+            <p class="leading-relaxed">
+              During this phase, your jawbone bonds permanently with the implant surface. Temporary aesthetic prosthetics can be provided so you never go without teeth while your bone matures.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 4: Digital Impression &amp; Permanent CAD/CAM Zirconia Crown</h4>
+            <p class="leading-relaxed">
+              An intraoral digital 3D scan captures the precise micron-level positioning of your healed implant. Our dental laboratory mills a multi-layered monolithic Zirconia crown tailored to your natural shade, which is permanently torqued in place.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bone Grafting and Sinus Lifts -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Advanced Bone Regeneration &amp; Sinus Lift Capabilities
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Patients previously told they lacked sufficient bone for implants can now receive successful restorations at House of Dental. Our clinicians specialize in biological bone augmentation:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Synthetic &amp; Autologous Bone Grafts</h4>
+            <p class="leading-relaxed">
+              Using mineralized particulate matrices and collagen barrier membranes, we rebuild depleted ridge width and height, creating a vascularized bone bed that firmly supports your implant.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Internal &amp; Lateral Sinus Elevation</h4>
+            <p class="leading-relaxed">
+              In the upper back molar region where the maxillary sinus cavity often expands, we gently elevate the sinus membrane through a micro-window and place bone graft material to create sufficient vertical bone foundation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost & Transparent EMI Options -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Dental Implant Cost Breakdown in Hennur, Bangalore
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          At House of Dental, pricing is 100% transparent with no hidden surgeon fees or facility surcharges:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-2 font-light">
+          <li><strong>Standard Single Dental Implant:</strong> Starting from ₹25,000 to ₹35,000 (includes titanium fixture and surgical placement).</li>
+          <li><strong>Premium European / American Implant Systems (Nobel Biocare, Straumann):</strong> ₹35,000 to ₹50,000.</li>
+          <li><strong>CAD/CAM Monolithic Zirconia Crown &amp; Abutment:</strong> ₹8,000 to ₹15,000.</li>
+          <li><strong>Bone Grafting &amp; Membrane Augmentation:</strong> ₹5,000 to ₹15,000 (when clinically required).</li>
+          <li><strong>Flexible Payment Plans:</strong> Convert credit card transactions into manageable zero-interest monthly EMIs through all major Indian banks.</li>
+        </ul>
+      </div>
+
+      <!-- Local Catchment & Transit Directions -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Conveniently Accessible for Patients Across North-East Bangalore
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          House of Dental is centrally situated at 2nd Floor, SLV Nilaya, Horamavu Agara Road (beside Nayara Petrol Bunk), offering swift access for implant consultations:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-1.5 font-light">
+          <li><strong>Hennur Bande &amp; Geddalahalli:</strong> 2 to 5 minutes by car or two-wheeler.</li>
+          <li><strong>Horamavu, Babusapalya &amp; Kalkere:</strong> 5 to 8 minutes via Horamavu Agara Road with zero railway gate delays.</li>
+          <li><strong>Kalyan Nagar, HRBR Layout &amp; Kammanahalli:</strong> 10 minutes via the Hennur Cross underpass.</li>
+          <li><strong>Thanisandra, Kothanur &amp; Manyata Tech Park:</strong> 10 to 12 minutes along Outer Ring Road / Hennur Main Road.</li>
+        </ul>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed pt-2">
+          Dedicated on-premise car and two-wheeler parking is available, ensuring easy accessibility for elderly patients and families.
+        </p>
+      </div>
+
+      <!-- Internal Links Cluster -->
+      <div class="p-6 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/50 space-y-4">
+        <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+          Explore Related Specialty Treatments &amp; Hennur Portals:
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
+          <a href="/treatments/dental-implants" class="hover:underline">&bull; Main Dental Implants Clinical Page</a>
+          <a href="/root-canal-treatment-hennur" class="hover:underline">&bull; Painless Root Canal Treatment in Hennur</a>
+          <a href="/dentist-in-hennur" class="hover:underline">&bull; Best Dentist in Hennur Consultation</a>
+          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/invisible-aligners-hennur" class="hover:underline">&bull; Invisible Clear Aligners in Hennur</a>
+          <a href="/teeth-whitening-hennur" class="hover:underline">&bull; Laser Teeth Whitening in Hennur</a>
+          <a href="/wisdom-tooth-removal-hennur" class="hover:underline">&bull; Wisdom Tooth Removal in Hennur</a>
+          <a href="/contact" class="hover:underline">&bull; Contact &amp; Schedule Appointment</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Patient Clarity</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium">
+          Frequently Asked Questions About Dental Implants in Hennur
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light max-w-xl mx-auto">
+          Honest answers about implant surgery, bone healing, longevity, and post-operative recovery.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div class="bg-japandi-sand/40 border border-japandi-clay/40 rounded-2xl p-6 space-y-2">
+            <h3 class="font-serif text-base sm:text-lg text-japandi-charcoal font-medium">
+              {faq.question}
+            </h3>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="pb-24 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+        Reclaim Your Confident Smile &amp; Natural Chewing Power
+      </h2>
+      <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
+        Consult with our dental implant specialists in Hennur. Digital CBCT bone planning, painless placement, and transparent EMI options.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button
+          type="button"
+          data-open-booking
+          data-treatment="Dental Implants Consultation"
+          class="px-8 py-3.5 rounded-full bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow"
+        >
+          Book Implant Consultation
+        </button>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-japandi-cream/40 hover:border-japandi-cream text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-japandi-cream/70 font-light pt-2">
+        House of Dental &bull; 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149 &bull; Phone: 09113563040
+      </p>
+    </div>
+  </section>
+</Layout>

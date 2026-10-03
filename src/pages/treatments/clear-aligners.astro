@@ -1,0 +1,514 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Clear Aligners & Invisible Braces in Bangalore | House of Dental";
+const pageDescription = "Straighten your teeth discreetly with custom clear aligners at House of Dental in Bangalore. 3D digital smile scan, flexible EMI & certified orthodontics.";
+const canonicalUrl = "https://aurevadental.com/treatments/clear-aligners";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20Clear%20Aligners%20at%20House%20of%20Dental.";
+
+const faqs = [
+  {
+    question: "How do clear aligners work compared to traditional braces?",
+    answer: "Clear aligners use a sequence of custom-manufactured, transparent medical-grade polymer trays that exert gentle, calibrated forces to shift teeth incrementally into ideal alignment. Unlike traditional metal braces with brackets and wires, clear aligners are virtually invisible, removable for eating and brushing, and cause zero soft-tissue lacerations or mouth ulcers."
+  },
+  {
+    question: "How many hours a day do I need to wear my clear aligners?",
+    answer: "For optimal biological tooth movement, aligners must be worn for 20 to 22 hours each day. You only remove them during meals, drinking hot or colored beverages, and when brushing or flossing your teeth. Each tray set is typically worn for 7 to 14 days before advancing to the next series."
+  },
+  {
+    question: "Are clear aligners painful to wear?",
+    answer: "Clear aligners are vastly more comfortable than traditional metal brackets. You may feel mild pressure or snugness during the first 24 to 48 hours of switching to a new tray set, which is a normal indicator that controlled biological tooth movement is underway. There are no sharp metal edges to poke your cheeks or gums."
+  },
+  {
+    question: "What is the cost of clear aligners at House of Dental Hennur?",
+    answer: "Clear aligner treatment at House of Dental ranges from Rs. 80,000 to Rs. 2,50,000 depending on the clinical complexity of your bite and total number of aligner trays required. We accept all major Credit Cards, Debit Cards, UPI, and Net Banking. Patients wishing to split payments into monthly installments can seamlessly convert credit card transactions into flexible monthly EMIs directly via their bank's post-payment portal or net banking app."
+  }
+];
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/#services" },
+  { name: "Clear Aligners", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Clear Aligners & Invisible Braces",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "Orthodontics"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/#services" class="hover:text-japandi-moss transition-colors">Treatments</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Clear Aligners</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Invisible Orthodontics &bull; Hennur, Bengaluru
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Straighten Your Teeth Discreetly With <span class="italic text-japandi-moss">Clear Aligners.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Transform your smile without metal brackets or wires. Experience state-of-the-art 3D intraoral digital planning, ultra-clear medical polymer aligners, and personalized clinical supervision in our calm Japandi studio.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <a 
+            href={whatsappUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Book 3D Smile Scan</span>
+          </a>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 border border-japandi-clay bg-japandi-sand/50 hover:bg-japandi-sand text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <div class="pt-4 flex items-center gap-6 text-xs text-japandi-earth">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Bank Card EMIs</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Free 3D Simulation</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Doctor Supervised</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 animate-slow-fade" style="animation-delay: 0.2s;">
+        <div class="bg-japandi-sand/60 border border-japandi-clay/50 rounded-[2.5rem] p-8 sm:p-10 shadow-lg shadow-japandi-charcoal/5 relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-40 h-40 bg-japandi-moss/10 rounded-full blur-2xl pointer-events-none"></div>
+          
+          <h3 class="text-xl font-serif text-japandi-charcoal font-medium mb-4">Why Choose Clear Aligners?</h3>
+          
+          <ul class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Virtually Invisible:</strong> Made of crystal-clear biocompatible medical polymer that goes unnoticed.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Removable Freedom:</strong> Enjoy your favorite meals, weddings, and parties with zero dietary restrictions.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">No Wire Emergencies:</strong> Zero broken brackets, sharp wires, or emergency clinic visits.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">3D Preview Before You Start:</strong> See your predicted smile outcome on screen before treatment begins.</div>
+            </li>
+          </ul>
+
+          <div class="mt-8 pt-6 border-t border-japandi-clay/40 flex items-center justify-between text-xs">
+            <span class="text-japandi-earth">Average Duration</span>
+            <span class="font-serif text-base font-semibold text-japandi-charcoal">6 – 14 Months</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Intraoral Scanning Walkthrough -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/25 border-t border-japandi-clay/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-14">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">Precision Diagnostics</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          3D Intraoral Scanning: No Sticky Impression Paste
+        </h2>
+        <p class="text-sm text-japandi-earth font-light mt-3 leading-relaxed">
+          Say goodbye to gag-inducing impression trays. At House of Dental Hennur, we capture an exact digital 3D replica of your mouth in under 5 minutes using high-definition optical laser scanning.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-japandi-cream/90 border border-japandi-clay/40 rounded-3xl p-8 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-full bg-japandi-sand flex items-center justify-center text-japandi-moss font-semibold text-sm mb-6">01</div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium mb-3">Sub-Millimeter Accuracy</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Captures 6,000 optical frames per second to render micrometer-level tooth contours, guaranteeing an airtight, comfortable aligner snap.
+          </p>
+        </div>
+
+        <div class="bg-japandi-cream/90 border border-japandi-clay/40 rounded-3xl p-8 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-full bg-japandi-sand flex items-center justify-center text-japandi-moss font-semibold text-sm mb-6">02</div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium mb-3">Real-Time Smile Simulator</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Watch an interactive 3D simulation of your teeth shifting week-by-week toward perfect symmetry right in the dental chair.
+          </p>
+        </div>
+
+        <div class="bg-japandi-cream/90 border border-japandi-clay/40 rounded-3xl p-8 hover:shadow-md transition-all">
+          <div class="w-10 h-10 rounded-full bg-japandi-sand flex items-center justify-center text-japandi-moss font-semibold text-sm mb-6">03</div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium mb-3">Custom CAD/CAM Fabrication</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Your scans are digitally transmitted to specialized aligner laboratories to print laser-trimmed, polished biocompatible aligners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clear Aligners vs. Metal Braces Comparison Table -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">Honest Comparison</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          Clear Aligners vs. Traditional Braces
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light mt-2">
+          Compare the everyday lifestyle benefits to make the most informed decision for your smile.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-japandi-clay/40 bg-japandi-sand/30 backdrop-blur-sm">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-japandi-clay/40 bg-japandi-sand/70">
+              <th class="py-4 px-6 text-japandi-charcoal font-serif font-medium">Feature</th>
+              <th class="py-4 px-6 text-japandi-moss font-serif font-semibold">Clear Aligners (House of Dental)</th>
+              <th class="py-4 px-6 text-japandi-earth font-serif font-medium">Metal Braces</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-japandi-clay/20 text-japandi-charcoal font-light">
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Visual Appearance</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">Near-invisible transparent polymer</td>
+              <td class="py-4 px-6 text-japandi-earth">Prominent metal brackets and dark wires</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Dietary Freedom</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">100% removable — eat anything</td>
+              <td class="py-4 px-6 text-japandi-earth">Restricted (no hard, sticky, or crunchy food)</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Oral Hygiene & Flossing</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">Normal effortless brushing & flossing</td>
+              <td class="py-4 px-6 text-japandi-earth">Challenging with food entrapment & plaque</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Comfort & Ulcers</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">Smooth, laser-scalloped gumline</td>
+              <td class="py-4 px-6 text-japandi-earth">Frequent mouth ulcers & pokey wires</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Routine Clinic Visits</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">Every 6 to 8 weeks for brief checks</td>
+              <td class="py-4 px-6 text-japandi-earth">Frequent monthly wire tightenings</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Guide & Cost Breakdown Callout Banner -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/40 border-t border-japandi-clay/30">
+    <div class="max-w-5xl mx-auto rounded-3xl border border-japandi-clay/40 bg-japandi-cream p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-japandi-moss bg-japandi-moss/10 px-3 py-1 rounded-full">
+          2026 Patient Pricing Guide
+        </span>
+        <h3 class="text-xl md:text-2xl font-serif text-japandi-charcoal font-medium">
+          Clear Aligners Cost in Bangalore: Complete Breakdown
+        </h3>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light max-w-xl">
+          Wondering about mild vs. complex case pricing, Indian brands vs. Invisalign, and bank card EMI options? Read the in-depth clinical guide by Dr. Shweta Singh.
+        </p>
+      </div>
+      <a 
+        href="/blog/clear-aligners-cost-bangalore"
+        class="inline-flex items-center gap-2 whitespace-nowrap px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm"
+      >
+        <span>Read Pricing Guide</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Aligner Journey -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/25 border-t border-japandi-clay/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-14">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">Your Roadmap</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          The 4-Step Aligner Transformation
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-japandi-cream border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 01</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">3D Scan & Consultation</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              Complete clinical evaluation, 3D intraoral digital imaging, and review of your simulated final smile.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Day 1</div>
+        </div>
+
+        <div class="bg-japandi-cream border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 02</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Custom Tray Delivery</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              Receive your bespoke aligner kit with starter guidance and discreet tooth-colored attachments if needed.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Week 2</div>
+        </div>
+
+        <div class="bg-japandi-cream border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 03</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Gradual Progression</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              Switch trays every 10–14 days. Check in periodically with our doctors in Hennur or via WhatsApp progress photos.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Months 2 – 10</div>
+        </div>
+
+        <div class="bg-japandi-cream border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 04</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Retain Your Radiance</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              Complete your treatment and receive custom clear retainers to lock your straight smile in place for life.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Lifelong Result</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Factors & Financial Transparency -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/30">
+    <div class="max-w-5xl mx-auto bg-japandi-sand/45 border border-japandi-clay/50 rounded-[2.5rem] p-8 sm:p-12">
+      <div class="max-w-2xl mb-8">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-2">Pricing Transparency</p>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          What Determines the Cost of Clear Aligners?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+        <div class="space-y-4">
+          <p>
+            At House of Dental, clear aligner treatments range from <strong class="text-japandi-charcoal font-medium">Rs. 80,000 to Rs. 2,50,000</strong>. Pricing is determined strictly by biological complexity rather than arbitrary markups:
+          </p>
+          <ul class="space-y-2 list-disc pl-5">
+            <li><strong class="text-japandi-charcoal font-medium">Mild Alignment (Rs. 80,000 – Rs. 1,20,000):</strong> Minor spacing, small midline shifts, or relapse from teenage braces.</li>
+            <li><strong class="text-japandi-charcoal font-medium">Moderate Crowding (Rs. 1,20,000 – Rs. 1,80,000):</strong> Overbites, deep bites, crossbites, and rotated premolars.</li>
+            <li><strong class="text-japandi-charcoal font-medium">Complex/Full Arch (Rs. 1,80,000 – Rs. 2,50,000):</strong> Severe skeletal crowding and extraction space closures.</li>
+          </ul>
+        </div>
+
+        <div class="bg-japandi-cream/80 border border-japandi-clay/40 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <h4 class="text-sm font-serif font-medium text-japandi-charcoal mb-2">Transparent Payment Terms</h4>
+            <p class="text-xs text-japandi-earth font-light mb-4">
+              We accept all major Credit Cards, Debit Cards, UPI, and Net Banking. Patients wishing to split payments into monthly installments can seamlessly convert credit card transactions into flexible monthly EMIs directly via their bank's post-payment portal or net banking app.
+            </p>
+          </div>
+          <a 
+            href={whatsappUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors"
+          >
+            Inquire About Payment Options on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Item FAQ Accordion -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/20 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-2">Clear Answers</p>
+        <h2 class="text-3xl font-serif text-japandi-charcoal font-medium">Clear Aligners FAQ</h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="faq-item bg-japandi-sand/45 border border-japandi-clay/45 rounded-2xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/50">
+            <button
+              type="button"
+              class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-none group"
+              aria-expanded="false"
+            >
+              <span class="text-base font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors">
+                {faq.question}
+              </span>
+              <div class="w-7 h-7 rounded-full bg-japandi-cream border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 faq-icon transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              <div class="pb-5 pt-1 border-t border-japandi-clay/20">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Treatments & Local Care in Hennur -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="space-y-1">
+        <h3 class="text-lg font-serif font-medium text-japandi-charcoal">Related Treatments &amp; Local Dental Care in Hennur</h3>
+        <p class="text-xs text-japandi-earth font-light">Explore complementary aesthetic and wellness treatments at our Hennur studio:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-light">
+        <a href="/treatments/teeth-whitening" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Teeth Whitening &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Laser brightening to complement your newly straightened smile.</span>
+        </a>
+        <a href="/treatments/cosmetic-dentistry" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Cosmetic Dentistry &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Veneers, edge bonding &amp; smile design aesthetics.</span>
+        </a>
+        <a href="/invisible-aligners-hennur" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Hennur Aligner Guide &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Local pricing, 3D scan workflow &amp; 0% EMI plans in Hennur.</span>
+        </a>
+        <a href="/contact" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Contact Clinic &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Get driving directions, clinic map &amp; parking info on Horamavu Agara Rd.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catchment Footer Note & Final Callout -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-sand/40 border-t border-japandi-clay/30 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Ready to Begin Your Invisible Smile Journey?</h3>
+      <p class="text-xs text-japandi-earth font-light max-w-xl mx-auto leading-relaxed">
+        Conveniently located for patients across Hennur Bande, Horamavu Agara Road, Kalyan Nagar, Kothanur, and North Bengaluru.
+      </p>
+      <div class="pt-3 flex items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+        >
+          Call: 09113563040
+        </a>
+        <a 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function setupPageAccordions() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+      if (!toggle || !content) return;
+
+      const newBtn = toggle.cloneNode(true) as HTMLElement;
+      toggle.parentNode?.replaceChild(newBtn, toggle);
+
+      newBtn.addEventListener('click', () => {
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        items.forEach((other) => {
+          if (other !== item) {
+            const ob = other.querySelector('.faq-toggle');
+            const oc = other.querySelector('.faq-content') as HTMLElement;
+            const oi = other.querySelector('.faq-icon');
+            if (ob && oc) {
+              ob.setAttribute('aria-expanded', 'false');
+              oc.style.maxHeight = '0px';
+              oi?.classList.remove('rotate-45');
+            }
+          }
+        });
+
+        if (isExpanded) {
+          newBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          icon?.classList.remove('rotate-45');
+        } else {
+          newBtn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  setupPageAccordions();
+  document.addEventListener('astro:after-swap', setupPageAccordions);
+</script>

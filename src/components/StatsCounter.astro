@@ -1,0 +1,65 @@
+---
+import { getConfig } from '../utils/getConfig';
+
+const config = getConfig();
+const { stats_section } = config;
+---
+
+<section class="py-16 px-6 lg:px-24 bg-japandi-sand/30 border-t border-b border-japandi-clay/40">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+      {stats_section.map((stat, index) => (
+        <div class="flex flex-col items-center justify-center space-y-2">
+          <div class="flex items-baseline text-4xl md:text-5xl font-serif font-medium text-japandi-moss">
+            <span 
+              class="stat-counter" 
+              data-target={stat.value}
+            >0</span>
+            <span>{stat.suffix}</span>
+          </div>
+          <p class="text-xs md:text-sm text-japandi-earth uppercase tracking-widest font-semibold">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupCounters() {
+    const counters = document.querySelectorAll('.stat-counter');
+    const speed = 200; // The lower the slower
+
+    const animate = (counter: Element) => {
+      const target = +(counter.getAttribute('data-target') || '0');
+      const count = +(counter.textContent || '0');
+      const increment = target / speed;
+
+      if (count < target) {
+        counter.textContent = Math.ceil(count + increment).toString();
+        setTimeout(() => animate(counter), 10);
+      } else {
+        counter.textContent = target.toString();
+      }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          animate(counter);
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  }
+
+  // Run on load
+  setupCounters();
+  
+  // Re-run on Astro page transitions
+  document.addEventListener('astro:page-load', setupCounters);
+</script>

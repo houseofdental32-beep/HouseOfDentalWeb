@@ -1,0 +1,288 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "About Us | Dental Clinic in Hennur | House of Dental";
+const pageDescription = "Learn about House of Dental in Hennur, Bangalore. Led by Dr. Shweta Singh and Dr. Agniss Mishra, offering gentle, hospital-grade modern dental treatments.";
+const canonicalUrl = "https://aurevadental.com/about";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20clinic%20and%20doctors.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "About Us", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "Who founded House of Dental?",
+    answer: "House of Dental is led by Dr. Shweta Singh (BDS, Lead Aesthetic Architect & Clinical Director) and Dr. Agniss Mishra (BDS, Dental Surgeon), alumni of The Oxford Dental College, Bangalore."
+  },
+  {
+    question: "What is the Japandi dental concept at House of Dental?",
+    answer: "Japandi is the fusion of Japanese minimalist tranquility (wabi-sabi) with Scandinavian functional warmth (hygge). We designed our clinic to eliminate the traditional sterile hospital atmosphere, using natural textures, sound-damped operatories, warm lighting, and zero chemical disinfectant odors to alleviate dental anxiety."
+  },
+  {
+    question: "Which areas does House of Dental serve in Bangalore?",
+    answer: "Our clinic is located on Horamavu Agara Road near Nayara Petrol Bunk, Hennur Bande, serving patients across Hennur, Horamavu, Kalyan Nagar, HRBR Layout, Banaswadi, Kammanahalli, Babusapalya, Kothanur, and North Bengaluru."
+  },
+  {
+    question: "What sterilization standards are followed?",
+    answer: "We follow strict CDC and OSHA four-tier sterilization standards with Class-B fractional vacuum autoclaves operating at 134°C, ultrasonic enzymatic decontamination, and 100% single-use barrier wraps."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">About Us</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Calm Mind &bull; Healthy Smile &bull; Hennur, Bengaluru
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Where Clinical Mastery Meets <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Restorative Tranquility.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          House of Dental was created to challenge the notion that visiting the dentist must be stressful. In our Japandi-designed studio in Hennur, Bangalore, we pair gentle chairside empathy with hospital-grade dental engineering to safeguard your oral wellness for life.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="General Consultation - About Page"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Consultation</span>
+          </button>
+
+          <a 
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <span>Visit Our Studio</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Clinical Leadership</span>
+          <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Dr. Shweta Singh &amp; Dr. Agniss Mishra</h3>
+          <p class="text-xs text-japandi-earth leading-relaxed font-light">
+            Alumni of The Oxford Dental College, Bangalore, bringing dedicated clinical focus to aesthetic architecture, preventive care, and family dental wellness.
+          </p>
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">10+ Yrs</span>
+              <span class="text-[11px] text-japandi-earth">Combined Experience</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">5.0 ★</span>
+              <span class="text-[11px] text-japandi-earth">Google Verified Rating</span>
+            </div>
+          </div>
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Clinic Address:</p>
+            <p class="text-japandi-earth font-light">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande, Bangalore 562149.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Philosophy Section -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-10">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          The Japandi Dental Philosophy: Healing Mind and Smile
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          At House of Dental, we believe that healthcare environments profoundly shape patient emotional responses. The traditional dental clinic—characterized by cold vinyl flooring, harsh overhead fluorescent tubes, pungent chemical odors, and buzzing handpieces—stimulates the sympathetic nervous system, causing heart rates to spike and pain thresholds to plummet before a dentist even looks inside the mouth.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          We designed our Hennur studio as an intentional sanctuary. By marrying the understated simplicity of Japanese design (wabi-sabi) with the comforting, tactile warmth of Scandinavian minimalism (hygge), every element works in harmony to soothe sensory overload. Natural oak textures, muted earth palettes, acoustic sound-damping panels, and essential oil aromatherapy create an atmosphere reminiscent of a boutique spa rather than a surgical facility.
+        </p>
+      </div>
+
+      <!-- The Founders Section -->
+      <div class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          Meet Our Clinical Leadership &amp; Dental Team
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-3">
+            <h3 class="font-serif text-xl text-japandi-charcoal font-medium">Dr. Shweta Singh, BDS</h3>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block">Lead Aesthetic Architect &bull; Clinical Director &bull; Founder</span>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              Dr. Shweta graduated from The Oxford Dental College, Bangalore, and holds active registration with the Karnataka State Dental Council. She specializes in Digital Smile Design, minimally invasive ceramic veneers, clear aligner orthodontics, and restorative cosmetic bonding. Her clinical eye emphasizes natural facial symmetry, golden proportions, and long-term biological harmony.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-3">
+            <h3 class="font-serif text-xl text-japandi-charcoal font-medium">Dr. Agniss Mishra, BDS</h3>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block">Dental Surgeon</span>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              Dr. Agniss graduated from The Oxford Dental College, Bangalore (BDS). Dedicated to gentle, communicative chairside care, he focuses on preventive dentistry, restorative care, and patient wellness in our serene studio environment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Clinical Pillars -->
+      <div class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          Our Four Pillars of Dental Care
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">1. 100% Pain-Free Protocols</span>
+            <p>Computerized buffered anesthesia, topical pre-numbing gels, and ultra-gentle micro-instruments guarantee that pain is never part of your treatment.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">2. Complete Price Transparency</span>
+            <p>Every diagnostic finding is explained with intraoral photography. Written estimates with clear material tiers are provided upfront with zero hidden charges.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">3. Hospital-Grade Sterilization</span>
+            <p>Four-tier infection control utilizing Class-B vacuum autoclaves at 134°C, ultrasonic baths, and single-use protective barriers opened exclusively in front of you.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">4. Weekend &amp; Sunday Availability</span>
+            <p>Open on Sundays from 9:30 AM to 9:00 PM and late weekday evenings, offering dedicated emergency slots so you never have to delay necessary care.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local Catchment & Transit -->
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          Serving Families Across Hennur, Kalyan Nagar &amp; North Bangalore
+        </h2>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          House of Dental is conveniently situated on Horamavu Agara Road near Nayara Petrol Bunk, Hennur Bande, Bengaluru 562149. We serve patients across:
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs text-japandi-charcoal">
+          {["Hennur", "Horamavu", "Kalyan Nagar", "HRBR Layout", "Banaswadi", "Kammanahalli", "Babusapalya", "Kothanur", "Byrathi", "North Bengaluru"].map(loc => (
+            <span class="px-3 py-1.5 rounded-full bg-japandi-sand/80 border border-japandi-clay/50 font-medium">
+              {loc}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Internal Link Cluster -->
+      <div class="p-6 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/50 space-y-4">
+        <h3 class="font-serif text-base text-japandi-charcoal font-medium">
+          Explore Our Specialized Treatments &amp; Local Guides:
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
+          <a href="/dentist-in-hennur" class="hover:underline">&bull; Dentist in Hennur - Doctor Profiles</a>
+          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/treatments/root-canal-treatment" class="hover:underline">&bull; Painless Root Canal Treatment</a>
+          <a href="/treatments/dental-implants" class="hover:underline">&bull; Permanent Dental Implants</a>
+          <a href="/treatments/clear-aligners" class="hover:underline">&bull; Clear &amp; Invisible Aligners</a>
+          <a href="/treatments/teeth-whitening" class="hover:underline">&bull; Laser Teeth Whitening</a>
+          <a href="/treatments/wisdom-tooth-removal" class="hover:underline">&bull; Wisdom Tooth Extraction</a>
+          <a href="/contact" class="hover:underline">&bull; Contact &amp; Clinic Directions</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Clear Guidance</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium">
+          Frequently Asked Questions About House of Dental
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <div class="bg-japandi-sand/40 border border-japandi-clay/40 rounded-2xl p-6 space-y-2">
+            <h3 class="font-serif text-base sm:text-lg text-japandi-charcoal font-medium">
+              {faq.question}
+            </h3>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="pb-24 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+        Experience Mindful Dental Care in Hennur
+      </h2>
+      <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
+        Schedule your comprehensive wellness examination at House of Dental today.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button
+          type="button"
+          data-open-booking
+          data-treatment="General Consultation"
+          class="px-8 py-3.5 rounded-full bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow"
+        >
+          Book Consultation
+        </button>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-japandi-cream/40 hover:border-japandi-cream text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

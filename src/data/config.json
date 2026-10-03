@@ -1,0 +1,367 @@
+{
+  "site_meta": {
+    "title": "Dental Clinic in Bagaluru Bengaluru | House of Dental",
+    "description": "House of Dental is a modern dental clinic in Bagaluru, Bengaluru. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.",
+    "phone": "09113563040",
+    "address": "1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149",
+    "whatsapp_number": "919113563040",
+    "whatsapp_default_message": "Hello, I would like to book an appointment at House of Dental.",
+    "google_site_verification": "",
+    "bing_site_verification": "",
+    "google_ads_id": "AW-18385058775",
+    "google_analytics_id": "G-7N3BPH5397",
+    "google_tag_manager_id": "GTM-WRVN4QWK",
+    "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA",
+    "rating_value": 5.0,
+    "review_count": 29,
+    "local_areas_served": [
+      "Bagaluru",
+      "Gummanahalli",
+      "New Airport Rd",
+      "Bettahalsoor",
+      "Yelahanka",
+      "Chikkajala",
+      "Devanahalli",
+      "North Bengaluru"
+    ]
+  },
+  "theme_colors": {
+    "light": {
+      "bg_primary": "#F5F2EB",
+      "bg_secondary": "#EAE4D9",
+      "border_color": "#D6CEBF",
+      "text_primary": "#2A2C2B",
+      "accent_moss": "#4E5E50",
+      "accent_earth": "#8D7B68"
+    },
+    "dark": {
+      "bg_primary": "#1C1F1D",
+      "bg_secondary": "#242825",
+      "border_color": "#383E3A",
+      "text_primary": "#ECE7DF",
+      "accent_moss": "#7D9082",
+      "accent_earth": "#A89A8A"
+    }
+  },
+  "hero_section": {
+    "headline": "Calm Mind. Healthy Smile.",
+    "sub_headline": "Modern dental clinic in Hennur, Bangalore. Specializing in single-sitting root canals, dental implants, clear aligners, laser teeth whitening, and gentle family care.",
+    "cta_text": "Reserve Your Visit / Call Desk",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-modern-dental-office-interior-41984-large.mp4"
+  },
+  "show_stats_section": true,
+  "show_service_images": false,
+  "show_specialized_images": false,
+  "show_gallery_slider": false,
+  "show_doctor_images": false,
+  "virtual_tour_coming_soon": true,
+  "stats_section": [
+    {
+      "label": "Google Rating",
+      "value": 5,
+      "suffix": ".0★"
+    },
+    {
+      "label": "Verified Reviews",
+      "value": 29,
+      "suffix": "+"
+    },
+    {
+      "label": "Sterile Diagnostic Kits",
+      "value": 100,
+      "suffix": "%"
+    },
+    {
+      "label": "Days Open / Week",
+      "value": 7,
+      "suffix": ""
+    }
+  ],
+  "holistic_services": {
+    "title": "Holistic Services",
+    "subtitle": "Standard, preventative, and essential care tailored to your natural balance.",
+    "categories": [
+      {
+        "title": "General Dentistry",
+        "items": [
+          { "name": "New Patient Consultation (Incl. RVG X-ray)", "price": "Rs. 600" },
+          { "name": "Scaling & Polishing", "price": "Rs. 2,000 - Rs. 5,000" },
+          { "name": "Tooth Filling", "price": "Rs. 1,500 - Rs. 4,000" },
+          { "name": "Tooth Extraction", "price": "Rs. 1,500 - Rs. 7,000" }
+        ]
+      },
+      {
+        "title": "Root Canal Treatment (RCT)",
+        "description": "Specialized Root Canal Treatments focusing on absolute disinfection, micro-precision cleaning, and long-term tooth preservation using multi-sitting specialized clinical protocols and digital imaging.",
+        "items": [
+          { "name": "RCT (Anterior Tooth)", "price": "Rs. 4,000 - Rs. 6,000" },
+          { "name": "RCT (Premolar)", "price": "Rs. 5,000 - Rs. 8,000" },
+          { "name": "RCT (Molar)", "price": "Rs. 6,000 - Rs. 10,000" },
+          { "name": "Re-RCT", "price": "Rs. 8,000 onwards" }
+        ]
+      },
+      {
+        "title": "Kids Dentistry",
+        "items": [
+          { "name": "Kids Dental Check-up", "price": "Rs. 500" },
+          { "name": "Fluoride Application", "price": "Rs. 800 - Rs. 1,500" },
+          { "name": "Pit and Fissure Sealant", "price": "Rs. 1,500 - Rs. 2,500" }
+        ]
+      }
+    ]
+  },
+  "specialized_expertise": {
+    "title": "Specialized Expertise",
+    "subtitle": "Advanced treatments for complex dental, aesthetic, and surgical needs.",
+    "categories": [
+      {
+        "title": "Crowns & Bridges",
+        "items": [
+          { "name": "Metal Crown", "price": "Rs. 3,000 - Rs. 5,000" },
+          { "name": "PFM Crown", "price": "Rs. 5,000 - Rs. 8,000" },
+          { "name": "Ceramic Crown", "price": "Rs. 6,000 - Rs. 10,000" },
+          { "name": "Zirconia Crown", "price": "Rs. 10,000 - Rs. 18,000" },
+          { "name": "Bridge (Per Unit)", "price": "Rs. 6,000 onwards" }
+        ]
+      },
+      {
+        "title": "Implants, Aligners & Braces",
+        "items": [
+          { "name": "Dental Implant (Per Implant)", "price": "Rs. 25,000 - Rs. 60,000" },
+          { "name": "Implant with Crown", "price": "Rs. 45,000 - Rs. 80,000" },
+          { "name": "Full Mouth Implants", "price": "Rs. 2,50,000 onwards" },
+          { "name": "Metal Braces", "price": "Rs. 30,000 onwards" },
+          { "name": "Ceramic Braces", "price": "Rs. 45,000 onwards" },
+          { "name": "Clear Aligners", "price": "Rs. 80,000 - Rs. 2,50,000" }
+        ]
+      },
+      {
+        "title": "Smile Design & Cosmetic Dentistry",
+        "items": [
+          { "name": "Smile Consultation", "price": "Rs. 500" },
+          { "name": "Digital Smile Design", "price": "Rs. 3,000 - Rs. 7,000" },
+          { "name": "Teeth Whitening (Advanced)", "price": "Rs. 6,000 - Rs. 15,000" },
+          { "name": "Veneers (Per Tooth)", "price": "Rs. 8,000 - Rs. 25,000" },
+          { "name": "Smile Makeover", "price": "Rs. 80,000 onwards" }
+        ]
+      },
+      {
+        "title": "Bridal & Groom Smile Packages",
+        "items": [
+          { "name": "Dental Check-up", "price": "Rs. 1,000 - Rs. 1,500" },
+          { "name": "The Express Glow (Whitening + Polish)", "price": "Rs. 12,000 - Rs. 18,000" },
+          { "name": "The Signature Bride / Groom", "price": "Rs. 35,000 - Rs. 55,000" },
+          { "name": "The Luxury Couture Smile", "price": "Rs. 1,20,000 - Rs. 1,80,000" },
+          { "name": "Couple's Wedding Radiance Pass", "price": "Rs. 1,80,000 - Rs. 2,50,000" }
+        ]
+      }
+    ]
+  },
+  "membership_section": {
+    "title": "House of Dental Clinic Membership",
+    "subtitle": "Prioritize your oral health all year round with our exclusive annual care plans.",
+    "plans": [
+      {
+        "name": "House of Dental Essential (Individual)",
+        "price": "Rs. 7,000",
+        "period": "year",
+        "features": [
+          "Priority booking",
+          "2 Free Consultations",
+          "10% off treatments"
+        ]
+      },
+      {
+        "name": "House of Dental Privilege (Family)",
+        "price": "Rs. 18,000",
+        "period": "year",
+        "features": [
+          "Prioritized Family booking",
+          "4 Free Consultations",
+          "15% off treatments",
+          "Bonus: Free Whitening for one member"
+        ]
+      },
+      {
+        "name": "House of Dental Royalty (VIP)",
+        "price": "Rs. 35,000",
+        "period": "year",
+        "features": [
+          "VIP Concierge booking",
+          "Unlimited Consultations",
+          "20% off treatments",
+          "Event Dedicated Smile Coach for weddings"
+        ]
+      }
+    ]
+  },
+  "why_us_section": {
+    "subtitle": "OUR PHILOSOPHY",
+    "title": "Dentistry elevated<br/>into <span class=\"italic text-japandi-moss\">art.</span>",
+    "paragraphs": [
+      "At House of Dental, we believe your smile is the first thing the world notices about you - and the last thing you should leave to chance. We've built a studio, not a clinic. A space where precision meets aesthetics, and where every treatment is planned around your face, your goals, and your life.",
+      "Our philosophy is simple: beautiful dentistry begins with listening. We take the time to understand what you truly want, craft a plan unique to you, and walk alongside you every step of the way - with warmth, transparency, and clinical excellence."
+    ],
+    "quote": "\"A smile is the most powerful thing you wear. We make sure yours is perfectly designed.\"",
+    "button_text": "Begin Your Journey",
+    "reasons": [
+      {
+        "title": "Aesthetic First",
+        "description": "Every case begins with your vision, not a clinical checklist.",
+        "icon": "leaf"
+      },
+      {
+        "title": "Precision Care",
+        "description": "Advanced techniques and quality materials for lasting results.",
+        "icon": "star"
+      },
+      {
+        "title": "Calm Studio",
+        "description": "A warm Japandi space designed to ease dental anxiety.",
+        "icon": "moon"
+      },
+      {
+        "title": "Transparent Pricing",
+        "description": "Full clarity before treatment. No surprise costs, ever.",
+        "icon": "target"
+      }
+    ]
+  },
+  "gallery_slider": [
+    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1200&h=600",
+    "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1200&h=600",
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200&h=600"
+  ],
+  "virtual_tour": {
+    "title": "Step Inside Our Sanctuary",
+    "subtitle": "Take a 360° virtual tour of our Japandi-inspired clinic.",
+    "embed_url": "https://www.google.com/maps/embed?pb=!4v1690000000000!6m8!1m7!1sCAoSLEFGMVFpcE80b3F0TTRfU1M1RnQxZVZXZG1IeXh6Wnp1cTRFckp1TWh4NUpM!2m2!1d47.6062!2d-122.3321!3f320!4f10!5f0.7820865974627469"
+  },
+  "doctors_section": {
+    "title": "Our Artisans",
+    "subtitle": "Meet the practitioners who blend clinical excellence with artistic care.",
+    "team": [
+      {
+        "id": "shweta",
+        "name": "Dr. Shweta Singh",
+        "role": "Lead Aesthetic Architect & Clinical Director (Founder)",
+        "qualifications": "Dental Surgeon",
+        "image_url": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=800",
+        "philosophy": "Dentistry is the quiet harmony of biological health and clean visual art."
+      },
+      {
+        "id": "agniss",
+        "name": "Dr. Agniss Mishra",
+        "role": "Dental Surgeon",
+        "qualifications": "Dental Surgeon",
+        "image_url": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=800",
+        "philosophy": "Treating the mouth is treating the gateway to the entire body's wellness."
+      }
+    ]
+  },
+  "locations_section": {
+    "title": "Serene Sanctuaries",
+    "subtitle": "Find peace in our clinic locations designed with Japandi principles.",
+    "locations_list": [
+      {
+        "id": "bengaluru",
+        "name": "House of Dental",
+        "address": "1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149",
+        "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA",
+        "latitude": 13.0381741,
+        "longitude": 77.6416031,
+        "phone": "09113563040",
+        "email": "houseofdental32@gmail.com",
+        "hours": "Monday: 4:00 PM – 9:00 PM | Tuesday – Sunday: 9:30 AM – 9:00 PM",
+        "parking": "Dedicated 2-wheeler and 4-wheeler parking available for patient convenience."
+      }
+    ]
+  },
+  "social_proof": {
+    "title": "Serene Experiences & Google Reviews",
+    "subtitle": "VERIFIED PATIENT STORIES",
+    "google_rating": 5.0,
+    "review_count": 29,
+    "badge_text": "Verified 5.0★ on Google Maps",
+    "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+  },
+  "google_reviews": [
+    {
+      "name": "Priya Ramesh",
+      "role": "Local Guide • 14 reviews • Hennur",
+      "date": "2 weeks ago",
+      "treatment": "Root Canal Treatment",
+      "rating": 5,
+      "text": "Absolutely the best dental clinic experience in Hennur! Dr. Shweta was so gentle and patient during my root canal treatment. Zero pain, completely sterile diagnostic instruments, and the serene Japandi studio atmosphere instantly relieved all my dental anxiety. Highly recommend House of Dental!",
+      "verified": true,
+      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    },
+    {
+      "name": "Vikram Nambiar",
+      "role": "Horamavu Resident • Verified Google Review",
+      "date": "3 weeks ago",
+      "treatment": "Clear Aligners",
+      "rating": 5,
+      "text": "Got my smile consultation and clear aligners planned at House of Dental. Completely transparent pricing, state-of-the-art digital intraoral scans, and unmatched professionalism from the dental team. Seeing your simulated 3D teeth movement before starting gives immense confidence. Outstanding 5-star care!",
+      "verified": true,
+      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    },
+    {
+      "name": "Sneha Mukherjee",
+      "role": "Kalyan Nagar • Verified Google Review",
+      "date": "1 month ago",
+      "treatment": "Teeth Whitening",
+      "rating": 5,
+      "text": "I had severe dental anxiety before visiting House of Dental. The studio feels like a soothing wellness sanctuary rather than a clinical hospital. Dr. Agniss and the team made the cleaning and laser teeth whitening completely pain-free. My teeth look radiant and healthy!",
+      "verified": true,
+      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    },
+    {
+      "name": "Rajesh Varma",
+      "role": "Local Guide • 29 reviews",
+      "date": "1 month ago",
+      "treatment": "Dental Implants",
+      "rating": 5,
+      "text": "Exceptional precision and clinical care. Dr. Shweta and Dr. Agniss walked me through every detail of my dental implant with digital X-rays and zero rush. Very honest pricing with no hidden charges. Post-op recovery was seamless. North Bangalore's finest smile clinic.",
+      "verified": true,
+      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    },
+    {
+      "name": "Ananya Sundaram",
+      "role": "Hennur Bande • Verified Google Review",
+      "date": "2 months ago",
+      "treatment": "Kids Dentistry",
+      "rating": 5,
+      "text": "Brought my 6-year-old daughter for her dental check-up and fluoride application. Dr. Shweta was so friendly, warm, and playful that my daughter didn't cry once! The clinic is spotless and kid-friendly. We have definitely found our trusted family dentist in Hennur.",
+      "verified": true,
+      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    },
+    {
+      "name": "Karthik Balakrishnan",
+      "role": "HRBR Layout • Verified Google Review",
+      "date": "2 months ago",
+      "treatment": "Wisdom Tooth Removal",
+      "rating": 5,
+      "text": "Had a complicated impacted wisdom tooth removed. Was really nervous about pain, but the surgical team performed the extraction in under 20 minutes with zero discomfort during the procedure. Healing was fast with minimal swelling. Cleanest clinic in Bangalore with modern tech.",
+      "verified": true,
+      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    },
+    {
+      "name": "Meera Chandran",
+      "role": "Babusapalya • Verified Google Review",
+      "date": "3 months ago",
+      "treatment": "Cosmetic Dentistry",
+      "rating": 5,
+      "text": "Got custom zirconia crowns and aesthetic bonding done here. The craftsmanship and attention to natural tooth shade matching is remarkable. Warm and courteous staff, prompt appointments, and very soothing Japanese-minimalist interiors.",
+      "verified": true,
+      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    }
+  ],
+  "social_media": [
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/houseofdental/?hl=en",
+      "icon": "instagram"
+    }
+  ]
+}

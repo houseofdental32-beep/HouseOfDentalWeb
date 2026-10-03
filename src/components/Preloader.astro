@@ -1,0 +1,75 @@
+---
+---
+
+<div id="preloader" class="fixed inset-0 z-[100] bg-japandi-cream dark:bg-[#1C1F1D] flex items-center justify-center transition-opacity duration-1000 ease-in-out opacity-100">
+  <!-- Light Theme Logo -->
+  <img 
+    src="/House_of_Dental_Logo_light.png" 
+    alt="House of Dental Clinic in Bagaluru Bengaluru" 
+    width="224"
+    height="224"
+    class="preloader-logo-light h-48 md:h-56 w-auto object-contain animate-pulse" 
+  />
+  <!-- Dark Theme Logo -->
+  <img 
+    src="/House_of_Dental_Logo.png" 
+    alt="House of Dental Clinic in Bagaluru Bengaluru" 
+    width="224"
+    height="224"
+    class="preloader-logo-dark h-48 md:h-56 w-auto object-contain animate-pulse" 
+  />
+</div>
+
+<script>
+  function hidePreloader() {
+    const preloader = document.getElementById('preloader');
+    if (preloader && preloader.style.display !== 'none') {
+      setTimeout(() => {
+        preloader.classList.remove('opacity-100');
+        preloader.classList.add('opacity-0');
+        
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          try {
+            sessionStorage.setItem('aureva_preloader_seen', 'true');
+          } catch (e) {
+            // Storage quota or security exception fallback
+          }
+        }, 600); // Wait for transition to finish
+      }, 900); // 900ms delay before fading out
+    }
+  }
+
+  // Check if visitor has already seen the preloader in this session
+  try {
+    if (sessionStorage.getItem('aureva_preloader_seen') === 'true') {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
+    } else {
+      window.addEventListener('load', hidePreloader);
+      setTimeout(hidePreloader, 1500); // Fast fallback if load event was delayed
+    }
+  } catch (e) {
+    window.addEventListener('load', hidePreloader);
+    setTimeout(hidePreloader, 1500);
+  }
+
+  // Hide instantly on Astro view transitions so it never replays
+  document.addEventListener('astro:after-swap', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
+  });
+</script>
+
+<style>
+  :global(html:not(.dark)) .preloader-logo-dark {
+    display: none !important;
+  }
+  :global(html.dark) .preloader-logo-light {
+    display: none !important;
+  }
+</style>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tooth 3D Background</title>
+<style>
+  html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; }
+  #tooth { position: fixed; inset: 0; width: 100%; height: 100%; display: block; background: transparent; pointer-events: none; }
+  /* Preview only: add #checker to the URL to see the transparency */
+  body.checker {
+    background-color: #fff;
+    background-image:
+      linear-gradient(45deg, #e6ecf2 25%, transparent 25%, transparent 75%, #e6ecf2 75%),
+      linear-gradient(45deg, #e6ecf2 25%, transparent 25%, transparent 75%, #e6ecf2 75%);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+  }
+</style>
+</head>
+<body>
+<canvas id="tooth"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  if (location.hash === '#checker') document.body.classList.add('checker');
+
+  const SHOW_SHADOW = true;      // soft floor shadow under the tooth (transparent elsewhere)
+  const SPARKLES = true;         // twinkling stars around the tooth
+
+  /* ===== Tooth shape: smooth signed-distance field -> mesh (surface nets) ===== */
+const smoothstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+function smin(a, b, k) { const h = Math.max(k - Math.abs(a - b), 0) / k; return Math.min(a, b) - h * h * k * 0.25; }
+
+// crown: soft rounded block with 4 gentle cusps
+const CUSPS = [[-0.7, -0.5, 0.2], [0.7, -0.5, 0.2], [-0.7, 0.5, 0.2], [0.7, 0.5, 0.2]];
+function sdCrown(x, y, z) {
+  const s = 1 - 0.20 * smoothstep(1.5, -0.1, y);          // narrows slightly toward the roots
+  const px = x / s, pz = z / s;
+  let bump = 0;
+  if (y > 1.0) {
+    for (let i = 0; i < 4; i++) {
+      const c = CUSPS[i], dx = px - c[0], dz = pz - c[1];
+      bump += c[2] * Math.exp(-(dx * dx + dz * dz) / 0.45);
+    }
+    bump -= 0.12 * Math.exp(-(px * px + pz * pz) / 0.3);
+    bump *= smoothstep(1.0, 2.0, y);
+  }
+  const ye = y - bump;
+  const qx = Math.abs(px) - 0.8, qy = Math.abs(ye - 1.15) - 0.55, qz = Math.abs(pz) - 0.55;
+  const mx = Math.max(qx, 0), my = Math.max(qy, 0), mz = Math.max(qz, 0);
+  return (Math.sqrt(mx * mx + my * my + mz * mz) + Math.min(Math.max(qx, qy, qz), 0) - 0.55) * 0.95;
+}
+
+// roots: tapered round cones with rounded tips
+function makeCone(a, b, r1, r2) {
+  const bx = b[0] - a[0], by = b[1] - a[1], bz = b[2] - a[2];
+  const l2 = bx * bx + by * by + bz * bz, rr = r1 - r2;
+  return { ax: a[0], ay: a[1], az: a[2], bx, by, bz, l2, rr, a2: l2 - rr * rr, il2: 1 / l2, r1, r2, srr: Math.sign(rr) };
+}
+function sdCone(c, x, y, z) {
+  const pax = x - c.ax, pay = y - c.ay, paz = z - c.az;
+  const yy = pax * c.bx + pay * c.by + paz * c.bz;
+  const zz = yy - c.l2;
+  const ex = pax * c.l2 - c.bx * yy, ey = pay * c.l2 - c.by * yy, ez = paz * c.l2 - c.bz * yy;
+  const x2 = ex * ex + ey * ey + ez * ez;
+  const y2 = yy * yy * c.l2, z2 = zz * zz * c.l2;
+  const k = c.srr * c.rr * c.rr * x2;
+  if (Math.sign(zz) * c.a2 * z2 > k) return Math.sqrt(x2 + z2) * c.il2 - c.r2;
+  if (Math.sign(yy) * c.a2 * y2 < k) return Math.sqrt(x2 + y2) * c.il2 - c.r1;
+  return (Math.sqrt(x2 * c.a2 * c.il2) + yy * c.rr) * c.il2 - c.r1;
+}
+const ROOTS = [
+  makeCone([-0.72, 0.9, -0.52], [-0.52, -2.05, -0.38], 0.50, 0.09),
+  makeCone([ 0.72, 0.9, -0.52], [ 0.52, -2.05, -0.38], 0.50, 0.09),
+  makeCone([-0.72, 0.9,  0.52], [-0.52, -2.05,  0.38], 0.50, 0.09),
+  makeCone([ 0.72, 0.9,  0.52], [ 0.52, -2.05,  0.38], 0.50, 0.09)
+];
+function sdTooth(x, y, z) {
+  let d = sdCrown(x, y, z);
+  if (y < 2.3) {
+    let r = sdCone(ROOTS[0], x, y, z);
+    r = smin(r, sdCone(ROOTS[1], x, y, z), 0.14);
+    r = smin(r, sdCone(ROOTS[2], x, y, z), 0.14);
+    r = smin(r, sdCone(ROOTS[3], x, y, z), 0.14);
+    d = smin(d, r, 0.45);
+  }
+  return d;
+}
+
+function buildToothMesh(h) {
+  h = h || 0.04;
+  const x0 = -1.9, y0 = -2.4, z0 = -1.6;
+  const nx = Math.ceil(3.8 / h) + 1, ny = Math.ceil(5.3 / h) + 1, nz = Math.ceil(3.2 / h) + 1;
+  const F = new Float32Array(nx * ny * nz);
+  let n = 0;
+  for (let k = 0; k < nz; k++) { const z = z0 + k * h;
+    for (let j = 0; j < ny; j++) { const y = y0 + j * h;
+      for (let i = 0; i < nx; i++) F[n++] = sdTooth(x0 + i * h, y, z); } }
+
+  const cx = nx - 1, cy = ny - 1, cz = nz - 1;
+  const cell = new Int32Array(cx * cy * cz).fill(-1);
+  const CO = [0,0,0, 1,0,0, 0,1,0, 1,1,0, 0,0,1, 1,0,1, 0,1,1, 1,1,1];
+  const ED = [0,1, 2,3, 4,5, 6,7, 0,2, 1,3, 4,6, 5,7, 0,4, 1,5, 2,6, 3,7];
+  const v = new Float32Array(8);
+  const P = [];
+  let vc = 0;
+  for (let k = 0; k < cz; k++) for (let j = 0; j < cy; j++) for (let i = 0; i < cx; i++) {
+    let mask = 0;
+    for (let c = 0; c < 8; c++) {
+      v[c] = F[(i + CO[c * 3]) + nx * ((j + CO[c * 3 + 1]) + ny * (k + CO[c * 3 + 2]))];
+      if (v[c] < 0) mask |= 1 << c;
+    }
+    if (mask === 0 || mask === 255) continue;
+    let sx = 0, sy = 0, sz = 0, cnt = 0;
+    for (let e = 0; e < 12; e++) {
+      const a = ED[e * 2], b = ED[e * 2 + 1];
+      if ((v[a] < 0) !== (v[b] < 0)) {
+        const t = v[a] / (v[a] - v[b]);
+        sx += CO[a * 3] + t * (CO[b * 3] - CO[a * 3]);
+        sy += CO[a * 3 + 1] + t * (CO[b * 3 + 1] - CO[a * 3 + 1]);
+        sz += CO[a * 3 + 2] + t * (CO[b * 3 + 2] - CO[a * 3 + 2]);
+        cnt++;
+      }
+    }
+    P.push(x0 + (i + sx / cnt) * h, y0 + (j + sy / cnt) * h, z0 + (k + sz / cnt) * h);
+    cell[i + cx * (j + cy * k)] = vc++;
+  }
+
+  // smooth normals straight from the field gradient
+  const N = new Float32Array(P.length);
+  const e = 0.012;
+  for (let q = 0; q < vc; q++) {
+    const x = P[q * 3], y = P[q * 3 + 1], z = P[q * 3 + 2];
+    let gx = sdTooth(x + e, y, z) - sdTooth(x - e, y, z);
+    let gy = sdTooth(x, y + e, z) - sdTooth(x, y - e, z);
+    let gz = sdTooth(x, y, z + e) - sdTooth(x, y, z - e);
+    const l = Math.hypot(gx, gy, gz) || 1;
+    N[q * 3] = gx / l; N[q * 3 + 1] = gy / l; N[q * 3 + 2] = gz / l;
+  }
+
+  const I = [];
+  function quad(a, b, c, d) {
+    if (a < 0 || b < 0 || c < 0 || d < 0) return;
+    const ux = P[b*3]-P[a*3], uy = P[b*3+1]-P[a*3+1], uz = P[b*3+2]-P[a*3+2];
+    const wx = P[c*3]-P[a*3], wy = P[c*3+1]-P[a*3+1], wz = P[c*3+2]-P[a*3+2];
+    const fx = uy*wz-uz*wy, fy = uz*wx-ux*wz, fz = ux*wy-uy*wx;
+    const dot = fx*(N[a*3]+N[c*3]) + fy*(N[a*3+1]+N[c*3+1]) + fz*(N[a*3+2]+N[c*3+2]);
+    if (dot >= 0) I.push(a, b, c, a, c, d); else I.push(a, d, c, a, c, b);
+  }
+  const C = (i, j, k) => cell[i + cx * (j + cy * k)];
+  for (let k = 1; k < cz; k++) for (let j = 1; j < cy; j++) for (let i = 1; i < cx; i++) {
+    const s0 = F[i + nx * (j + ny * k)] < 0;
+    if (i < cx && s0 !== (F[(i + 1) + nx * (j + ny * k)] < 0)) quad(C(i, j-1, k-1), C(i, j, k-1), C(i, j, k), C(i, j-1, k));
+    if (j < cy && s0 !== (F[i + nx * ((j + 1) + ny * k)] < 0)) quad(C(i-1, j, k-1), C(i, j, k-1), C(i, j, k), C(i-1, j, k));
+    if (k < cz && s0 !== (F[i + nx * (j + ny * (k + 1))] < 0)) quad(C(i-1, j-1, k), C(i, j-1, k), C(i, j, k), C(i-1, j, k));
+  }
+  return { positions: new Float32Array(P), normals: N, indices: new Uint32Array(I) };
+}
+
+
+
+  /* ---------------- renderer / scene ---------------- */
+  const canvas = document.getElementById('tooth');
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
+  renderer.setClearColor(0x000000, 0);                 // transparent
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 0.75;
+  renderer.shadowMap.enabled = SHOW_SHADOW;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  const scene = new THREE.Scene();                     // no background => transparent
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+
+  /* ---------------- soft pastel studio reflections ---------------- */
+  let env;
+  (function () {
+    const c = document.createElement('canvas'); c.width = 1024; c.height = 512;
+    const g = c.getContext('2d');
+    const bg = g.createLinearGradient(0, 0, 0, 512);
+    bg.addColorStop(0, '#809996'); bg.addColorStop(0.45, '#4a6361'); bg.addColorStop(1, '#253836');
+    g.fillStyle = bg; g.fillRect(0, 0, 1024, 512);
+    g.fillStyle = '#ffffff';
+    [[60, 90, 190, 190], [400, 60, 240, 150], [790, 110, 170, 210]].forEach(r => g.fillRect(r[0], r[1], r[2], r[3]));
+    const tex = new THREE.CanvasTexture(c);
+    tex.mapping = THREE.EquirectangularReflectionMapping;
+    tex.encoding = THREE.sRGBEncoding;
+    const pm = new THREE.PMREMGenerator(renderer);
+    env = pm.fromEquirectangular(tex).texture;
+    tex.dispose(); pm.dispose();
+  })();
+
+  /* ---------------- lights ---------------- */
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x4a6361, 0.45);
+  scene.add(hemiLight);
+  const key = new THREE.DirectionalLight(0xffffff, 0.5);
+  key.position.set(4, 8, 5);
+  key.castShadow = SHOW_SHADOW;
+  key.shadow.mapSize.set(1024, 1024);
+  key.shadow.camera.left = -6; key.shadow.camera.right = 6;
+  key.shadow.camera.top = 6; key.shadow.camera.bottom = -6;
+  key.shadow.camera.near = 1; key.shadow.camera.far = 25;
+  key.shadow.bias = -0.0005;
+  scene.add(key);
+  const glintLight = new THREE.PointLight(0x9ee5dc, 0.7, 30); scene.add(glintLight);
+  const rimL = new THREE.PointLight(0x3ea397, 0.4, 30); rimL.position.set(-6, 0, 3); scene.add(rimL);
+
+  /* ---------------- tooth mesh ---------------- */
+  const mesh = buildToothMesh(0.04);
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(mesh.positions, 3));
+  geo.setAttribute('normal', new THREE.BufferAttribute(mesh.normals, 3));
+  geo.setIndex(new THREE.Uint32BufferAttribute(mesh.indices, 1));
+
+  const mat = new THREE.MeshPhysicalMaterial({
+    color: 0xc8d6d8, roughness: 0.45, metalness: 0.05,
+    clearcoat: 0.4, clearcoatRoughness: 0.35,
+    envMap: env, envMapIntensity: 0.45
+  });
+  // crown enamel texture (fine grain + faint growth lines) and a faint mint glow at grazing angles
+  const TEXTURE_STRENGTH = 0.015;        // raise for a more visible texture, 0 to switch off
+  mat.onBeforeCompile = (sh) => {
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vObjPos;\nvarying vec3 vMV0;\nvarying vec3 vMV1;\nvarying vec3 vMV2;')
+      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvObjPos = position;\nvMV0 = modelViewMatrix[0].xyz;\nvMV1 = modelViewMatrix[1].xyz;\nvMV2 = modelViewMatrix[2].xyz;');
+
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', `#include <common>
+        varying vec3 vObjPos;
+        varying vec3 vMV0;
+        varying vec3 vMV1;
+        varying vec3 vMV2;
+        float tH; float tM;
+        float hash31(vec3 p) {
+          p = fract(p * 0.3183099 + vec3(0.1, 0.2, 0.3)); p *= 17.0;
+          return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
+        }
+        float vnoise(vec3 x) {
+          vec3 i = floor(x); vec3 f = fract(x); f = f * f * (3.0 - 2.0 * f);
+          float a = mix(hash31(i), hash31(i + vec3(1.0,0.0,0.0)), f.x);
+          float b = mix(hash31(i + vec3(0.0,1.0,0.0)), hash31(i + vec3(1.0,1.0,0.0)), f.x);
+          float c = mix(hash31(i + vec3(0.0,0.0,1.0)), hash31(i + vec3(1.0,0.0,1.0)), f.x);
+          float d = mix(hash31(i + vec3(0.0,1.0,1.0)), hash31(i + vec3(1.0,1.0,1.0)), f.x);
+          return mix(mix(a, b, f.y), mix(c, d, f.y), f.z);
+        }
+        float noiseH(vec3 p) {
+          return vnoise(p * 14.0) * 0.6 + vnoise(p * 34.0) * 0.4
+               + 0.02 * sin(p.y * 70.0 + vnoise(p * 5.0) * 6.0);
+        }`)
+      .replace('#include <roughnessmap_fragment>', `#include <roughnessmap_fragment>
+        tM = smoothstep(0.6, 1.1, vObjPos.y);                         // crown only, roots stay smooth
+        tH = noiseH(vObjPos);
+        roughnessFactor = clamp(roughnessFactor + (tH - 0.5) * 0.18 * tM, 0.05, 1.0);`)
+      .replace('#include <normal_fragment_maps>', `#include <normal_fragment_maps>
+        {
+          float e = 0.01;
+          vec3 g = vec3(noiseH(vObjPos + vec3(e, 0.0, 0.0)) - tH,
+                        noiseH(vObjPos + vec3(0.0, e, 0.0)) - tH,
+                        noiseH(vObjPos + vec3(0.0, 0.0, e)) - tH) / e;
+          vec3 gv = (vMV0 * g.x + vMV1 * g.y + vMV2 * g.z) * tM;
+          normal = normalize(normal - ${TEXTURE_STRENGTH.toFixed(4)} * (gv - dot(gv, normal) * normal));
+        }`)
+      .replace('#include <dithering_fragment>',
+      `{ vec3 vd = normalize(vViewPosition);
+         float fr = pow(1.0 - clamp(dot(normalize(normal), vd), 0.0, 1.0), 2.5);
+         gl_FragColor.rgb += vec3(0.25, 0.7, 0.65) * fr * 0.12; }
+       #include <dithering_fragment>`);
+  };
+
+  // safety net: if a browser rejects the texture shader, fall back to the plain glossy tooth
+  (function () {
+    let fellBack = false;
+    const origErr = console.error;
+    console.error = function () {
+      if (!fellBack && String(arguments[0]).indexOf('WebGLProgram') > -1) {
+        fellBack = true;
+        mat.onBeforeCompile = (sh) => {
+          sh.fragmentShader = sh.fragmentShader.replace('#include <dithering_fragment>',
+            `{ vec3 vd = normalize(vViewPosition);
+               float fr = pow(1.0 - clamp(dot(normalize(normal), vd), 0.0, 1.0), 2.5);
+               gl_FragColor.rgb += vec3(0.25, 0.7, 0.65) * fr * 0.12; }
+             #include <dithering_fragment>`);
+        };
+        mat.needsUpdate = true;
+      }
+      return origErr.apply(console, arguments);
+    };
+  })();
+
+  const FLOOR_Y = -1.75;                                  // root tips sit on this level
+  const tooth = new THREE.Mesh(geo, mat);
+  tooth.castShadow = SHOW_SHADOW;
+  const turn = new THREE.Group();                         // turntable rotation
+  turn.add(tooth);
+  scene.add(turn);
+
+  if (SHOW_SHADOW) {
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(14, 14),
+      new THREE.ShadowMaterial({ opacity: 0.2, color: 0x1f6f68 }));
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -2.13;
+    floor.receiveShadow = true;
+    scene.add(floor);
+  }
+
+  /* ---------------- sparkles ---------------- */
+  function starTexture() {
+    const c = document.createElement('canvas'); c.width = c.height = 256;
+    const g = c.getContext('2d'); g.translate(128, 128);
+    const halo = g.createRadialGradient(0, 0, 0, 0, 0, 120);
+    halo.addColorStop(0, 'rgba(160,235,255,0.55)'); halo.addColorStop(1, 'rgba(160,235,255,0)');
+    g.fillStyle = halo; g.beginPath(); g.arc(0, 0, 120, 0, 6.2832); g.fill();
+    function star(R, r, fill) {
+      g.beginPath();
+      for (let i = 0; i < 8; i++) {
+        const a = i * Math.PI / 4 - Math.PI / 2, d = i % 2 === 0 ? R : r;
+        g.lineTo(Math.cos(a) * d, Math.sin(a) * d);
+      }
+      g.closePath(); g.fillStyle = fill; g.fill();
+    }
+    star(118, 12, 'rgba(70,190,230,0.95)');
+    star(100, 9, '#ffffff');
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t;
+  }
+  const stars = [], glints = [];
+  if (SPARKLES) {
+    const starTex = starTexture();
+    for (let i = 0; i < 18; i++) {
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: starTex, transparent: true, depthWrite: false }));
+      scene.add(s);
+      stars.push({
+        s, ang: Math.random() * 6.28, rad: 2.6 + Math.random() * 1.6,
+        y: -1.8 + Math.random() * 4.2, size: 0.16 + Math.random() * 0.36,
+        speed: (0.1 + Math.random() * 0.2) * (Math.random() < 0.5 ? -1 : 1),
+        phase: Math.random() * 6.28, rate: 1.2 + Math.random() * 2.2
+      });
+    }
+    [[0.9, 1.8, 1.4], [-0.95, 1.2, 1.35], [0.2, 0.4, 1.45]].forEach((p, i) => {
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: starTex, transparent: true, depthWrite: false }));
+      s.position.set(p[0], p[1], p[2]);
+      scene.add(s);
+      glints.push({ s, phase: i * 2.1 });
+    });
+  }
+
+  /* ---------------- layout ---------------- */
+  let baseZ = 16;
+  function resize() {
+    const w = window.innerWidth, h = window.innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    const need = 8.6, vf = THREE.MathUtils.degToRad(camera.fov);
+    const dH = (need / 2) / Math.tan(vf / 2);
+    const dW = (need / 2) / (Math.tan(vf / 2) * camera.aspect);
+    baseZ = Math.max(dH, dW);
+  }
+  window.addEventListener('resize', resize); resize();
+
+  let mx = 0, tx = 0;
+  function updatePointer(clientX) {
+    tx = (clientX / window.innerWidth) * 2 - 1;
+  }
+  window.addEventListener('pointermove', e => updatePointer(e.clientX));
+  window.addEventListener('message', e => {
+    if (e.data) {
+      if (e.data.type === 'pointermove') {
+        updatePointer(e.data.x);
+      } else if (e.data.type === 'theme') {
+        if (e.data.isDark) {
+          renderer.toneMappingExposure = 0.50;
+          mat.color.setHex(0x8a9ca0);
+          mat.envMapIntensity = 0.25;
+          hemiLight.intensity = 0.25;
+          key.intensity = 0.3;
+        } else {
+          renderer.toneMappingExposure = 0.75;
+          mat.color.setHex(0xc8d6d8);
+          mat.envMapIntensity = 0.45;
+          hemiLight.intensity = 0.45;
+          key.intensity = 0.5;
+        }
+      }
+    }
+  });
+
+  /* ---------------- animate ---------------- */
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clock = new THREE.Clock();
+  (function frame() {
+    const t = clock.getElapsedTime() * (reduce ? 0.2 : 1);
+    mx += (tx - mx) * 0.05;
+
+    turn.rotation.y = t * 0.55;                           // turntable spin
+    camera.position.set(mx * 0.8, 1.6, baseZ);
+    camera.lookAt(0, 0.1, 0);
+
+    glintLight.position.set(Math.cos(t * 1.3) * 4, 2.5 + Math.sin(t * 0.9) * 1.5, Math.sin(t * 1.3) * 4 + 2);
+
+    for (const o of stars) {
+      const a = o.ang + t * o.speed;
+      o.s.position.set(Math.cos(a) * o.rad, o.y + Math.sin(t * 0.8 + o.phase) * 0.15, Math.sin(a) * o.rad * 0.7);
+      const tw = Math.max(0, Math.sin(t * o.rate + o.phase));
+      const sc = o.size * (0.25 + 0.9 * tw);
+      o.s.scale.set(sc, sc, 1);
+      o.s.material.opacity = 0.2 + 0.8 * tw;
+      o.s.material.rotation = t * 0.3;
+    }
+    for (const g of glints) {
+      const tw = Math.pow(Math.max(0, Math.sin(t * 1.6 + g.phase)), 3);
+      const sc = 0.1 + 0.75 * tw;
+      g.s.scale.set(sc, sc, 1);
+      g.s.material.opacity = tw;
+      g.s.material.rotation = t * 0.3;
+    }
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  })();
+
+  // Press "P" to save the current frame as a transparent PNG
+  window.addEventListener('keydown', e => {
+    if (e.key.toLowerCase() !== 'p') return;
+    renderer.render(scene, camera);
+    const a = document.createElement('a');
+    a.download = 'tooth.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  });
+})();
+</script>
+</body>
+</html>

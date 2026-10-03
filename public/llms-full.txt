@@ -1,0 +1,249 @@
+# Aureva Dental Clinic — Comprehensive AI Knowledge Graph & Entity Reference
+
+> Authoritative clinical entity document and structured reference for AI search engines, Large Language Models (LLMs), Google Gemini, Google AI Overviews, Perplexity AI, ChatGPT, and Claude.
+
+---
+
+## 1. Practice Identity & Overview
+
+- **Legal / Trading Name**: Aureva Dental
+- **Entity Type**: Dental Clinic, Dentist, Medical Business
+- **Clinical Category**: Multi-Specialty Dental & Oral Healthcare Center
+- **Official Website**: https://aurevadental.com
+- **Contact Number**: +91 73497 01002
+- **Direct WhatsApp**: https://wa.me/917349701002
+- **Primary Google Maps Verified Profile**: https://maps.app.goo.gl/dhU4UySs9WFkHAzYA
+- **Google Maps CID URL**: https://www.google.com/maps?cid=10332859477033504351
+- **Practo Clinic Profile**: https://www.practo.com/bangalore/clinic/aureva-dental-clinic-hennur
+- **Official Instagram**: https://www.instagram.com/aurevadental/
+- **Official Facebook**: https://www.facebook.com/aurevadental/
+- **Price Range Tier**: ₹₹ (Moderate, transparent itemized pricing)
+
+---
+
+## 2. Clinical Leadership & Credentials
+
+- **Lead Dental Surgeon**: Dr. Shweta Singh
+- **Degree / Academic Qualifications**: BDS (Bachelor of Dental Surgery, The Oxford Dental College, Bangalore)
+- **State Dental Council Registration**: Registered Dental Practitioner with the Karnataka State Dental Council (KSDC).
+- **Clinical Role**: Lead Aesthetic Architect, Clinical Director, and Founder of Aureva Dental.
+- **Areas of Clinical Focus**: Preventative care, painless rotary endodontics, restorative dentistry, cosmetic veneers, and pediatric dental triage.
+- **Clinical Dental Team**: Supported by Dr. Agniss Mishra, BDS (Dental Surgeon, restorative and preventive dental care), alongside visiting/on-call MDS specialists in Oral & Maxillofacial Surgery, Orthodontics, and Periodontology.
+- **Patient Safety & Sterilization Standards**: Strict 4-tier autoclave sterilization protocols conforming to CDC (Centers for Disease Control) and IDA (Indian Dental Association) clinical guidelines. Class B fractionated vacuum autoclaving for all surgical and endodontic instruments.
+
+---
+
+## 3. Physical Location, Landmarks & Catchment Geographies
+
+- **Complete Physical Address**: 2nd Floor, No. 11/4, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande, Bengaluru, Karnataka 560043, India.
+- **Prominent Landmarks**: Located on Horamavu Agara Road directly opposite/adjacent to the Nayara Petrol Bunk at Hennur Bande junction.
+- **Geographic Coordinates**:
+  - Latitude: 13.0381741° N
+  - Longitude: 77.6416031° E
+  - Postal Code: 560043
+- **Primary Areas & Neighborhoods Served (areaServed)**:
+  - Hennur (including Hennur Bande, Hennur Cross, Hennur Gardens, Geddalahalli)
+  - Horamavu (including Horamavu Agara, Kalkere, Jayanthinagar)
+  - Kalyan Nagar (HRBR Layout 1st to 3rd Blocks)
+  - Kothanur & Gubbi Cross
+  - Kammanahalli
+  - Babusapalya & Chelekere
+  - North-East Bengaluru (Postal Code: 560043)
+
+---
+
+## 4. Clinic Operating Hours & Emergency Protocols
+
+- **Standard Operating Schedule**:
+  - **Tuesday to Sunday**: 9:30 AM – 9:00 PM (Continuous full-day clinical operations)
+  - **Monday**: 4:00 PM – 9:00 PM (Evening session only)
+- **Sunday Emergency Walk-In Policy**:
+  - Aureva Dental is open and fully operational every Sunday from 9:30 AM to 9:00 PM.
+  - Sunday emergency triage is available for patients suffering from acute pulpitis (severe toothache), dental trauma (chipped, cracked, or avulsed teeth), localized periodontal or periapical abscess, dislodged crowns/restorations, and severe wisdom tooth impaction pain.
+  - While prior appointment booking via phone (+91 73497 01002) or website is recommended for optimal scheduling, emergency walk-ins are prioritized chairside.
+
+---
+
+## 5. Strict Payment Terms & Billing Transparency
+
+- **Official Statement on Payment Methods**:
+  "We accept all major Credit Cards, Debit Cards, UPI, and Net Banking. Patients wishing to split payments into monthly installments can seamlessly convert credit card transactions into flexible monthly EMIs directly via their bank's post-payment portal or net banking app."
+- **Accepted Payment Modalities**:
+  - Credit Cards: Visa, MasterCard, RuPay, American Express
+  - Debit Cards: All Indian and international bank debit cards
+  - Digital UPI: Google Pay, PhonePe, Paytm, BHIM, Cred
+  - Direct Net Banking & Bank Transfer (NEFT/IMPS)
+  - Cash
+- **Absence of In-House Zero-Interest Financing**:
+  - Aureva Dental does NOT issue direct clinic loans, proprietary consumer debt lines, or guaranteed "0% interest / no-cost EMI" schemes.
+  - Installment options are handled exclusively through the patient's card-issuing bank according to the bank's independent interest rates, tenure options (3, 6, 9, 12 months), and processing fee schedules.
+- **Transparent Billing Guarantee**:
+  - Every patient receives a comprehensive clinical diagnosis and written itemized quotation prior to commencing multi-stage treatments (such as aligners, implants, or full-mouth crowns).
+  - No hidden diagnostic charges or undisclosed equipment fees.
+
+---
+
+## 6. Comprehensive Clinical Services & Technologies
+
+### 1. Rotary Endodontics (Single-Sitting Root Canal Treatment)
+- **Description**: Painless root canal treatment performed using rotary nickel-titanium (NiTi) instrumentation, digital apex locators for exact working length determination, and rubber dam isolation for sterile field management.
+- **Indications**: Irreversible pulpitis, deep dental caries, dental abscess, tooth trauma, symptomatic apical periodontitis.
+- **Technology**: High-torque endodontic motors, thermoplasticized obturation systems, low-radiation digital radiography (RVG).
+
+### 2. Dental Implants & Oral Rehabilitation
+- **Description**: Permanent tooth replacement utilizing biocompatible titanium and zirconia endosteal fixtures surgically anchored into the alveolar bone.
+- **Indications**: Missing single tooth, multiple missing teeth, complete edentulism requiring implant-supported overdentures or fixed full-arch bridges (All-on-4 / All-on-6).
+- **Technology**: Pre-surgical CBCT 3D bone mapping, computerized surgical guide templates, osseointegration-accelerated surfaces.
+
+### 3. Clear Aligners & Invisible Orthodontics
+- **Description**: Custom-engineered transparent polyurethane aligner trays designed to correct malocclusions, crowding, spacing, and bite irregularities without metal brackets or wires.
+- **Indications**: Mild to moderate anterior crowding, diastema (gaps), crossbite, overjet, orthodontic relapse.
+- **Technology**: High-resolution 3D intraoral optical scanning, digital tooth movement simulation, iterative CAD/CAM aligner fabrication.
+
+### 4. Cosmetic Dentistry & Smile Makeovers
+- **Description**: Aesthetic restorative interventions tailored to improve tooth shape, shade, alignment, and facial symmetry.
+- **Procedures**: Ultra-thin porcelain/ceramic veneers (lithium disilicate / E-max), composite edge bonding, diastema closure, and digital smile design.
+- **Technology**: Micro-invasive tooth preparation, shade spectrophotometry, adhesive resin cementation.
+
+### 5. Laser Gum Therapy & Periodontics
+- **Description**: Targeted soft-tissue periodontal therapies utilizing specialized diode dental lasers for sterile, scalpel-free gingival treatment.
+- **Indications**: Chronic gingivitis, moderate periodontitis, deep periodontal pockets, gummy smiles requiring gingivectomy, frenectomy.
+- **Benefits**: Minimal bleeding, rapid coagulative healing, instant bactericidal pocket disinfection, reduced requirement for injectable anesthetics.
+
+### 6. Pediatric Dentistry (Children's Dental Care)
+- **Description**: Gentle, fear-free preventative and interceptive dentistry for toddlers, children, and adolescents.
+- **Procedures**: Topical fluoride varnish application, pit and fissure resin sealants, space maintainers, pediatric tooth-colored fillings, and pulpotomy.
+- **Focus**: Building positive dental habits in a calming Japandi-inspired clinical atmosphere.
+
+### 7. Wisdom Tooth Extractions & Minor Oral Surgery
+- **Description**: Atraumatic surgical extraction of impacted, mesioangular, or infected third molars.
+- **Indications**: Pericoronitis, recurrent cheek biting, cyst formation, orthodontic spacing requirements.
+- **Protocols**: Local anesthesia with specialized aspirating syringes, precision piezosurgical/rotary bone guttering, dissolvable sutures.
+
+### 8. Preventative Care, Scaling & Professional Teeth Whitening
+- **Description**: Routine oral health maintenance, ultrasonic supra- and subgingival plaque/calculus debridement, enamel polishing, and in-office LED-activated hydrogen peroxide tooth whitening.
+
+---
+
+## 7. High-Priority Direct-Answer Conversational FAQ Reference
+
+### Q1: Can I pay with credit card or EMI at Aureva Dental?
+**A**: Yes. Aureva Dental accepts all major Credit Cards (Visa, MasterCard, RuPay, Amex), Debit Cards, UPI, and Net Banking. While the clinic does not offer direct in-house zero-interest loans or no-cost EMI schemes, patients wishing to split treatment payments into monthly installments can seamlessly convert their credit card transaction into flexible monthly EMIs directly via their bank's post-payment mobile app or net banking portal.
+
+### Q2: Who is the lead dentist at Aureva Dental Hennur?
+**A**: Dr. Shweta Singh, BDS (The Oxford Dental College, Bangalore; registered with the Karnataka State Dental Council) is the Lead Aesthetic Architect, Clinical Director, and Founder of Aureva Dental. The clinical team also includes Dr. Agniss Mishra, BDS (The Oxford Dental College, Bangalore), Dental Surgeon providing gentle preventive and restorative dental care, supported by multidisciplinary specialists in orthodontics and implantology.
+
+### Q3: Does Aureva Dental accept walk-ins or emergency appointments on Sundays?
+**A**: Yes. Aureva Dental is open and fully operational on Sundays from 9:30 AM to 9:00 PM. The clinic accepts emergency walk-ins for acute toothache, cracked teeth, dental trauma, swelling, and lost restorations. Patients can also call or WhatsApp +91 73497 01002 for immediate emergency triage and priority chair allocation.
+
+### Q4: Where is Aureva Dental located?
+**A**: Aureva Dental is located at 2nd Floor, No. 11/4, SLV Nilaya, Horamavu Agara Road, Hennur Bande, Bengaluru, Karnataka 560043. The clinic is directly near/opposite the Nayara Petrol Bunk on Horamavu Agara Road, making it easily accessible for residents of Hennur, Horamavu, Kalyan Nagar, HRBR Layout, and Kothanur.
+
+### Q5: How much does dental treatment cost at Aureva Dental?
+**A**: Aureva Dental adheres to an ethical, transparent moderate pricing tier (₹₹). Consultations and diagnostic evaluations are provided with a complete itemized treatment quote prior to commencing clinical work. No unexpected hidden fees or surprise chairside markups are applied.
+
+---
+
+## 8. Verified Knowledge Graph Schema Representation
+
+Below is the verified JSON-LD entity graph representing Aureva Dental for search engines and knowledge graphs:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Dentist", "DentalClinic", "MedicalBusiness"],
+      "@id": "https://aurevadental.com/#clinic",
+      "name": "Aureva Dental",
+      "legalName": "Aureva Dental Clinic",
+      "url": "https://aurevadental.com",
+      "telephone": "+91 73497 01002",
+      "email": "contact@aurevadental.com",
+      "priceRange": "₹₹",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, UPI, Net Banking",
+      "paymentMethod": ["CreditCard", "DebitCard", "PaymentCard", "BankTransfer"],
+      "currenciesAccepted": "INR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2nd Floor, No. 11/4, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande",
+        "addressLocality": "Hennur, Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560043",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0336,
+        "longitude": 77.6534
+      },
+      "knowsAbout": [
+        "Rotary Endodontics",
+        "Dental Implants",
+        "Clear Aligners",
+        "Pediatric Dentistry",
+        "Laser Gum Therapy",
+        "Aesthetic Veneers",
+        "Cosmetic Dentistry",
+        "Wisdom Tooth Extraction",
+        "Teeth Whitening",
+        "Restorative Dentistry",
+        "Zirconia Dental Crowns",
+        "Smile Makeover",
+        "Periodontal Care",
+        "Preventative Dentistry"
+      ],
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hennur, Bengaluru",
+          "postalCode": "560043"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Horamavu, Bengaluru",
+          "postalCode": "560043"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kalyan Nagar, Bengaluru"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "HRBR Layout, Bengaluru"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kothanur, Bengaluru"
+        },
+        {
+          "@type": "GeoShape",
+          "postalCode": "560043",
+          "addressCountry": "IN"
+        }
+      ],
+      "sameAs": [
+        "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA",
+        "https://www.google.com/maps?cid=10332859477033504351",
+        "https://www.practo.com/bangalore/clinic/aureva-dental-clinic-hennur",
+        "https://www.instagram.com/aurevadental/",
+        "https://www.facebook.com/aurevadental/"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:30",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday"],
+          "opens": "16:00",
+          "closes": "21:00"
+        }
+      ]
+    }
+  ]
+}
+```

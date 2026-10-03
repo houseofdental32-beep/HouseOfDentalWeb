@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import StatsCounter from '../components/StatsCounter.astro';
+import HolisticServices from '../components/HolisticServices.astro';
+import SpecializedExpertise from '../components/SpecializedExpertise.astro';
+import ClinicalTrust from '../components/ClinicalTrust.astro';
+import Membership from '../components/Membership.astro';
+import WhyUs from '../components/WhyUs.astro';
+import DoctorsGallery from '../components/DoctorsGallery.astro';
+import VirtualTour from '../components/VirtualTour.astro';
+import ImageSlider from '../components/ImageSlider.astro';
+import LocalFAQ from '../components/LocalFAQ.astro';
+import LocationsAndReviews from '../components/LocationsAndReviews.astro';
+import { getConfig } from '../utils/getConfig';
+import { generateDentistSchema, generateFaqSchema, generateBreadcrumbSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const config = getConfig();
+const { show_stats_section, show_gallery_slider } = config;
+
+// Generate Google Rich Results-compliant JSON-LD schemas
+const faqSchema = JSON.stringify(generateFaqSchema());
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema([
+  { name: "Home", url: "https://aurevadental.com/" }
+]));
+
+const schemaMarkup = [faqSchema, breadcrumbSchema];
+
+const seoProps = {
+  title: "Dental Clinic in Hennur Bangalore | House of Dental",
+  description: "House of Dental is a modern dental clinic in Hennur, Bangalore. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.",
+  keywords: "dental clinic in hennur bangalore, dentist in hennur, dental clinic horamavu, best dentist near me, root canal treatment bengaluru, clear aligners hennur bangalore, dental implants, teeth whitening, emergency dentist hennur",
+  canonical: "https://aurevadental.com/",
+  ogType: "website",
+  ogTitle: "Dental Clinic in Hennur Bangalore | House of Dental",
+  ogDescription: "House of Dental is a modern dental clinic in Hennur, Bangalore. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.",
+  ogUrl: "https://aurevadental.com/",
+  ogImage: "https://aurevadental.com/assets/og-image.jpg",
+  schemaMarkup
+};
+---
+
+<Layout {...seoProps}>
+	<!-- Hero Section -->
+	<Hero />
+
+  <!-- Stats Counter Section -->
+  {show_stats_section !== false && <StatsCounter />}
+
+	<!-- Holistic Services Grid -->
+	<HolisticServices />
+
+  <!-- Specialized Expertise Section -->
+  <SpecializedExpertise />
+
+  <!-- Clinical Hygiene, Safety, & Payments -->
+  <ClinicalTrust />
+
+  <!-- Membership Plans Section -->
+  <Membership />
+
+  <!-- Why Choose Us -->
+  <WhyUs />
+
+  <!-- Image Slider / Gallery -->
+  {show_gallery_slider !== false && <ImageSlider />}
+
+	<!-- Doctors Horizontal Scroll Gallery -->
+	<DoctorsGallery />
+
+  <!-- Virtual Tour Placeholder -->
+  <VirtualTour />
+
+  <!-- Local SEO & Patient Questions FAQ Accordion -->
+  <LocalFAQ />
+
+	<!-- Locations Deep Map Links & Social Proof Reviews -->
+	<LocationsAndReviews />
+</Layout>

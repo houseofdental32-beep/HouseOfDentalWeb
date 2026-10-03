@@ -1,0 +1,409 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Teeth Whitening in Hennur | House of Dental";
+const pageDescription = "Professional laser teeth whitening in Hennur, Bangalore at House of Dental. 4 to 8 shades lighter in 45 minutes with zero enamel sensitivity. Call now.";
+const canonicalUrl = "https://aurevadental.com/teeth-whitening-hennur";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20Teeth%20Whitening%20in%20Hennur.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/treatments/teeth-whitening" },
+  { name: "Teeth Whitening Hennur", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "Does professional laser teeth whitening damage enamel?",
+    answer: "No. Professional teeth whitening performed at House of Dental uses pH-neutral hydrogen peroxide and carbamide peroxide gels formulated with desensitizing agents (potassium nitrate and fluoride). The blue light wavelength gently oxidizes deep intrinsic chromogens embedded within microscopic enamel pores without eroding, thinning, or softening your protective tooth enamel."
+  },
+  {
+    question: "How many shades lighter can my teeth become in a single session?",
+    answer: "Most patients experience a noticeable brightening of 4 to 8 shades on the VITA classical shade guide in a single 45 to 60-minute in-office session. The final shade depends on the baseline severity of staining, enamel mineral density, and whether discoloration stems from food/coffee pigments or internal tetracycline/fluorosis."
+  },
+  {
+    question: "How long do professional teeth whitening results last?",
+    answer: "Results typically last 1 to 3 years depending on your dietary and lifestyle habits. Limiting consumption of dark staining beverages like black coffee, tea, and red wine, avoiding tobacco smoking, brushing twice daily, and receiving routine biannual ultrasonic cleanings will maintain your luminous smile indefinitely."
+  },
+  {
+    question: "Will I experience painful tooth sensitivity after whitening?",
+    answer: "Our clinical protocol incorporates high-potency gum barrier isolation that shields delicate gingival tissues from contact with active whitening gels. We apply a specialized remineralizing nano-hydroxyapatite desensitizing varnish immediately following the procedure, ensuring zero to minimal transient thermal sensitivity."
+  },
+  {
+    question: "What is the cost of professional teeth whitening in Hennur, Bangalore?",
+    answer: "At House of Dental, in-office laser whitening sessions typically range from Rs. 8,000 to Rs. 15,000. We also offer curated bridal and groom smile radiance packages that combine ultrasonic scaling, air polishing, and laser brightening at exclusive package pricing."
+  },
+  {
+    question: "What should I eat immediately after teeth whitening?",
+    answer: "We advise following the 'White Diet' for 48 hours following treatment, as your enamel pores remain slightly permeable. Safe foods include steamed rice, white poultry, plain pasta, milk, curd, tofu, cauliflower, and water. Avoid turmeric, curries, soy sauce, coffee, tea, berries, and dark sodas for two full days."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Teeth Whitening in Hennur",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "CosmeticDentistry"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/treatments/teeth-whitening" class="hover:text-japandi-moss transition-colors">Teeth Whitening</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Hennur</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Aesthetic Dentistry &bull; Hennur Bande, Bangalore
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Safe, Radiant <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Teeth Whitening in Hennur.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Brighten your smile safely by 4 to 8 shades in just 45 minutes. Led by cosmetic director Dr. Shweta Singh (BDS) and our clinical team, House of Dental utilizes gentle, pH-neutral laser bleaching with gingival barrier protection to deliver luminous results with zero enamel sensitivity on Horamavu Agara Road.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Teeth Whitening Consultation - Hennur"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Whitening Session</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-japandi-earth border-t border-japandi-clay/30 w-full">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Zero Enamel Abrasion</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Up to 8 Shades Lighter</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Bridal &amp; Event Packages</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Cosmetic Brilliance</span>
+            <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">In-Office Laser Radiance</h3>
+            <p class="text-xs text-japandi-earth leading-relaxed font-light">
+              Unlike over-the-counter strips or abrasive charcoal toothpastes that strip protective enamel, our clinical whitening breaks deep stain molecules chemically while preserving your enamel prisms intact.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">45 min</span>
+              <span class="text-[11px] text-japandi-earth">Total In-Office Appointment</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">100%</span>
+              <span class="text-[11px] text-japandi-earth">Gingival Gum Protection</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Clinic Address in Hennur:</p>
+            <p class="text-japandi-earth font-light">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande, Bangalore 562149. Dedicated parking available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth Clinical Guide: Teeth Whitening in Hennur -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          The Science of Professional Laser Teeth Whitening Explained
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Tooth enamel appears solid to the naked eye, but under microscopic examination, it consists of millions of crystalline hydroxyapatite prisms separated by microscopic organic pores. Over years of consuming South Indian filter coffee, black tea, spices like turmeric, red wine, and colored foods, organic pigment molecules (chromogens) penetrate deep within these pores. Surface brushing with standard commercial toothpaste only scrubs extrinsic superficial film; it cannot break the complex molecular bonds of intrinsic stains locked beneath the surface.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          At House of Dental in Hennur, our in-office laser whitening treatment utilizes stabilized, pH-neutral bleaching formulations. When activated by a specialized non-thermal blue LED and cold-laser wavelength, the formulation releases free oxygen radicals that penetrate deep into the enamel microstructure. These oxygen radicals specifically break the double bonds of dark chromogen molecules, converting them into colorless, light-reflecting compounds without changing or eroding your enamel mineral density.
+        </p>
+      </div>
+
+      <!-- Why Professional In-Office Whitening is Superior to DIY Kits -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Professional Clinical Whitening vs. At-Home &amp; Over-the-Counter Products
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-japandi-moss"></span>
+              <h4 class="font-serif text-base text-japandi-charcoal font-medium">House of Dentalal Whitening</h4>
+            </div>
+            <ul class="space-y-2 list-disc list-inside leading-relaxed">
+              <li><strong>Hermetic Gum Barrier:</strong> We apply a light-cured resin dam over your gums, ensuring active peroxide never touches or burns soft tissues.</li>
+              <li><strong>Immediate Results:</strong> Teeth brighten by 4 to 8 shades in a single 45-minute appointment, monitored by an aesthetic dentist.</li>
+              <li><strong>Nano-Hydroxyapatite Remineralization:</strong> Post-treatment desensitizing paste seals enamel pores instantly, preventing sensitivity.</li>
+              <li><strong>Zero Acid Erosion:</strong> Controlled pH-neutral chemistry maintains the structural integrity of your tooth enamel.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-japandi-clay"></span>
+              <h4 class="font-serif text-base text-japandi-charcoal font-medium">Store-Bought DIY Kits &amp; Charcoal Powders</h4>
+            </div>
+            <ul class="space-y-2 list-disc list-inside leading-relaxed">
+              <li><strong>Unregulated Gum Irritation:</strong> Poorly fitting generic trays cause gel leakage, resulting in painful chemical chemical burns on gums.</li>
+              <li><strong>Enamel Abrasion:</strong> Activated charcoal and whitening powders contain abrasive grit that scratches and wears away outer enamel permanently.</li>
+              <li><strong>Uneven, Blotchy Whitening:</strong> Non-customized application leads to patchy, spotty results, especially along the gum margins.</li>
+              <li><strong>Chronic Sensitivity:</strong> Lack of professional remineralizing agents leaves teeth hypersensitive to cold air and beverages for weeks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Procedure at Hennur Clinic -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          The 4-Step In-Office Teeth Whitening Protocol at House of Dental
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Here is exactly what you will experience during your 45-minute smile transformation on Horamavu Agara Road:
+        </p>
+
+        <div class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 1: Baseline Shade Matching &amp; Ultrasonic Polish</h4>
+            <p class="leading-relaxed">
+              We record your starting tooth shade on the standard VITA classical shade guide with high-resolution photography. We then perform a light ultrasonic polish to remove external plaque and tartar, ensuring direct contact between the whitening gel and enamel.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 2: Gingival Barrier Application</h4>
+            <p class="leading-relaxed">
+              A gentle lip retractor is positioned, and a liquid dam isolation barrier is painted carefully along your gum line and cured with blue light. This forms an impermeable rubberized seal that protects your gums completely throughout the procedure.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 3: Laser-Activated Bleaching Cycles (3 x 15 Minutes)</h4>
+            <p class="leading-relaxed">
+              The professional whitening gel is applied to the front surfaces of your upper and lower teeth. Our LED/laser accelerator light is positioned, activating the gel for 15 minutes. We repeat this for two to three gentle cycles depending on your target brightness.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Step 4: Remineralizing Enamel Glaze &amp; Final Reveal</h4>
+            <p class="leading-relaxed">
+              The gel and gum barrier are rinsed away. We apply a specialized nano-hydroxyapatite and potassium nitrate desensitizing treatment to soothe the nerves. We compare your brilliant new shade against your baseline photo, revealing a radiant, refreshed smile.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post-Whitening 'White Diet' Protocol -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          The 48-Hour 'White Diet' Protocol for Long-Lasting Brilliance
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          For the first 48 hours following your laser whitening treatment, the microscopic enamel prisms remain slightly permeable and susceptible to absorbing deep pigments. Following our simple 'White Diet' locks in your radiant results:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Recommended Foods (Safe)</span>
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Plain steamed white rice, idlis, and plain dosas (without red chutney).</li>
+              <li>White chicken, steamed fish, egg whites, paneer, and tofu.</li>
+              <li>Milk, curd, plain yogurt, and clear soups.</li>
+              <li>Peeled potatoes, cauliflower, and white pasta with white sauce.</li>
+              <li>Water, coconut water, and clear liquids.</li>
+            </ul>
+          </div>
+
+          <div class="p-5 rounded-xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <span class="font-semibold text-japandi-clay uppercase text-[10px] tracking-wider block">Foods to Avoid for 48 Hours</span>
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Coffee, black tea, green tea, and hot chocolate.</li>
+              <li>Curries with heavy turmeric or bright red chili powders.</li>
+              <li>Soy sauce, tomato ketchup, mustard, and balsamic vinegar.</li>
+              <li>Red wine, dark beers, cola, and colored sports drinks.</li>
+              <li>Berries (blueberries, blackberries), cherries, and beetroot.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing and Bridal Packages -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Teeth Whitening Cost in Hennur, Bangalore &amp; Bridal Packages
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          We offer straightforward, all-inclusive pricing with zero hidden surcharges:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-2 font-light">
+          <li><strong>In-Office Laser Teeth Whitening (Complete Session):</strong> ₹8,000 to ₹12,000 (includes scaling, gum barrier, and remineralization).</li>
+          <li><strong>Bridal &amp; Groom Smile Radiance Package:</strong> ₹12,000 to ₹15,000 (includes deep ultrasonic scaling, air polishing, laser whitening, and home touch-up maintenance trays).</li>
+          <li><strong>Dual Couple Smile Makeover Package:</strong> Special pricing when booking simultaneous consultations for weddings or corporate events.</li>
+        </ul>
+      </div>
+
+      <!-- Local Catchment & Transit Directions -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Effortless Access from Hennur, Kalyan Nagar &amp; North Bangalore
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          House of Dental is centrally located at 2nd Floor, SLV Nilaya, Horamavu Agara Road (beside Nayara Petrol Bunk), making it a convenient stop before upcoming weddings, photo shoots, and family celebrations:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-1.5 font-light">
+          <li><strong>Hennur Bande &amp; Geddalahalli:</strong> 2 to 5 minutes by car or two-wheeler.</li>
+          <li><strong>Horamavu &amp; Babusapalya:</strong> 5 to 7 minutes via Horamavu Agara Road.</li>
+          <li><strong>Kalyan Nagar, HRBR Layout &amp; Kammanahalli:</strong> 10 minutes via Hennur Road.</li>
+          <li><strong>Thanisandra, Kothanur &amp; Byrathi:</strong> 8 to 12 minutes along the northern corridor.</li>
+        </ul>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed pt-2">
+          Dedicated car and bike parking is provided on premise, and we are open on Sundays (9:30 AM to 9:00 PM) for weekend appointments.
+        </p>
+      </div>
+
+      <!-- Internal Links Cluster -->
+      <div class="p-6 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/50 space-y-4">
+        <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+          Explore Related Specialty Treatments &amp; Local Care Portals:
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
+          <a href="/treatments/teeth-whitening" class="hover:underline">&bull; Main Teeth Whitening Clinical Page</a>
+          <a href="/treatments/cosmetic-dentistry" class="hover:underline">&bull; Cosmetic Dentistry &amp; Veneers in Hennur</a>
+          <a href="/invisible-aligners-hennur" class="hover:underline">&bull; Invisible Clear Aligners in Hennur</a>
+          <a href="/dentist-in-hennur" class="hover:underline">&bull; Best Dentist in Hennur Consultation</a>
+          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/root-canal-treatment-hennur" class="hover:underline">&bull; Painless Root Canal in Hennur</a>
+          <a href="/dental-implants-hennur" class="hover:underline">&bull; Dental Implants in Hennur</a>
+          <a href="/contact" class="hover:underline">&bull; Contact &amp; Book Appointment</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Patient Clarity</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium">
+          Frequently Asked Questions About Teeth Whitening in Hennur
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light max-w-xl mx-auto">
+          Honest answers regarding enamel safety, sensitivity management, duration, and dietary guidelines.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div class="bg-japandi-sand/40 border border-japandi-clay/40 rounded-2xl p-6 space-y-2">
+            <h3 class="font-serif text-base sm:text-lg text-japandi-charcoal font-medium">
+              {faq.question}
+            </h3>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="pb-24 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+        Unveil Your Most Radiant Smile Today
+      </h2>
+      <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
+        Brighten your smile safely with professional laser whitening at House of Dental in Hennur. Same-day appointments and weekend slots available.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button
+          type="button"
+          data-open-booking
+          data-treatment="Laser Teeth Whitening Session"
+          class="px-8 py-3.5 rounded-full bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow"
+        >
+          Book Whitening Session
+        </button>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-japandi-cream/40 hover:border-japandi-cream text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-japandi-cream/70 font-light pt-2">
+        House of Dental &bull; 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149 &bull; Phone: 09113563040
+      </p>
+    </div>
+  </section>
+</Layout>

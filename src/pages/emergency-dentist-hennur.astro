@@ -1,0 +1,503 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Emergency Dentist in Hennur | House of Dental";
+const pageDescription = "Same-day emergency dental care in Hennur, Bangalore at House of Dental. Immediate relief for acute toothache, broken teeth & swelling. Open on Sundays.";
+const canonicalUrl = "https://aurevadental.com/emergency-dentist-hennur";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=EMERGENCY%3A%20I%20have%20an%20urgent%20dental%20emergency%20in%20Hennur%20and%20need%20immediate%20assistance.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Emergency Dentist in Hennur", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "How quickly can I be seen for a dental emergency in Hennur?",
+    answer: "At House of Dental on Horamavu Agara Road in Hennur Bande, we reserve dedicated daily emergency triage slots for patients experiencing acute dental pain, swelling, knocked-out teeth, or broken restorations. If you are in severe distress, call our direct reception desk at 09113563040 or message our emergency WhatsApp line. Most emergency walk-ins from Hennur, Horamavu, Kalyan Nagar, Babusapalya, and Thanisandra are attended to immediately upon arrival."
+  },
+  {
+    question: "Are you open on Sundays for dental emergencies in North Bangalore?",
+    answer: "Yes, House of Dental is fully operational on Sundays from 9:30 AM to 9:00 PM. We understand that severe toothaches, accidental sports injuries, and fractured teeth frequently strike outside traditional banking and office hours. Our Tuesday through Saturday hours are 9:30 AM to 9:00 PM, and Monday hours are 4:00 PM to 9:00 PM."
+  },
+  {
+    question: "What should I do if my permanent tooth is completely knocked out (avulsion)?",
+    answer: "A knocked-out tooth is a critical dental emergency with a 30 to 60-minute window for successful reimplantation. First, handle the tooth solely by the white crown—never touch the root surface. Gently rinse it with cold milk or saline if soiled (do not scrub or dry with a towel). If possible, reinsert it into the socket and bite down gently on a clean tissue. If you cannot reinsert it, submerge the tooth in a cup of cold whole milk or coconut water and bring it directly to House of Dental in Hennur immediately."
+  },
+  {
+    question: "Can an acute toothache be treated in a single sitting?",
+    answer: "Yes. When acute pulpitis or deep bacterial decay causes unbearable throbbing, our dental surgeons administer computerized local anesthesia for prompt numbness. We then perform a single-sitting emergency pulpectomy or rotary root canal treatment (RCT) to eliminate the infected nerve tissues, relieving throbbing pressure within 45 to 60 minutes."
+  },
+  {
+    question: "How much does an emergency dental visit cost at House of Dental Hennur?",
+    answer: "Our initial emergency clinical consultation with digital RVG low-radiation imaging is Rs. 600. Temporary emergency fillings start from Rs. 900 to Rs. 1,500, emergency pain-relief nerve dressings or pulpectomy start from Rs. 1,500 to Rs. 2,500, and comprehensive single-sitting root canals range from Rs. 4,000 to Rs. 10,000 depending on tooth anatomy. All treatment costs are provided transparently upfront with zero surprise fees."
+  },
+  {
+    question: "Do you treat dental emergencies for children and pediatric patients?",
+    answer: "Yes, our clinical team provides gentle, trauma-informed emergency dental care for toddlers, children, and teenagers. Common pediatric emergencies include fractured primary incisors from playground falls, pulpitis from aggressive early childhood caries, and soft-tissue lip or tongue lacerations. We emphasize soothing anxiety management to keep children calm and comfortable."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Emergency Dentist in Hennur</span>
+    </div>
+  </nav>
+
+  <!-- Emergency Triage Banner -->
+  <aside aria-label="Urgent Notice" class="bg-red-600 text-white py-3 px-6 lg:px-24 text-center text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6">
+      <span class="flex items-center gap-1.5 font-semibold uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+        Dental Emergency Hotline &bull; Open Sundays
+      </span>
+      <div class="flex items-center gap-4">
+        <a href={phoneCallUrl} class="underline font-bold hover:text-red-100 transition-colors">Call: 09113563040</a>
+        <span>&bull;</span>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="underline font-bold hover:text-red-100 transition-colors">Emergency WhatsApp</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-8 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-red-200 bg-red-50 text-red-800 text-xs font-semibold tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse shrink-0"></span>
+          <span>Same-Day Emergency Dental Triage in Hennur, Bangalore</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Emergency Dentist in Hennur: <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Immediate Toothache &amp; Trauma Relief.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Severe dental pain, fractured teeth, and facial swellings cannot wait for weeks. At House of Dental, we provide rapid same-day emergency relief, advanced digital RVG diagnostic imaging, and hospital-grade surgical precision for patients across Hennur, Horamavu, Kalyan Nagar, Babusapalya, and Thanisandra.
+        </p>
+
+        <!-- Direct Action Emergency CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-red-600 text-white hover:bg-red-700 text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-red-600/20 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040 (Emergency Desk)</span>
+          </a>
+
+          <a 
+            href={whatsappUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp Emergency Triage</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Emergency Badges Card -->
+      <div class="lg:col-span-4 bg-japandi-sand/50 border border-japandi-clay/60 rounded-[2.5rem] p-8 space-y-6">
+        <h2 class="font-serif text-xl font-medium text-japandi-charcoal">
+          House of Dental Emergency Promise
+        </h2>
+        <ul class="space-y-4 text-xs font-light text-japandi-charcoal">
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center shrink-0 font-bold text-[10px]">1</span>
+            <div>
+              <strong class="font-medium block text-japandi-charcoal">Zero Delay Triage:</strong>
+              <span class="text-japandi-earth">Acute trauma, dental bleeding, and swelling bypass regular queues.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center shrink-0 font-bold text-[10px]">2</span>
+            <div>
+              <strong class="font-medium block text-japandi-charcoal">Low-Radiation RVG Diagnostics:</strong>
+              <span class="text-japandi-earth">Immediate digital X-ray confirmation of root fractures and abscesses.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center shrink-0 font-bold text-[10px]">3</span>
+            <div>
+              <strong class="font-medium block text-japandi-charcoal">Sunday &amp; Evening Availability:</strong>
+              <span class="text-japandi-earth">Open all Sundays from 9:30 AM to 9:00 PM on Horamavu Agara Road.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center shrink-0 font-bold text-[10px]">4</span>
+            <div>
+              <strong class="font-medium block text-japandi-charcoal">Transparent Emergency Pricing:</strong>
+              <span class="text-japandi-earth">Full diagnostic fee (Rs. 600) and treatment quotes shared upfront.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Clinical Content Guide -->
+  <section class="py-16 md:py-20 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <!-- Section 1: Identifying Dental Emergencies -->
+      <article class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          What Constitutes a Dental Emergency in Hennur?
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Dental emergencies generally fall into two clinical categories: acute biological infections requiring urgent pharmaceutical or endodontic intervention, and physical mechanical trauma requiring immediate structural preservation. Ignoring acute oral pain can allow localized bacterial infections to spread across deep fascial spaces in the head and neck, resulting in severe systemic complications.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          If you or your family members in <strong class="text-japandi-charcoal font-medium">Hennur</strong>, <strong class="text-japandi-charcoal font-medium">Horamavu</strong>, <strong class="text-japandi-charcoal font-medium">Kalyan Nagar</strong>, <strong class="text-japandi-charcoal font-medium">Babusapalya</strong>, or <strong class="text-japandi-charcoal font-medium">Thanisandra</strong> experience any of the symptoms below, you should seek immediate emergency dental care at House of Dental:
+        </p>
+      </article>
+
+      <!-- Section 2: Clinical Emergency Conditions Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-3xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+          <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">
+            !
+          </div>
+          <h3 class="font-serif text-lg font-medium text-japandi-charcoal">Severe, Throbbing Toothache</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Pain that radiates to your ear, jaw, or temple—especially pain that intensifies when lying down or drinking warm liquids—indicates irreversible pulpitis. Our doctors provide immediate painless nerve extirpation via single-sitting <a href="/treatments/root-canal-treatment" class="text-japandi-moss hover:underline font-medium">Root Canal Treatment</a>.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+          <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">
+            !
+          </div>
+          <h3 class="font-serif text-lg font-medium text-japandi-charcoal">Dental Abscess &amp; Facial Swelling</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            A pimple-like bump on the gum (parulis), bad taste from pus discharge, or visible facial swelling indicates an acute periapical or periodontal abscess. Immediate drainage and targeted antibiotic therapy are essential to prevent Ludwig’s angina.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+          <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">
+            !
+          </div>
+          <h3 class="font-serif text-lg font-medium text-japandi-charcoal">Knocked-Out Tooth (Dental Avulsion)</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Accidents during sports, vehicle collisions, or falls can dislodge teeth entirely. Immediate reimplantation within 30 to 60 minutes offers the highest clinical chance of preserving natural periodontal ligament fibers.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+          <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">
+            !
+          </div>
+          <h3 class="font-serif text-lg font-medium text-japandi-charcoal">Chipped, Broken, or Fractured Teeth</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Cracked teeth leave dentin and dental nerves exposed to oral fluids, causing extreme sensitivity and rapid bacterial contamination. We protect fractured teeth using aesthetic composite bonding or high-strength <a href="/treatments/dental-crowns" class="text-japandi-moss hover:underline font-medium">Dental Crowns</a>.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+          <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">
+            !
+          </div>
+          <h3 class="font-serif text-lg font-medium text-japandi-charcoal">Dislodged Crowns, Bridges or Fillings</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            When a permanent crown or bridge becomes loose, the underlying prepared abutment is vulnerable to rapid decay and temperature shock. Bring the dislodged restoration with you for professional disinfection and recementation.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+          <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">
+            !
+          </div>
+          <h3 class="font-serif text-lg font-medium text-japandi-charcoal">Impacted Wisdom Tooth Agony (Pericoronitis)</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Food debris trapped under the gum flap of an erupting third molar causes severe swelling, difficulty opening the jaw (trismus), and intense pain. We perform ultrasonic irrigation, operculectomy, or emergency <a href="/treatments/wisdom-tooth-removal" class="text-japandi-moss hover:underline font-medium">Wisdom Tooth Removal</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 3: First Aid Emergency Guidance -->
+      <article class="p-8 rounded-[2.5rem] bg-amber-500/10 border border-amber-500/30 space-y-4">
+        <h2 class="text-xl sm:text-2xl font-serif text-amber-950 dark:text-amber-100 font-medium">
+          Step-by-Step Emergency First Aid Protocol (While You Travel to House of Dental)
+        </h2>
+        <div class="space-y-3 text-xs sm:text-sm text-amber-900 dark:text-amber-200 font-light leading-relaxed">
+          <p>
+            <strong>1. For Knocked-Out Teeth:</strong> Pick up the tooth only by the biting edge. Do not touch or scrub the root surface. If dirty, rinse gently in milk for 5 seconds. Store the tooth submerged in a sealed container of cold milk, coconut water, or inside your cheek pouch (if not a swallowing hazard for small children).
+          </p>
+          <p>
+            <strong>2. For Bleeding Soft Tissues:</strong> Apply firm, constant pressure with sterile gauze or a clean cotton handkerchief directly on the bleeding site for 15 unbroken minutes. Avoid spitting, rinsing vigorously, or sucking through a straw, which dislodges protective blood clots.
+          </p>
+          <p>
+            <strong>3. For Severe Toothache:</strong> Rinse with lukewarm salt water to dislodge trapped food. Never place an aspirin tablet directly against the gum tissue, as concentrated acetylsalicylic acid causes severe chemical burns. Take approved oral analgesics such as paracetamol or ibuprofen as recommended by your physician.
+          </p>
+          <p>
+            <strong>4. For Swelling or Facial Trauma:</strong> Apply an external cold pack or ice wrapped in a washcloth to the affected cheek for 10 minutes on and 10 minutes off to reduce localized inflammation.
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 4: Local Hennur Catchment & Connectivity -->
+      <article class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          Serving Dental Emergencies Across North Bengaluru
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          House of Dental is centrally positioned at <strong class="text-japandi-charcoal font-medium">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande (Bengaluru 562149)</strong>. Our strategic location offers swift road connectivity for emergency patients residing throughout:
+        </p>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-japandi-charcoal font-light pt-2">
+          <li class="p-3.5 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/30">
+            <strong class="font-medium block text-japandi-moss">Hennur &amp; Hennur Bande:</strong>
+            Immediate 2 to 5-minute access along the main Horamavu Agara corridor.
+          </li>
+          <li class="p-3.5 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/30">
+            <strong class="font-medium block text-japandi-moss">Horamavu &amp; Kalkere:</strong>
+            Convenient 5 to 8-minute drive avoiding heavy arterial bottlenecks.
+          </li>
+          <li class="p-3.5 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/30">
+            <strong class="font-medium block text-japandi-moss">Kalyan Nagar &amp; HRBR Layout:</strong>
+            Direct 10-minute transit via Hennur Main Road flyover.
+          </li>
+          <li class="p-3.5 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/30">
+            <strong class="font-medium block text-japandi-moss">Babusapalya &amp; Chelekere:</strong>
+            Rapid 7 to 10-minute access through the connecting Ring Road underpasses.
+          </li>
+          <li class="p-3.5 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/30">
+            <strong class="font-medium block text-japandi-moss">Thanisandra &amp; Manyata Corridor:</strong>
+            Smooth 12 to 15-minute commute for tech professionals and families.
+          </li>
+          <li class="p-3.5 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/30">
+            <strong class="font-medium block text-japandi-moss">Byrathi, Kothanur &amp; Geddalahalli:</strong>
+            Quick 8 to 12-minute drive down Hennur-Bagalur main artery.
+          </li>
+        </ul>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed pt-2">
+          We maintain dedicated on-premise patient parking so arriving emergency visitors never have to waste critical minutes searching for vehicle parking spaces.
+        </p>
+      </article>
+
+      <!-- Section 5: Transparent Emergency Pricing Table -->
+      <article class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          Transparent Emergency Dental Fees (No Hidden Weekend Surcharges)
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          At House of Dental, we believe patients seeking emergency medical care deserve total transparency. We do not charge predatory after-hours or Sunday price surcharges:
+        </p>
+
+        <div class="overflow-x-auto rounded-3xl border border-japandi-clay/50 bg-japandi-sand/35 my-4">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-japandi-clay/40 bg-japandi-sand/80">
+                <th class="py-4 px-6 font-serif font-medium text-japandi-charcoal">Emergency Procedure</th>
+                <th class="py-4 px-6 font-serif font-medium text-japandi-moss">Price Range (INR)</th>
+                <th class="py-4 px-6 font-serif font-medium text-japandi-earth">Clinical Inclusions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-japandi-clay/20 text-japandi-charcoal font-light">
+              <tr class="hover:bg-japandi-sand/40 transition-colors">
+                <td class="py-4 px-6 font-medium">Emergency Diagnostic Consultation</td>
+                <td class="py-4 px-6 text-japandi-moss font-semibold">₹600</td>
+                <td class="py-4 px-6 text-japandi-earth">Intraoral exam, high-definition digital RVG X-ray &amp; medical prescription</td>
+              </tr>
+              <tr class="hover:bg-japandi-sand/40 transition-colors">
+                <td class="py-4 px-6 font-medium">Emergency Pulpectomy / Pain Dressing</td>
+                <td class="py-4 px-6 text-japandi-moss font-semibold">₹1,500 – ₹2,500</td>
+                <td class="py-4 px-6 text-japandi-earth">Local anesthesia, nerve extirpation, antibacterial medicament &amp; temp seal</td>
+              </tr>
+              <tr class="hover:bg-japandi-sand/40 transition-colors">
+                <td class="py-4 px-6 font-medium">Single-Sitting Root Canal Treatment (RCT)</td>
+                <td class="py-4 px-6 text-japandi-moss font-semibold">₹4,000 – ₹10,000</td>
+                <td class="py-4 px-6 text-japandi-earth">Rotary instrumentation, motorized disinfection, biocompatible obturation</td>
+              </tr>
+              <tr class="hover:bg-japandi-sand/40 transition-colors">
+                <td class="py-4 px-6 font-medium">Emergency Tooth Extraction</td>
+                <td class="py-4 px-6 text-japandi-moss font-semibold">₹1,500 – ₹4,000</td>
+                <td class="py-4 px-6 text-japandi-earth">Painless local anesthesia, atraumatic luxation &amp; socket preservation</td>
+              </tr>
+              <tr class="hover:bg-japandi-sand/40 transition-colors">
+                <td class="py-4 px-6 font-medium">Emergency Broken Tooth Composite Repair</td>
+                <td class="py-4 px-6 text-japandi-moss font-semibold">₹1,200 – ₹2,800</td>
+                <td class="py-4 px-6 text-japandi-earth">Color-matched biomimetic composite bonding &amp; edge polish</td>
+              </tr>
+              <tr class="hover:bg-japandi-sand/40 transition-colors">
+                <td class="py-4 px-6 font-medium">Crown / Bridge Recementation</td>
+                <td class="py-4 px-6 text-japandi-moss font-semibold">₹800 – ₹1,500</td>
+                <td class="py-4 px-6 text-japandi-earth">Ultrasonic cleanup, biological isolation &amp; high-bond resin cement</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-japandi-earth font-light italic">
+          * Flexible payment options available including Credit/Debit Cards, UPI, and instant card-converted monthly EMIs.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Interactive FAQ Accordion -->
+  <section class="py-16 md:py-20 px-6 lg:px-24 bg-japandi-sand/25 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="text-center space-y-2">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest">Emergency Questions Answered</p>
+        <h2 class="text-3xl font-serif text-japandi-charcoal font-medium">Frequently Asked Emergency Questions</h2>
+      </div>
+
+      <div class="space-y-4 pt-4">
+        {faqs.map((faq) => (
+          <div class="faq-item bg-japandi-sand/55 border border-japandi-clay/50 rounded-2xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/60">
+            <button
+              type="button"
+              class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-none group"
+              aria-expanded="false"
+            >
+              <span class="text-base font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors">
+                {faq.question}
+              </span>
+              <div class="w-7 h-7 rounded-full bg-japandi-cream border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 faq-icon transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              <div class="pb-5 pt-1 border-t border-japandi-clay/20">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Treatment & Internal Links Hub -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/35 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="space-y-1">
+        <h3 class="text-lg font-serif font-medium text-japandi-charcoal">Related Dental Care Services in Hennur</h3>
+        <p class="text-xs text-japandi-earth font-light">Explore restorative, surgical, and family dental care at our clinic:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-light">
+        <a href="/dentist-in-hennur" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Dentist in Hennur &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Meet our clinical founders Dr. Shweta Singh and Dr. Agniss Mishra.</span>
+        </a>
+        <a href="/treatments/root-canal-treatment" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Root Canal Treatment &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Save severe aching teeth with single-sitting rotary endodontics.</span>
+        </a>
+        <a href="/treatments/tooth-extraction" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Tooth Extraction &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Gentle surgical extraction with bone socket preservation.</span>
+        </a>
+        <a href="/contact" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Clinic Directions &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Google Map directions to SLV Nilaya on Horamavu Agara Road.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Emergency Callout & Action Bar -->
+  <section class="py-14 px-6 lg:px-24 bg-red-700 text-white text-center">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <h3 class="text-2xl sm:text-3xl font-serif font-medium">Do Not Endure Severe Dental Pain in Silence</h3>
+      <p class="text-xs sm:text-sm text-red-100 font-light leading-relaxed">
+        Speak directly with our Hennur emergency desk right now. We triage your condition over phone/WhatsApp and prepare our treatment operatory prior to your arrival.
+      </p>
+      <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-8 py-4 rounded-full bg-white text-red-700 text-xs font-bold uppercase tracking-wider hover:bg-red-50 transition-colors shadow-lg shadow-black/20"
+        >
+          Call Clinic: 09113563040
+        </a>
+        <a 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-8 py-4 rounded-full bg-japandi-moss text-japandi-cream text-xs font-bold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-lg shadow-black/20"
+        >
+          WhatsApp Emergency Triage
+        </a>
+      </div>
+      <p class="text-[11px] text-red-200/90 font-light pt-2">
+        House of Dental &bull; 2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Bunk, Hennur Bande &bull; Open 7 Days
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function setupPageAccordions() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+      if (!toggle || !content) return;
+
+      const newBtn = toggle.cloneNode(true) as HTMLElement;
+      toggle.parentNode?.replaceChild(newBtn, toggle);
+
+      newBtn.addEventListener('click', () => {
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        items.forEach((other) => {
+          if (other !== item) {
+            const ob = other.querySelector('.faq-toggle');
+            const oc = other.querySelector('.faq-content') as HTMLElement;
+            const oi = other.querySelector('.faq-icon');
+            if (ob && oc) {
+              ob.setAttribute('aria-expanded', 'false');
+              oc.style.maxHeight = '0px';
+              oi?.classList.remove('rotate-45');
+            }
+          }
+        });
+
+        if (isExpanded) {
+          newBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          icon?.classList.remove('rotate-45');
+        } else {
+          newBtn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  setupPageAccordions();
+  document.addEventListener('astro:after-swap', setupPageAccordions);
+</script>

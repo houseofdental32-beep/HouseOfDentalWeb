@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Terms & Conditions | House of Dental Hennur";
+const pageDescription = "Review the official Terms and Conditions of House of Dental in Hennur, Bangalore. Covers appointments, treatment consent, payments, and clinic guidelines.";
+const canonicalUrl = "https://aurevadental.com/terms-and-conditions";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Terms and Conditions", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Terms &amp; Conditions</span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-14 sm:py-20 px-6 lg:px-24 bg-transparent border-b border-japandi-clay/20">
+    <div class="max-w-4xl mx-auto text-left space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+        Clinical Protocol &bull; Practice Terms
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif text-japandi-charcoal font-medium tracking-tight">
+        Terms &amp; <span class="italic text-japandi-moss">Conditions.</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+        Effective Date: September 2026 &bull; Last Revised: September 23, 2026 &bull; House of Dental, Bengaluru
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Terms Content -->
+  <main class="py-14 px-6 lg:px-24 max-w-4xl mx-auto text-japandi-charcoal leading-relaxed space-y-10 text-sm font-light">
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">1. Acceptance of Terms</h2>
+      <p class="text-japandi-earth">
+        Welcome to House of Dental ("House of Dental," "we," "our," or "us"). By accessing or using our website (<a href="https://aurevadental.com" class="text-japandi-moss hover:underline">https://aurevadental.com</a>), booking consultations, or receiving clinical dental care at our studio located at 2nd Floor, SLV Nilaya, Horamavu Agara Road, Hennur Bande, Bengaluru, you agree to comply with and be bound by the following Terms and Conditions.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">2. Clinical Consultations &amp; Medical Disclaimers</h2>
+      <p class="text-japandi-earth">
+        The informational content provided on our website—including treatment descriptions, blog articles, and estimated cost ranges—is strictly for general educational purposes. It does not constitute a definitive medical diagnosis, nor does it replace personalized in-person clinical evaluation and radiographic investigation by a licensed dental surgeon.
+      </p>
+      <p class="text-japandi-earth">
+        All treatment proposals, including root canal therapies, dental implants, clear aligner sequences, and restorative crown placements, are determined following thorough clinical examination, digital RVG radiography, and mutual discussion of risks and benefits.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">3. Appointment Scheduling &amp; Cancellation Policy</h2>
+      <ul class="list-disc pl-5 space-y-2 text-japandi-earth">
+        <li><strong>Booking:</strong> Appointments can be scheduled online via our booking module, direct WhatsApp messaging (09113563040), or telephone call.</li>
+        <li><strong>Arrival:</strong> To facilitate a calming, unhurried Japandi experience, new patients are requested to arrive 10 minutes prior to scheduled appointments to complete health history documentation.</li>
+        <li><strong>Rescheduling &amp; Cancellations:</strong> We require at least 24 hours advance notice if you need to reschedule or cancel your appointment, allowing our clinicians to accommodate emergency patients requiring urgent pain relief.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">4. Fees, Invoicing &amp; Payment Options</h2>
+      <ul class="list-disc pl-5 space-y-2 text-japandi-earth">
+        <li><strong>Transparent Fee Structure:</strong> Complete treatment costs, including laboratory fabrication costs for zirconia crowns or custom clear aligners, are presented transparently before clinical intervention begins.</li>
+        <li><strong>Payment Methods:</strong> We accept all standard payment methods including Cash, UPI (Google Pay, PhonePe, Paytm), Visa/Mastercard Credit &amp; Debit Cards, and Net Banking.</li>
+        <li><strong>Monthly EMI Facilities:</strong> Post-payment EMI conversion is available on major credit cards through your issuing bank's net banking portal.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">5. Informed Consent &amp; Treatment Outcomes</h2>
+      <p class="text-japandi-earth">
+        Dentistry involves biological living tissue. While our experienced dental surgeons utilize advanced rotary endodontics, high-magnification loupes, and precision digital diagnostics, human biological healing varies. Patients are required to sign informed consent documentation prior to undergoing surgical, endodontic, or invasive aesthetic procedures.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">6. Intellectual Property</h2>
+      <p class="text-japandi-earth">
+        All website copy, clinical illustrations, photographs, branding marks, logos, and custom Japandi UI design assets on aurevadental.com are the exclusive intellectual property of House of Dental. Reproduction, modification, or republication without prior written consent is strictly prohibited.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">7. Governing Law and Jurisdiction</h2>
+      <p class="text-japandi-earth">
+        These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising out of clinical services or web portal usage shall be subject to the exclusive jurisdiction of the competent courts in Bengaluru, Karnataka.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">8. Contact Information</h2>
+      <div class="p-6 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+        <p class="font-medium text-japandi-charcoal">House of Dental</p>
+        <p class="text-japandi-earth text-xs">1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149</p>
+        <p class="text-japandi-earth text-xs">Phone: <a href="tel:09113563040" class="text-japandi-moss font-medium hover:underline">09113563040</a></p>
+        <p class="text-japandi-earth text-xs">Email: <a href="mailto:houseofdental32@gmail.com" class="text-japandi-moss font-medium hover:underline">houseofdental32@gmail.com</a></p>
+      </div>
+    </section>
+
+    <!-- Navigation Links -->
+    <div class="pt-8 border-t border-japandi-clay/30 flex flex-wrap gap-4 text-xs font-light">
+      <a href="/privacy-policy" class="text-japandi-moss hover:underline">&larr; Privacy Policy</a>
+      <span class="text-japandi-clay">&bull;</span>
+      <a href="/about" class="text-japandi-moss hover:underline">About Us &rarr;</a>
+      <span class="text-japandi-clay">&bull;</span>
+      <a href="/contact" class="text-japandi-moss hover:underline">Contact &amp; Clinic Map</a>
+    </div>
+  </main>
+</Layout>

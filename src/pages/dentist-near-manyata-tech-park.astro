@@ -1,0 +1,431 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Best Dentist Near Manyata Tech Park | Sunday & Evening Dental Clinic | House of Dental";
+const pageDescription = "Looking for a top dentist near Manyata Tech Park? House of Dental offers painless RCT, dental implants, clear aligners & Sunday clinic hours till 9 PM. Book today.";
+const canonicalUrl = "https://aurevadental.com/dentist-near-manyata-tech-park";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20work%20near%20Manyata%20Tech%20Park%20and%20would%20like%20to%20book%20a%20dental%20appointment.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Dentist Near Manyata Tech Park", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "How far is House of Dental from Manyata Tech Park?",
+    answer: "House of Dental is located approximately 8 to 10 minutes from Manyata Tech Park Gates 1 & 2 via Outer Ring Road and Hennur Main Road. Situated at 2nd Floor, SLV Nilaya, Horamavu Agara Road near Nayara Petrol Bunk, we provide dedicated parking and quick access avoiding heavy inner-city traffic."
+  },
+  {
+    question: "Are you a Sunday dentist near Manyata Tech Park?",
+    answer: "Yes! House of Dental is fully operational on Sundays from 9:30 AM to 9:00 PM. We understand that IT and corporate professionals at Manyata find it difficult to take time off during weekday project sprints. Our full-day Sunday clinic allows you to schedule routine cleanings, single-sitting root canals, or aligner checkups at your convenience."
+  },
+  {
+    question: "What are your weekday clinic timings for Manyata professionals?",
+    answer: "We are open until 9:00 PM every evening (Tuesday to Saturday: 9:30 AM to 9:00 PM, and Monday: 4:00 PM to 9:00 PM). This enables Manyata tech employees to visit after office hours without rushing."
+  },
+  {
+    question: "Can I get corporate dental reimbursement invoices?",
+    answer: "Yes. We provide comprehensive, itemized digital invoices, diagnostic X-ray documentation, and clinical treatment receipts suitable for corporate insurance reimbursements, health spending accounts (HSA), and flexible benefits claims."
+  },
+  {
+    question: "Do you offer emergency dental appointments for severe toothaches?",
+    answer: "Yes, we reserve daily emergency slots for sudden acute pulpitis, broken teeth, lost fillings, and wisdom tooth flare-ups. Call our direct line at 09113563040 or WhatsApp us for priority same-day relief."
+  },
+  {
+    question: "What advanced treatments are available at House of Dental?",
+    answer: "We specialize in single-sitting painless Root Canal Treatments (RCT) using rotary endodontics, 3D Digital Clear Aligners, dental implants with lifetime titanium fixtures, laser teeth whitening, ceramic crowns, and preventive scaling and polishing."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Dentist Near Manyata Tech Park</span>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Premium Dental Clinic &bull; 8 Mins from Manyata Tech Park
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Precision Dental Care <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Near Manyata Tech Park.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Designed for busy tech professionals and families in North Bangalore. House of Dental offers painless dentistry, zero waiting room delays, late evening appointments until 9:00 PM, and a dedicated all-day Sunday dental clinic just 8 minutes from Manyata Gate 1 &amp; 2.
+        </p>
+
+        <!-- Direct Action CTA Buttons (Call, WhatsApp, Book) -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Corporate Consultation - Manyata"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Visit Online</span>
+          </button>
+
+          <a 
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-emerald-500/20 cursor-none"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.991.564 1.775.814 2.802.814 3.182 0 5.768-2.587 5.768-5.766 0-3.181-2.586-5.766-5.774-5.766zm6.756 5.766c-.001 3.73-3.036 6.764-6.766 6.764-.997 0-1.932-.24-2.774-.698l-3.097.813.827-3.023c-.496-.867-.723-1.85-.723-2.856.001-3.73 3.035-6.764 6.766-6.764 3.731 0 6.767 3.034 6.767 6.764z"/>
+            </svg>
+            <span>WhatsApp Appointment</span>
+          </a>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <!-- Trust Highlights -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-japandi-earth border-t border-japandi-clay/30 w-full">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Sunday Dentist Near Manyata</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Evening Appointments Till 9 PM</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Corporate Reimbursement Support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Executive Healthcare</span>
+            <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Dental Care for Manyata Techies</h3>
+            <p class="text-xs text-japandi-earth leading-relaxed font-light">
+              Avoid traffic and work leaves. Enjoy stress-free, digital dental appointments tailored around your project deadlines and sprint schedules.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">8-10 Mins</span>
+              <span class="text-[11px] text-japandi-earth">From Manyata Gate 1/2</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">Till 9 PM</span>
+              <span class="text-[11px] text-japandi-earth">Evenings &amp; All Day Sunday</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Direct Route from Manyata:</p>
+            <p class="text-japandi-earth font-light">Via Outer Ring Road / Hennur Main Road to SLV Nilaya, Horamavu Agara Road. Easy on-premise parking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tailored for Tech Professionals -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Tailored Convenience</span>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal">Dental Care Built for Manyata Tech Park Professionals</h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Between sprint planning, client calls, and Bangalore traffic, visiting a dentist during standard banking hours is nearly impossible. House of Dental is designed to fit your busy life seamlessly.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/60 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-japandi-sand/60 flex items-center justify-center text-japandi-moss">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">Sunday Dentist Near Manyata</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth leading-relaxed font-light">
+            We are open every Sunday from 9:30 AM to 9:00 PM. Book your deep cleanings, root canal treatments, or aligner checkups on the weekend without touching your leave balance.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/60 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-japandi-sand/60 flex items-center justify-center text-japandi-moss">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">Late Evenings Till 9:00 PM</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth leading-relaxed font-light">
+            Working late at Philips, IBM, Target, or Cognizant? Drop in after 6:00 PM. We run full diagnostic and treatment schedules every evening until 9:00 PM with zero compromise on clinical attention.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/60 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-japandi-sand/60 flex items-center justify-center text-japandi-moss">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">Digital Corporate Billing &amp; Invoices</h3>
+          <p class="text-xs sm:text-sm text-japandi-earth leading-relaxed font-light">
+            We provide official digital invoices and dental condition summaries formatted for hassle-free corporate medical claims and dental reimbursement portals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Services for Corporate Patients -->
+  <section class="py-16 px-6 lg:px-24">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">High-Efficiency Treatments</span>
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal">Recommended Treatments for Tech Professionals</h2>
+        <p class="text-sm text-japandi-earth font-light">Advanced digital care with minimum chair time and maximum precision.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/40 space-y-3 hover:border-japandi-moss transition-colors">
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">
+            <a href="/treatments/clear-aligners" class="hover:text-japandi-moss">Invisible Clear Aligners</a>
+          </h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Straighten teeth without noticeable metal braces. Custom 3D aligners that allow you to conduct client presentations with 100% confidence.
+          </p>
+          <a href="/treatments/clear-aligners" class="inline-flex text-xs font-medium text-japandi-moss hover:underline">Learn more &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/40 space-y-3 hover:border-japandi-moss transition-colors">
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">
+            <a href="/treatments/teeth-whitening" class="hover:text-japandi-moss">Laser Teeth Whitening</a>
+          </h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Reverse coffee and tea stains in a single 45-minute lunch break or weekend appointment. Up to 8 shades brighter safely.
+          </p>
+          <a href="/treatments/teeth-whitening" class="inline-flex text-xs font-medium text-japandi-moss hover:underline">Learn more &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/40 space-y-3 hover:border-japandi-moss transition-colors">
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">
+            <a href="/treatments/root-canal-treatment" class="hover:text-japandi-moss">Single-Sitting Root Canal (RCT)</a>
+          </h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Fast, painless relief from severe toothache using rotary endodontics. Completed in a single session without repeated clinic visits.
+          </p>
+          <a href="/treatments/root-canal-treatment" class="inline-flex text-xs font-medium text-japandi-moss hover:underline">Learn more &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/40 space-y-3 hover:border-japandi-moss transition-colors">
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">
+            <a href="/treatments/scaling-and-polishing" class="hover:text-japandi-moss">Routine Cleaning &amp; Polishing</a>
+          </h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Ultrasonic removal of tartar and stains, fresh breath restoration, and preventive gum health check in just 30 minutes.
+          </p>
+          <a href="/treatments/scaling-and-polishing" class="inline-flex text-xs font-medium text-japandi-moss hover:underline">Learn more &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/40 space-y-3 hover:border-japandi-moss transition-colors">
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">
+            <a href="/treatments/wisdom-tooth-removal" class="hover:text-japandi-moss">Wisdom Tooth Disimpaction</a>
+          </h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Gentle oral surgical extraction of troublesome third molars with modern local anesthesia, avoiding prolonged facial swelling.
+          </p>
+          <a href="/treatments/wisdom-tooth-removal" class="inline-flex text-xs font-medium text-japandi-moss hover:underline">Learn more &rarr;</a>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-japandi-sand/30 border border-japandi-clay/40 space-y-3 hover:border-japandi-moss transition-colors">
+          <h3 class="text-lg font-serif text-japandi-charcoal font-medium">
+            <a href="/treatments/dental-implants" class="hover:text-japandi-moss">Permanent Dental Implants</a>
+          </h3>
+          <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+            Permanent titanium implants to replace lost teeth with the exact strength, appearance, and function of natural enamel.
+          </p>
+          <a href="/treatments/dental-implants" class="inline-flex text-xs font-medium text-japandi-moss hover:underline">Learn more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Route from Manyata -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/30 border-y border-japandi-clay/30">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Quick Commute</span>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal">Quick 8-10 Minute Commute from Manyata</h2>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Skip the inner Bangalore traffic gridlock. House of Dental is located on Horamavu Agara Road right off Hennur Main Road, just a quick drive from Nagawara and Thanisandra Main Road.
+        </p>
+
+        <div class="space-y-3 text-xs sm:text-sm text-japandi-charcoal">
+          <div class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss mt-1.5 shrink-0"></span>
+            <span><strong>From Manyata Gate 1 &amp; 2:</strong> Head East onto Outer Ring Road towards Hennur junction, then turn into Horamavu Agara Road. (Approx. 8-10 minutes).</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss mt-1.5 shrink-0"></span>
+            <span><strong>From Thanisandra Main Road / Nagawara:</strong> Quick 10-minute drive via Hennur Bande. Dedicated parking available on site.</span>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <a 
+            href="https://maps.app.goo.gl/dhU4UySs9WFkHAzYA" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-japandi-moss hover:text-japandi-charcoal transition-colors"
+          >
+            <span>Navigate via Google Maps</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/60 shadow-md space-y-4">
+        <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Working Hours</h3>
+        <div class="space-y-2 text-xs text-japandi-earth border-b border-japandi-clay/30 pb-4">
+          <div class="flex justify-between">
+            <span class="font-medium text-japandi-charcoal">Sunday (Full Day)</span>
+            <span class="text-japandi-moss font-semibold">9:30 AM – 9:00 PM</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-japandi-charcoal">Tuesday – Saturday</span>
+            <span>9:30 AM – 9:00 PM (Late Evenings)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-japandi-charcoal">Monday</span>
+            <span>4:00 PM – 9:00 PM</span>
+          </div>
+        </div>
+
+        <div class="pt-2 space-y-3">
+          <p class="text-xs text-japandi-earth font-light">Book your preferred after-office or Sunday slot:</p>
+          <div class="flex flex-col gap-2">
+            <a 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-3 bg-[#25D366] text-white text-center rounded-xl text-xs font-semibold uppercase tracking-wider hover:bg-[#20ba59] transition-colors"
+            >
+              WhatsApp Appointment Desk
+            </a>
+            <a 
+              href={phoneCallUrl}
+              class="w-full py-3 border border-japandi-clay text-japandi-charcoal text-center rounded-xl text-xs font-semibold uppercase tracking-wider hover:bg-japandi-sand transition-colors"
+            >
+              Call 09113563040
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="py-16 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">FAQ</span>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal">Frequently Asked Questions</h2>
+        <p class="text-sm text-japandi-earth font-light">Convenient dental appointments for Manyata professionals.</p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group border border-japandi-clay/50 rounded-2xl p-5 bg-japandi-cream/50 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-medium cursor-pointer text-sm sm:text-base text-japandi-charcoal select-none">
+              <span>{faq.question}</span>
+              <span class="transition duration-300 group-open:-rotate-180 text-japandi-moss text-xs ml-4">
+                &darr;
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed border-t border-japandi-clay/20 pt-3">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Bar -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-moss text-japandi-cream text-center">
+    <div class="max-w-3xl mx-auto space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-serif font-medium">Looking for a Sunday Dentist Near Manyata Tech Park?</h2>
+      <p class="text-sm text-japandi-sand/80 font-light leading-relaxed">
+        Experience calm, high-precision dental care with zero waiting time and flexible evening or Sunday slots.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button 
+          type="button"
+          data-open-booking
+          data-treatment="Manyata Consultation"
+          class="px-8 py-4 bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider rounded-full transition-all shadow-md cursor-none"
+        >
+          Book Appointment Online
+        </button>
+        <a 
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-7 py-4 bg-[#25D366] text-white hover:bg-[#20ba59] text-xs font-semibold uppercase tracking-wider rounded-full transition-all shadow-md cursor-none inline-flex items-center gap-2"
+        >
+          <span>WhatsApp Clinic</span>
+        </a>
+        <a 
+          href={phoneCallUrl}
+          class="px-7 py-4 border border-japandi-sand/40 text-japandi-cream hover:bg-white/10 text-xs font-semibold uppercase tracking-wider rounded-full transition-all cursor-none"
+        >
+          Call 09113563040
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,108 @@
+---
+import { getConfig } from '../utils/getConfig';
+
+const config = getConfig();
+const { specialized_expertise } = config;
+---
+
+<section id="specialized-expertise" class="py-24 px-6 lg:px-24 bg-japandi-sand/10 border-t border-japandi-clay/40 relative">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16 animate-slow-fade">
+      <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">
+        {specialized_expertise.subtitle}
+      </p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-japandi-charcoal font-medium tracking-tight">
+        {specialized_expertise.title}
+      </h2>
+    </div>
+
+    <!-- Responsive Grid of Categories (2x2 Grid for 4 categories) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {specialized_expertise.categories.map((category, catIndex) => {
+        const catTitleLower = category.title.toLowerCase();
+        const isImplantsOrAligners = catTitleLower.includes('implants') || catTitleLower.includes('aligners');
+        const isSmileDesign = catTitleLower.includes('smile design') || catTitleLower.includes('cosmetic');
+
+        const getItemUrl = (name: string) => {
+          const n = name.toLowerCase();
+          if (n.includes('whitening')) return '/treatments/teeth-whitening';
+          if (n.includes('aligner')) return '/treatments/clear-aligners';
+          if (n.includes('implant')) return '/treatments/dental-implants';
+          if (isSmileDesign) return '/treatments/cosmetic-dentistry';
+          return null;
+        };
+
+        return (
+          <div 
+            class="bg-japandi-sand/55 backdrop-blur-md hover:bg-japandi-sand border border-japandi-clay/45 rounded-[2rem] p-8 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-japandi-charcoal/5 animate-slow-fade"
+            style={`animation-delay: ${catIndex * 0.15}s;`}
+          >
+            <div>
+              <!-- Category Index & Title -->
+              <div class="flex items-center gap-4 mb-8">
+                <div class="w-10 h-10 rounded-full bg-japandi-cream border border-japandi-clay flex items-center justify-center text-japandi-moss shrink-0">
+                  <span class="text-sm font-semibold">0{catIndex + 1}</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+                  {category.title}
+                </h3>
+              </div>
+              
+              <!-- Items List -->
+              <ul class="space-y-5">
+                {category.items.map((item) => {
+                  const url = getItemUrl(item.name);
+                  return (
+                    <li class="flex items-baseline justify-between group">
+                      {url ? (
+                        <a href={url} class="text-sm text-japandi-charcoal font-light leading-relaxed group-hover:text-japandi-moss transition-colors hover:underline">
+                          {item.name}
+                        </a>
+                      ) : (
+                        <span class="text-sm text-japandi-charcoal font-light leading-relaxed group-hover:text-japandi-moss transition-colors">
+                          {item.name}
+                        </span>
+                      )}
+                      <span class="flex-grow mx-3 border-b border-dotted border-japandi-clay/70 self-end mb-1.5 opacity-40 group-hover:opacity-100 transition-opacity"></span>
+                      <span class="text-sm font-semibold text-japandi-moss shrink-0">
+                        {item.price}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            <!-- Dedicated Landing Page Links -->
+            {isImplantsOrAligners && (
+              <div class="mt-8 pt-4 border-t border-japandi-clay/30 flex flex-wrap items-center gap-4 text-xs font-semibold text-japandi-moss">
+                <a href="/treatments/dental-implants" class="hover:text-japandi-charcoal transition-colors">
+                  Dental Implants Guide &rarr;
+                </a>
+                <span class="text-japandi-clay">&bull;</span>
+                <a href="/treatments/clear-aligners" class="hover:text-japandi-charcoal transition-colors">
+                  Clear Aligners Guide &rarr;
+                </a>
+              </div>
+            )}
+
+            {isSmileDesign && (
+              <div class="mt-8 pt-4 border-t border-japandi-clay/30 text-xs font-semibold text-japandi-moss">
+                <a href="/treatments/cosmetic-dentistry" class="hover:text-japandi-charcoal transition-colors inline-flex items-center gap-1.5 group/link">
+                  <span>Explore Cosmetic Dentistry & Smile Design</span>
+                  <span class="transition-transform group-hover/link:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Footer Note -->
+    <p class="text-center text-xs font-light text-japandi-earth italic mt-16 max-w-2xl mx-auto leading-relaxed animate-slow-fade" style="animation-delay: 0.5s;">
+      * All prices in INR. Prices are subject to final clinical assessment and may vary with the complexity of the case.
+    </p>
+  </div>
+</section>

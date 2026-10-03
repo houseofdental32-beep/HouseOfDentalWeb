@@ -1,0 +1,428 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Invisible Aligners in Hennur | House of Dental";
+const pageDescription = "Discreet invisible aligners in Hennur, Bangalore at House of Dental. 3D digital smile scan, customized clear aligner trays & 0% bank EMI options available.";
+const canonicalUrl = "https://aurevadental.com/invisible-aligners-hennur";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20Invisible%20Aligners%20in%20Hennur.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/treatments/clear-aligners" },
+  { name: "Invisible Aligners Hennur", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "How do invisible aligners straighten teeth without metal wires?",
+    answer: "Invisible aligners are custom-manufactured series of transparent, medical-grade thermoplastic trays (polyurethane). Using 3D computer-aided software, your treatment is mapped in advance. Each sequential aligner applies gentle, controlled biomechanical force to specific teeth, gradually shifting them by approximately 0.25mm per tray until your ideal alignment is achieved."
+  },
+  {
+    question: "How many hours per day must I wear my clear aligners?",
+    answer: "For optimal biological tooth movement, clear aligners must be worn for 20 to 22 hours per day. You only remove them while eating, drinking hot or sugary beverages, and brushing or flossing your teeth. Inconsistent wear delays tooth tracking and prolongs overall treatment duration."
+  },
+  {
+    question: "What is the cost of invisible aligners in Hennur, Bangalore?",
+    answer: "At House of Dental, invisible aligner packages typically range between Rs. 80,000 and Rs. 2,50,000 depending on the complexity of malocclusion (mild crowding, moderate spacing, or complex bite correction), number of total trays required, and whether you choose in-house customized digital aligners or international systems like Invisalign. Transparent pricing with zero-interest monthly EMI plans is provided upfront."
+  },
+  {
+    question: "Can invisible aligners fix severe crowding or overbites?",
+    answer: "Yes. Advanced clear aligner protocols utilize tooth-colored composite attachments (small aesthetic grips bonded to enamel) and intermaxillary elastics to successfully correct deep overbites, open bites, crossbites, and severe crowding without unsightly metal brackets."
+  },
+  {
+    question: "Are clear aligners painful to wear?",
+    answer: "Clear aligners are vastly more comfortable than traditional metal or ceramic braces. There are no sharp metal brackets to cut your cheeks or lips and no wires requiring tightening. When transitioning to a new aligner tray every 7 to 10 days, you will feel mild, temporary tightness for the first 24 to 48 hours, which simply confirms active tooth movement."
+  },
+  {
+    question: "How do I get started with invisible aligners at House of Dental in Hennur?",
+    answer: "Getting started begins with an initial digital smile assessment at our Horamavu Agara Road clinic. We perform a high-resolution 3D digital intraoral scan of your teeth, generate an instant 3D simulation showing your future straight smile, discuss wear expectations, and initiate custom tray fabrication."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Invisible Aligners in Hennur",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "Orthodontics"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/treatments/clear-aligners" class="hover:text-japandi-moss transition-colors">Clear Aligners</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Hennur</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Digital Orthodontics &bull; Hennur Bande, Bangalore
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Discreet, Comfortable <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Invisible Aligners in Hennur.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Straighten your teeth without metal brackets or painful wires. At House of Dental on Horamavu Agara Road, our orthodontic experts utilize precision 3D intraoral digital scanning and custom clear aligner therapy to deliver radiant, perfectly aligned smiles with complete discretion.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Invisible Aligners Consultation - Hennur"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book 3D Smile Scan</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-japandi-earth border-t border-japandi-clay/30 w-full">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>100% Nearly Invisible</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>3D Digital Treatment Plan</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Zero-Cost EMI Plans</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Modern Orthodontics</span>
+            <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Clear Braces Revolution</h3>
+            <p class="text-xs text-japandi-earth leading-relaxed font-light">
+              Enjoy your favorite meals, brush and floss with complete ease, and smile with confidence in professional meetings and social gatherings without anyone noticing your aligner trays.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">6-14 mos</span>
+              <span class="text-[11px] text-japandi-earth">Average Treatment Duration</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">100%</span>
+              <span class="text-[11px] text-japandi-earth">Removable for Meals &amp; Events</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Hennur Aligner Studio:</p>
+            <p class="text-japandi-earth font-light">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Bangalore 562149. Dedicated on-site patient parking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth Clinical Guide: Clear Aligners in Hennur -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          Why Adults &amp; Teens in Hennur Choose Invisible Aligners Over Metal Braces
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          For decades, orthodontic tooth straightening meant enduring two or three years of metallic brackets bonded to your enamel, uncomfortable archwires, emergency clinic visits for broken ligatures, and painful mouth ulcers. For working professionals in Bangalore's tech corridors, college students, and active adults, the aesthetic compromise of metal braces was frequently a dealbreaker.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Invisible aligners have transformed orthodontic care into an entirely discreet, predictable, and digitally guided journey. At House of Dental, we utilize high-precision intraoral 3D scanners that replace gag-inducing impression paste. We map every single tooth movement digitally, allowing you to preview a 3D video simulation of your teeth straightening before treatment even begins.
+        </p>
+      </div>
+
+      <!-- Comparison Grid: Aligners vs Traditional Metal Braces -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Clear Aligners vs. Conventional Metal Braces: Direct Comparison
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-japandi-moss"></span>
+              <h4 class="font-serif text-base text-japandi-charcoal font-medium">Invisible Aligners at House of Dental</h4>
+            </div>
+            <ul class="space-y-2 list-disc list-inside leading-relaxed">
+              <li><strong>Near-Invisible Appearance:</strong> Fabricated from crystal-clear, medical-grade BPA-free polymer that is virtually unnoticeable from a conversational distance.</li>
+              <li><strong>100% Removable:</strong> Remove them for meals, client presentations, coffee breaks, and special family gatherings.</li>
+              <li><strong>Zero Dietary Restrictions:</strong> Enjoy apples, popcorn, nuts, and crisp snacks without worrying about dislodging brackets.</li>
+              <li><strong>Superior Gum Hygiene:</strong> Brush and floss normally without threading needles or maneuvering around wires, minimizing plaque buildup.</li>
+              <li><strong>Fewer Clinic Visits:</strong> Receive multiple sequential sets in advance, requiring brief progress reviews every 6 to 8 weeks.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-japandi-clay"></span>
+              <h4 class="font-serif text-base text-japandi-charcoal font-medium">Traditional Metal &amp; Ceramic Braces</h4>
+            </div>
+            <ul class="space-y-2 list-disc list-inside leading-relaxed">
+              <li><strong>Conspicuous Metal Look:</strong> Dark brackets and metallic archwires dominate your smile for 18 to 36 months.</li>
+              <li><strong>Permanently Glued:</strong> Fixed to tooth enamel throughout treatment; cannot be removed for events or photos.</li>
+              <li><strong>Severe Dietary Bans:</strong> Hard, crunchy, or sticky foods must be strictly avoided to prevent broken brackets.</li>
+              <li><strong>Difficult Oral Cleaning:</strong> Food traps easily around brackets and wires, drastically increasing the risk of enamel white spots and gingivitis.</li>
+              <li><strong>Frequent Emergency Appointments:</strong> Requires monthly manual wire tightenings, emergency wax applications, and repairs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical Conditions Treated with Aligners -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Orthodontic Conditions Corrected with Invisible Aligners
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Clear aligners are engineered to resolve a wide spectrum of malocclusion cases in both adults and adolescents:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Dental Crowding</span>
+            <p>Overlapping, twisted, or misaligned teeth caused by lack of jaw space, making flossing difficult and trapping plaque.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Diastema &amp; Spacing Gaps</span>
+            <p>Unwanted gaps between teeth that collect food particles and create self-consciousness during social smiles.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Overbite (Deep Bite)</span>
+            <p>Upper front teeth excessively overlap lower teeth, causing wear on lower incisors and potential jaw joint strain.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Crossbite &amp; Open Bite</span>
+            <p>Mismatched upper and lower dental arches leading to uneven enamel attrition, chewing fatigue, and speech impediments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Clinical Workflow -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          The 4-Stage Aligner Journey at House of Dental Hennur
+        </h3>
+        <div class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 1: 3D Intraoral Digital Scan &amp; Facial Aesthetics</h4>
+            <p class="leading-relaxed">
+              We capture thousands of digital optical frames per second using our intraoral 3D scanner, creating a photorealistic virtual rendering of your dental arches without messy impression molds.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 2: 3D Simulation &amp; Treatment Roadmap Review</h4>
+            <p class="leading-relaxed">
+              Our orthodontic specialists calculate the precise trajectory of every tooth. You view a 3D digital simulation showing how your smile transforms week by week before you confirm your treatment.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 3: Precision Aligner Delivery &amp; Tracking Checks</h4>
+            <p class="leading-relaxed">
+              You receive your custom-milled aligner trays along with guidance on daily wear (20–22 hours) and hygiene care. You switch to a new set every 7 to 10 days, with brief reviews at our clinic every 6 to 8 weeks.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 4: Treatment Completion &amp; Vivera-Style Retainers</h4>
+            <p class="leading-relaxed">
+              Once your teeth reach their planned aesthetic positions, we provide clear post-orthodontic retainers to prevent relapse and lock your stunning new smile permanently in place.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Essential Aligner Care & Maintenance Guidelines -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Daily Wear &amp; Maintenance: How to Care for Your Aligners
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Maintaining pristine clear aligners requires simple daily habits that keep them invisible and odor-free:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-4 rounded-xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Gentle Lukewarm Rinsing</span>
+            <p>Rinse your aligners with lukewarm water every time you take them out. Never use boiling or hot water, as elevated temperatures can warp the precision polymer matrix.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Soft-Bristle Toothbrushing</span>
+            <p>Brush your aligners gently using a soft-bristled brush and clear antibacterial soap or specialized aligner cleaning crystals. Avoid abrasive toothpastes that scratch the clear surface.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Always Use Your Protective Case</span>
+            <p>Whenever you remove your aligners for meals, store them in your ventilated travel case. Never wrap them in napkins, which are easily thrown away accidentally.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing and Flexible 0% EMI Options -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Invisible Aligners Cost in Bangalore &amp; Flexible Financing
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          At House of Dental, we believe world-class orthodontic care should be accessible:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-2 font-light">
+          <li><strong>Mild Correction / Express Aligners (Up to 10-14 Trays):</strong> ₹80,000 to ₹1,20,000.</li>
+          <li><strong>Moderate Alignment (Up to 24 Trays):</strong> ₹1,20,000 to ₹1,75,000.</li>
+          <li><strong>Comprehensive / Severe Malocclusion Cases:</strong> ₹1,75,000 to ₹2,50,000.</li>
+          <li><strong>Zero-Cost Monthly EMI:</strong> We offer convenient split-payment and credit card EMI conversions through all major banks in India with zero interest.</li>
+        </ul>
+      </div>
+
+      <!-- Local Catchment & Transit Directions -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Strategic Hennur Location for Working Professionals &amp; Students
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Located at 2nd Floor, SLV Nilaya, Horamavu Agara Road (near Nayara Petrol Bunk), House of Dental is situated for smooth commutes from major residential enclaves:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-1.5 font-light">
+          <li><strong>Hennur Bande &amp; Horamavu Agara Road:</strong> Within 2 minutes.</li>
+          <li><strong>Horamavu, Babusapalya &amp; Kalkere:</strong> 5 to 7 minutes via local corridors.</li>
+          <li><strong>Kalyan Nagar, HRBR Layout &amp; Kammanahalli:</strong> 10 minutes via Hennur Road.</li>
+          <li><strong>Manyata Tech Park &amp; Thanisandra:</strong> 10 to 12 minutes along Outer Ring Road.</li>
+        </ul>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed pt-2">
+          We offer late evening appointments and full Sunday hours (9:30 AM to 9:00 PM), allowing IT professionals and students to attend checkups without taking time off work or school.
+        </p>
+      </div>
+
+      <!-- Internal Link Cluster -->
+      <div class="p-6 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/50 space-y-4">
+        <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+          Explore Related Specialty Treatments &amp; Local Guides:
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
+          <a href="/treatments/clear-aligners" class="hover:underline">&bull; Main Clear Aligners Treatment Overview</a>
+          <a href="/blog/clear-aligners-cost-bangalore" class="hover:underline">&bull; In-Depth Clear Aligners Cost in Bangalore Guide</a>
+          <a href="/dentist-in-hennur" class="hover:underline">&bull; Best Dentist in Hennur Consultation</a>
+          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/teeth-whitening-hennur" class="hover:underline">&bull; Professional Teeth Whitening in Hennur</a>
+          <a href="/root-canal-treatment-hennur" class="hover:underline">&bull; Root Canal Treatment in Hennur</a>
+          <a href="/dental-implants-hennur" class="hover:underline">&bull; Dental Implants in Hennur</a>
+          <a href="/contact" class="hover:underline">&bull; Schedule 3D Scan at Clinic</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Patient Clarity</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium">
+          Frequently Asked Questions About Clear Aligners in Hennur
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light max-w-xl mx-auto">
+          Everything you need to know about wear duration, tray maintenance, eating, and pricing.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div class="bg-japandi-sand/40 border border-japandi-clay/40 rounded-2xl p-6 space-y-2">
+            <h3 class="font-serif text-base sm:text-lg text-japandi-charcoal font-medium">
+              {faq.question}
+            </h3>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="pb-24 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+        Preview Your Straight Smile with a 3D Scan
+      </h2>
+      <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
+        Discover how invisible aligners can discretely transform your smile. Schedule your intraoral 3D scan at House of Dental in Hennur today.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button
+          type="button"
+          data-open-booking
+          data-treatment="Invisible Aligners 3D Scan"
+          class="px-8 py-3.5 rounded-full bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow"
+        >
+          Book 3D Smile Scan
+        </button>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-japandi-cream/40 hover:border-japandi-cream text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-japandi-cream/70 font-light pt-2">
+        House of Dental &bull; 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149 &bull; Phone: 09113563040
+      </p>
+    </div>
+  </section>
+</Layout>

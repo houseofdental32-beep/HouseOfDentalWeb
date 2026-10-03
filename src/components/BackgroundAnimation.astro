@@ -1,0 +1,45 @@
+---
+// BackgroundAnimation.astro - Soothing Sparkles (Dental Theme)
+---
+
+<div class="fixed inset-0 pointer-events-none overflow-hidden z-[0]" aria-hidden="true">
+  <!-- 3D Canvas / Background Iframe -->
+  <iframe 
+    id="bg-3d-iframe"
+    src="/house-of-dental-3d-background.html" 
+    class="w-full h-full opacity-35 dark:opacity-20 transition-opacity duration-700 pointer-events-none"
+    style="position:absolute;inset:0;width:100%;height:100%;border:0;z-index:0;background:transparent" 
+    allowtransparency="true"
+    aria-hidden="true"
+  ></iframe>
+
+  <script is:inline>
+    (function() {
+      const iframe = document.getElementById('bg-3d-iframe');
+      if (!iframe) return;
+      
+      function sendState() {
+        if (iframe.contentWindow) {
+          const isDark = document.documentElement.classList.contains('dark');
+          iframe.contentWindow.postMessage({ type: 'theme', isDark }, '*');
+        }
+      }
+
+      window.addEventListener('pointermove', function(e) {
+        if (iframe.contentWindow) {
+          iframe.contentWindow.postMessage({
+            type: 'pointermove',
+            x: e.clientX,
+            y: e.clientY
+          }, '*');
+        }
+      }, { passive: true });
+
+      // Observe dark mode class changes on html element
+      const observer = new MutationObserver(sendState);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+      iframe.addEventListener('load', sendState);
+    })();
+  </script>
+
+</div>

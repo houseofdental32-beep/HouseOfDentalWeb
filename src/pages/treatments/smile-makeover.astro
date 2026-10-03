@@ -1,0 +1,337 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Digital Smile Makeover in Bangalore | Porcelain Veneers | House of Dental";
+const pageDescription = "Digital Smile Design, porcelain veneers & aesthetic bonding in Bangalore at House of Dental. Plan your dream smile with our experienced cosmetic dentists.";
+const canonicalUrl = "https://aurevadental.com/treatments/smile-makeover";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20a%20Smile%20Makeover%20at%20House%20of%20Dental.";
+
+const faqs = [
+  {
+    question: "What is a Digital Smile Makeover and what does it include?",
+    answer: "A smile makeover is a comprehensive, customized aesthetic transformation combining multiple cosmetic dental treatments tailored to your facial proportions. It may include Digital Smile Design (DSD), ultra-thin porcelain or composite veneers, laser gum depigmentation or contouring, teeth whitening, and subtle clear aligner alignment."
+  },
+  {
+    question: "Can I preview my new smile before committing to treatment?",
+    answer: "Yes, absolutely! With our 3D Digital Smile Design technology, we capture facial photographs and 3D intraoral scans to create a digital simulation and physical aesthetic wax-up mock-up. You can test-drive your new smile in your own mouth, assessing tooth shape, length, and shade before any clinical preparation begins."
+  },
+  {
+    question: "What is the difference between composite and porcelain veneers?",
+    answer: "Composite veneers are hand-sculpted directly in a single visit using aesthetic nano-hybrid resins; they are budget-friendly and minimally invasive (lasting 5 to 7 years). Porcelain/E-Max ceramic veneers are custom-fabricated in specialized dental labs, offering unmatched glass-like translucency, zero staining, and lasting 15 to 20+ years."
+  },
+  {
+    question: "Are smile makeover procedures painful?",
+    answer: "Not at all. Most cosmetic procedures like teeth whitening, direct composite bonding, and minimal-prep veneers involve little to no tooth structure reduction and are performed with total comfort under gentle local numbing if required."
+  },
+  {
+    question: "What is the cost of a smile makeover in Hennur, Bangalore?",
+    answer: "At House of Dental Hennur, direct composite veneers start from Rs. 4,500 to Rs. 8,000 per tooth. Hand-crafted porcelain and E-Max ceramic veneers range from Rs. 12,000 to Rs. 24,000 per tooth depending on aesthetic customization. Complete bridal, groom, and full-mouth rehabilitation packages are tailored with zero-cost EMI plans."
+  }
+];
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/#services" },
+  { name: "Smile Makeover", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Digital Smile Makeover & Veneers",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "CosmeticDentistry"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/#services" class="hover:text-japandi-moss transition-colors">Treatments</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Smile Makeover</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Aesthetic Architecture &bull; Hennur Bande, Bengaluru
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Bespoke, Radiantly Natural <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Smile Makeovers.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Craft your dream smile with precision Digital Smile Design, custom porcelain veneers, and gentle gum aesthetics. Experience luxury Japandi cosmetic dentistry that enhances your unique facial harmony.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Smile Makeover Consultation"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Smile Design Session</span>
+          </button>
+
+          <a 
+            href={whatsappUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-emerald-600">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp Smile Team</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="p-8 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/40 shadow-sm space-y-6">
+          <h2 class="text-xs uppercase font-semibold text-japandi-moss tracking-widest">The House of Dental Aesthetic Edge</h2>
+          <div class="space-y-4 text-xs font-light text-japandi-earth">
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Digital 3D Smile Preview:</strong> Test-drive your smile with clinical mock-ups before treatment.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Micro-Thin E-Max Veneers:</strong> Maximum natural tooth enamel preservation with lifelike vitality.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Facial Golden Proportions:</strong> Customized tooth lengths that complement your lips and jawline.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Curated Wedding Packages:</strong> Radiance transformations for brides, grooms, and key events.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smile Elements (H2 Hierarchy) -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/20 border-t border-japandi-clay/20">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="max-w-3xl space-y-3">
+        <div class="text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">Cosmetic Services</div>
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium">Components of Your Bespoke Smile Makeover</h2>
+        <p class="text-sm text-japandi-earth font-light">
+          We combine cutting-edge aesthetic modalities to create a seamless, balanced smile:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-4">
+          <div class="text-2xl font-serif text-japandi-moss">Porcelain Veneers</div>
+          <h3 class="text-base font-serif font-medium text-japandi-charcoal">E-Max Ceramic Shells</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Ultra-thin ceramic laminates bonded to the front of teeth to correct deep discoloration, chips, gaps, and minor misalignments permanently.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-4">
+          <div class="text-2xl font-serif text-japandi-moss">Composite Bonding</div>
+          <h3 class="text-base font-serif font-medium text-japandi-charcoal">Same-Day Artistry</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Sculpted nano-hybrid resins applied in a single appointment to repair chipped corners, close small black triangles, and refine edge contours.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-4">
+          <div class="text-2xl font-serif text-japandi-moss">Laser Gum Aesthetics</div>
+          <h3 class="text-base font-serif font-medium text-japandi-charcoal">Gummy Smile Correction</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Painless laser recontouring balances uneven gingival margins and exposes optimal tooth crowns for symmetrical, radiant smile framing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Area Targeting Section -->
+  <section class="py-14 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/20">
+    <div class="max-w-7xl mx-auto space-y-6">
+      <div class="max-w-3xl space-y-2">
+        <h2 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">Cosmetic Dentistry in Hennur, Kalyan Nagar &amp; North Bangalore</h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+          Conveniently located for patients across Hennur Bande, Horamavu Agara Road, Kalyan Nagar, HRBR Layout, Banaswadi, Kammanahalli, Babusapalya, and Kothanur. House of Dental brings world-class cosmetic dentistry, Digital Smile Design, and flexible monthly EMI plans to your doorstep.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/20">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="space-y-2 text-center">
+        <div class="text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">Frequently Asked Questions</div>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">Smile Makeover FAQs</h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="faq-item bg-japandi-sand/45 border border-japandi-clay/45 rounded-2xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/50">
+            <button
+              type="button"
+              class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-none group"
+              aria-expanded="false"
+            >
+              <span class="text-base font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors">
+                {faq.question}
+              </span>
+              <div class="w-7 h-7 rounded-full bg-japandi-cream border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 faq-icon transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              <div class="pb-5 pt-1 border-t border-japandi-clay/20">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Treatments & Internal Linking -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="space-y-1">
+        <h3 class="text-lg font-serif font-medium text-japandi-charcoal">Related Treatments &amp; Aesthetic Solutions</h3>
+        <p class="text-xs text-japandi-earth font-light">Explore complementary cosmetic services at our studio:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-light">
+        <a href="/treatments/teeth-whitening" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Teeth Whitening &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Instant in-office laser whitening for dazzling smile brightness.</span>
+        </a>
+        <a href="/treatments/clear-aligners" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Clear Aligners &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Discreetly align crooked teeth before placing ceramic veneers.</span>
+        </a>
+        <a href="/treatments/dental-crowns" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Dental Crowns &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Full-coverage E-Max and Zirconia caps for broken teeth.</span>
+        </a>
+        <a href="/contact" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Contact Clinic &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Schedule your consultation at SLV Nilaya, Horamavu Agara Road.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catchment Footer Note & Final Callout -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-sand/40 border-t border-japandi-clay/30 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Design the Confident Smile You Deserve</h3>
+      <p class="text-xs text-japandi-earth font-light max-w-xl mx-auto leading-relaxed">
+        Serving patients in Hennur, Kalyan Nagar, Horamavu, Banaswadi, Kammanahalli, and HRBR Layout.
+      </p>
+      <div class="pt-3 flex items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+        >
+          Call: 09113563040
+        </a>
+        <a 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function setupPageAccordions() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+      if (!toggle || !content) return;
+
+      const newBtn = toggle.cloneNode(true) as HTMLElement;
+      toggle.parentNode?.replaceChild(newBtn, toggle);
+
+      newBtn.addEventListener('click', () => {
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        items.forEach((other) => {
+          if (other !== item) {
+            const ob = other.querySelector('.faq-toggle');
+            const oc = other.querySelector('.faq-content') as HTMLElement;
+            const oi = other.querySelector('.faq-icon');
+            if (ob && oc) {
+              ob.setAttribute('aria-expanded', 'false');
+              oc.style.maxHeight = '0px';
+              oi?.classList.remove('rotate-45');
+            }
+          }
+        });
+
+        if (isExpanded) {
+          newBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          icon?.classList.remove('rotate-45');
+        } else {
+          newBtn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  setupPageAccordions();
+  document.addEventListener('astro:after-swap', setupPageAccordions);
+</script>

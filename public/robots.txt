@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# Googlebot specific
+User-agent: Googlebot
+Allow: /
+
+# Googlebot Image Crawler
+User-agent: Googlebot-Image
+Allow: /
+
+# Google Search Console URL Inspection Tool
+User-agent: Google-InspectionTool
+Allow: /
+
+# Bingbot specific
+User-agent: Bingbot
+Allow: /
+
+# Applebot
+User-agent: Applebot
+Allow: /
+
+# Modern AI Crawlers & Engines
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Host
+Host: aurevadental.com
+
+# Sitemap
+Sitemap: https://aurevadental.com/sitemap.xml

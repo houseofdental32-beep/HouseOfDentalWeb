@@ -1,0 +1,473 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Wisdom Tooth Removal in Hennur | House of Dental";
+const pageDescription = "Painless wisdom tooth removal in Hennur, Bangalore at House of Dental. Gentle oral surgery, digital RVG diagnostics & same-day emergency pain relief.";
+const canonicalUrl = "https://aurevadental.com/wisdom-tooth-removal-hennur";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20have%20wisdom%20tooth%20pain%20and%20would%20like%20to%20consult%20for%20Removal%20in%20Hennur.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/treatments/wisdom-tooth-removal" },
+  { name: "Wisdom Tooth Removal Hennur", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "Is wisdom tooth removal truly painless at House of Dental?",
+    answer: "Yes, modern wisdom tooth extraction at House of Dental is virtually painless. We utilize high-potency computerized local anesthetics that ensure deep, profound numbness across the surgical site before touching the tooth. You will feel mild pressure during the procedure, but zero sharp pain."
+  },
+  {
+    question: "What is the recovery time after a wisdom tooth extraction in Hennur?",
+    answer: "Most patients return to school or normal desk work within 24 to 48 hours. Soft tissue gum healing occurs over 7 to 10 days. We provide a customized recovery kit with targeted anti-inflammatory medications, an ice pack regimen, and a soft-food guide to minimize facial swelling and ensure rapid biological healing."
+  },
+  {
+    question: "What is the cost of wisdom tooth removal at your Hennur clinic?",
+    answer: "At House of Dental, wisdom tooth extraction fees range from Rs. 3,500 to Rs. 9,000 per tooth based on surgical complexity: Simple non-impacted erupted wisdom teeth: Rs. 3,500 to Rs. 5,000; Partially impacted or soft-tissue impactions: Rs. 5,000 to Rs. 7,000; Deep horizontal, angular, or complex bony impactions requiring micro-bone sectioning: Rs. 7,000 to Rs. 9,000. All surgical costs are quoted in writing upfront."
+  },
+  {
+    question: "Do all four wisdom teeth need to be extracted at once?",
+    answer: "No. We only recommend removing wisdom teeth that are actively symptomatic, impacted against adjacent healthy molars, triggering recurrent gum infection (pericoronitis), or threatening cyst formation. Depending on your clinical status and personal comfort, we can treat one tooth at a time or address both teeth on one side in a single appointment."
+  },
+  {
+    question: "How do I prevent 'dry socket' after a wisdom tooth extraction?",
+    answer: "Dry socket (alveolar osteitis) occurs when the protective blood clot in the extraction socket dislodges prematurely. To prevent dry socket, avoid smoking or tobacco use for at least 72 hours, do not use drinking straws, refrain from vigorous spitting or swishing, and consume only soft, lukewarm foods for the first two to three days."
+  },
+  {
+    question: "Can I get same-day emergency relief for severe wisdom tooth pain in Hennur?",
+    answer: "Yes. We maintain emergency appointment slots daily for acute pericoronitis, severe jaw stiffness (trismus), cheek biting, and sudden wisdom tooth infections. Please call our clinic desk at 09113563040 or contact us on WhatsApp for same-day evaluation."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Wisdom Tooth Removal in Hennur",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "OralSurgery",
+  isSurgical: true
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/treatments/wisdom-tooth-removal" class="hover:text-japandi-moss transition-colors">Wisdom Tooth Removal</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Hennur</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Oral &amp; Maxillofacial Surgery &bull; Hennur Bande, Bangalore
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Gentle, Painless <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Wisdom Tooth Removal in Hennur.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Relieve jaw pain, swelling, and impacted molar discomfort safely and gently. At House of Dental on Horamavu Agara Road, our dental surgeons combine low-radiation digital RVG diagnostics, computer-guided local anesthesia, and minimally traumatic surgical techniques in our serene studio environment.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Wisdom Tooth Consultation - Hennur"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Surgical Consultation</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-japandi-earth border-t border-japandi-clay/30 w-full">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Atraumatic Surgical Protocol</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Low-Radiation Digital RVG</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Same-Day Emergency Relief</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Surgical Excellence</span>
+            <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Relieve Impaction &amp; Pain</h3>
+            <p class="text-xs text-japandi-earth leading-relaxed font-light">
+              Impacted wisdom teeth often push against healthy adjacent second molars, causing root decay, gum pocketing, and severe cheek bite ulcers. Early extraction protects your dental arch permanently.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">20-35 min</span>
+              <span class="text-[11px] text-japandi-earth">Average Procedure Time</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">24-48 hrs</span>
+              <span class="text-[11px] text-japandi-earth">Rapid Normal Routine Recovery</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Hennur Surgical Clinic:</p>
+            <p class="text-japandi-earth font-light">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Bangalore 562149. Dedicated on-site patient parking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth Clinical Guide: Wisdom Tooth Extraction in Hennur -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          Comprehensive Guide to Wisdom Tooth Removal in Hennur, Bangalore
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Wisdom teeth (third molars) are the final permanent teeth to erupt into the oral cavity, typically emerging between the ages of 17 and 25. In modern human jaws, evolutionary dietary shifts have led to narrower dental arches, leaving insufficient room for these large molars to erupt upright into a functional chewing position. As a consequence, third molars frequently become impacted—trapped beneath the gums, tilted sideways against adjacent teeth, or lodged within the jawbone.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          At House of Dental on Horamavu Agara Road, our surgical philosophy centers on atraumatic, minimally invasive extraction. Rather than applying heavy mechanical leverage that can bruise bone and tissue, our surgeons utilize specialized micro-surgical instruments, precise digital sectioning, and motorized cold-saline cooling. This dramatically reduces tissue trauma, swelling, and post-operative discomfort, allowing you to resume your everyday schedule in 24 to 48 hours.
+        </p>
+      </div>
+
+      <!-- Common Impaction Types -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          4 Common Types of Wisdom Tooth Impaction We Treat
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Our digital RVG radiography accurately categorizes the exact anatomical angle of your third molar:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">1. Mesioangular Impaction</h4>
+            <p class="leading-relaxed">
+              The tooth tilts forward toward the front of the mouth at a 45-degree angle, pressing directly into the root or crown of the adjacent second molar. This is the most common impaction type, frequently trapping food particles and causing undetected caries in healthy teeth.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">2. Horizontal Impaction</h4>
+            <p class="leading-relaxed">
+              The molar lies completely on its side at a 90-degree angle, buried beneath the gum and alveolar bone. As it attempts to erupt, it exerts intense pressure against the neighboring molar's roots, leading to severe localized neuralgic pain and bone resorption.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">3. Vertical Impaction</h4>
+            <p class="leading-relaxed">
+              The tooth is oriented in a normal upright direction but is unable to fully clear the gum line due to insufficient jawbone length. The overlying flap of gum tissue (operculum) repeatedly traps food and bacteria, triggering acute pericoronitis infections.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">4. Distoangular Impaction</h4>
+            <p class="leading-relaxed">
+              The tooth tilts backward toward the ascending ramus of the lower jawbone. This challenging impaction often requires specialized surgical bone contouring and careful sectioning to protect adjacent anatomical structures like the inferior alveolar nerve canal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Warning Signs: When You Must Remove a Wisdom Tooth -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Warning Signs That Demand Prompt Wisdom Tooth Evaluation
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Ignoring an impacted or infected wisdom tooth can lead to dangerous deep-space facial infections. Schedule an immediate consultation if you experience:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Throbbing Jaw &amp; Ear Pain</span>
+            <p>Persistent radiating pain extending from the back of the lower jaw up into the ear, temple, or neck.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Swollen Gums &amp; Pericoronitis</span>
+            <p>Red, inflamed, bleeding gum tissue behind the last molar that hurts when chewing or brushing.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Trismus (Difficulty Opening Mouth)</span>
+            <p>Stiffness in the masticatory muscles making it painful to open your mouth wide or swallow comfortably.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Halitosis &amp; Foul Taste</span>
+            <p>Chronic bad breath and an unpleasant metallic or sour taste caused by pus or food decomposing under the gum flap.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Atraumatic Surgical Procedure -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          The 4-Stage Atraumatic Removal Protocol at House of Dental
+        </h3>
+        <div class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 1: RVG Radiographic Nerve Mapping</h4>
+            <p class="leading-relaxed">
+              We capture digital low-radiation RVG radiographs to precisely locate the position of your wisdom tooth roots relative to the inferior alveolar nerve canal and maxillary sinus.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 2: Computerized Profound Local Anesthesia</h4>
+            <p class="leading-relaxed">
+              We buffer the local anesthetic to match body pH and administer it with micro-gauge needles, rendering the tooth, bone, and surrounding gums 100% numb with zero injection sting.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 3: Micro-Sectioning &amp; Gentle Extraction</h4>
+            <p class="leading-relaxed">
+              Rather than forcing the tooth out whole, our surgeons section the crown into small fragments under continuous saline irrigation. Each section is lifted out effortlessly without straining the jaw.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">Stage 4: Socket Cleansing &amp; Resorbable Suturing</h4>
+            <p class="leading-relaxed">
+              The socket is thoroughly debrided with antiseptic irrigation and a collagen plug or PRF (platelet-rich fibrin) clot stabilizer is placed. Dissolvable micro-sutures seal the gums cleanly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recovery & Dry Socket Prevention -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Post-Extraction Recovery &amp; How to Prevent Dry Socket
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Following our simple 48-hour recovery rules ensures smooth, painless healing with zero complications:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-2">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Do's: Promote Healing</span>
+            <ul class="space-y-1 list-disc list-inside">
+              <li>Keep firm biting pressure on the sterile gauze pack for 45 to 60 minutes after surgery.</li>
+              <li>Apply cold ice packs to the outside of your cheek (15 mins on, 15 mins off) for the first 24 hours.</li>
+              <li>Eat soft, cool foods like yogurt, ice cream, smoothies (eaten with a spoon), dal, and khichdi.</li>
+              <li>Take prescribed pain-relieving anti-inflammatory medication before numbness wears off.</li>
+              <li>Begin gentle warm salt water rinses 24 hours after surgery (after every meal).</li>
+            </ul>
+          </div>
+
+          <div class="p-5 rounded-xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <span class="font-semibold text-japandi-clay uppercase text-[10px] tracking-wider block">Don'ts: Prevent Dry Socket</span>
+            <ul class="space-y-1 list-disc list-inside">
+              <li><strong>Do NOT use drinking straws:</strong> The suction dislodges the protective blood clot.</li>
+              <li><strong>Do NOT smoke or use tobacco:</strong> Nicotine impairs capillary blood flow and delays bone healing.</li>
+              <li><strong>Do NOT spit vigorously:</strong> Swallow saliva gently; spitting creates pressure in the mouth.</li>
+              <li><strong>Do NOT touch the socket:</strong> Keep your tongue and fingers away from the surgical area.</li>
+              <li><strong>Avoid hot, spicy, or crunchy foods:</strong> Chips, seeds, and hot curries irritate the raw gums.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost Breakdown Table Section -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Transparent Wisdom Tooth Removal Cost in Hennur, Bangalore
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          At House of Dental, we maintain an ethical fee structure with zero surprise surcharges:
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-japandi-clay/40 bg-japandi-sand/30">
+          <table class="w-full text-left text-xs sm:text-sm text-japandi-earth font-light">
+            <thead class="bg-japandi-sand/80 text-japandi-charcoal font-medium border-b border-japandi-clay/40">
+              <tr>
+                <th class="p-4">Impaction Category</th>
+                <th class="p-4">Surgical Complexity</th>
+                <th class="p-4">Estimated Fee Range</th>
+                <th class="p-4">Anesthesia Protocol</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-japandi-clay/20">
+              <tr>
+                <td class="p-4 font-medium text-japandi-charcoal">Erupted Third Molar</td>
+                <td class="p-4">Simple non-surgical extraction</td>
+                <td class="p-4 text-japandi-moss font-semibold">₹3,500 – ₹5,000</td>
+                <td class="p-4">Computerized Local Anesthesia</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-japandi-charcoal">Soft Tissue Impaction</td>
+                <td class="p-4">Minor flap elevation + extraction</td>
+                <td class="p-4 text-japandi-moss font-semibold">₹5,000 – ₹7,000</td>
+                <td class="p-4">Buffered Local Numbing</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-japandi-charcoal">Partial Bony Impaction</td>
+                <td class="p-4">Bone troughing + tooth sectioning</td>
+                <td class="p-4 text-japandi-moss font-semibold">₹6,500 – ₹8,000</td>
+                <td class="p-4">Profound Local Block + PRF</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-japandi-charcoal">Full Horizontal / Deep Bony</td>
+                <td class="p-4">Complex micro-surgical sectioning</td>
+                <td class="p-4 text-japandi-moss font-semibold">₹7,500 – ₹9,000</td>
+                <td class="p-4">Advanced Local Block + Suturing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Local Catchment & Transit Directions -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Emergency Wisdom Tooth Care Across Hennur &amp; North Bangalore
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          Acute third molar pain strikes without warning. Located at 2nd Floor, SLV Nilaya, Horamavu Agara Road (beside Nayara Petrol Bunk), House of Dental is rapidly accessible across North-East Bangalore:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-1.5 font-light">
+          <li><strong>Hennur Bande &amp; Geddalahalli:</strong> 2 to 5 minutes by car or two-wheeler.</li>
+          <li><strong>Horamavu, Babusapalya &amp; Kalkere:</strong> 5 to 7 minutes via local corridors.</li>
+          <li><strong>Kalyan Nagar, HRBR Layout &amp; Kammanahalli:</strong> 10 minutes via Hennur Road.</li>
+          <li><strong>Thanisandra, Kothanur &amp; Byrathi:</strong> 8 to 12 minutes along northern routes.</li>
+        </ul>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed pt-2">
+          We maintain dedicated daily emergency slots and remain open on Sundays (9:30 AM to 9:00 PM) to ensure immediate pain relief over the weekend.
+        </p>
+      </div>
+
+      <!-- Internal Link Cluster -->
+      <div class="p-6 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/50 space-y-4">
+        <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+          Explore Related Specialty Treatments &amp; Local Portals:
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
+          <a href="/treatments/wisdom-tooth-removal" class="hover:underline">&bull; Main Wisdom Tooth Removal Clinical Page</a>
+          <a href="/root-canal-treatment-hennur" class="hover:underline">&bull; Painless Root Canal in Hennur</a>
+          <a href="/dental-implants-hennur" class="hover:underline">&bull; Permanent Dental Implants in Hennur</a>
+          <a href="/dentist-in-hennur" class="hover:underline">&bull; Best Dentist in Hennur Consultation</a>
+          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/invisible-aligners-hennur" class="hover:underline">&bull; Invisible Clear Aligners in Hennur</a>
+          <a href="/teeth-whitening-hennur" class="hover:underline">&bull; Laser Teeth Whitening in Hennur</a>
+          <a href="/contact" class="hover:underline">&bull; Contact &amp; Emergency Appointment</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Patient Clarity</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium">
+          Frequently Asked Questions About Wisdom Tooth Surgery in Hennur
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light max-w-xl mx-auto">
+          Clear, medically verified guidance regarding anesthesia, impaction types, recovery, and pricing.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div class="bg-japandi-sand/40 border border-japandi-clay/40 rounded-2xl p-6 space-y-2">
+            <h3 class="font-serif text-base sm:text-lg text-japandi-charcoal font-medium">
+              {faq.question}
+            </h3>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="pb-24 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+        Relieve Wisdom Tooth Pain Gently &amp; Permanently
+      </h2>
+      <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
+        Do not let impacted third molar pain disrupt your life. Consult with our oral surgery specialists at House of Dental in Hennur. Same-day emergency care available.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button
+          type="button"
+          data-open-booking
+          data-treatment="Wisdom Tooth Extraction Consultation"
+          class="px-8 py-3.5 rounded-full bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow"
+        >
+          Book Surgical Appointment
+        </button>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-japandi-cream/40 hover:border-japandi-cream text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-japandi-cream/70 font-light pt-2">
+        House of Dental &bull; 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149 &bull; Phone: 09113563040
+      </p>
+    </div>
+  </section>
+</Layout>

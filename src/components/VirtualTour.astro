@@ -1,0 +1,56 @@
+---
+import { getConfig } from '../utils/getConfig';
+
+const config = getConfig();
+const { virtual_tour, virtual_tour_coming_soon } = config;
+---
+
+<section class="py-24 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/40">
+  <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+    
+    <div class="max-w-2xl mb-12 animate-slow-fade">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-japandi-charcoal font-medium tracking-tight mb-4">
+        {virtual_tour.title}
+      </h2>
+      <p class="text-japandi-earth font-light leading-relaxed text-sm">
+        {virtual_tour.subtitle}
+      </p>
+    </div>
+
+    <!-- Dummy Placeholder for Virtual Tour -->
+    <div class="w-full max-w-5xl aspect-video bg-japandi-clay/20 rounded-[2.5rem] border border-japandi-clay/40 overflow-hidden relative group animate-slow-fade" style="animation-delay: 0.2s;">
+      
+      {virtual_tour_coming_soon ? (
+        <div class="absolute inset-0 flex flex-col items-center justify-center bg-japandi-sand/80 backdrop-blur-sm z-10">
+          <p class="text-2xl md:text-4xl font-serif text-japandi-moss font-medium mb-2">Coming Soon</p>
+          <p class="text-sm text-japandi-earth uppercase tracking-widest font-semibold">Our 360° Dental Studio Tour</p>
+        </div>
+      ) : (
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <div class="w-20 h-20 rounded-full bg-white/60 backdrop-blur-sm shadow-xl flex items-center justify-center text-japandi-moss mb-4 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 ml-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+            </svg>
+          </div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-japandi-charcoal bg-white/60 backdrop-blur-sm px-4 py-1.5 rounded-full">
+            Explore 360° Tour
+          </p>
+        </div>
+      )}
+      
+      <!-- Placeholder Image simulating 360 view -->
+      {!virtual_tour_coming_soon && (
+        <img 
+          src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1600&h=900" 
+          alt="House of Dental Interior Tour in Hennur Bangalore" 
+          width="1600"
+          height="900"
+          loading="lazy"
+          class="w-full h-full object-cover opacity-50" 
+        />
+      )}
+      
+    </div>
+
+  </div>
+</section>

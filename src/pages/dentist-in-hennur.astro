@@ -1,0 +1,417 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Best Dentist in Hennur Bangalore | House of Dental";
+const pageDescription = "Looking for the best dentist in Hennur, Bangalore? House of Dental offers painless root canals, dental implants, clear aligners & gentle family dental care.";
+const canonicalUrl = "https://aurevadental.com/dentist-in-hennur";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20a%20dentist%20in%20Hennur.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Dentist in Hennur", url: canonicalUrl }
+];
+
+const faqs = [
+  {
+    question: "Who is the best dentist in Hennur for painless treatment?",
+    answer: "At House of Dental in Hennur, our clinical practice is headed by Dr. Shweta Singh (BDS, Lead Aesthetic Architect & Clinical Director) and Dr. Agniss Mishra (BDS, Dental Surgeon), both alumni of The Oxford Dental College, Bangalore and registered with the Karnataka State Dental Council (KSDC). We utilize computerized anesthesia delivery, digital apex locators, and rotary micro-instruments to ensure dental treatments remain completely painless and anxiety-free."
+  },
+  {
+    question: "Where is House of Dental located in Hennur?",
+    answer: "House of Dental is conveniently situated on the 2nd Floor, No. 11/4, SLV Nilaya, Horamavu Agara Road, directly near Nayara Petrol Bunk, Hennur Bande, Bengaluru 562149. We serve residents across Hennur Road, Horamavu, Kalyan Nagar, HRBR Layout, Babusapalya, Geddalahalli, Kothanur, and Byrathi with dedicated patient parking facilities on premise."
+  },
+  {
+    question: "What are the clinic timings, and are you open on Sundays?",
+    answer: "Yes, House of Dental is open on Sundays from 9:30 AM to 9:00 PM. Our weekday hours are Monday from 4:00 PM to 9:00 PM, and Tuesday through Saturday from 9:30 AM to 9:00 PM. We accommodate evening consultations for IT professionals and same-day dental emergency walk-ins."
+  },
+  {
+    question: "How much does a dental consultation cost at your Hennur clinic?",
+    answer: "Our comprehensive initial dental consultation is Rs. 600, which includes a full intraoral clinical assessment, high-resolution low-radiation digital RVG X-rays when indicated, and a customized, transparent digital treatment roadmap with zero hidden costs."
+  },
+  {
+    question: "How do you maintain sterilization and patient safety?",
+    answer: "We follow strict four-tier hospital-grade sterilization protocols compliant with CDC and OSHA guidelines. All metallic instruments undergo ultrasonic pre-cleaning followed by Class-B vacuum autoclave sterilization in sealed, color-changing pouches opened exclusively in front of the patient. All surfaces, suction tips, and barriers are 100% disposable and disinfected between every visit."
+  },
+  {
+    question: "Do you offer emergency dental treatments for acute toothache in Hennur?",
+    answer: "Yes, we prioritize same-day emergency appointments for acute toothaches, chipped or cracked teeth, fractured restorations, facial swelling, and accidental dental trauma. Please call our clinic reception desk at 09113563040 or reach out via WhatsApp for immediate triage guidance."
+  }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Dentist in Hennur</span>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Family &amp; Cosmetic Dentistry &bull; Hennur, Bangalore
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Experienced, Compassionate <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Dentist in Hennur.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Welcome to House of Dental, a modern dental sanctuary designed around your peace of mind. Founded by Dr. Shweta Singh, BDS (Clinical Director) alongside dental surgeon Dr. Agniss Mishra, BDS, we provide gentle, precision-driven oral healthcare for families across Hennur, Horamavu, Kalyan Nagar, and North Bangalore.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="General Consultation - Hennur"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Dentist Visit</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-japandi-earth border-t border-japandi-clay/30 w-full">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>KSDC Certified Dentists</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Class-B Autoclave Sterility</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Open Sundays (9:30 AM – 9 PM)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Clinical Leadership</span>
+            <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Dr. Shweta Singh &amp; Dr. Agniss Mishra</h3>
+            <p class="text-xs text-japandi-earth leading-relaxed font-light">
+              Alumni of The Oxford Dental College, Bangalore, bringing dedicated clinical focus to cosmetic smile architecture, gentle dental care, and preventive family wellness.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">100%</span>
+              <span class="text-[11px] text-japandi-earth">Painless Anesthesia Protocol</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
+              <span class="block text-xl font-serif text-japandi-moss font-semibold">5.0 ★</span>
+              <span class="text-[11px] text-japandi-earth">Google Verified Patient Rating</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
+            <p class="font-medium">Clinic Address in Hennur:</p>
+            <p class="text-japandi-earth font-light">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande, Bangalore 562149.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth Clinical Guide: Finding the Best Dentist in Hennur -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/25 border-y border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          Why Choosing the Right Dentist in Hennur Makes All the Difference
+        </h2>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Dental health is directly connected to overall systemic wellness, digestive health, and everyday self-confidence. Yet for thousands of residents across Hennur, Horamavu, and North Bangalore, past traumatic experiences, cold clinical environments, and fears of painful drilling lead to delayed dental care until an emergency strikes. At House of Dental, we deliberately reimagined the patient journey from the ground up to eliminate dental apprehension and deliver exemplary clinical outcomes.
+        </p>
+        <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+          Whether you need a preventive examination for your child, a single-sitting root canal to relieve excruciating nerve pain, or a smile makeover with invisible aligners, our doctors combine empathetic chairside communication with cutting-edge dental technology. We do not rush appointments; our team takes time to educate you with high-definition digital intraoral photography, explain every anatomical nuance, and co-design a care plan that respects your health goals, lifestyle, and budget.
+        </p>
+      </div>
+
+      <!-- Key Pillars of Our Dental Practice -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          The House of Dental Standard: 5 Pillars of Gentle Dental Care in Hennur
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">1. Absolute Pain-Free Dentistry</h4>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              We employ topical pre-numbing gels and computerized local anesthetic infiltration before every procedure. By buffering anesthetic solutions to match physiological pH, the dreaded stinging sensation is neutralized, ensuring complete numbness prior to treatment.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">2. Ultra-Low Radiation Digital Imaging</h4>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              Our clinic utilizes advanced digital RVG (Radiovisiography) sensors that reduce radiation exposure by more than 85% compared to conventional dental film. High-resolution digital radiographs appear instantaneously on chairside monitors for instant diagnostic clarity.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">3. Uncompromising Hospital-Grade Sterilization</h4>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              Cross-contamination prevention is paramount. Every metallic tool passes through an enzymatic ultrasonic bath before undergoing Class-B fractional vacuum autoclaving at 134°C. Single-use barriers protect dental chairs, air-water syringes, and touchscreens.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-japandi-cream/80 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">4. Transparent, Upfront Pricing</h4>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              We maintain an uncompromising ethical policy regarding billing. Before any procedure is initiated, patients receive a written breakdown of treatment alternatives, crown material grades (such as monolithic zirconia or lithium disilicate), and exact costs with zero surprise fees.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comprehensive Dental Services -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Specialized Dental Treatments Available at Our Hennur Clinic
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          As a full-scope dental clinic, we cater to all age groups under one roof without unnecessary external referrals:
+        </p>
+
+        <div class="space-y-4 text-sm text-japandi-earth font-light">
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+              <a href="/treatments/root-canal-treatment" class="text-japandi-moss hover:underline">Root Canal Treatment (Painless RCT) &rarr;</a>
+            </h4>
+            <p class="leading-relaxed">
+              Save badly decayed or infected teeth without extraction. Our endodontic treatments utilize motorized rotary nickel-titanium shaping files, ultrasonic irrigation, and biocompatible warm vertical condensation for long-lasting root seals. Learn more about our <a href="/root-canal-treatment-hennur" class="text-japandi-moss underline">root canal treatment in Hennur</a>.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+              <a href="/treatments/clear-aligners" class="text-japandi-moss hover:underline">Invisible Clear Aligners &rarr;</a>
+            </h4>
+            <p class="leading-relaxed">
+              Straighten crowded, gapped, or misaligned teeth discretely with clear, removable orthodontic aligners. No painful metal brackets or wires, and you can preview your 3D digital smile simulation before starting. Explore our <a href="/invisible-aligners-hennur" class="text-japandi-moss underline">invisible aligners in Hennur</a>.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+              <a href="/treatments/dental-implants" class="text-japandi-moss hover:underline">Dental Implants &amp; Permanent Tooth Replacement &rarr;</a>
+            </h4>
+            <p class="leading-relaxed">
+              Permanent, titanium-anchored prosthetic roots that look, feel, and function exactly like natural teeth. Whether replacing a single missing tooth or rehabilitating an entire dental arch, dental implants prevent jawbone resorption. See our guide on <a href="/dental-implants-hennur" class="text-japandi-moss underline">dental implants in Hennur</a>.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+              <a href="/treatments/teeth-whitening" class="text-japandi-moss hover:underline">Laser Teeth Whitening &amp; Cosmetic Smile Design &rarr;</a>
+            </h4>
+            <p class="leading-relaxed">
+              Safely lift stubborn stains caused by coffee, tea, smoking, or age with in-office laser whitening. We also provide porcelain veneers, composite bonding, and bridal smile makeovers. Discover our <a href="/teeth-whitening-hennur" class="text-japandi-moss underline">teeth whitening in Hennur</a>.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+              <a href="/treatments/wisdom-tooth-removal" class="text-japandi-moss hover:underline">Wisdom Tooth Removal &amp; Oral Surgery &rarr;</a>
+            </h4>
+            <p class="leading-relaxed">
+              Gentle extraction of impacted, painful, or partially erupted third molars to prevent pericoronitis, root resorption of adjacent teeth, and facial swelling. Read our complete guide to <a href="/wisdom-tooth-removal-hennur" class="text-japandi-moss underline">wisdom tooth removal in Hennur</a>.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+              <a href="/treatments/pediatric-dentistry" class="text-japandi-moss hover:underline">Pediatric &amp; Preventive Children's Dentistry &rarr;</a>
+            </h4>
+            <p class="leading-relaxed">
+              Instilling lifelong positive oral hygiene habits in young children. From painless pit and fissure sealants that shield vulnerable deep molar grooves from bacterial decay to remineralizing topical fluoride varnishes and habit interception for thumb-sucking or tongue-thrusting, our dentists ensure your child's visit is filled with laughter and curiosity rather than fear.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+            <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+              <a href="/treatments/cosmetic-dentistry" class="text-japandi-moss hover:underline">Ceramic Veneers &amp; Aesthetic Restorative Bonding &rarr;</a>
+            </h4>
+            <p class="leading-relaxed">
+              Customized ultra-thin lithium disilicate (E-Max) porcelain veneers and biomimetic composite bonding engineered to close midline diastemas (tooth gaps), conceal intrinsic fluorosis discoloration, and rebuild worn incisal edges. We employ digital facial proportion mapping so your enhanced smile seamlessly complements your facial features.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What to Expect: 4-Step Patient Consultation Experience -->
+      <div class="space-y-6">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          What to Expect During Your Visit with Our Hennur Dentists
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          From the moment you step through our doors on Horamavu Agara Road, our team ensures complete clarity, comfort, and clinical precision:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-japandi-earth font-light">
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Step 1: Calm Welcome &amp; Medical Triage</span>
+            <p>Relax in our Japandi-designed lounge with zero clinical disinfectant smell. We record your medical history, existing medications, and any specific dental anxiety triggers.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Step 2: Low-Dose Digital RVG Diagnostics</span>
+            <p>Our dentists capture high-resolution digital radiographs of suspected areas, exposing you to minimal radiation while uncovering hidden proximal caries or bone levels.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Step 3: High-Definition Intraoral Camera Tour</span>
+            <p>See exactly what your dentist sees on a high-definition monitor. We point out micro-fractures, tartar buildup, or early enamel demineralization before treatment begins.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-japandi-sand/30 border border-japandi-clay/30 space-y-1.5">
+            <span class="font-semibold text-japandi-moss uppercase text-[10px] tracking-wider block">Step 4: Collaborative Treatment Roadmap</span>
+            <p>You receive a written treatment plan with transparent tier options, longevity expectations, and exact costs so you make fully informed decisions without pressure.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local Catchment & Transit Guidance -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+          Serving Patients Across Hennur, Horamavu, Kalyan Nagar &amp; North Bangalore
+        </h3>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed">
+          House of Dental is centrally positioned at 2nd Floor, SLV Nilaya, Horamavu Agara Road (immediately adjacent to Nayara Petrol Bunk), making it seamless to reach for families living throughout North-East Bengaluru:
+        </p>
+        <ul class="list-disc list-inside text-xs sm:text-sm text-japandi-earth space-y-1.5 font-light">
+          <li><strong>From Hennur Main Road &amp; Geddalahalli:</strong> A 5-minute drive via Hennur Bande Road with zero congestion.</li>
+          <li><strong>From Horamavu &amp; Babusapalya:</strong> Easily accessible through Horamavu Agara Road without needing to cross the Outer Ring Road railway underpass.</li>
+          <li><strong>From Kalyan Nagar, HRBR Layout &amp; Kammanahalli:</strong> Located just 10 minutes away via the Hennur Cross underpass.</li>
+          <li><strong>From Kothanur, Byrathi &amp; Thanisandra:</strong> A swift 8-minute commute along the Hennur-Bagalur corridor.</li>
+        </ul>
+        <p class="text-sm text-japandi-earth font-light leading-relaxed pt-2">
+          Ample two-wheeler and dedicated car parking is available on premise, ensuring a smooth, stress-free arrival for elderly patients, children, and families.
+        </p>
+      </div>
+
+      <!-- Internal Link Cluster to Local Guides -->
+      <div class="p-6 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/50 space-y-4">
+        <h4 class="font-serif text-base text-japandi-charcoal font-medium">
+          Explore Our Hennur Dental Specialty Care Guides:
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
+          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/root-canal-treatment-hennur" class="hover:underline">&bull; Painless Root Canal Treatment in Hennur</a>
+          <a href="/dental-implants-hennur" class="hover:underline">&bull; Permanent Dental Implants in Hennur</a>
+          <a href="/invisible-aligners-hennur" class="hover:underline">&bull; Clear &amp; Invisible Aligners in Hennur</a>
+          <a href="/teeth-whitening-hennur" class="hover:underline">&bull; Laser Teeth Whitening in Hennur</a>
+          <a href="/wisdom-tooth-removal-hennur" class="hover:underline">&bull; Wisdom Tooth Extraction in Hennur</a>
+          <a href="/contact" class="hover:underline">&bull; Clinic Location &amp; Appointment Desk</a>
+          <a href="/blog" class="hover:underline">&bull; Oral Health &amp; Dental Journal</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions Section -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-4xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Patient Clarity</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium">
+          Frequently Asked Questions About Our Hennur Dental Practice
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light max-w-xl mx-auto">
+          Transparent answers to common questions about appointments, consultations, treatments, and sterilization.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div class="bg-japandi-sand/40 border border-japandi-clay/40 rounded-2xl p-6 space-y-2">
+            <h3 class="font-serif text-base sm:text-lg text-japandi-charcoal font-medium">
+              {faq.question}
+            </h3>
+            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Appointment Booking CTA -->
+  <section class="pb-24 px-6 lg:px-24">
+    <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+        Experience Gentle Dental Care in Hennur Today
+      </h2>
+      <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
+        Whether it is a routine hygiene cleaning, sudden toothache, or a comprehensive smile transformation, our clinical team is here for you. Open Sundays &amp; late evenings.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <button
+          type="button"
+          data-open-booking
+          data-treatment="Dentist in Hennur Consultation"
+          class="px-8 py-3.5 rounded-full bg-japandi-cream text-japandi-charcoal hover:bg-japandi-sand text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow"
+        >
+          Book Consultation
+        </button>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-japandi-cream/40 hover:border-japandi-cream text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-japandi-cream/70 font-light pt-2">
+        House of Dental &bull; 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149 &bull; Phone: 09113563040
+      </p>
+    </div>
+  </section>
+</Layout>

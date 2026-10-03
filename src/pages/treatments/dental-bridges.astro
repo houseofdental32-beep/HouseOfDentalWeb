@@ -1,0 +1,337 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Dental Bridges in Bangalore | Fixed Tooth Replacement | House of Dental";
+const pageDescription = "Replace missing teeth with fixed ceramic & zirconia dental bridges at House of Dental in Bangalore. Non-surgical restorative smile restoration.";
+const canonicalUrl = "https://aurevadental.com/treatments/dental-bridges";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%2C%20I%20would%20like%20to%20consult%20about%20Dental%20Bridges%20at%20House%20of%20Dental.";
+
+const faqs = [
+  {
+    question: "What is a dental bridge and how does it work?",
+    answer: "A dental bridge is a fixed prosthetic device that bridges the gap created by one or more missing teeth. It is anchored onto the natural teeth on either side of the space (abutment teeth) with crowns, suspending an artificial prosthetic tooth (pontic) securely in between."
+  },
+  {
+    question: "What is the difference between a dental bridge and a dental implant?",
+    answer: "A dental implant replaces the missing tooth root independently in the jawbone without altering adjacent teeth. A dental bridge relies on shaping the adjacent healthy teeth for support crowns. Bridges are an excellent, rapid, and non-surgical solution for patients who have medical contraindications to surgery or insufficient bone for implants."
+  },
+  {
+    question: "How long does a dental bridge last?",
+    answer: "With good oral hygiene, regular dental check-ups, and specialized superfloss cleaning beneath the pontic, high-grade Zirconia and ceramic bridges typically last between 10 to 15+ years."
+  },
+  {
+    question: "How do I clean and maintain a dental bridge?",
+    answer: "Maintaining a bridge involves regular twice-daily brushing and cleaning the space beneath the artificial tooth using specialized bridge floss threaders or an oral water flosser. This prevents plaque stagnation and safeguards the supporting abutment teeth."
+  },
+  {
+    question: "What is the cost of dental bridges in Hennur, Bangalore?",
+    answer: "At House of Dental Hennur, dental bridge pricing is calculated per unit (tooth). Standard PFM bridge units range from Rs. 4,000 to Rs. 6,000 per unit, while metal-free CAD/CAM Zirconia bridge units range from Rs. 7,000 to Rs. 14,000 per unit depending on the aesthetic warranty tier chosen. A 3-unit bridge replaces one missing tooth."
+  }
+];
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/#services" },
+  { name: "Dental Bridges", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Fixed Dental Bridges & Tooth Replacement",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "Prosthodontics"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/#services" class="hover:text-japandi-moss transition-colors">Treatments</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Dental Bridges</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Fixed Prosthodontics &bull; Hennur Bande, Bengaluru
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Non-Surgical, Fixed <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Dental Bridges.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Close gaps left by missing teeth without surgical downtime. Our custom-crafted zirconia and ceramic bridges seamlessly match your natural bite alignment, restoring full chewing power and facial structure.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Dental Bridges Consultation"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Bridge Consultation</span>
+          </button>
+
+          <a 
+            href={whatsappUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-emerald-600">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp Clinic</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="p-8 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/40 shadow-sm space-y-6">
+          <h2 class="text-xs uppercase font-semibold text-japandi-moss tracking-widest">Benefits of Dental Bridges</h2>
+          <div class="space-y-4 text-xs font-light text-japandi-earth">
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Completely Non-Surgical:</strong> Restores missing teeth without bone grafting or oral surgery.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Prevents Tooth Migration:</strong> Keeps neighboring teeth from drifting or tipping into empty spaces.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Fast Turnaround Time:</strong> Full bridge completion typically achieved in just two clinical visits.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Solid Chewing Equilibrium:</strong> Restores balanced bilateral bite force and speech articulation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bridge Types (H2 Hierarchy) -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/20 border-t border-japandi-clay/20">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="max-w-3xl space-y-3">
+        <div class="text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">Fixed Bridge Configurations</div>
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium">Engineered for Lasting Biomechanical Balance</h2>
+        <p class="text-sm text-japandi-earth font-light">
+          We offer diverse bridge modalities matched to your specific oral anatomy:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-4">
+          <div class="text-2xl font-serif text-japandi-moss">Traditional Fixed Bridge</div>
+          <h3 class="text-base font-serif font-medium text-japandi-charcoal">Two Supporting Crowns</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            The most established fixed restoration, anchored securely on both sides of the gap for maximum load distribution in posterior molars.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-4">
+          <div class="text-2xl font-serif text-japandi-moss">Cantilever Bridge</div>
+          <h3 class="text-base font-serif font-medium text-japandi-charcoal">Single-Sided Support</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Utilized when only one adjacent natural tooth is available, carefully engineered to avoid torque stresses on the supporting abutment.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-4">
+          <div class="text-2xl font-serif text-japandi-moss">Implant-Supported Bridge</div>
+          <h3 class="text-base font-serif font-medium text-japandi-charcoal">Multiple Missing Teeth</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Suspends three to four replacement teeth across just two titanium dental implants, eliminating the need to prepare healthy natural teeth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Area Targeting Section -->
+  <section class="py-14 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/20">
+    <div class="max-w-7xl mx-auto space-y-6">
+      <div class="max-w-3xl space-y-2">
+        <h2 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">Custom Dental Bridges in Hennur &amp; North Bangalore</h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+          Conveniently located for patients in Hennur Bande, Horamavu Agara Road, Kalyan Nagar, HRBR Layout, Banaswadi, Kammanahalli, Babusapalya, and Kothanur. House of Dental offers computerized shade matching, digital scanning, and EMI payment options for all restorative bridge treatments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/20">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="space-y-2 text-center">
+        <div class="text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">Frequently Asked Questions</div>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">Dental Bridge FAQs</h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="faq-item bg-japandi-sand/45 border border-japandi-clay/45 rounded-2xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/50">
+            <button
+              type="button"
+              class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-none group"
+              aria-expanded="false"
+            >
+              <span class="text-base font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors">
+                {faq.question}
+              </span>
+              <div class="w-7 h-7 rounded-full bg-japandi-cream border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 faq-icon transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              <div class="pb-5 pt-1 border-t border-japandi-clay/20">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Treatments & Internal Linking -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="space-y-1">
+        <h3 class="text-lg font-serif font-medium text-japandi-charcoal">Related Treatments &amp; Tooth Replacement</h3>
+        <p class="text-xs text-japandi-earth font-light">Explore missing tooth options at our Hennur clinic:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-light">
+        <a href="/treatments/dental-implants" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Dental Implants &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Compare surgical implants with fixed tooth bridges.</span>
+        </a>
+        <a href="/treatments/dental-crowns" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Dental Crowns &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Individual porcelain &amp; zirconia caps for weakened teeth.</span>
+        </a>
+        <a href="/treatments/dentures" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Dentures &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Removable partial &amp; complete prosthetics for multiple teeth.</span>
+        </a>
+        <a href="/contact" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Contact Clinic &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Visit us at Horamavu Agara Road near Nayara Petrol Bunk.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catchment Footer Note & Final Callout -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-sand/40 border-t border-japandi-clay/30 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Reclaim Full Chewing Comfort Today</h3>
+      <p class="text-xs text-japandi-earth font-light max-w-xl mx-auto leading-relaxed">
+        Serving patients across Hennur, Kalyan Nagar, Horamavu, Banaswadi, Kammanahalli, and HRBR Layout.
+      </p>
+      <div class="pt-3 flex items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+        >
+          Call: 09113563040
+        </a>
+        <a 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function setupPageAccordions() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+      if (!toggle || !content) return;
+
+      const newBtn = toggle.cloneNode(true) as HTMLElement;
+      toggle.parentNode?.replaceChild(newBtn, toggle);
+
+      newBtn.addEventListener('click', () => {
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        items.forEach((other) => {
+          if (other !== item) {
+            const ob = other.querySelector('.faq-toggle');
+            const oc = other.querySelector('.faq-content') as HTMLElement;
+            const oi = other.querySelector('.faq-icon');
+            if (ob && oc) {
+              ob.setAttribute('aria-expanded', 'false');
+              oc.style.maxHeight = '0px';
+              oi?.classList.remove('rotate-45');
+            }
+          }
+        });
+
+        if (isExpanded) {
+          newBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          icon?.classList.remove('rotate-45');
+        } else {
+          newBtn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  setupPageAccordions();
+  document.addEventListener('astro:after-swap', setupPageAccordions);
+</script>

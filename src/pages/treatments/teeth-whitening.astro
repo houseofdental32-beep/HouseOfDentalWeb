@@ -1,0 +1,451 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Laser Teeth Whitening in Bangalore | In-Office Bleaching | House of Dental";
+const pageDescription = "Professional laser teeth whitening in Bangalore at House of Dental. Get 4 to 8 shades lighter in 45 minutes with zero enamel sensitivity. Book your visit.";
+const canonicalUrl = "https://aurevadental.com/treatments/teeth-whitening";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%2C%20I%20would%20like%20to%20consult%20for%20Teeth%20Whitening%20at%20House%20of%20Dental.";
+
+const faqs = [
+  {
+    question: "Does professional laser teeth whitening damage tooth enamel?",
+    answer: "No. Professional teeth whitening at House of Dental uses advanced, pH-neutral hydrogen peroxide and carbamide peroxide formulations combined with low-heat LED/laser light activation. This gently releases active oxygen molecules to break down deep microscopic stains inside the enamel pores without eroding, thinning, or damaging the natural tooth structure."
+  },
+  {
+    question: "How many shades lighter will my teeth become in a single visit?",
+    answer: "Most patients achieve a transformation of 4 to 8 shades lighter in a single 45 to 60-minute in-office treatment session. Results vary slightly depending on your baseline tooth shade, natural enamel thickness, and whether staining is extrinsic (coffee, tea, smoking) or intrinsic."
+  },
+  {
+    question: "Will I experience sensitive teeth after the whitening procedure?",
+    answer: "Some patients experience mild, temporary sensitivity to cold foods or beverages for 24 to 48 hours following treatment. At House of Dental, we apply a soothing desensitizing mineral varnish immediately after the whitening cycle to seal the dentinal tubules and maximize post-procedure comfort."
+  },
+  {
+    question: "How much does professional teeth whitening cost in Bangalore?",
+    answer: "At House of Dental Hennur, in-office laser teeth whitening starts from Rs. 6,000 to Rs. 15,000 depending on the number of bleaching cycles required. We also offer curated Bridal and Groom smile radiance packages starting from Rs. 12,000 that include deep polishing, enamel remineralization, and customized take-home touch-up kits."
+  }
+];
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/#services" },
+  { name: "Teeth Whitening", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Professional Teeth Whitening & Laser Bleaching",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "CosmeticDentistry"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/#services" class="hover:text-japandi-moss transition-colors">Treatments</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Teeth Whitening</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Laser Aesthetics &bull; Hennur, Bengaluru
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Illuminate Your Natural Smile With <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Laser Teeth Whitening.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Erase stubborn coffee, tea, and tobacco stains in a single comfortable 45-minute sitting. Experience pH-balanced European bleaching formulations, soothing gum protection, and instant luminous radiance in our calm Japandi studio.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Professional Teeth Whitening"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Whitening Session</span>
+          </button>
+
+          <a 
+            href={phoneCallUrl}
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 border border-japandi-clay bg-japandi-sand/50 hover:bg-japandi-sand text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-japandi-moss">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <span>Call 09113563040</span>
+          </a>
+        </div>
+
+        <div class="pt-4 flex items-center gap-6 text-xs text-japandi-earth">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>4–8 Shades Lighter</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Enamel-Safe Formulation</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-japandi-moss"></span>
+            <span>Single 45-Min Sitting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="lg:col-span-5 animate-slow-fade" style="animation-delay: 0.2s;">
+        <div class="bg-japandi-sand/60 border border-japandi-clay/50 rounded-[2.5rem] p-8 sm:p-10 shadow-lg shadow-japandi-charcoal/5 relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-40 h-40 bg-japandi-moss/10 rounded-full blur-2xl pointer-events-none"></div>
+          
+          <h3 class="text-xl font-serif text-japandi-charcoal font-medium mb-4">Why Professional Whitening?</h3>
+          
+          <ul class="space-y-4 text-xs sm:text-sm text-japandi-earth font-light">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Safe Gum Barrier:</strong> Specialized gingival dam shields protect delicate gum tissues from chemical irritation.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Uniform Whiteness:</strong> Eliminates the blotchy, patchy results common with over-the-counter strips and pastes.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Instant Visual Feedback:</strong> Compare your before-and-after shades on our calibrated VITA shade guide.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-japandi-moss/15 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5 font-semibold text-[10px]">&check;</div>
+              <div><strong class="text-japandi-charcoal font-medium">Bridal Packages:</strong> Curated smile glow sessions for couples, weddings, graduations, and major milestones.</div>
+            </li>
+          </ul>
+
+          <div class="mt-8 pt-6 border-t border-japandi-clay/40 flex items-center justify-between text-xs">
+            <span class="text-japandi-earth">Average Duration</span>
+            <span class="font-serif text-base font-semibold text-japandi-charcoal">45 Minutes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison: In-Clinic Laser vs. OTC Products -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/25 border-t border-japandi-clay/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">Honest Comparison</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          In-Clinic Whitening vs. At-Home Kits
+        </h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light mt-2">
+          Discover why dentist-supervised bleaching delivers superior aesthetics and safety.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-japandi-clay/40 bg-japandi-sand/30 backdrop-blur-sm">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-japandi-clay/40 bg-japandi-sand/70">
+              <th class="py-4 px-6 text-japandi-charcoal font-serif font-medium">Feature</th>
+              <th class="py-4 px-6 text-japandi-moss font-serif font-semibold">Laser Whitening (House of Dental)</th>
+              <th class="py-4 px-6 text-japandi-earth font-serif font-medium">OTC Strips &amp; Pastes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-japandi-clay/20 text-japandi-charcoal font-light">
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Time Required</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">Single 45-minute session</td>
+              <td class="py-4 px-6 text-japandi-earth">3 to 6 weeks of daily wear</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Shade Improvement</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">4 to 8 calibrated shades lighter</td>
+              <td class="py-4 px-6 text-japandi-earth">1 to 2 shades (minimal depth)</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Gum &amp; Tissue Safety</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">100% shielded with liquid dam</td>
+              <td class="py-4 px-6 text-japandi-earth">Frequent chemical burns &amp; ulcers</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Enamel Protection</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">pH-neutral with post-mineral seal</td>
+              <td class="py-4 px-6 text-japandi-earth">Often abrasive (wears enamel down)</td>
+            </tr>
+            <tr class="hover:bg-japandi-sand/40 transition-colors">
+              <td class="py-4 px-6 font-medium">Longevity</td>
+              <td class="py-4 px-6 text-japandi-moss font-medium">12 to 24 months with care</td>
+              <td class="py-4 px-6 text-japandi-earth">Fades within 2 to 4 weeks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Whitening Journey -->
+  <section class="py-20 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/30">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-14">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">Clinical Protocol</p>
+        <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
+          The 4-Step In-Clinic Whitening Process
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 01</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">VITA Shade Analysis</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              We clean extrinsic plaque and document your baseline tooth shade with digital photography.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Minute 0 – 10</div>
+        </div>
+
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 02</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Gum Isolation Barrier</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              A light-cured protective barrier is applied along your gumline to guarantee complete comfort.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Minute 10 – 15</div>
+        </div>
+
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 03</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Laser Activation Cycles</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              Active whitening gel is illuminated with specialized cool blue light in 15-minute cycles.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Minute 15 – 45</div>
+        </div>
+
+        <div class="bg-japandi-sand/45 border border-japandi-clay/40 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block mb-2">Step 04</span>
+            <h3 class="text-base font-serif text-japandi-charcoal font-medium mb-2">Mineral Enamel Lock</h3>
+            <p class="text-xs text-japandi-earth font-light leading-relaxed">
+              We apply an anti-sensitivity remineralizing paste to lock in high-gloss shine and prevent dehydration.
+            </p>
+          </div>
+          <div class="mt-6 text-[11px] text-japandi-earth font-medium pt-3 border-t border-japandi-clay/25">Minute 45 – 50</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Transparency -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-5xl mx-auto bg-japandi-sand/50 border border-japandi-clay/50 rounded-[2.5rem] p-8 sm:p-12">
+      <div class="max-w-2xl mb-8">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-2">Transparent Pricing</p>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
+          Teeth Whitening Investment Guide
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+        <div class="space-y-4">
+          <p>
+            At House of Dental, we believe in 100% transparent upfront pricing with zero hidden dispensary costs:
+          </p>
+          <ul class="space-y-2 list-disc pl-5">
+            <li><strong class="text-japandi-charcoal font-medium">Standard Polishing &amp; Stain Removal:</strong> Rs. 2,000 – Rs. 5,000</li>
+            <li><strong class="text-japandi-charcoal font-medium">Advanced In-Clinic Laser Whitening:</strong> Rs. 6,000 – Rs. 15,000</li>
+            <li><strong class="text-japandi-charcoal font-medium">The Express Bridal/Glow Session:</strong> Rs. 12,000 – Rs. 18,000</li>
+            <li><strong class="text-japandi-charcoal font-medium">The Signature Wedding Couple Radiance Pass:</strong> Rs. 1,80,000 – Rs. 2,50,000 (Includes Veneers, Aligners &amp; Whitening)</li>
+          </ul>
+        </div>
+
+        <div class="bg-japandi-cream/80 border border-japandi-clay/40 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <h4 class="text-sm font-serif font-medium text-japandi-charcoal mb-2">Book a Radiance Consultation</h4>
+            <p class="text-xs text-japandi-earth font-light mb-4">
+              Speak with Dr. Shweta or our aesthetic architects in Hennur to determine the exact shade potential of your smile.
+            </p>
+          </div>
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Professional Teeth Whitening"
+            class="inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors cursor-none"
+          >
+            Schedule Whitening Slot
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Item FAQ Accordion -->
+  <section class="py-20 px-6 lg:px-24 bg-japandi-sand/20 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-2">Common Inquiries</p>
+        <h2 class="text-3xl font-serif text-japandi-charcoal font-medium">Teeth Whitening FAQ</h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <div class="faq-item bg-japandi-sand/45 border border-japandi-clay/45 rounded-2xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/50">
+            <button
+              type="button"
+              class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-none group"
+              aria-expanded="false"
+            >
+              <span class="text-base font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors">
+                {faq.question}
+              </span>
+              <div class="w-7 h-7 rounded-full bg-japandi-cream border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 faq-icon transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              <div class="pb-5 pt-1 border-t border-japandi-clay/20">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Treatments & Local Care in Hennur -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="space-y-1">
+        <h3 class="text-lg font-serif font-medium text-japandi-charcoal">Related Treatments &amp; Local Dental Care in Hennur</h3>
+        <p class="text-xs text-japandi-earth font-light">Explore complementary aesthetic and smile enhancement treatments at our Hennur studio:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-light">
+        <a href="/treatments/clear-aligners" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Clear Aligners &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Invisible orthodontics to straighten teeth without metal braces.</span>
+        </a>
+        <a href="/treatments/smile-makeover" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Smile Makeover &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Digital smile design, porcelain veneers &amp; comprehensive smile aesthetics.</span>
+        </a>
+        <a href="/teeth-whitening-hennur" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Hennur Whitening Guide &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Local laser pricing, bridal packages &amp; directions in Hennur.</span>
+        </a>
+        <a href="/contact" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Contact Clinic &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Get driving directions, clinic map &amp; parking info on Horamavu Agara Rd.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catchment Footer Note & Final Callout -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-sand/40 border-t border-japandi-clay/30 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Ready for a Brighter, More Confident Smile?</h3>
+      <p class="text-xs text-japandi-earth font-light max-w-xl mx-auto leading-relaxed">
+        Conveniently located for patients across Hennur Bande, Horamavu Agara Road, Kalyan Nagar, Kothanur, and North Bengaluru.
+      </p>
+      <div class="pt-3 flex items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+        >
+          Call: 09113563040
+        </a>
+        <button 
+          type="button"
+          data-open-booking
+          data-treatment="Professional Teeth Whitening"
+          class="px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm cursor-none"
+        >
+          Book Whitening Visit
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function setupPageAccordions() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+      if (!toggle || !content) return;
+
+      const newBtn = toggle.cloneNode(true) as HTMLElement;
+      toggle.parentNode?.replaceChild(newBtn, toggle);
+
+      newBtn.addEventListener('click', () => {
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        items.forEach((other) => {
+          if (other !== item) {
+            const ob = other.querySelector('.faq-toggle');
+            const oc = other.querySelector('.faq-content') as HTMLElement;
+            const oi = other.querySelector('.faq-icon');
+            if (ob && oc) {
+              ob.setAttribute('aria-expanded', 'false');
+              oc.style.maxHeight = '0px';
+              oi?.classList.remove('rotate-45');
+            }
+          }
+        });
+
+        if (isExpanded) {
+          newBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          icon?.classList.remove('rotate-45');
+        } else {
+          newBtn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  setupPageAccordions();
+  document.addEventListener('astro:after-swap', setupPageAccordions);
+</script>

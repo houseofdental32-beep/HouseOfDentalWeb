@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { generateBreadcrumbSchema } from '../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Privacy Policy | House of Dental Hennur Bangalore";
+const pageDescription = "Read the official Privacy Policy of House of Dental in Hennur, Bangalore. Learn how we safeguard patient records, appointment data, and clinical privacy.";
+const canonicalUrl = "https://aurevadental.com/privacy-policy";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Privacy Policy", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Privacy Policy</span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-14 sm:py-20 px-6 lg:px-24 bg-transparent border-b border-japandi-clay/20">
+    <div class="max-w-4xl mx-auto text-left space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+        Patient Confidentiality &bull; Legal Notice
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif text-japandi-charcoal font-medium tracking-tight">
+        Privacy <span class="italic text-japandi-moss">Policy.</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+        Effective Date: September 2026 &bull; Last Revised: September 23, 2026 &bull; House of Dental, Bengaluru
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Legal Content -->
+  <main class="py-14 px-6 lg:px-24 max-w-4xl mx-auto text-japandi-charcoal leading-relaxed space-y-10 text-sm font-light">
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">1. Introduction &amp; Commitment to Confidentiality</h2>
+      <p class="text-japandi-earth">
+        House of Dental ("we," "our," or "the Clinic"), operating at 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149, is strictly committed to protecting the privacy, confidentiality, and security of our patients and website visitors.
+      </p>
+      <p class="text-japandi-earth">
+        This Privacy Policy explains how we collect, handle, store, and protect your personal identification, medical history, clinical records, and communication details in full compliance with the Information Technology Act (2000), Digital Personal Data Protection Act (DPDPA), and Dental Council of India ethical guidelines.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">2. Information We Collect</h2>
+      <p class="text-japandi-earth">
+        To provide clinical dental healthcare, personalized treatment plans, and emergency support, we collect the following categories of information:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-japandi-earth">
+        <li><strong>Personal Identifiers:</strong> Name, age, gender, telephone number, email address, emergency contact numbers, and residential address.</li>
+        <li><strong>Clinical &amp; Health Records:</strong> Dental history, systemic medical history (allergies, diabetes, hypertension, cardiac conditions, medications), digital RVG dental X-rays, intraoral photographs, and diagnostic models.</li>
+        <li><strong>Appointment &amp; Transaction Records:</strong> Preferred appointment slots, treatment logs, consultation notes, payment modes, and invoicing records. We do not store sensitive credit or debit card numbers on our servers.</li>
+        <li><strong>Digital Usage Data:</strong> Anonymized website analytics (via Google Analytics gtag.js), browser type, referring pages, and device telemetry to enhance website usability.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">3. Purpose and Legal Basis for Processing</h2>
+      <p class="text-japandi-earth">
+        We utilize patient information strictly for legitimate medical and clinical operations:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-japandi-earth">
+        <li>Diagnosing oral pathology and administering safe, pain-free dental treatments.</li>
+        <li>Scheduling appointments, dispatching reminders via WhatsApp or SMS, and post-operative follow-up consultations.</li>
+        <li>Maintaining accurate medical records in accordance with statutory dental healthcare regulations in India.</li>
+        <li>Coordinating with certified dental laboratories (e.g., custom CAD/CAM zirconia crown milling, clear aligner fabrication).</li>
+        <li>Providing patient receipts and facilitating bank EMI options upon patient request.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">4. Data Security and Storage</h2>
+      <p class="text-japandi-earth">
+        All physical and digital records are protected by stringent technical safeguards:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-japandi-earth">
+        <li>All web communications with <a href="https://aurevadental.com" class="text-japandi-moss hover:underline">aurevadental.com</a> are encrypted using modern Transport Layer Security (TLS 1.3 / SSL).</li>
+        <li>Digital radiography and patient records are stored on restricted-access, encrypted clinical management software accessible only by authorized dental surgeons and clinicians.</li>
+        <li>Physical records are stored in secure, keycard-monitored administrative facilities within our Hennur clinic.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">5. Third-Party Disclosures</h2>
+      <p class="text-japandi-earth">
+        House of Dental does not sell, rent, lease, or monetize patient information under any circumstances. Disclosures are limited solely to:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-japandi-earth">
+        <li><strong>Certified Dental Laboratories:</strong> Disclosing de-identified 3D digital impressions and shade guides for prosthetic milling.</li>
+        <li><strong>Medical Specialists:</strong> Referring to trusted maxillofacial surgeons, endodontists, or radiologists when multidisciplinary surgical care is necessary.</li>
+        <li><strong>Legal Mandates:</strong> Where required by applicable Indian law, court order, or authorized government health authorities.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">6. Cookies &amp; Tracking Technologies</h2>
+      <p class="text-japandi-earth">
+        Our website uses standard essential cookies and anonymized Google Analytics tags to monitor website load times and improve user experience. You can choose to disable cookies in your personal browser settings without impacting your ability to browse our clinic's treatment guides or reach our emergency contact lines.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">7. Patient Rights</h2>
+      <p class="text-japandi-earth">
+        As a patient of House of Dental, you retain the right to:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-japandi-earth">
+        <li>Access, inspect, or request digital copies of your diagnostic RVG X-rays and treatment records.</li>
+        <li>Request corrections or updates to your contact details or emergency contact information.</li>
+        <li>Opt out of non-clinical promotional communications at any time.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-serif font-medium text-japandi-charcoal">8. Contact Our Data Protection Officer</h2>
+      <p class="text-japandi-earth">
+        If you have any questions, privacy concerns, or requests regarding this Privacy Policy, please contact our administrative team:
+      </p>
+      <div class="p-6 rounded-2xl bg-japandi-sand/40 border border-japandi-clay/40 space-y-2">
+        <p class="font-medium text-japandi-charcoal">House of Dental &bull; Privacy Officer</p>
+        <p class="text-japandi-earth text-xs">1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149</p>
+        <p class="text-japandi-earth text-xs">Phone: <a href="tel:09113563040" class="text-japandi-moss font-medium hover:underline">09113563040</a></p>
+        <p class="text-japandi-earth text-xs">Email: <a href="mailto:houseofdental32@gmail.com" class="text-japandi-moss font-medium hover:underline">houseofdental32@gmail.com</a></p>
+      </div>
+    </section>
+
+    <!-- Navigation Links -->
+    <div class="pt-8 border-t border-japandi-clay/30 flex flex-wrap gap-4 text-xs font-light">
+      <a href="/about" class="text-japandi-moss hover:underline">&larr; About House of Dental</a>
+      <span class="text-japandi-clay">&bull;</span>
+      <a href="/terms-and-conditions" class="text-japandi-moss hover:underline">Terms &amp; Conditions &rarr;</a>
+      <span class="text-japandi-clay">&bull;</span>
+      <a href="/contact" class="text-japandi-moss hover:underline">Contact &amp; Clinic Map</a>
+    </div>
+  </main>
+</Layout>

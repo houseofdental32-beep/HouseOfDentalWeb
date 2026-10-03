@@ -1,0 +1,132 @@
+---
+import { getConfig } from '../utils/getConfig';
+
+const config = getConfig();
+const { hero_section, site_meta } = config;
+
+// Formulating the WhatsApp deep link
+const whatsappBase = "https://wa.me/";
+const encodedMessage = encodeURIComponent(site_meta.whatsapp_default_message);
+const whatsappUrl = `${whatsappBase}${site_meta.whatsapp_number}?text=${encodedMessage}`;
+---
+
+<header id="book" class="relative min-h-[90vh] flex items-center px-6 py-20 lg:px-24 overflow-hidden">
+  <!-- HTML5 Background Video Container -->
+  <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+    <video 
+      src={hero_section.video_url} 
+      poster="/og-image.jpg"
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      class="w-full h-full object-cover filter brightness-[0.7] contrast-[0.95]"
+      preload="auto"
+    >
+    </video>
+    <!-- Soft warm Japandi overlay for maximum readability and visual aesthetic -->
+    <div class="absolute inset-0 bg-gradient-to-r from-japandi-cream via-japandi-cream/90 to-japandi-sand/60 mix-blend-normal"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto w-full relative z-10">
+    <div class="max-w-3xl flex flex-col items-start space-y-8">
+      <div class="flex flex-wrap items-center gap-2.5 animate-slow-fade" style="animation-delay: 0.1s;">
+        <a 
+          href={site_meta.google_maps_url || "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          title={`View ${site_meta.review_count || 29} 5-star reviews on Google Maps`}
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-japandi-clay bg-japandi-sand/75 hover:bg-japandi-sand text-[10px] md:text-xs font-semibold text-japandi-moss tracking-wider transition-all duration-300 group shadow-sm hover:shadow"
+        >
+          <span class="flex items-center text-amber-500 text-xs tracking-tight">
+            ★ ★ ★ ★ ★
+          </span>
+          <span class="font-bold text-japandi-charcoal">{site_meta.rating_value ? site_meta.rating_value.toFixed(1) : "5.0"}/5</span>
+          <span class="text-japandi-earth font-normal group-hover:text-japandi-moss transition-colors">({site_meta.review_count || 29} Google Reviews)</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 text-japandi-moss opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-japandi-clay bg-japandi-sand/75 text-[10px] md:text-xs font-semibold text-japandi-moss tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-japandi-moss animate-pulse shrink-0"></span>
+          <span>Open 7 Days • Sundays & Emergency Care</span>
+        </div>
+      </div>
+      
+      <!-- Local Clinical H1 Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-japandi-charcoal leading-[1.15] font-medium tracking-tight animate-slow-fade opacity-0" style="animation-fill-mode: forwards; animation-delay: 0.3s;">
+        House of Dental <span class="text-3xl sm:text-4xl md:text-5xl font-light text-japandi-moss block sm:inline font-sans">| Dental Clinic in Hennur, Bangalore</span> <br class="hidden md:block"/>
+        <span class="text-lg sm:text-xl md:text-2xl text-japandi-earth font-sans uppercase tracking-widest block mt-3 font-normal">Modern Family & Specialized Dental Care</span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-japandi-earth max-w-2xl font-light leading-relaxed animate-slow-fade opacity-0" style="animation-fill-mode: forwards; animation-delay: 0.4s;">
+        A premier dental clinic on Horamavu Agara Road, Hennur Bande, Bangalore. Providing gentle, painless dental treatments with digital RVG imaging, hospital-grade sterilization, and transparent pricing.
+      </p>
+
+      <!-- Primary Core Services (Above the Fold for Local SEO & User Intent) -->
+      <div class="w-full pt-1 animate-slow-fade opacity-0" style="animation-fill-mode: forwards; animation-delay: 0.5s;">
+        <span class="text-[11px] font-semibold text-japandi-moss uppercase tracking-widest block mb-2.5">
+          Primary Dental Services in Hennur:
+        </span>
+        <div class="flex flex-wrap gap-2 sm:gap-2.5">
+          <a 
+            href="/treatments/root-canal-treatment" 
+            class="px-3.5 py-1.5 rounded-full border border-japandi-clay/70 bg-japandi-sand/80 hover:bg-japandi-moss hover:text-japandi-cream text-xs text-japandi-charcoal font-medium transition-all duration-200"
+          >
+            Root Canal Treatment
+          </a>
+          <a 
+            href="/treatments/dental-implants" 
+            class="px-3.5 py-1.5 rounded-full border border-japandi-clay/70 bg-japandi-sand/80 hover:bg-japandi-moss hover:text-japandi-cream text-xs text-japandi-charcoal font-medium transition-all duration-200"
+          >
+            Dental Implants
+          </a>
+          <a 
+            href="/treatments/clear-aligners" 
+            class="px-3.5 py-1.5 rounded-full border border-japandi-clay/70 bg-japandi-sand/80 hover:bg-japandi-moss hover:text-japandi-cream text-xs text-japandi-charcoal font-medium transition-all duration-200"
+          >
+            Clear Aligners
+          </a>
+          <a 
+            href="/treatments/teeth-whitening" 
+            class="px-3.5 py-1.5 rounded-full border border-japandi-clay/70 bg-japandi-sand/80 hover:bg-japandi-moss hover:text-japandi-cream text-xs text-japandi-charcoal font-medium transition-all duration-200"
+          >
+            Teeth Whitening
+          </a>
+          <a 
+            href="/treatments/pediatric-dentistry" 
+            class="px-3.5 py-1.5 rounded-full border border-japandi-clay/70 bg-japandi-sand/80 hover:bg-japandi-moss hover:text-japandi-cream text-xs text-japandi-charcoal font-medium transition-all duration-200"
+          >
+            Pediatric Dentistry
+          </a>
+          <a 
+            href="/treatments/wisdom-tooth-removal" 
+            class="px-3.5 py-1.5 rounded-full border border-japandi-clay/70 bg-japandi-sand/80 hover:bg-japandi-moss hover:text-japandi-cream text-xs text-japandi-charcoal font-medium transition-all duration-200"
+          >
+            Wisdom Tooth Removal
+          </a>
+        </div>
+      </div>
+      
+      <div class="pt-3 flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-slow-fade" style="animation-delay: 0.6s;">
+        <button 
+          type="button"
+          data-open-booking
+          class="inline-flex items-center justify-center px-8 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal font-medium rounded-full transition-all duration-300 transform hover:-translate-y-0.5 shadow-md shadow-japandi-moss/10 cursor-none"
+        >
+          <!-- Calendar / Checkup Icon inside CTA -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 mr-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          </svg>
+          {hero_section.cta_text}
+        </button>
+        <a 
+          href="/emergency-dentist-hennur" 
+          class="inline-flex items-center justify-center px-8 py-4 border border-japandi-clay bg-japandi-sand/50 text-japandi-charcoal hover:bg-japandi-sand font-medium rounded-full transition-all duration-300"
+        >
+          Emergency Dentist (Hennur)
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

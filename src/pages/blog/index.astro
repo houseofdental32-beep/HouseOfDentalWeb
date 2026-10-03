@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAllBlogPosts } from '../../data/blogPosts';
+import { generateBreadcrumbSchema } from '../../utils/seoSchemas';
+
+export const prerender = false;
+
+const posts = getAllBlogPosts();
+
+const pageTitle = "Dental Blog & Oral Health Guide | House of Dental";
+const pageDescription = "Explore evidence-based dental guides, treatment pricing breakdowns, and smile care tips from Dr. Shweta Singh and the team at House of Dental in Hennur.";
+const canonicalUrl = "https://aurevadental.com/blog";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%2C%20I%20have%20a%20question%20regarding%20treatments%20at%20House%20of%20Dental.";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Blog", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Blog</span>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <section class="py-16 md:py-20 px-6 lg:px-24 bg-transparent border-b border-japandi-clay/25">
+    <div class="max-w-7xl mx-auto flex flex-col items-start space-y-4 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+        Clinical Insights &bull; House of Dental Studio
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-serif text-japandi-charcoal font-medium tracking-tight leading-tight">
+        Oral Health & <span class="italic text-japandi-moss">Smile Journal.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
+        Evidence-based guidance, transparent procedure pricing breakdowns, and orthodontic insights crafted by Dr. Shweta Singh and our dental artisans in Hennur, Bangalore.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Articles Grid -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post, index) => (
+          <article 
+            class="bg-japandi-sand/45 hover:bg-japandi-sand/80 border border-japandi-clay/45 hover:border-japandi-moss/40 rounded-[2rem] p-8 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-japandi-charcoal/5 animate-slow-fade group"
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            <div>
+              <!-- Category & Read Time -->
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-japandi-moss/10 text-japandi-moss">
+                  {post.category}
+                </span>
+                <span class="text-[11px] text-japandi-earth font-light">
+                  {post.readTime}
+                </span>
+              </div>
+
+              <!-- Article Title -->
+              <h2 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium leading-snug group-hover:text-japandi-moss transition-colors mb-3">
+                <a href={`/blog/${post.slug}`} class="block">
+                  {post.title}
+                </a>
+              </h2>
+
+              <!-- Excerpt -->
+              <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed mb-6 line-clamp-3">
+                {post.excerpt}
+              </p>
+            </div>
+
+            <!-- Author & Action Footer -->
+            <div class="pt-6 border-t border-japandi-clay/30 flex items-center justify-between">
+              <div class="flex flex-col">
+                <span class="text-xs font-semibold text-japandi-charcoal">
+                  {post.author}
+                </span>
+                <span class="text-[10px] text-japandi-earth font-light">
+                  {post.date}
+                </span>
+              </div>
+
+              <a 
+                href={`/blog/${post.slug}`} 
+                class="inline-flex items-center gap-1.5 text-xs font-semibold text-japandi-moss group-hover:text-japandi-charcoal transition-colors"
+                aria-label={`Read article: ${post.title}`}
+              >
+                <span>Read Article</span>
+                <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio Consultation Banner -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-sand/35 border-t border-japandi-clay/30 text-center">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Have a Specific Dental Question?</h3>
+      <p class="text-xs text-japandi-earth font-light leading-relaxed">
+        Speak directly with our clinical desk or schedule a consultation at our studio on Horamavu Agara Road, Hennur Bande.
+      </p>
+      <div class="pt-2 flex items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+        >
+          Call: 09113563040
+        </a>
+        <a 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm"
+        >
+          WhatsApp Desk
+        </a>
+      </div>
+      <p class="text-[11px] text-japandi-earth/80 font-light pt-2">
+        Conveniently located for patients across Hennur Bande, Horamavu Agara Road, Kalyan Nagar, Kothanur, and North Bengaluru.
+      </p>
+    </div>
+  </section>
+</Layout>

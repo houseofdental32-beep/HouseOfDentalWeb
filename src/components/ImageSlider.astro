@@ -1,0 +1,114 @@
+---
+import { getConfig } from '../utils/getConfig';
+
+const config = getConfig();
+const { gallery_slider } = config;
+---
+
+<section class="py-24 px-6 lg:px-24 bg-japandi-cream border-t border-japandi-clay/40 overflow-hidden">
+  <div class="max-w-7xl mx-auto relative animate-slow-fade">
+    
+    <!-- Carousel Track -->
+    <div 
+      id="gallery-track"
+      class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 pb-8"
+      style="scrollbar-width: none; -ms-overflow-style: none;"
+    >
+      {gallery_slider.map((imgUrl, index) => (
+        <div class="snap-center shrink-0 w-full md:w-[85%] aspect-[16/9] md:aspect-[21/9] rounded-[2.5rem] overflow-hidden border border-japandi-clay/40">
+          <img 
+            src={imgUrl} 
+            alt={`House of Dental Hennur Interior - View ${index + 1}`} 
+            width="1600"
+            height="800"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex items-center justify-center gap-4 mt-4">
+      <button 
+        id="btn-prev" 
+        class="w-12 h-12 rounded-full border border-japandi-clay bg-japandi-sand/50 text-japandi-charcoal flex items-center justify-center hover:bg-japandi-moss hover:text-white hover:border-japandi-moss transition-all cursor-pointer"
+        aria-label="Previous Slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      
+      <div id="slide-indicators" class="flex gap-2">
+        {gallery_slider.map((_, idx) => (
+          <div class={`w-2 h-2 rounded-full transition-all duration-300 indicator-dot ${idx === 0 ? 'bg-japandi-moss scale-125' : 'bg-japandi-clay'}`} data-index={idx}></div>
+        ))}
+      </div>
+
+      <button 
+        id="btn-next" 
+        class="w-12 h-12 rounded-full border border-japandi-clay bg-japandi-sand/50 text-japandi-charcoal flex items-center justify-center hover:bg-japandi-moss hover:text-white hover:border-japandi-moss transition-all cursor-pointer"
+        aria-label="Next Slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  function setupCarousel() {
+    const track = document.getElementById('gallery-track');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const indicators = document.querySelectorAll('.indicator-dot');
+    
+    if (!track || !btnPrev || !btnNext) return;
+
+    const slideWidth = track.children[0]?.clientWidth + 16 || 0; // +16 for gap
+    let currentIndex = 0;
+
+    const updateIndicators = (index: number) => {
+      indicators.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('bg-japandi-moss', 'scale-125');
+          dot.classList.remove('bg-japandi-clay');
+        } else {
+          dot.classList.add('bg-japandi-clay');
+          dot.classList.remove('bg-japandi-moss', 'scale-125');
+        }
+      });
+    };
+
+    btnNext.addEventListener('click', () => {
+      track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    });
+
+    btnPrev.addEventListener('click', () => {
+      track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    });
+
+    // Update indicator based on scroll position
+    track.addEventListener('scroll', () => {
+      const scrollPos = track.scrollLeft;
+      const newIndex = Math.round(scrollPos / slideWidth);
+      if (newIndex !== currentIndex && newIndex >= 0 && newIndex < indicators.length) {
+        currentIndex = newIndex;
+        updateIndicators(currentIndex);
+      }
+    });
+  }
+
+  setupCarousel();
+  document.addEventListener('astro:page-load', setupCarousel);
+</script>

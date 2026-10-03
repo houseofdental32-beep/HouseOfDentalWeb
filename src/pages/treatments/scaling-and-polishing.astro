@@ -1,0 +1,345 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { generateBreadcrumbSchema, generateFaqSchema, generateTreatmentServiceSchema } from '../../utils/seoSchemas';
+
+export const prerender = false;
+
+const pageTitle = "Teeth Cleaning & Scaling in Bangalore | House of Dental";
+const pageDescription = "Gentle ultrasonic teeth cleaning, scaling & stain polishing in Bangalore at House of Dental. Prevent gum disease & refresh your breath today.";
+const canonicalUrl = "https://aurevadental.com/treatments/scaling-and-polishing";
+const phoneCallUrl = "tel:09113563040";
+const whatsappUrl = "https://wa.me/919113563040?text=Hello%2C%20I%20would%20like%20to%20book%20a%20Scaling%20and%20Polishing%20session%20at%20House%20of%20Dental.";
+
+const faqs = [
+  {
+    question: "Does scaling weaken enamel or create gaps between teeth?",
+    answer: "No, this is a common dental myth. Ultrasonic scaling uses high-frequency micro-vibrations and water spray to shatter hardened bacterial tartar (calculus) without scratching or eroding natural tooth enamel. The 'gaps' patients sometimes feel after cleaning were previously packed with inflamed calculus deposits that caused gingival recession."
+  },
+  {
+    question: "How often should I get professional scaling and polishing done?",
+    answer: "The Indian Dental Association and international dental protocols recommend professional scaling every 6 months. For patients undergoing orthodontic aligner treatment, smokers, or those with active periodontal gum disease, quarterly (every 3 to 4 months) hygiene reviews are advised."
+  },
+  {
+    question: "Will my teeth be sensitive after the cleaning procedure?",
+    answer: "Mild, transient sensitivity to cold water is completely normal for 24 to 48 hours following removal of thick calculus sheets, especially if your roots were previously exposed. We apply a soothing desensitizing fluoride varnish at the end of every cleaning session to protect your enamel."
+  },
+  {
+    question: "What is the difference between scaling and teeth whitening?",
+    answer: "Scaling cleans the teeth by eliminating bacterial plaque, calcified tartar, and extrinsic surface stains caused by coffee, tea, and tobacco. Teeth whitening is a cosmetic bleaching treatment that penetrates deep inside enamel and dentin to lighten internal yellow discoloration by several shades."
+  },
+  {
+    question: "What is the cost of teeth scaling and polishing in Hennur, Bangalore?",
+    answer: "At House of Dental Hennur, routine ultrasonic scaling and prophy polishing ranges from Rs. 1,200 to Rs. 2,500. Advanced deep subgingival scaling or periodontal root planing for heavy calculus and swollen bleeding gums ranges from Rs. 2,500 to Rs. 5,000 across all four quadrants."
+  }
+];
+
+const breadcrumbs = [
+  { name: "Home", url: "https://aurevadental.com/" },
+  { name: "Treatments", url: "https://aurevadental.com/#services" },
+  { name: "Scaling & Polishing", url: canonicalUrl }
+];
+
+const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema(breadcrumbs));
+const faqSchema = JSON.stringify(generateFaqSchema(faqs));
+const serviceSchema = JSON.stringify(generateTreatmentServiceSchema({
+  name: "Ultrasonic Scaling & Dental Polishing",
+  description: pageDescription,
+  url: canonicalUrl,
+  medicalSpecialty: "Periodontics"
+}));
+
+const seoProps = {
+  title: pageTitle,
+  description: pageDescription,
+  canonical: canonicalUrl,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  schemaMarkup: [breadcrumbSchema, faqSchema, serviceSchema]
+};
+---
+
+<Layout {...seoProps}>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-japandi-sand/30 border-b border-japandi-clay/20 py-3.5 px-6 lg:px-24 text-xs font-light text-japandi-earth" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-japandi-moss transition-colors">Home</a>
+      <span>/</span>
+      <a href="/#services" class="hover:text-japandi-moss transition-colors">Treatments</a>
+      <span>/</span>
+      <span class="text-japandi-charcoal font-medium">Scaling &amp; Polishing</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 px-6 lg:px-24 bg-transparent relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
+          Preventive Periodontics &bull; Hennur Bande, Bengaluru
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
+          Gentle Ultrasonic <br class="hidden sm:inline"/>
+          <span class="italic text-japandi-moss">Scaling &amp; Polishing.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
+          Eradicate stubborn tartar, eliminate bad breath, and halt bleeding gums with gentle ultrasonic technology and stain-buffing polishing in our serene Hennur studio.
+        </p>
+
+        <!-- Direct Action CTA Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-4 w-full sm:w-auto">
+          <button 
+            type="button"
+            data-open-booking
+            data-treatment="Scaling & Polishing Appointment"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 shadow-md shadow-japandi-moss/15 cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span>Book Cleaning Slot</span>
+          </button>
+
+          <a 
+            href={whatsappUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 border border-japandi-clay hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold uppercase tracking-wider rounded-full transition-all duration-300 bg-japandi-sand/40 hover:bg-japandi-sand cursor-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-emerald-600">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp Clinic</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="p-8 rounded-3xl bg-japandi-sand/50 border border-japandi-clay/40 shadow-sm space-y-6">
+          <h2 class="text-xs uppercase font-semibold text-japandi-moss tracking-widest">Why Biannual Cleaning Matters</h2>
+          <div class="space-y-4 text-xs font-light text-japandi-earth">
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Reverses Gingivitis:</strong> Stops bleeding during brushing and firms up spongy, tender gums.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Safeguards Jawbone Support:</strong> Prevents periodontitis and premature loosening of teeth.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Erases Coffee &amp; Tea Stains:</strong> Fine diamond-polishing pastes restore natural tooth shine.
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded-full bg-japandi-moss/20 text-japandi-moss flex items-center justify-center shrink-0 mt-0.5">&check;</span>
+              <div>
+                <strong class="text-japandi-charcoal font-medium">Fresh Breath Guarantee:</strong> Eliminates anaerobic bacteria colonies hiding beneath the gumline.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cleaning Procedure (H2 Hierarchy) -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/20 border-t border-japandi-clay/20">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="max-w-3xl space-y-3">
+        <div class="text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">Our Hygiene Protocol</div>
+        <h2 class="text-2xl sm:text-4xl font-serif text-japandi-charcoal font-medium">Complete 4-Step Periodontal Care</h2>
+        <p class="text-sm text-japandi-earth font-light">
+          Enjoy a calming, zero-stress hygiene session designed to refresh your mouth completely:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="p-6 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-3">
+          <div class="text-2xl font-serif text-japandi-moss">01</div>
+          <h3 class="text-sm font-serif font-medium text-japandi-charcoal">Intraoral Screening</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            High-definition intraoral camera mapping of plaque accumulation and gum pockets.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-3">
+          <div class="text-2xl font-serif text-japandi-moss">02</div>
+          <h3 class="text-sm font-serif font-medium text-japandi-charcoal">Ultrasonic Scaling</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Piezoelectric micro-vibrations dissolve hardened calculus with warm water irrigation.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-3">
+          <div class="text-2xl font-serif text-japandi-moss">03</div>
+          <h3 class="text-sm font-serif font-medium text-japandi-charcoal">Airflow Polishing</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Non-abrasive polishing eliminates stubborn tobacco, tea, and turmeric surface stains.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-japandi-cream border border-japandi-clay/40 space-y-3">
+          <div class="text-2xl font-serif text-japandi-moss">04</div>
+          <h3 class="text-sm font-serif font-medium text-japandi-charcoal">Fluoride Shield</h3>
+          <p class="text-xs text-japandi-earth font-light leading-relaxed">
+            Topical remineralization varnish soothes exposed root surfaces and blocks sensitivity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Area Targeting Section -->
+  <section class="py-14 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/20">
+    <div class="max-w-7xl mx-auto space-y-6">
+      <div class="max-w-3xl space-y-2">
+        <h2 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">Teeth Cleaning in Hennur, Kalyan Nagar &amp; Horamavu</h2>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+          Serving families across Hennur Bande, Horamavu Agara Road, Kalyan Nagar, HRBR Layout, Banaswadi, Kammanahalli, Babusapalya, and North Bengaluru. House of Dental offers gentle preventative care, flexible morning and evening appointment slots, and open Sundays.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="py-16 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/20">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="space-y-2 text-center">
+        <div class="text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">Frequently Asked Questions</div>
+        <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">Teeth Cleaning FAQs</h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="faq-item bg-japandi-sand/45 border border-japandi-clay/45 rounded-2xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/50">
+            <button
+              type="button"
+              class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-none group"
+              aria-expanded="false"
+            >
+              <span class="text-base font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors">
+                {faq.question}
+              </span>
+              <div class="w-7 h-7 rounded-full bg-japandi-cream border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 faq-icon transition-transform duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
+              <div class="pb-5 pt-1 border-t border-japandi-clay/20">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Treatments & Internal Linking -->
+  <section class="py-12 px-6 lg:px-24 bg-japandi-sand/30 border-t border-japandi-clay/30">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="space-y-1">
+        <h3 class="text-lg font-serif font-medium text-japandi-charcoal">Related Treatments &amp; Aesthetic Care</h3>
+        <p class="text-xs text-japandi-earth font-light">Explore complementary preventative and cosmetic services:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-light">
+        <a href="/treatments/teeth-whitening" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Teeth Whitening &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Brighten clean teeth by up to 8 shades in a single in-office visit.</span>
+        </a>
+        <a href="/treatments/clear-aligners" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Clear Aligners &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Straighten crowded teeth that trap food and calculus.</span>
+        </a>
+        <a href="/treatments/root-canal-treatment" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Root Canal Treatment &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Treat deep bacterial decay before infections spread to the root tip.</span>
+        </a>
+        <a href="/contact" class="p-4 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 hover:border-japandi-moss transition-all group">
+          <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-1">Contact Clinic &rarr;</span>
+          <span class="text-japandi-earth text-[11px]">Find our address, clinic timings, and parking directions.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catchment Footer Note & Final Callout -->
+  <section class="py-14 px-6 lg:px-24 bg-japandi-sand/40 border-t border-japandi-clay/30 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <h3 class="text-xl font-serif text-japandi-charcoal font-medium">Experience Ultra-Clean, Fresh Teeth Today</h3>
+      <p class="text-xs text-japandi-earth font-light max-w-xl mx-auto leading-relaxed">
+        Conveniently located for patients across Hennur, Kalyan Nagar, Horamavu, Banaswadi, Kammanahalli, and HRBR Layout.
+      </p>
+      <div class="pt-3 flex items-center justify-center gap-3">
+        <a 
+          href={phoneCallUrl}
+          class="px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+        >
+          Call: 09113563040
+        </a>
+        <a 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function setupPageAccordions() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const icon = item.querySelector('.faq-icon');
+      if (!toggle || !content) return;
+
+      const newBtn = toggle.cloneNode(true) as HTMLElement;
+      toggle.parentNode?.replaceChild(newBtn, toggle);
+
+      newBtn.addEventListener('click', () => {
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        items.forEach((other) => {
+          if (other !== item) {
+            const ob = other.querySelector('.faq-toggle');
+            const oc = other.querySelector('.faq-content') as HTMLElement;
+            const oi = other.querySelector('.faq-icon');
+            if (ob && oc) {
+              ob.setAttribute('aria-expanded', 'false');
+              oc.style.maxHeight = '0px';
+              oi?.classList.remove('rotate-45');
+            }
+          }
+        });
+
+        if (isExpanded) {
+          newBtn.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          icon?.classList.remove('rotate-45');
+        } else {
+          newBtn.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  setupPageAccordions();
+  document.addEventListener('astro:after-swap', setupPageAccordions);
+</script>
