@@ -1,18 +1,20 @@
 ---
-import { getConfig } from '../utils/getConfig';
+import { getConfig } from "../utils/getConfig";
 
 const config = getConfig();
 const { site_meta } = config;
 
-const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
-const servicesLink = isHome ? '#services' : '/#services';
-const teamLink = isHome ? '#team' : '/#team';
-const locationsLink = isHome ? '#locations' : '/#locations';
-const faqLink = isHome ? '#faq' : '/#faq';
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "";
+const servicesLink = isHome ? "#services" : "/#services";
+const teamLink = isHome ? "#team" : "/#team";
+const locationsLink = isHome ? "#locations" : "/#locations";
+const faqLink = isHome ? "#faq" : "/#faq";
 
 const phoneDisplay = site_meta?.phone || "09113563040";
 const whatsappNumber = site_meta?.whatsapp_number || "919113563040";
-const defaultMsg = site_meta?.whatsapp_default_message || "Hello, I would like to book an appointment at House of Dental.";
+const defaultMsg =
+  site_meta?.whatsapp_default_message ||
+  "Hello, I would like to book an appointment at House of Dental.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMsg)}`;
 const phoneCallUrl = `tel:${phoneDisplay}`;
 const siteTitle = site_meta?.title || "House of Dental";
@@ -22,188 +24,323 @@ const treatments = [
     name: "Clear Aligners",
     desc: "Invisible 3D smile alignment",
     url: "/treatments/clear-aligners",
-    tag: "Invisible"
+    tag: "Invisible",
   },
   {
     name: "Dental Implants",
     desc: "Permanent titanium & zirconia teeth",
     url: "/treatments/dental-implants",
-    tag: "Permanent"
+    tag: "Permanent",
   },
   {
     name: "Root Canal Treatment",
     desc: "Single-sitting painless rotary RCT",
     url: "/treatments/root-canal-treatment",
-    tag: "Painless"
+    tag: "Painless",
   },
   {
     name: "Cosmetic Dentistry",
     desc: "Veneers, bonding & smile design",
     url: "/treatments/cosmetic-dentistry",
-    tag: "Aesthetic"
+    tag: "Aesthetic",
   },
   {
     name: "Teeth Whitening",
     desc: "Laser bleaching & bridal radiance",
     url: "/treatments/teeth-whitening",
-    tag: "Laser"
+    tag: "Laser",
   },
   {
     name: "Pediatric Dentistry",
     desc: "Gentle cavity care & sealants for kids",
     url: "/treatments/pediatric-dentistry",
-    tag: "Gentle"
+    tag: "Gentle",
   },
   {
     name: "Wisdom Tooth Removal",
     desc: "Painless oral surgery & pain relief",
     url: "/treatments/wisdom-tooth-removal",
-    tag: "Surgical"
-  }
+    tag: "Surgical",
+  },
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-japandi-clay/20 bg-japandi-cream/85 backdrop-blur-md px-4 sm:px-6 lg:px-12 xl:px-16 py-3">
+<header
+  class="sticky top-0 z-50 w-full border-b border-japandi-clay/20 bg-japandi-cream/85 backdrop-blur-md px-4 sm:px-6 lg:px-12 xl:px-16 py-3"
+>
   <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
     <!-- Home Button (Clinic Logo) -->
-    <a href="/" class="flex items-center gap-2.5 group shrink-0" aria-label="House of Dental - Home" title="Home - House of Dental">
+    <a
+      href="/"
+      class="flex items-center gap-2.5 group shrink-0"
+      aria-label="House of Dental - Home"
+      title="Home - House of Dental"
+    >
       <!-- Light Theme Logo -->
-      <img 
-        src="/House_of_Dental_Logo_light.png" 
-        alt="House of Dental - Dental Clinic" 
+      <img
+        src="/House_of_Dental_Logo_light.png"
+        alt="House of Dental - Dental Clinic"
         width="220"
         height="90"
-        class="header-logo-light h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+        class="header-logo-light h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
       />
       <!-- Dark Theme Logo -->
-      <img 
-        src="/House_of_Dental_Logo.png" 
-        alt="House of Dental - Dental Clinic" 
+      <img
+        src="/House_of_Dental_Logo.png"
+        alt="House of Dental - Dental Clinic"
         width="220"
         height="90"
-        class="header-logo-dark h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+        class="header-logo-dark h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
       />
     </a>
 
     <!-- Desktop Navigation -->
     <nav class="flex items-center gap-3 lg:gap-5 xl:gap-7 shrink-0">
-      <div class="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-6 text-[11px] lg:text-xs font-medium uppercase tracking-wider text-japandi-earth whitespace-nowrap">
-        
+      <div
+        class="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-6 text-[11px] lg:text-xs font-medium uppercase tracking-wider text-japandi-earth whitespace-nowrap"
+      >
         <!-- Treatments Dropdown -->
         <div class="relative group/dropdown shrink-0">
-          <button 
+          <button
             type="button"
             class="flex items-center gap-1 py-2 hover:text-japandi-charcoal transition-colors group-hover/dropdown:text-japandi-moss focus:outline-none cursor-none"
             aria-haspopup="true"
             aria-expanded="false"
           >
             <span>Treatments</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3 transition-transform duration-200 group-hover/dropdown:rotate-180">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-3 h-3 transition-transform duration-200 group-hover/dropdown:rotate-180"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
             </svg>
           </button>
 
           <!-- Dropdown Menu -->
-          <div class="absolute top-full left-0 pt-2 w-72 invisible opacity-0 translate-y-2 group-hover/dropdown:visible group-hover/dropdown:opacity-100 group-hover/dropdown:translate-y-0 transition-all duration-200 pointer-events-none group-hover/dropdown:pointer-events-auto">
-            <div class="p-2 rounded-2xl bg-japandi-cream/95 dark:bg-japandi-sand/90 backdrop-blur-lg border border-japandi-clay/40 shadow-xl shadow-japandi-charcoal/5 flex flex-col gap-1">
-              {treatments.map((t) => (
-                <a 
-                  href={t.url}
-                  class="flex flex-col p-2.5 rounded-xl hover:bg-japandi-sand/70 dark:hover:bg-japandi-clay/20 transition-all group/item"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-semibold normal-case tracking-normal text-japandi-charcoal group-hover/item:text-japandi-moss transition-colors">
-                      {t.name}
+          <div
+            class="absolute top-full left-0 pt-2 w-72 invisible opacity-0 translate-y-2 group-hover/dropdown:visible group-hover/dropdown:opacity-100 group-hover/dropdown:translate-y-0 transition-all duration-200 pointer-events-none group-hover/dropdown:pointer-events-auto"
+          >
+            <div
+              class="p-2 rounded-2xl bg-japandi-cream/95 dark:bg-japandi-sand/90 backdrop-blur-lg border border-japandi-clay/40 shadow-xl shadow-japandi-charcoal/5 flex flex-col gap-1"
+            >
+              {
+                treatments.map((t) => (
+                  <a
+                    href={t.url}
+                    class="flex flex-col p-2.5 rounded-xl hover:bg-japandi-sand/70 dark:hover:bg-japandi-clay/20 transition-all group/item"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-semibold normal-case tracking-normal text-japandi-charcoal group-hover/item:text-japandi-moss transition-colors">
+                        {t.name}
+                      </span>
+                      <span class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-japandi-moss/10 text-japandi-moss font-semibold">
+                        {t.tag}
+                      </span>
+                    </div>
+                    <span class="text-[11px] normal-case tracking-normal text-japandi-earth font-light mt-0.5">
+                      {t.desc}
                     </span>
-                    <span class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-japandi-moss/10 text-japandi-moss font-semibold">
-                      {t.tag}
-                    </span>
-                  </div>
-                  <span class="text-[11px] normal-case tracking-normal text-japandi-earth font-light mt-0.5">
-                    {t.desc}
-                  </span>
-                </a>
-              ))}
+                  </a>
+                ))
+              }
             </div>
           </div>
         </div>
 
-        <a href={servicesLink} class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">Services</a>
-        <a href="/about" class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">About</a>
-        <a href={teamLink} class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">Artisans</a>
-        <a href={locationsLink} class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">Sanctuaries</a>
-        <a href="/blog" class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">Blog</a>
-        <a href="/contact" class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">Contact</a>
-        <a href={faqLink} class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">FAQ</a>
-        <a href="/feedback" class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300">Feedback</a>
+        <a
+          href={servicesLink}
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >Services</a
+        >
+        <a
+          href="/about"
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >About</a
+        >
+        <a
+          href={teamLink}
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >Artisans</a
+        >
+        <a
+          href={locationsLink}
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >Sanctuaries</a
+        >
+        <a
+          href="/blog"
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >Blog</a
+        >
+        <a
+          href="/contact"
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >Contact</a
+        >
+        <a
+          href={faqLink}
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >FAQ</a
+        >
+        <a
+          href="/feedback"
+          class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
+          >Feedback</a
+        >
       </div>
 
       <div class="flex items-center gap-2.5 sm:gap-4">
         <!-- Direct Phone Link on Desktop / Tablet -->
-        <a 
+        <a
           href={phoneCallUrl}
           onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion('tel:09113563040') : true;"
-          class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-japandi-clay/60 hover:border-japandi-moss text-japandi-charcoal text-xs font-semibold tracking-wider transition-all duration-300 cursor-none"
+          class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-japandi-charcoal bg-japandi-charcoal text-japandi-cream hover:bg-japandi-moss hover:text-japandi-charcoal text-xs font-bold tracking-wider transition-all duration-300 cursor-none shadow-sm"
           title="Call House of Dental Reception"
           aria-label="Call House of Dental"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 text-japandi-moss">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.2"
+            stroke="currentColor"
+            class="w-3.5 h-3.5 text-japandi-moss group-hover:text-japandi-charcoal"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+            ></path>
           </svg>
-          <span>{phoneDisplay}</span>
+          <span class="font-bold">{phoneDisplay}</span>
         </a>
 
-        <!-- Direct WhatsApp Chat Link on Desktop / Tablet -->
-        <a 
+        <!-- Direct WhatsApp Chat Link on Desktop / Tablet (High Contrast Solid Pill) -->
+        <a
           href={whatsappUrl}
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
-          class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-emerald-600/40 hover:border-emerald-600 bg-emerald-50/50 hover:bg-emerald-50 dark:bg-emerald-950/20 dark:hover:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 text-xs font-semibold tracking-wider transition-all duration-300 cursor-none"
+          class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-emerald-700 bg-emerald-700 hover:bg-emerald-800 !text-white font-extrabold text-xs tracking-wider transition-all duration-300 shadow-md shadow-emerald-700/25 cursor-none"
           title="Chat with House of Dental on WhatsApp"
           aria-label="WhatsApp House of Dental"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            class="w-3.5 h-3.5 !text-white shrink-0"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            ></path>
           </svg>
-          <span>WhatsApp</span>
+          <span class="!text-white font-extrabold">WhatsApp</span>
         </a>
 
         <!-- Desktop Book Visit Modal CTA Button -->
-        <button 
+        <button
           type="button"
           data-open-booking
-          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-japandi-moss text-japandi-cream hover:bg-japandi-charcoal text-xs font-semibold uppercase tracking-widest transition-all duration-300 shadow-sm shadow-japandi-moss/10 cursor-none"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-japandi-moss text-japandi-charcoal hover:bg-japandi-charcoal hover:text-japandi-cream text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md shadow-japandi-moss/20 cursor-none"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-3.5 h-3.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+            ></path>
           </svg>
           <span>Book Visit</span>
         </button>
 
         <!-- Mobile Menu Toggle Button -->
-        <button 
+        <button
           id="mobile-menu-btn"
           class="md:hidden p-2 text-japandi-charcoal hover:bg-japandi-sand/50 rounded-full transition-colors focus:outline-none"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
         >
-          <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          <svg
+            id="menu-open-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
           </svg>
-          <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 hidden">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          <svg
+            id="menu-close-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="w-5 h-5 hidden"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"></path>
           </svg>
         </button>
 
         <!-- Premium Minimalist Theme Toggle Switch -->
-        <button id="theme-toggle" class="p-2.5 rounded-full border border-japandi-clay/45 bg-japandi-sand/40 hover:bg-japandi-sand/75 text-japandi-moss hover:text-japandi-charcoal transition-all cursor-none focus:outline-none" aria-label="Toggle Dark Mode">
+        <button
+          id="theme-toggle"
+          class="p-2.5 rounded-full border border-japandi-clay bg-japandi-sand/80 hover:bg-japandi-sand text-japandi-moss hover:text-japandi-charcoal transition-all cursor-none focus:outline-none shadow-sm"
+          aria-label="Toggle Dark Mode"
+        >
           <!-- Sun Icon (Visible in light mode, hidden in dark mode) -->
-          <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 dark:hidden">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M5.25 5.25l1.5 1.5m10.5 10.5l1.5 1.5M3 12h2.25m13.5 0H21M5.25 18.75l1.5-1.5m10.5-10.5l1.5-1.5M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+          <svg
+            id="theme-toggle-light-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="w-4 h-4 dark:hidden"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m0 13.5V21M5.25 5.25l1.5 1.5m10.5 10.5l1.5 1.5M3 12h2.25m13.5 0H21M5.25 18.75l1.5-1.5m10.5-10.5l1.5-1.5M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
+            ></path>
           </svg>
           <!-- Moon Icon (Hidden in light mode, visible in dark mode) -->
-          <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 hidden dark:block">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+          <svg
+            id="theme-toggle-dark-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="w-4 h-4 hidden dark:block"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            ></path>
           </svg>
         </button>
       </div>
@@ -211,52 +348,103 @@ const treatments = [
   </div>
 
   <!-- Mobile Collapsible Navigation Drawer -->
-  <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 border-t border-japandi-clay/20 mt-3 animate-slow-fade">
-    <div class="flex flex-col gap-3 text-xs font-medium uppercase tracking-widest text-japandi-earth">
-      <div class="px-2 pt-1 text-[10px] text-japandi-moss font-semibold tracking-wider">Treatments</div>
-      <div class="grid grid-cols-2 gap-2 pb-2 border-b border-japandi-clay/20">
-        {treatments.map((t) => (
-          <a 
-            href={t.url} 
-            class="px-3 py-2 rounded-xl bg-japandi-sand/50 text-japandi-charcoal normal-case text-xs hover:bg-japandi-sand transition-colors"
-          >
-            <span class="font-medium block">{t.name}</span>
-            <span class="text-[10px] text-japandi-earth font-light">{t.tag}</span>
-          </a>
-        ))}
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden pt-4 pb-2 border-t border-japandi-clay/20 mt-3 animate-slow-fade"
+  >
+    <div
+      class="flex flex-col gap-3 text-xs font-medium uppercase tracking-widest text-japandi-earth"
+    >
+      <div
+        class="px-2 pt-1 text-[10px] text-japandi-moss font-semibold tracking-wider"
+      >
+        Treatments
       </div>
-      <a href={servicesLink} class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">Services</a>
-      <a href="/about" class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">About Us</a>
-      <a href={teamLink} class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">Artisans</a>
-      <a href={locationsLink} class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">Sanctuaries</a>
-      <a href="/blog" class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">Blog</a>
-      <a href="/contact" class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">Contact</a>
-      <a href={faqLink} class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">FAQ</a>
-      <a href="/feedback" class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">Feedback</a>
-      <div class="pt-2 grid grid-cols-3 gap-2">
-        <a 
-          href={phoneCallUrl}
-          onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion('tel:09113563040') : true;"
-          aria-label="Call House of Dental Reception Desk"
-          class="text-center py-2 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold"
+      <div class="grid grid-cols-2 gap-2 pb-2 border-b border-japandi-clay/20">
+        {
+          treatments.map((t) => (
+            <a
+              href={t.url}
+              class="px-3 py-2 rounded-xl bg-japandi-sand/50 text-japandi-charcoal normal-case text-xs hover:bg-japandi-sand transition-colors"
+            >
+              <span class="font-medium block">{t.name}</span>
+              <span class="text-[10px] text-japandi-earth font-light">
+                {t.tag}
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <a
+        href={servicesLink}
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
+        >Services</a
+      >
+      <a
+        href="/about"
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
+        >About Us</a
+      >
+      <a
+        href={teamLink}
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
+        >Artisans</a
+      >
+      <a
+        href={locationsLink}
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
+        >Sanctuaries</a
+      >
+      <a
+        href="/blog"
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
+        >Blog</a
+      >
+      <a
+        href="/contact"
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
+        >Contact</a
+      >
+      <a
+        href={faqLink}
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">FAQ</a
+      >
+      <a
+        href="/feedback"
+        class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
+        >Feedback</a
+      >
+      <div class="pt-2 grid grid-cols-2 gap-2">
+        <a
+          href="/treatments/emergency-dentist"
+          aria-label="Emergency Dentist"
+          class="text-center py-2.5 rounded-full bg-red-700 !text-white text-xs font-bold shadow-sm"
         >
-          Call
+          🚨 Emergency
         </a>
-        <a 
+        <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp House of Dental"
-          class="text-center py-2 rounded-full bg-emerald-600 text-white text-xs font-semibold"
+          class="text-center py-2.5 rounded-full bg-emerald-700 !text-white text-xs font-bold shadow-sm"
         >
           WhatsApp
         </a>
-        <button 
+        <a
+          href={phoneCallUrl}
+          onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion('tel:09113563040') : true;"
+          aria-label="Call House of Dental Reception Desk"
+          class="text-center py-2.5 rounded-full border border-japandi-charcoal bg-japandi-charcoal text-japandi-cream text-xs font-bold"
+        >
+          Call Us
+        </a>
+        <button
           type="button"
           data-open-booking
-          class="text-center py-2 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold"
+          class="text-center py-2.5 rounded-full bg-japandi-moss text-japandi-charcoal text-xs font-bold"
         >
-          Book
+          Book Visit
         </button>
       </div>
     </div>
@@ -265,34 +453,34 @@ const treatments = [
 
 <script>
   function setupThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggle = document.getElementById("theme-toggle");
     if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
       });
     }
   }
 
   function setupMobileMenu() {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const openIcon = document.getElementById('menu-open-icon');
-    const closeIcon = document.getElementById('menu-close-icon');
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const openIcon = document.getElementById("menu-open-icon");
+    const closeIcon = document.getElementById("menu-close-icon");
 
     if (btn && menu) {
       btn.onclick = () => {
-        const isClosed = menu.classList.contains('hidden');
+        const isClosed = menu.classList.contains("hidden");
         if (isClosed) {
-          menu.classList.remove('hidden');
-          btn.setAttribute('aria-expanded', 'true');
-          openIcon?.classList.add('hidden');
-          closeIcon?.classList.remove('hidden');
+          menu.classList.remove("hidden");
+          btn.setAttribute("aria-expanded", "true");
+          openIcon?.classList.add("hidden");
+          closeIcon?.classList.remove("hidden");
         } else {
-          menu.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-          openIcon?.classList.remove('hidden');
-          closeIcon?.classList.add('hidden');
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+          openIcon?.classList.remove("hidden");
+          closeIcon?.classList.add("hidden");
         }
       };
     }
@@ -303,7 +491,7 @@ const treatments = [
   setupMobileMenu();
 
   // Handle Astro page transitions if custom routing is ever used
-  document.addEventListener('astro:after-swap', () => {
+  document.addEventListener("astro:after-swap", () => {
     setupThemeToggle();
     setupMobileMenu();
   });

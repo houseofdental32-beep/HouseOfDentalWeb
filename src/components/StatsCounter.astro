@@ -5,19 +5,19 @@ const config = getConfig();
 const { stats_section } = config;
 ---
 
-<section class="py-16 px-6 lg:px-24 bg-japandi-sand/30 border-t border-b border-japandi-clay/40">
+<section class="py-14 px-4 sm:px-6 lg:px-16 bg-japandi-sand/40 dark:bg-japandi-sand/20 border-t border-b border-japandi-clay/35 relative">
   <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
       {stats_section.map((stat, index) => (
-        <div class="flex flex-col items-center justify-center space-y-2">
-          <div class="flex items-baseline text-4xl md:text-5xl font-serif font-medium text-japandi-moss">
+        <div class="p-6 rounded-3xl bg-japandi-cream/70 dark:bg-japandi-sand/40 border border-japandi-clay/40 soft-glow flex flex-col items-center justify-center space-y-2 hover:border-japandi-moss/40 transition-all duration-300">
+          <div class="flex items-baseline text-4xl sm:text-5xl font-serif font-medium text-japandi-moss">
             <span 
               class="stat-counter" 
               data-target={stat.value}
             >0</span>
-            <span>{stat.suffix}</span>
+            <span class="text-3xl sm:text-4xl">{stat.suffix}</span>
           </div>
-          <p class="text-xs md:text-sm text-japandi-earth uppercase tracking-widest font-semibold">{stat.label}</p>
+          <p class="text-[11px] sm:text-xs text-japandi-earth uppercase tracking-widest font-semibold">{stat.label}</p>
         </div>
       ))}
     </div>

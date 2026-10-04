@@ -2,21 +2,21 @@
 import { LOCAL_FAQS } from '../utils/seoSchemas';
 ---
 
-<section id="faq" class="py-24 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/40 relative">
+<section id="faq" class="py-24 px-4 sm:px-6 lg:px-16 xl:px-24 bg-transparent border-t border-japandi-clay/40 relative">
   <!-- Subtle decorative line -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-12 bg-japandi-clay"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-12 bg-japandi-clay/60"></div>
 
   <div class="max-w-4xl mx-auto">
     <!-- Header -->
     <div class="text-center mb-16 animate-slow-fade">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/55 bg-japandi-cream/50 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest mb-4">
-        Patient Guidance & Clarity
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/50 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest mb-4">
+        Patient Guidance &bull; Common Questions
       </div>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-japandi-charcoal font-medium tracking-tight">
         Frequently Asked Questions
       </h2>
       <p class="text-xs sm:text-sm text-japandi-earth font-light mt-3 max-w-xl mx-auto leading-relaxed">
-        Everything you need to know about our dental studio, treatments, appointments, and location in Hennur, Bengaluru.
+        Clear, honest answers about our procedures, zero-pain rotary endodontics, pricing, and scheduling at House of Dental.
       </p>
     </div>
 
@@ -24,7 +24,7 @@ import { LOCAL_FAQS } from '../utils/seoSchemas';
     <div class="space-y-4">
       {LOCAL_FAQS.map((faq, index) => (
         <div 
-          class="faq-item bg-japandi-sand/45 border border-japandi-clay/45 rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/50 hover:bg-japandi-sand/65"
+          class="faq-item bg-japandi-sand/35 dark:bg-japandi-sand/20 border border-japandi-clay/45 rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-300 hover:border-japandi-moss/60 hover:bg-japandi-sand/65 dark:hover:bg-japandi-sand/35 soft-glow"
         >
           <button
             type="button"
@@ -36,7 +36,7 @@ import { LOCAL_FAQS } from '../utils/seoSchemas';
             <h3 class="text-base sm:text-lg font-serif text-japandi-charcoal font-medium group-hover:text-japandi-moss transition-colors pr-2">
               {faq.question}
             </h3>
-            <div class="w-8 h-8 rounded-full bg-japandi-cream/80 border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all duration-300">
+            <div class="w-8 h-8 rounded-full bg-japandi-cream/90 dark:bg-japandi-sand border border-japandi-clay/60 flex items-center justify-center shrink-0 text-japandi-moss group-hover:bg-japandi-moss group-hover:text-japandi-cream transition-all duration-300">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
@@ -65,16 +65,16 @@ import { LOCAL_FAQS } from '../utils/seoSchemas';
     </div>
 
     <!-- Quick Help Banner -->
-    <div class="mt-12 p-6 rounded-3xl bg-japandi-sand/30 border border-japandi-clay/35 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="mt-14 p-7 sm:p-8 rounded-[2rem] bg-japandi-sand/40 dark:bg-japandi-sand/20 border border-japandi-clay/45 text-center flex flex-col sm:flex-row items-center justify-between gap-6 soft-glow">
       <div class="text-left">
-        <h4 class="text-sm font-serif font-medium text-japandi-charcoal">Have a specific question about your smile?</h4>
-        <p class="text-xs text-japandi-earth font-light mt-0.5">Speak with our clinical desk directly on WhatsApp or over a quick phone call.</p>
+        <h4 class="text-base font-serif font-medium text-japandi-charcoal">Have a specific question about your treatment?</h4>
+        <p class="text-xs text-japandi-earth font-light mt-1">Our clinical desk is available to assist you over call or WhatsApp.</p>
       </div>
-      <div class="flex items-center gap-3 shrink-0">
+      <div class="flex items-center gap-3 shrink-0 w-full sm:w-auto justify-center">
         <a 
           href="tel:09113563040" 
           onclick="return typeof gtag_report_conversion === 'function' ? gtag_report_conversion('tel:09113563040') : true;"
-          class="px-5 py-2.5 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
+          class="px-5 py-2.5 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss hover:text-japandi-cream transition-colors"
         >
           Call Desk
         </a>
@@ -82,7 +82,7 @@ import { LOCAL_FAQS } from '../utils/seoSchemas';
           href="https://wa.me/919113563040?text=Hello%2C%20I%20have%20a%20question%20regarding%20treatments%20at%20House%20of%20Dental." 
           target="_blank" 
           rel="noopener noreferrer"
-          class="px-5 py-2.5 rounded-full bg-japandi-moss text-japandi-cream text-xs font-semibold uppercase tracking-wider hover:bg-japandi-charcoal transition-colors shadow-sm"
+          class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
         >
           Chat on WhatsApp
         </a>

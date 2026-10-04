@@ -5,72 +5,77 @@ const config = getConfig();
 const { holistic_services } = config;
 ---
 
-<section id="pricing" class="py-24 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/40 relative">
+<section id="pricing" class="py-24 px-4 sm:px-6 lg:px-16 xl:px-24 bg-transparent border-t border-japandi-clay/40 relative">
   <div id="services" class="absolute -top-12 left-0 pointer-events-none"></div>
+  
   <!-- Subtle line decoration -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-12 bg-japandi-clay"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-12 bg-japandi-clay/60"></div>
 
   <div class="max-w-7xl mx-auto">
-    <!-- Header -->
+    <!-- Section Header -->
     <div class="max-w-3xl mb-16 animate-slow-fade">
-      <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">
-        {holistic_services.subtitle}
-      </p>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/50 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest mb-4">
+        Transparent Pricing &bull; Hospital Grade Quality
+      </div>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-japandi-charcoal font-medium tracking-tight">
         {holistic_services.title}
       </h2>
+      <p class="text-sm sm:text-base text-japandi-earth font-light mt-3 leading-relaxed">
+        {holistic_services.subtitle} All procedures include digital RVG X-ray diagnostic planning and sterile diagnostic pouches.
+      </p>
     </div>
 
-    <!-- Responsive Grid of Categories -->
+    <!-- Category Cards Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {holistic_services.categories.map((category, catIndex) => {
         const isRct = category.title.toLowerCase().includes('root canal');
         return (
           <div 
-            class="bg-japandi-sand/55 hover:bg-japandi-sand border border-japandi-clay/50 rounded-[2rem] p-8 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-japandi-charcoal/5 animate-slow-fade"
-            style={`animation-delay: ${catIndex * 0.15}s;`}
+            class="bg-japandi-sand/40 dark:bg-japandi-sand/25 hover:bg-japandi-sand/70 dark:hover:bg-japandi-sand/40 border border-japandi-clay/50 rounded-[2.2rem] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1 soft-glow animate-slow-fade"
+            style={`animation-delay: ${catIndex * 0.12}s;`}
           >
             <div>
-              <!-- Category Index & Title -->
-              <div class="flex items-center gap-4 mb-8">
-                <div class="w-10 h-10 rounded-full bg-japandi-cream border border-japandi-clay flex items-center justify-center text-japandi-moss shrink-0">
-                  <span class="text-sm font-semibold">0{catIndex + 1}</span>
+              <!-- Category Header -->
+              <div class="flex items-center gap-4 mb-6 pb-4 border-b border-japandi-clay/35">
+                <div class="w-10 h-10 rounded-2xl bg-japandi-cream dark:bg-japandi-sand border border-japandi-clay/60 flex items-center justify-center text-japandi-moss font-serif font-semibold text-base shrink-0">
+                  0{catIndex + 1}
                 </div>
-                <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
-                  {isRct ? (
-                    <a href="/treatments/root-canal-treatment" class="hover:text-japandi-moss transition-colors">
-                      {category.title}
-                    </a>
-                  ) : (
-                    category.title
-                  )}
-                </h3>
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-serif text-japandi-charcoal font-medium">
+                    {isRct ? (
+                      <a href="/treatments/root-canal-treatment" class="hover:text-japandi-moss transition-colors">
+                        {category.title}
+                      </a>
+                    ) : (
+                      category.title
+                    )}
+                  </h3>
+                </div>
               </div>
 
-              <!-- Category Description (Optional) -->
               {category.description && (
                 <p class="text-xs font-light text-japandi-earth leading-relaxed mb-6 italic">
                   {category.description}
                 </p>
               )}
               
-              <!-- Items List -->
-              <ul class="space-y-5">
+              <!-- Service Price List -->
+              <ul class="space-y-4">
                 {category.items.map((item) => {
                   const itemUrl = isRct ? '/treatments/root-canal-treatment' : null;
                   return (
                     <li class="flex items-baseline justify-between group">
                       {itemUrl ? (
-                        <a href={itemUrl} class="text-sm text-japandi-charcoal font-light leading-relaxed group-hover:text-japandi-moss transition-colors hover:underline">
+                        <a href={itemUrl} class="text-xs sm:text-sm text-japandi-charcoal font-light leading-relaxed group-hover:text-japandi-moss transition-colors hover:underline">
                           {item.name}
                         </a>
                       ) : (
-                        <span class="text-sm text-japandi-charcoal font-light leading-relaxed group-hover:text-japandi-moss transition-colors">
+                        <span class="text-xs sm:text-sm text-japandi-charcoal font-light leading-relaxed group-hover:text-japandi-moss transition-colors">
                           {item.name}
                         </span>
                       )}
-                      <span class="flex-grow mx-3 border-b border-dotted border-japandi-clay/70 self-end mb-1.5 opacity-40 group-hover:opacity-100 transition-opacity"></span>
-                      <span class="text-sm font-semibold text-japandi-moss shrink-0">
+                      <span class="flex-grow mx-2.5 border-b border-dotted border-japandi-clay/60 self-end mb-1 opacity-50 group-hover:opacity-100 transition-opacity"></span>
+                      <span class="text-xs sm:text-sm font-semibold text-japandi-moss shrink-0">
                         {item.price}
                       </span>
                     </li>
@@ -79,115 +84,174 @@ const { holistic_services } = config;
               </ul>
             </div>
 
-            {isRct && (
-              <div class="mt-8 pt-4 border-t border-japandi-clay/30">
+            <!-- Card Bottom Action -->
+            <div class="mt-8 pt-5 border-t border-japandi-clay/35 flex items-center justify-between">
+              <button 
+                type="button"
+                data-open-booking
+                data-treatment={category.title}
+                class="px-4 py-2 rounded-full border border-japandi-moss text-japandi-moss hover:bg-japandi-moss hover:text-japandi-cream text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+              >
+                Book Category
+              </button>
+              
+              {isRct && (
                 <a 
                   href="/treatments/root-canal-treatment" 
-                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-japandi-moss hover:text-japandi-charcoal transition-colors group/link"
+                  class="inline-flex items-center gap-1 text-xs font-semibold text-japandi-moss hover:text-japandi-charcoal transition-colors group/link"
                 >
-                  <span>Explore Painless Single-Sitting RCT</span>
+                  <span>Rotary RCT Guide</span>
                   <span class="transition-transform group-hover/link:translate-x-1">&rarr;</span>
                 </a>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         );
       })}
     </div>
 
-    <!-- Comprehensive Clinical Services Hub -->
-    <div class="mt-16 pt-12 border-t border-japandi-clay/40">
-      <div class="max-w-3xl mb-8">
-        <p class="text-xs font-semibold text-japandi-moss uppercase tracking-widest mb-1.5">Specialized Clinical Directory</p>
-        <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Explore All Dental Treatments</h3>
-        <p class="text-xs text-japandi-earth font-light mt-1">Detailed clinical guides, transparent pricing, and FAQs for all dental procedures at our Hennur studio:</p>
+    <!-- Comprehensive Clinical Services Hub (SEO Deep Links Grid) -->
+    <div class="mt-20 pt-14 border-t border-japandi-clay/40">
+      <div class="max-w-3xl mb-10">
+        <span class="text-[11px] font-semibold text-japandi-moss uppercase tracking-widest block mb-1.5">Specialized Dental Treatments</span>
+        <h3 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">Complete Dental Care Catalog</h3>
+        <p class="text-xs sm:text-sm text-japandi-earth font-light mt-1">Detailed treatment guides, procedure steps, and transparent costs at House of Dental:</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 text-xs">
-        <a href="/treatments/dental-implants" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Dental Implants &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Permanent titanium &amp; zirconia tooth replacement.</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-4 text-xs">
+        <a href="/treatments/dental-implants" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Dental Implants</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Permanent titanium &amp; zirconia tooth replacement.</span>
           </div>
         </a>
-        <a href="/treatments/root-canal-treatment" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Root Canal Treatment &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Painless single-sitting rotary endodontics.</span>
+
+        <a href="/treatments/root-canal-treatment" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Root Canal Treatment</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Painless single-sitting rotary endodontics.</span>
           </div>
         </a>
-        <a href="/treatments/clear-aligners" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Clear Aligners &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Custom invisible braces &amp; 3D digital orthodontics.</span>
+
+        <a href="/treatments/clear-aligners" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Clear Aligners</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Custom invisible braces &amp; 3D digital orthodontics.</span>
           </div>
         </a>
-        <a href="/treatments/teeth-whitening" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Teeth Whitening &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">In-office laser bleaching for radiant smiles.</span>
+
+        <a href="/treatments/teeth-whitening" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Teeth Whitening</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">In-office laser bleaching for radiant smiles.</span>
           </div>
         </a>
-        <a href="/treatments/wisdom-tooth-removal" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Wisdom Tooth Removal &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Atraumatic surgical extraction of impacted molars.</span>
+
+        <a href="/treatments/wisdom-tooth-removal" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Wisdom Tooth Removal</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Atraumatic surgical extraction of impacted molars.</span>
           </div>
         </a>
-        <a href="/treatments/pediatric-dentistry" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Pediatric Dentistry &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Gentle cavity care, fluoride &amp; sealants for children.</span>
+
+        <a href="/treatments/pediatric-dentistry" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Pediatric Dentistry</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Gentle cavity care, fluoride &amp; sealants for children.</span>
           </div>
         </a>
-        <a href="/treatments/tooth-extraction" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Tooth Extraction &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Gentle tooth removal with socket bone preservation.</span>
+
+        <a href="/treatments/tooth-extraction" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Tooth Extraction</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Gentle tooth removal with socket bone preservation.</span>
           </div>
         </a>
-        <a href="/treatments/dental-crowns" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Dental Crowns &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">CAD/CAM Zirconia &amp; E-Max high-strength caps.</span>
+
+        <a href="/treatments/dental-crowns" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Dental Crowns</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">CAD/CAM Zirconia &amp; E-Max high-strength caps.</span>
           </div>
         </a>
-        <a href="/treatments/dental-bridges" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Dental Bridges &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Fixed ceramic bridges to replace missing teeth.</span>
+
+        <a href="/treatments/dental-bridges" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Dental Bridges</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Fixed ceramic bridges to replace missing teeth.</span>
           </div>
         </a>
-        <a href="/treatments/dentures" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Dentures &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Full, partial, flexible &amp; implant snap-in dentures.</span>
+
+        <a href="/treatments/dentures" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Dentures</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Full, partial, flexible &amp; implant snap-in dentures.</span>
           </div>
         </a>
-        <a href="/treatments/scaling-and-polishing" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Scaling &amp; Polishing &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Ultrasonic teeth cleaning &amp; stain removal.</span>
+
+        <a href="/treatments/scaling-and-polishing" class="p-4 sm:p-4.5 rounded-2xl bg-japandi-sand/35 hover:bg-japandi-sand/80 dark:bg-japandi-sand/20 dark:hover:bg-japandi-sand/40 border border-japandi-clay/45 hover:border-japandi-moss transition-all duration-300 group flex flex-col justify-between h-full soft-glow">
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-semibold text-sm sm:text-base text-japandi-charcoal group-hover:text-japandi-moss transition-colors">Scaling &amp; Polishing</span>
+              <span class="text-japandi-moss text-sm group-hover:translate-x-1 transition-transform shrink-0">&rarr;</span>
+            </div>
+            <span class="text-japandi-earth font-light text-xs leading-normal">Ultrasonic teeth cleaning &amp; stain removal.</span>
           </div>
         </a>
-        <a href="/treatments/smile-makeover" class="p-4 rounded-2xl bg-japandi-sand/40 hover:bg-japandi-sand border border-japandi-clay/40 hover:border-japandi-moss transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-japandi-charcoal group-hover:text-japandi-moss block mb-0.5 transition-colors">Smile Makeover &rarr;</span>
-            <span class="text-[11px] text-japandi-earth font-light leading-relaxed">Digital Smile Design, porcelain veneers &amp; bonding.</span>
-          </div>
-        </a>
-        <a href="/treatments/emergency-dentist" class="p-4 rounded-2xl bg-red-50/70 hover:bg-red-50 border border-red-200 hover:border-red-400 transition-all group flex flex-col justify-between">
-          <div>
-            <span class="font-medium text-red-800 group-hover:text-red-900 block mb-0.5 transition-colors">Emergency Dentist &rarr;</span>
-            <span class="text-[11px] text-red-700/80 font-light leading-relaxed">Same-day severe pain relief &bull; Open Sundays.</span>
+
+        <a 
+          href="/treatments/emergency-dentist" 
+          class="p-4 sm:p-4.5 rounded-2xl bg-gradient-to-br from-red-600 via-rose-600 to-red-700 text-white border border-red-500/80 transition-all duration-300 group flex flex-col justify-between h-full shadow-lg shadow-red-600/30 hover:shadow-xl hover:shadow-red-600/40 hover:-translate-y-1 relative overflow-hidden"
+        >
+          <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amber-300 animate-ping shrink-0"></span>
+                <span class="font-extrabold text-sm sm:text-base text-white drop-shadow-sm">Emergency Dentist</span>
+              </div>
+              <span class="text-white text-sm group-hover:translate-x-1 transition-transform shrink-0 font-bold">&rarr;</span>
+            </div>
+            <span class="text-rose-100 font-medium text-xs leading-normal">Same-day severe pain relief &bull; Open Sundays.</span>
           </div>
         </a>
       </div>
     </div>
 
-    <!-- Footer Note -->
-    <p class="text-center text-xs font-light text-japandi-earth italic mt-16 max-w-2xl mx-auto leading-relaxed animate-slow-fade" style="animation-delay: 0.5s;">
-      * All prices in INR. Prices are subject to final clinical assessment and may vary with the complexity of the case.
+    <!-- Footnote -->
+    <p class="text-center text-xs font-light text-japandi-earth italic mt-14 max-w-2xl mx-auto leading-relaxed">
+      * All treatment costs in INR. Final pricing subject to diagnostic X-ray examination and case complexity.
     </p>
   </div>
 </section>
+

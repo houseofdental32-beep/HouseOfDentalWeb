@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import CustomCursor from '../components/CustomCursor';
+import DentalMirrorCursor from '../components/DentalMirrorCursor';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BackgroundAnimation from '../components/BackgroundAnimation.astro';
@@ -217,9 +217,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<meta name="theme-color" content="#F5F2EB" />
 		<meta name="format-detection" content="telephone=yes" />
 
+		<link rel="icon" type="image/png" href="/House_of_Dental_Logo_light.png" media="(prefers-color-scheme: light)" />
+		<link rel="icon" type="image/png" href="/House_of_Dental_Logo.png" media="(prefers-color-scheme: dark)" />
 		<link rel="icon" type="image/png" href="/House_of_Dental_Logo_light.png" />
-		<link rel="icon" type="image/png" href="/logo.png" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" type="image/png" href="/House_of_Dental_Logo_light.png" />
 		<link rel="apple-touch-icon" href="/House_of_Dental_Logo_light.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
@@ -331,7 +332,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			/>
 		</noscript>
 	</head>
-	<body class="bg-japandi-cream text-japandi-charcoal font-sans antialiased selection:bg-japandi-clay selection:text-japandi-charcoal min-h-screen flex flex-col relative z-0 pb-20 md:pb-0">
+	<body class="bg-japandi-cream text-japandi-charcoal font-sans antialiased selection:bg-japandi-clay selection:text-japandi-charcoal min-h-screen flex flex-col relative z-0 pb-20 md:pb-0 w-full max-w-full overflow-x-hidden">
 		<!-- Google Tag Manager (noscript) -->
 		{googleTagManagerId && (
 			<noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${googleTagManagerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
@@ -343,15 +344,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 		<!-- Soothing Background UI Animation -->
 		<BackgroundAnimation />
-
-		<!-- Custom Interactive Cursor Component -->
-		<CustomCursor client:only="react" />
 		
+		<!-- Interactive Animated Dental Mirror Cursor -->
+		<DentalMirrorCursor client:only="react" />
+
 		<!-- Sticky Header Component -->
 		{!hideHeader && <Header />}
 		
 		<!-- Main Content Slot -->
-		<main class="flex-grow relative z-10">
+		<main class="flex-grow relative z-10 w-full max-w-full overflow-x-hidden">
 			<slot />
 		</main>
 

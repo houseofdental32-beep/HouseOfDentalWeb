@@ -216,9 +216,9 @@ function buildToothMesh(h) {
   geo.setIndex(new THREE.Uint32BufferAttribute(mesh.indices, 1));
 
   const mat = new THREE.MeshPhysicalMaterial({
-    color: 0xc8d6d8, roughness: 0.45, metalness: 0.05,
-    clearcoat: 0.4, clearcoatRoughness: 0.35,
-    envMap: env, envMapIntensity: 0.45
+    color: 0x3f5b63, roughness: 0.40, metalness: 0.10,
+    clearcoat: 0.50, clearcoatRoughness: 0.30,
+    envMap: env, envMapIntensity: 0.65
   });
   // crown enamel texture (fine grain + faint growth lines) and a faint mint glow at grazing angles
   const TEXTURE_STRENGTH = 0.015;        // raise for a more visible texture, 0 to switch off
@@ -370,17 +370,17 @@ function buildToothMesh(h) {
         updatePointer(e.data.x);
       } else if (e.data.type === 'theme') {
         if (e.data.isDark) {
-          renderer.toneMappingExposure = 0.50;
-          mat.color.setHex(0x8a9ca0);
-          mat.envMapIntensity = 0.25;
-          hemiLight.intensity = 0.25;
-          key.intensity = 0.3;
-        } else {
-          renderer.toneMappingExposure = 0.75;
-          mat.color.setHex(0xc8d6d8);
+          renderer.toneMappingExposure = 0.65;
+          mat.color.setHex(0x7a9299);
           mat.envMapIntensity = 0.45;
           hemiLight.intensity = 0.45;
           key.intensity = 0.5;
+        } else {
+          renderer.toneMappingExposure = 0.88;
+          mat.color.setHex(0x3f5b63);
+          mat.envMapIntensity = 0.65;
+          hemiLight.intensity = 0.65;
+          key.intensity = 0.85;
         }
       }
     }

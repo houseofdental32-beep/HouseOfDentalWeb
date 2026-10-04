@@ -27,25 +27,25 @@
   },
   "theme_colors": {
     "light": {
-      "bg_primary": "#F5F2EB",
-      "bg_secondary": "#EAE4D9",
-      "border_color": "#D6CEBF",
-      "text_primary": "#2A2C2B",
-      "accent_moss": "#4E5E50",
-      "accent_earth": "#8D7B68"
+      "bg_primary": "#FAF8F5",
+      "bg_secondary": "#F3EFE6",
+      "border_color": "#E2D9CA",
+      "text_primary": "#121D28",
+      "accent_moss": "#C59B27",
+      "accent_earth": "#6E5A47"
     },
     "dark": {
-      "bg_primary": "#1C1F1D",
-      "bg_secondary": "#242825",
-      "border_color": "#383E3A",
-      "text_primary": "#ECE7DF",
-      "accent_moss": "#7D9082",
-      "accent_earth": "#A89A8A"
+      "bg_primary": "#0B131B",
+      "bg_secondary": "#121C27",
+      "border_color": "#203042",
+      "text_primary": "#F5F2EB",
+      "accent_moss": "#E5C384",
+      "accent_earth": "#CBB89D"
     }
   },
   "hero_section": {
-    "headline": "Calm Mind. Healthy Smile.",
-    "sub_headline": "Modern dental clinic in Gummanahalli, Bengaluru. Specializing in single-sitting root canals, dental implants, clear aligners, laser teeth whitening, and gentle family care.",
+    "headline": "Where Science Meets Art. Where Anxiety Meets Peace.",
+    "sub_headline": "Welcome to House of Dental — Bengaluru's premier smile sanctuary. Experience painless single-sitting rotary root canals, custom clear aligners, titanium implants, and 3D digital smile design in a serene, hospital-grade sterile environment.",
     "cta_text": "Reserve Your Visit / Call Desk",
     "video_url": "https://assets.mixkit.co/videos/preview/mixkit-modern-dental-office-interior-41984-large.mp4"
   },
@@ -253,52 +253,14 @@
       }
     ]
   },
-  "membership_section": {
-    "title": "House of Dental Clinic Membership",
-    "subtitle": "Prioritize your oral health all year round with our exclusive annual care plans.",
-    "plans": [
-      {
-        "name": "House of Dental Essential (Individual)",
-        "price": "Rs. 7,000",
-        "period": "year",
-        "features": [
-          "Priority booking",
-          "2 Free Consultations",
-          "10% off treatments"
-        ]
-      },
-      {
-        "name": "House of Dental Privilege (Family)",
-        "price": "Rs. 18,000",
-        "period": "year",
-        "features": [
-          "Prioritized Family booking",
-          "4 Free Consultations",
-          "15% off treatments",
-          "Bonus: Free Whitening for one member"
-        ]
-      },
-      {
-        "name": "House of Dental Royalty (VIP)",
-        "price": "Rs. 35,000",
-        "period": "year",
-        "features": [
-          "VIP Concierge booking",
-          "Unlimited Consultations",
-          "20% off treatments",
-          "Event Dedicated Smile Coach for weddings"
-        ]
-      }
-    ]
-  },
   "why_us_section": {
-    "subtitle": "OUR PHILOSOPHY",
-    "title": "Dentistry elevated<br/>into <span class=\"italic text-japandi-moss\">art.</span>",
+    "subtitle": "OUR CLINICAL PHILOSOPHY",
+    "title": "Redefining Dental Care<br/>with <span class=\"italic text-japandi-moss\">quiet mastery &amp; gentle care.</span>",
     "paragraphs": [
-      "At House of Dental, we believe your smile is the first thing the world notices about you - and the last thing you should leave to chance. We've built a studio, not a clinic. A space where precision meets aesthetics, and where every treatment is planned around your face, your goals, and your life.",
-      "Our philosophy is simple: beautiful dentistry begins with listening. We take the time to understand what you truly want, craft a plan unique to you, and walk alongside you every step of the way - with warmth, transparency, and clinical excellence."
+      "At House of Dental, we believe a healthy, confident smile transforms how you walk into a room and interact with the world. We have replaced traditional clinical anxiety with a calm Japandi sanctuary — a space engineered for peace, hospital-grade sterility, and personalized aesthetic balance.",
+      "Every treatment plan begins with attentive listening and high-definition digital diagnostic imaging. Our specialized dental surgeons combine micro-precision technology with gentle craftsmanship to preserve your natural teeth and deliver timeless, natural results."
     ],
-    "quote": "\"A smile is the most powerful thing you wear. We make sure yours is perfectly designed.\"",
+    "quote": "\"A radiant smile isn't just about teeth — it's about the confidence, comfort, and peace of mind behind it.\"",
     "button_text": "Begin Your Journey",
     "reasons": [
       {
@@ -343,7 +305,7 @@
         "role": "Lead Aesthetic Architect & Clinical Director (Founder)",
         "qualifications": "Dental Surgeon",
         "image_url": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=800",
-        "philosophy": "Dentistry is the quiet harmony of biological health and clean visual art."
+        "philosophy": "True aesthetic dentistry is the seamless harmony of biological health, micro-precision, and subtle artistic balance."
       },
       {
         "id": "agniss",
@@ -351,7 +313,7 @@
         "role": "Dental Surgeon",
         "qualifications": "Dental Surgeon",
         "image_url": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=800",
-        "philosophy": "Treating the mouth is treating the gateway to the entire body's wellness."
+        "philosophy": "Gentle care and honest communication are the foundation of lifetime oral health and patient trust."
       }
     ]
   },
