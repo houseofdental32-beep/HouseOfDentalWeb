@@ -3,7 +3,19 @@ import { getConfig } from '../utils/getConfig';
 import { supabase } from '../lib/supabase';
 
 const config = getConfig();
-const { locations_section, social_proof, google_reviews } = config;
+const { locations_section, social_proof, google_reviews, site_meta } = config;
+const phoneDisplay = locPhone => locPhone || site_meta?.phone || "09113563040";
+const whatsappNumber = site_meta?.whatsapp_number || "919113563040";
+const defaultAreas = site_meta?.local_areas_served || [
+  "Bagaluru",
+  "Gummanahalli",
+  "New Airport Rd",
+  "Bettahalsoor",
+  "Yelahanka",
+  "Chikkajala",
+  "Devanahalli",
+  "North Bengaluru"
+];
 
 let reviews: any[] = [];
 try {
@@ -187,7 +199,7 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
                   <span>Get Driving Directions</span>
                 </a>
                 <a
-                  href="https://wa.me/919113563040"
+                  href={`https://wa.me/${whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-japandi-moss text-japandi-cream text-xs font-semibold hover:bg-japandi-charcoal transition-all duration-300"
@@ -206,10 +218,10 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                   </svg>
                   <a 
-                    href="tel:09113563040"
-                    onclick="return gtag_report_conversion('tel:09113563040');" 
+                    href={`tel:${phoneDisplay(loc.phone)}`}
+                    onclick={`return gtag_report_conversion('tel:${phoneDisplay(loc.phone)}');`} 
                     class="hover:text-japandi-moss font-semibold transition-colors"
-                  >09113563040</a>
+                  >{phoneDisplay(loc.phone)}</a>
                 </div>
                 {loc.email && (
                   <div class="flex items-center">
@@ -225,8 +237,7 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
                   </svg>
                   <div class="flex flex-col">
                     <span class="font-medium text-japandi-charcoal">Operating Hours:</span>
-                    <span class="text-japandi-earth">Monday: 4:00 PM – 9:00 PM (16:00 – 21:00)</span>
-                    <span class="text-japandi-earth">Tuesday – Sunday: 9:30 AM – 9:00 PM (09:30 – 21:00)</span>
+                    <span class="text-japandi-earth">{loc.hours || "Monday: 4:00 PM – 9:00 PM | Tuesday – Sunday: 9:30 AM – 9:00 PM"}</span>
                   </div>
                 </div>
                 {loc.parking && (
@@ -245,19 +256,7 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
                   Neighborhoods We Proudly Serve:
                 </p>
                 <div class="flex flex-wrap gap-1.5">
-                  {[
-                    "Hennur",
-                    "Horamavu",
-                    "Hennur Bande",
-                    "Babusapalya",
-                    "Kalyan Nagar",
-                    "HRBR Layout",
-                    "Kammanahalli",
-                    "Banaswadi",
-                    "Ramamurthy Nagar",
-                    "Chelekere",
-                    "North Bengaluru"
-                  ].map((area) => (
+                  {defaultAreas.map((area: string) => (
                     <span class="px-2.5 py-1 rounded-full bg-japandi-sand/80 border border-japandi-clay/60 text-[10px] text-japandi-charcoal">
                       {area}
                     </span>

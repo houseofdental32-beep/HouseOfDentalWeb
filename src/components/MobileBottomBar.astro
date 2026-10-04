@@ -3,9 +3,11 @@ import { getConfig } from '../utils/getConfig';
 
 const config = getConfig();
 const { site_meta } = config;
-const whatsappNumber = site_meta.whatsapp_number || "919113563040";
-const phoneLink = "tel:09113563040";
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20House%20of%20Dental.`;
+const phoneDisplay = site_meta?.phone || "09113563040";
+const whatsappNumber = site_meta?.whatsapp_number || "919113563040";
+const defaultMsg = site_meta?.whatsapp_default_message || "Hello, I would like to book an appointment at House of Dental.";
+const phoneLink = `tel:${phoneDisplay}`;
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMsg)}`;
 ---
 
 <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-japandi-cream/95 backdrop-blur-md border-t border-japandi-clay/45 px-3 py-2.5 shadow-[0_-8px_30px_rgb(0,0,0,0.06)] flex items-center justify-between gap-2 animate-slow-fade">

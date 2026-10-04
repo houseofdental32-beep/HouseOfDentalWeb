@@ -7,11 +7,11 @@ export const prerender = false;
 
 const config = getConfig();
 
-const pageTitle = "Contact Dentist in Hennur Bangalore | House of Dental";
-const pageDescription = "Contact House of Dental on Horamavu Agara Road, Hennur Bande, Bangalore. Call 09113563040, WhatsApp, or book online. Open 7 days including Sunday.";
+const pageTitle = config.site_meta?.title || "Contact House of Dental";
+const pageDescription = config.site_meta?.description || "Contact House of Dental. Call 09113563040, WhatsApp, or book online.";
 const canonicalUrl = "https://aurevadental.com/contact";
-const phoneCallUrl = "tel:09113563040";
-const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20would%20like%20to%20book%20an%20appointment%20or%20ask%20a%20question.";
+const phoneCallUrl = `tel:${config.site_meta?.phone || "09113563040"}`;
+const whatsappUrl = `https://wa.me/${config.site_meta?.whatsapp_number || "919113563040"}?text=${encodeURIComponent(config.site_meta?.whatsapp_default_message || "Hello House of Dental, I would like to book an appointment.")}`;
 
 const breadcrumbs = [
   { name: "Home", url: "https://aurevadental.com/" },
@@ -116,11 +116,8 @@ const seoProps = {
               <div class="leading-relaxed">
                 <span class="font-semibold block text-japandi-charcoal">Physical Address:</span>
                 <address class="not-italic text-japandi-earth font-light">
-                  2nd Floor, No. 11/4, SLV Nilaya,<br/>
-                  Horamavu Agara Road, Near Nayara Petrol Bunk,<br/>
-                  Hennur Bande, Bengaluru, Karnataka 562149
+                  {config.site_meta?.address || config.locations_section?.locations_list?.[0]?.address || "1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149"}
                 </address>
-                <span class="inline-block mt-1 text-[11px] text-japandi-moss font-medium">Landmark: Opposite/Near Nayara Petrol Bunk</span>
               </div>
             </div>
 
@@ -133,7 +130,7 @@ const seoProps = {
               </div>
               <div>
                 <span class="font-semibold block text-japandi-charcoal">Call Reception:</span>
-                <a href={phoneCallUrl} class="text-japandi-moss font-semibold hover:underline text-sm">09113563040</a>
+                <a href={phoneCallUrl} class="text-japandi-moss font-semibold hover:underline text-sm">{config.site_meta?.phone || "09113563040"}</a>
                 <span class="block text-[11px] text-japandi-earth font-light mt-0.5">Direct clinical triage & emergency support</span>
               </div>
             </div>
@@ -147,7 +144,7 @@ const seoProps = {
               </div>
               <div>
                 <span class="font-semibold block text-japandi-charcoal">Email Desk:</span>
-                <a href="mailto:houseofdental32@gmail.com" class="text-japandi-earth hover:text-japandi-moss transition-colors">houseofdental32@gmail.com</a>
+                <a href={`mailto:${config.locations_section?.locations_list?.[0]?.email || "houseofdental32@gmail.com"}`} class="text-japandi-earth hover:text-japandi-moss transition-colors">{config.locations_section?.locations_list?.[0]?.email || "houseofdental32@gmail.com"}</a>
               </div>
             </div>
 
@@ -161,9 +158,7 @@ const seoProps = {
               <div>
                 <span class="font-semibold block text-japandi-charcoal">Studio Hours:</span>
                 <p class="text-japandi-earth font-light leading-relaxed">
-                  <strong class="font-medium text-japandi-charcoal">Tuesday &ndash; Sunday:</strong> 9:30 AM &ndash; 9:00 PM<br/>
-                  <strong class="font-medium text-japandi-charcoal">Monday:</strong> 4:00 PM &ndash; 9:00 PM<br/>
-                  <span class="text-japandi-moss font-medium">Sunday Emergency Appointments Available</span>
+                  {config.locations_section?.locations_list?.[0]?.hours || "Monday: 4:00 PM – 9:00 PM | Tuesday – Sunday: 9:30 AM – 9:00 PM"}
                 </p>
               </div>
             </div>

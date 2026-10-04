@@ -1,11 +1,21 @@
 ---
+import { getConfig } from '../utils/getConfig';
+
+const config = getConfig();
+const { site_meta } = config;
+
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
 const servicesLink = isHome ? '#services' : '/#services';
 const teamLink = isHome ? '#team' : '/#team';
 const locationsLink = isHome ? '#locations' : '/#locations';
 const faqLink = isHome ? '#faq' : '/#faq';
-const whatsappUrl = "https://wa.me/919113563040";
-const phoneCallUrl = "tel:09113563040";
+
+const phoneDisplay = site_meta?.phone || "09113563040";
+const whatsappNumber = site_meta?.whatsapp_number || "919113563040";
+const defaultMsg = site_meta?.whatsapp_default_message || "Hello, I would like to book an appointment at House of Dental.";
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMsg)}`;
+const phoneCallUrl = `tel:${phoneDisplay}`;
+const siteTitle = site_meta?.title || "House of Dental";
 
 const treatments = [
   {
@@ -53,37 +63,37 @@ const treatments = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-japandi-clay/20 bg-japandi-cream/85 backdrop-blur-md px-6 py-3.5 lg:px-24">
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
-    <!-- Logo and Brand -->
-    <a href="/" class="flex items-center gap-2.5 group" aria-label="House of Dental Homepage">
+<header class="sticky top-0 z-50 w-full border-b border-japandi-clay/20 bg-japandi-cream/85 backdrop-blur-md px-4 sm:px-6 lg:px-12 xl:px-16 py-3">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <!-- Home Button (Clinic Logo) -->
+    <a href="/" class="flex items-center gap-2.5 group shrink-0" aria-label="House of Dental - Home" title="Home - House of Dental">
       <!-- Light Theme Logo -->
       <img 
         src="/House_of_Dental_Logo_light.png" 
-        alt="House of Dental - Dental Clinic in Bagaluru Bengaluru" 
+        alt="House of Dental - Dental Clinic" 
         width="220"
         height="90"
-        class="header-logo-light h-16 sm:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+        class="header-logo-light h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
       />
       <!-- Dark Theme Logo -->
       <img 
         src="/House_of_Dental_Logo.png" 
-        alt="House of Dental - Dental Clinic in Bagaluru Bengaluru" 
+        alt="House of Dental - Dental Clinic" 
         width="220"
         height="90"
-        class="header-logo-dark h-16 sm:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+        class="header-logo-dark h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
       />
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="flex items-center gap-5 lg:gap-8">
-      <div class="hidden md:flex items-center gap-5 lg:gap-7 text-xs font-medium uppercase tracking-widest text-japandi-earth">
+    <nav class="flex items-center gap-3 lg:gap-5 xl:gap-7 shrink-0">
+      <div class="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-6 text-[11px] lg:text-xs font-medium uppercase tracking-wider text-japandi-earth whitespace-nowrap">
         
         <!-- Treatments Dropdown -->
-        <div class="relative group/dropdown">
+        <div class="relative group/dropdown shrink-0">
           <button 
             type="button"
-            class="flex items-center gap-1.5 py-2 hover:text-japandi-charcoal transition-colors group-hover/dropdown:text-japandi-moss focus:outline-none cursor-none"
+            class="flex items-center gap-1 py-2 hover:text-japandi-charcoal transition-colors group-hover/dropdown:text-japandi-moss focus:outline-none cursor-none"
             aria-haspopup="true"
             aria-expanded="false"
           >
@@ -140,7 +150,7 @@ const treatments = [
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5 text-japandi-moss">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
           </svg>
-          <span>09113563040</span>
+          <span>{phoneDisplay}</span>
         </a>
 
         <!-- Direct WhatsApp Chat Link on Desktop / Tablet -->

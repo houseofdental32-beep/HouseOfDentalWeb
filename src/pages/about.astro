@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getConfig } from '../utils/getConfig';
 import { generateBreadcrumbSchema, generateFaqSchema } from '../utils/seoSchemas';
 
 export const prerender = false;
 
-const pageTitle = "About Us | Dental Clinic in Hennur | House of Dental";
-const pageDescription = "Learn about House of Dental in Hennur, Bangalore. Led by Dr. Shweta Singh and Dr. Agniss Mishra, offering gentle, hospital-grade modern dental treatments.";
+const config = getConfig();
+
+const pageTitle = config.site_meta?.title ? `About Us | ${config.site_meta.title}` : "About Us | House of Dental";
+const pageDescription = config.site_meta?.description || "Learn about House of Dental. Led by Dr. Shweta Singh and Dr. Agniss Mishra, offering gentle, modern dental treatments.";
 const canonicalUrl = "https://aurevadental.com/about";
-const phoneCallUrl = "tel:09113563040";
-const whatsappUrl = "https://wa.me/919113563040?text=Hello%20House%20of%20Dental%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20clinic%20and%20doctors.";
+const phoneCallUrl = `tel:${config.site_meta?.phone || "09113563040"}`;
+const whatsappUrl = `https://wa.me/${config.site_meta?.whatsapp_number || "919113563040"}?text=${encodeURIComponent(config.site_meta?.whatsapp_default_message || "Hello House of Dental, I would like to learn more about your clinic.")}`;
 
 const breadcrumbs = [
   { name: "Home", url: "https://aurevadental.com/" },

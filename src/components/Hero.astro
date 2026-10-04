@@ -53,14 +53,13 @@ const whatsappUrl = `${whatsappBase}${site_meta.whatsapp_number}?text=${encodedM
         </div>
       </div>
       
-      <!-- Local Clinical H1 Heading -->
+      <!-- Dynamic Clinical H1 Heading from Config -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-japandi-charcoal leading-[1.15] font-medium tracking-tight animate-slow-fade opacity-0" style="animation-fill-mode: forwards; animation-delay: 0.3s;">
-        House of Dental <span class="text-3xl sm:text-4xl md:text-5xl font-light text-japandi-moss block sm:inline font-sans">| Dental Clinic in Hennur, Bangalore</span> <br class="hidden md:block"/>
-        <span class="text-lg sm:text-xl md:text-2xl text-japandi-earth font-sans uppercase tracking-widest block mt-3 font-normal">Modern Family & Specialized Dental Care</span>
+        House of Dental <span class="text-3xl sm:text-4xl md:text-5xl font-light text-japandi-moss block sm:inline font-sans">| {hero_section.headline}</span>
       </h1>
       
       <p class="text-base sm:text-lg text-japandi-earth max-w-2xl font-light leading-relaxed animate-slow-fade opacity-0" style="animation-fill-mode: forwards; animation-delay: 0.4s;">
-        A premier dental clinic on Horamavu Agara Road, Hennur Bande, Bangalore. Providing gentle, painless dental treatments with digital RVG imaging, hospital-grade sterilization, and transparent pricing.
+        {hero_section.sub_headline}
       </p>
 
       <!-- Primary Core Services (Above the Fold for Local SEO & User Intent) -->

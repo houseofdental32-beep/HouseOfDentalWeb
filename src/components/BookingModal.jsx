@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import rawConfig from '../data/config.json';
 
 const TREATMENTS = [
   "Clear Aligners & 3D Scan",
@@ -101,7 +102,9 @@ export default function BookingModal() {
       "• Studio: Bagaluru, Bengaluru"
     ].filter(Boolean).join("\n");
 
-    const whatsappUrl = `https://wa.me/919113563040?text=${encodeURIComponent(message)}`;
+    const whatsappNumber = rawConfig.site_meta?.whatsapp_number || "919113563040";
+    const phoneDisplay = rawConfig.site_meta?.phone || "09113563040";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     // Trigger Google Ads conversion tracking if available
     if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
@@ -186,7 +189,7 @@ export default function BookingModal() {
                   </a>
                 )}
                 <a
-                  href="tel:09113563040"
+                  href={`tel:${rawConfig.site_meta?.phone || "09113563040"}`}
                   className="w-full sm:w-auto px-6 py-3 rounded-full border border-japandi-moss text-japandi-moss text-xs font-semibold uppercase tracking-wider hover:bg-japandi-moss/10 transition-colors"
                 >
                   Call Desk

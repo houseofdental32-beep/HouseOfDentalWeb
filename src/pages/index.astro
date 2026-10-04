@@ -29,13 +29,13 @@ const breadcrumbSchema = JSON.stringify(generateBreadcrumbSchema([
 const schemaMarkup = [faqSchema, breadcrumbSchema];
 
 const seoProps = {
-  title: "Dental Clinic in Hennur Bangalore | House of Dental",
-  description: "House of Dental is a modern dental clinic in Hennur, Bangalore. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.",
-  keywords: "dental clinic in hennur bangalore, dentist in hennur, dental clinic horamavu, best dentist near me, root canal treatment bengaluru, clear aligners hennur bangalore, dental implants, teeth whitening, emergency dentist hennur",
+  title: config.site_meta?.title || "House of Dental",
+  description: config.site_meta?.description || "House of Dental is a modern dental clinic.",
+  keywords: "dental clinic in bagaluru bangalore, dentist in gummanahalli, dental clinic horamavu, best dentist near me, root canal treatment bengaluru, clear aligners, dental implants, teeth whitening",
   canonical: "https://aurevadental.com/",
   ogType: "website",
-  ogTitle: "Dental Clinic in Hennur Bangalore | House of Dental",
-  ogDescription: "House of Dental is a modern dental clinic in Hennur, Bangalore. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.",
+  ogTitle: config.site_meta?.title || "House of Dental",
+  ogDescription: config.site_meta?.description || "House of Dental is a modern dental clinic.",
   ogUrl: "https://aurevadental.com/",
   ogImage: "https://aurevadental.com/assets/og-image.jpg",
   schemaMarkup

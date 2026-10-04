@@ -1,6 +1,6 @@
 {
   "site_meta": {
-    "title": "Dental Clinic in Bagaluru Bengaluru | House of Dental",
+    "title": "Dental Clinic in Gummanahalli Bengaluru | House of Dental",
     "description": "House of Dental is a modern dental clinic in Bagaluru, Bengaluru. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.",
     "phone": "09113563040",
     "address": "1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149",
@@ -45,7 +45,7 @@
   },
   "hero_section": {
     "headline": "Calm Mind. Healthy Smile.",
-    "sub_headline": "Modern dental clinic in Hennur, Bangalore. Specializing in single-sitting root canals, dental implants, clear aligners, laser teeth whitening, and gentle family care.",
+    "sub_headline": "Modern dental clinic in Gummanahalli, Bengaluru. Specializing in single-sitting root canals, dental implants, clear aligners, laser teeth whitening, and gentle family care.",
     "cta_text": "Reserve Your Visit / Call Desk",
     "video_url": "https://assets.mixkit.co/videos/preview/mixkit-modern-dental-office-interior-41984-large.mp4"
   },
@@ -84,28 +84,61 @@
       {
         "title": "General Dentistry",
         "items": [
-          { "name": "New Patient Consultation (Incl. RVG X-ray)", "price": "Rs. 600" },
-          { "name": "Scaling & Polishing", "price": "Rs. 2,000 - Rs. 5,000" },
-          { "name": "Tooth Filling", "price": "Rs. 1,500 - Rs. 4,000" },
-          { "name": "Tooth Extraction", "price": "Rs. 1,500 - Rs. 7,000" }
+          {
+            "name": "New Patient Consultation (Incl. RVG X-ray)",
+            "price": "Rs. 600"
+          },
+          {
+            "name": "Scaling & Polishing",
+            "price": "Rs. 2,000 - Rs. 5,000"
+          },
+          {
+            "name": "Tooth Filling",
+            "price": "Rs. 1,500 - Rs. 4,000"
+          },
+          {
+            "name": "Tooth Extraction",
+            "price": "Rs. 1,500 - Rs. 7,000"
+          }
         ]
       },
       {
         "title": "Root Canal Treatment (RCT)",
         "description": "Specialized Root Canal Treatments focusing on absolute disinfection, micro-precision cleaning, and long-term tooth preservation using multi-sitting specialized clinical protocols and digital imaging.",
         "items": [
-          { "name": "RCT (Anterior Tooth)", "price": "Rs. 4,000 - Rs. 6,000" },
-          { "name": "RCT (Premolar)", "price": "Rs. 5,000 - Rs. 8,000" },
-          { "name": "RCT (Molar)", "price": "Rs. 6,000 - Rs. 10,000" },
-          { "name": "Re-RCT", "price": "Rs. 8,000 onwards" }
+          {
+            "name": "RCT (Anterior Tooth)",
+            "price": "Rs. 4,000 - Rs. 6,000"
+          },
+          {
+            "name": "RCT (Premolar)",
+            "price": "Rs. 5,000 - Rs. 8,000"
+          },
+          {
+            "name": "RCT (Molar)",
+            "price": "Rs. 6,000 - Rs. 10,000"
+          },
+          {
+            "name": "Re-RCT",
+            "price": "Rs. 8,000 onwards"
+          }
         ]
       },
       {
         "title": "Kids Dentistry",
         "items": [
-          { "name": "Kids Dental Check-up", "price": "Rs. 500" },
-          { "name": "Fluoride Application", "price": "Rs. 800 - Rs. 1,500" },
-          { "name": "Pit and Fissure Sealant", "price": "Rs. 1,500 - Rs. 2,500" }
+          {
+            "name": "Kids Dental Check-up",
+            "price": "Rs. 500"
+          },
+          {
+            "name": "Fluoride Application",
+            "price": "Rs. 800 - Rs. 1,500"
+          },
+          {
+            "name": "Pit and Fissure Sealant",
+            "price": "Rs. 1,500 - Rs. 2,500"
+          }
         ]
       }
     ]
@@ -117,42 +150,105 @@
       {
         "title": "Crowns & Bridges",
         "items": [
-          { "name": "Metal Crown", "price": "Rs. 3,000 - Rs. 5,000" },
-          { "name": "PFM Crown", "price": "Rs. 5,000 - Rs. 8,000" },
-          { "name": "Ceramic Crown", "price": "Rs. 6,000 - Rs. 10,000" },
-          { "name": "Zirconia Crown", "price": "Rs. 10,000 - Rs. 18,000" },
-          { "name": "Bridge (Per Unit)", "price": "Rs. 6,000 onwards" }
+          {
+            "name": "Metal Crown",
+            "price": "Rs. 3,000 - Rs. 5,000"
+          },
+          {
+            "name": "PFM Crown",
+            "price": "Rs. 5,000 - Rs. 8,000"
+          },
+          {
+            "name": "Ceramic Crown",
+            "price": "Rs. 6,000 - Rs. 10,000"
+          },
+          {
+            "name": "Zirconia Crown",
+            "price": "Rs. 10,000 - Rs. 18,000"
+          },
+          {
+            "name": "Bridge (Per Unit)",
+            "price": "Rs. 6,000 onwards"
+          }
         ]
       },
       {
         "title": "Implants, Aligners & Braces",
         "items": [
-          { "name": "Dental Implant (Per Implant)", "price": "Rs. 25,000 - Rs. 60,000" },
-          { "name": "Implant with Crown", "price": "Rs. 45,000 - Rs. 80,000" },
-          { "name": "Full Mouth Implants", "price": "Rs. 2,50,000 onwards" },
-          { "name": "Metal Braces", "price": "Rs. 30,000 onwards" },
-          { "name": "Ceramic Braces", "price": "Rs. 45,000 onwards" },
-          { "name": "Clear Aligners", "price": "Rs. 80,000 - Rs. 2,50,000" }
+          {
+            "name": "Dental Implant (Per Implant)",
+            "price": "Rs. 25,000 - Rs. 60,000"
+          },
+          {
+            "name": "Implant with Crown",
+            "price": "Rs. 45,000 - Rs. 80,000"
+          },
+          {
+            "name": "Full Mouth Implants",
+            "price": "Rs. 2,50,000 onwards"
+          },
+          {
+            "name": "Metal Braces",
+            "price": "Rs. 30,000 onwards"
+          },
+          {
+            "name": "Ceramic Braces",
+            "price": "Rs. 45,000 onwards"
+          },
+          {
+            "name": "Clear Aligners",
+            "price": "Rs. 80,000 - Rs. 2,50,000"
+          }
         ]
       },
       {
         "title": "Smile Design & Cosmetic Dentistry",
         "items": [
-          { "name": "Smile Consultation", "price": "Rs. 500" },
-          { "name": "Digital Smile Design", "price": "Rs. 3,000 - Rs. 7,000" },
-          { "name": "Teeth Whitening (Advanced)", "price": "Rs. 6,000 - Rs. 15,000" },
-          { "name": "Veneers (Per Tooth)", "price": "Rs. 8,000 - Rs. 25,000" },
-          { "name": "Smile Makeover", "price": "Rs. 80,000 onwards" }
+          {
+            "name": "Smile Consultation",
+            "price": "Rs. 500"
+          },
+          {
+            "name": "Digital Smile Design",
+            "price": "Rs. 3,000 - Rs. 7,000"
+          },
+          {
+            "name": "Teeth Whitening (Advanced)",
+            "price": "Rs. 6,000 - Rs. 15,000"
+          },
+          {
+            "name": "Veneers (Per Tooth)",
+            "price": "Rs. 8,000 - Rs. 25,000"
+          },
+          {
+            "name": "Smile Makeover",
+            "price": "Rs. 80,000 onwards"
+          }
         ]
       },
       {
         "title": "Bridal & Groom Smile Packages",
         "items": [
-          { "name": "Dental Check-up", "price": "Rs. 1,000 - Rs. 1,500" },
-          { "name": "The Express Glow (Whitening + Polish)", "price": "Rs. 12,000 - Rs. 18,000" },
-          { "name": "The Signature Bride / Groom", "price": "Rs. 35,000 - Rs. 55,000" },
-          { "name": "The Luxury Couture Smile", "price": "Rs. 1,20,000 - Rs. 1,80,000" },
-          { "name": "Couple's Wedding Radiance Pass", "price": "Rs. 1,80,000 - Rs. 2,50,000" }
+          {
+            "name": "Dental Check-up",
+            "price": "Rs. 1,000 - Rs. 1,500"
+          },
+          {
+            "name": "The Express Glow (Whitening + Polish)",
+            "price": "Rs. 12,000 - Rs. 18,000"
+          },
+          {
+            "name": "The Signature Bride / Groom",
+            "price": "Rs. 35,000 - Rs. 55,000"
+          },
+          {
+            "name": "The Luxury Couture Smile",
+            "price": "Rs. 1,20,000 - Rs. 1,80,000"
+          },
+          {
+            "name": "Couple's Wedding Radiance Pass",
+            "price": "Rs. 1,80,000 - Rs. 2,50,000"
+          }
         ]
       }
     ]

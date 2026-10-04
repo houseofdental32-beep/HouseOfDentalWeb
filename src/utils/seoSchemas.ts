@@ -150,9 +150,9 @@ export function generateDentistSchema(config: any = {}, includeFullCatalog: bool
       "https://aurevadental.com/og-image.jpg",
       "https://aurevadental.com/logo.png"
     ],
-    "description": "House of Dental is a modern dental clinic & smile studio at BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru. Painless root canal, dental implants, aligners & cosmetic dentistry. Call 09113563040.",
-    "telephone": "09113563040",
-    "email": "houseofdental32@gmail.com",
+    "description": config.site_meta?.description || "House of Dental is a modern dental clinic & smile studio at BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru.",
+    "telephone": config.site_meta?.phone || "09113563040",
+    "email": config.locations_section?.locations_list?.[0]?.email || "houseofdental32@gmail.com",
     "priceRange": "₹₹",
     "currenciesAccepted": "INR",
     "paymentAccepted": [
@@ -171,7 +171,7 @@ export function generateDentistSchema(config: any = {}, includeFullCatalog: bool
     "isAccessibleForFree": false,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2nd Floor, No. 11/4, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande",
+      "streetAddress": config.site_meta?.address || config.locations_section?.locations_list?.[0]?.address || "1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru",
       "addressLocality": "Bengaluru",
       "addressRegion": "Karnataka",
       "postalCode": "562149",
