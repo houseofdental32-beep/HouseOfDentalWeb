@@ -1,6 +1,8 @@
 export interface SiteMeta {
   title: string;
   description: string;
+  phone?: string;
+  address?: string;
   whatsapp_number: string;
   whatsapp_default_message: string;
   google_site_verification?: string;
@@ -28,6 +30,7 @@ export interface ServiceItem {
 
 export interface ServiceCategory {
   title: string;
+  description?: string;
   items: ServiceItem[];
 }
 
