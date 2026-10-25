@@ -25,12 +25,14 @@ const { doctors_section, show_doctor_images } = config;
       </div>
       
       <!-- Swipe/Scroll Hint -->
-      <div class="mt-6 md:mt-0 flex items-center gap-3 text-xs text-japandi-earth font-light">
-        <span>Scroll team</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 animate-bounce-horizontal text-japandi-moss">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-        </svg>
-      </div>
+      {doctors_section.team.length > 1 && (
+        <div class="mt-6 md:mt-0 flex items-center gap-3 text-xs text-japandi-earth font-light">
+          <span>Scroll team</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 animate-bounce-horizontal text-japandi-moss">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </div>
+      )}
     </div>
 
     <!-- Horizontally Scrollable Gallery -->
@@ -86,7 +88,7 @@ const { doctors_section, show_doctor_images } = config;
                 data-open-booking
                 class="w-full py-2.5 rounded-full border border-japandi-moss/60 hover:bg-japandi-moss hover:text-japandi-cream text-japandi-moss text-xs font-semibold uppercase tracking-wider transition-all duration-300"
               >
-                Consult {doctor.name.split(' ')[0]}
+                Consult {doctor.name}
               </button>
             </div>
           </div>

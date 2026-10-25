@@ -13,9 +13,16 @@ const whatsappUrl = `${whatsappBase}${site_meta.whatsapp_number}?text=${encodedM
 <header id="book" class="relative min-h-[92vh] flex items-center px-4 sm:px-6 lg:px-16 xl:px-24 py-16 sm:py-24 overflow-hidden ambient-glow">
   <!-- Background Video Overlay Container -->
   <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+    <!-- og-image.jpg in the background with opacity set to 0 -->
+    <img 
+      src="/og-image.jpg" 
+      alt="" 
+      aria-hidden="true" 
+      class="absolute inset-0 w-full h-full object-cover opacity-0 pointer-events-none" 
+      style="opacity: 0;"
+    />
     <video 
       src={hero_section.video_url} 
-      poster="/og-image.jpg"
       autoplay 
       loop 
       muted 
@@ -37,7 +44,7 @@ const whatsappUrl = `${whatsappBase}${site_meta.whatsapp_number}?text=${encodedM
         <!-- Live Status & Rating Badges -->
         <div class="flex flex-wrap items-center gap-2.5 animate-slow-fade" style="animation-delay: 0.1s;">
           <a 
-            href={site_meta.google_maps_url || "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"} 
+            href={site_meta.google_maps_url || "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"} 
             target="_blank" 
             rel="noopener noreferrer" 
             title={`View ${site_meta.review_count || 29} 5-star reviews on Google Maps`}
@@ -74,7 +81,7 @@ const whatsappUrl = `${whatsappBase}${site_meta.whatsapp_number}?text=${encodedM
         <!-- Quick Access Dental Treatments (Above the Fold SEO Links) -->
         <div class="w-full pt-1 animate-slow-fade opacity-0" style="animation-fill-mode: forwards; animation-delay: 0.45s;">
           <span class="text-[11px] font-semibold text-japandi-moss uppercase tracking-widest block mb-2.5">
-            Specialized Dental Care in Hennur &amp; Horamavu:
+            Specialized Dental Care in Bagalur &amp; Gummanahalli:
           </span>
           <div class="flex flex-wrap gap-2">
             <a 

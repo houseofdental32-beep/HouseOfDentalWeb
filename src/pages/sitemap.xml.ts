@@ -13,7 +13,7 @@ interface StaticRoute {
 
 const STATIC_ROUTES: StaticRoute[] = [
   // Core pages
-  { url: 'https://aurevadental.com/', changefreq: 'weekly', priority: '1.0', lastmod: '2026-09-29', title: 'House of Dental - Premium Dental Clinic in Hennur, Bangalore' },
+  { url: 'https://aurevadental.com/', changefreq: 'weekly', priority: '1.0', lastmod: '2026-09-29', title: 'House of Dental - Premium Dental Clinic in Bagalur, Bangalore' },
   { url: 'https://aurevadental.com/about', changefreq: 'monthly', priority: '0.8', lastmod: '2026-09-29', title: 'About House of Dental' },
   { url: 'https://aurevadental.com/contact', changefreq: 'monthly', priority: '0.8', lastmod: '2026-09-29', title: 'Contact House of Dental' },
   { url: 'https://aurevadental.com/feedback', changefreq: 'weekly', priority: '0.7', lastmod: '2026-09-29', title: 'Patient Reviews & Feedback' },
@@ -22,16 +22,16 @@ const STATIC_ROUTES: StaticRoute[] = [
   { url: 'https://aurevadental.com/blog', changefreq: 'daily', priority: '0.8', lastmod: '2026-09-29', title: 'Dental Health Blog & Clinical Guides' },
 
   // Local Catchment Pages
-  { url: 'https://aurevadental.com/dentist-in-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Best Dentist in Hennur Bangalore' },
-  { url: 'https://aurevadental.com/dental-clinic-in-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dental Clinic in Hennur Bangalore' },
-  { url: 'https://aurevadental.com/emergency-dentist-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Emergency Dentist in Hennur Bangalore' },
-  { url: 'https://aurevadental.com/root-canal-treatment-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Root Canal Treatment in Hennur' },
-  { url: 'https://aurevadental.com/dental-implants-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dental Implants in Hennur' },
-  { url: 'https://aurevadental.com/invisible-aligners-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Invisible Aligners in Hennur' },
-  { url: 'https://aurevadental.com/teeth-whitening-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Teeth Whitening in Hennur' },
-  { url: 'https://aurevadental.com/wisdom-tooth-removal-hennur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Wisdom Tooth Removal in Hennur' },
-  { url: 'https://aurevadental.com/dentist-in-horamavu', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dentist in Horamavu Bangalore' },
-  { url: 'https://aurevadental.com/dentist-near-manyata-tech-park', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dentist Near Manyata Tech Park' },
+  { url: 'https://aurevadental.com/dentist-in-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Best Dentist in Bagalur Bangalore' },
+  { url: 'https://aurevadental.com/dental-clinic-in-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dental Clinic in Bagalur Bangalore' },
+  { url: 'https://aurevadental.com/emergency-dentist-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Emergency Dentist in Bagalur Bangalore' },
+  { url: 'https://aurevadental.com/root-canal-treatment-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Root Canal Treatment in Bagalur' },
+  { url: 'https://aurevadental.com/dental-implants-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dental Implants in Bagalur' },
+  { url: 'https://aurevadental.com/invisible-aligners-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Invisible Aligners in Bagalur' },
+  { url: 'https://aurevadental.com/teeth-whitening-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Teeth Whitening in Bagalur' },
+  { url: 'https://aurevadental.com/wisdom-tooth-removal-bagalur', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Wisdom Tooth Removal in Bagalur' },
+  { url: 'https://aurevadental.com/dentist-in-gummanahalli', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dentist in Gummanahalli Bangalore' },
+  { url: 'https://aurevadental.com/dentist-bagalur-colony', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Dentist in Bagalur Colony Bangalore' },
 
   // Treatment Pages (Bangalore-wide intent)
   { url: 'https://aurevadental.com/treatments/clear-aligners', changefreq: 'weekly', priority: '0.9', lastmod: '2026-09-29', title: 'Clear Aligners & Invisible Braces in Bangalore' },

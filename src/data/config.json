@@ -8,10 +8,10 @@
     "whatsapp_default_message": "Hello, I would like to book an appointment at House of Dental.",
     "google_site_verification": "",
     "bing_site_verification": "",
-    "google_ads_id": "AW-18385058775",
-    "google_analytics_id": "G-7N3BPH5397",
-    "google_tag_manager_id": "GTM-WRVN4QWK",
-    "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA",
+    "google_ads_id": "",
+    "google_analytics_id": "",
+    "google_tag_manager_id": "",
+    "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18",
     "rating_value": 5.0,
     "review_count": 29,
     "local_areas_served": [
@@ -296,24 +296,16 @@
     "embed_url": "https://www.google.com/maps/embed?pb=!4v1690000000000!6m8!1m7!1sCAoSLEFGMVFpcE80b3F0TTRfU1M1RnQxZVZXZG1IeXh6Wnp1cTRFckp1TWh4NUpM!2m2!1d47.6062!2d-122.3321!3f320!4f10!5f0.7820865974627469"
   },
   "doctors_section": {
-    "title": "Our Artisans",
-    "subtitle": "Meet the practitioners who blend clinical excellence with artistic care.",
+    "title": "Our Artisan",
+    "subtitle": "Meet the practitioner who blends clinical excellence with artistic care.",
     "team": [
       {
-        "id": "shweta",
-        "name": "Dr. Shweta Singh",
-        "role": "Lead Aesthetic Architect & Clinical Director (Founder)",
-        "qualifications": "Dental Surgeon",
-        "image_url": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=800",
-        "philosophy": "True aesthetic dentistry is the seamless harmony of biological health, micro-precision, and subtle artistic balance."
-      },
-      {
-        "id": "agniss",
-        "name": "Dr. Agniss Mishra",
-        "role": "Dental Surgeon",
-        "qualifications": "Dental Surgeon",
+        "id": "ashish",
+        "name": "Dr. Ashish",
+        "role": "Lead Dental Surgeon & Clinical Director",
+        "qualifications": "BDS, Dental Surgeon",
         "image_url": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=800",
-        "philosophy": "Gentle care and honest communication are the foundation of lifetime oral health and patient trust."
+        "philosophy": "True aesthetic dentistry is the seamless harmony of biological health, micro-precision, and gentle care."
       }
     ]
   },
@@ -325,9 +317,9 @@
         "id": "bengaluru",
         "name": "House of Dental",
         "address": "1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149",
-        "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA",
-        "latitude": 13.0381741,
-        "longitude": 77.6416031,
+        "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18",
+        "latitude": 13.1384696,
+        "longitude": 77.6703123,
         "phone": "09113563040",
         "email": "houseofdental32@gmail.com",
         "hours": "Monday: 4:00 PM – 9:00 PM | Tuesday – Sunday: 9:30 AM – 9:00 PM",
@@ -341,28 +333,28 @@
     "google_rating": 5.0,
     "review_count": 29,
     "badge_text": "Verified 5.0★ on Google Maps",
-    "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   },
   "google_reviews": [
     {
       "name": "Priya Ramesh",
-      "role": "Local Guide • 14 reviews • Hennur",
+      "role": "Local Guide • 14 reviews • Bagalur",
       "date": "2 weeks ago",
       "treatment": "Root Canal Treatment",
       "rating": 5,
-      "text": "Absolutely the best dental clinic experience in Hennur! Dr. Shweta was so gentle and patient during my root canal treatment. Zero pain, completely sterile diagnostic instruments, and the serene Japandi studio atmosphere instantly relieved all my dental anxiety. Highly recommend House of Dental!",
+      "text": "Absolutely the best dental clinic experience in Bagalur! Dr. Ashish was so gentle and patient during my root canal treatment. Zero pain, completely sterile diagnostic instruments, and the serene Japandi studio atmosphere instantly relieved all my dental anxiety. Highly recommend House of Dental!",
       "verified": true,
-      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+      "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
     },
     {
       "name": "Vikram Nambiar",
-      "role": "Horamavu Resident • Verified Google Review",
+      "role": "Gummanahalli Resident • Verified Google Review",
       "date": "3 weeks ago",
       "treatment": "Clear Aligners",
       "rating": 5,
       "text": "Got my smile consultation and clear aligners planned at House of Dental. Completely transparent pricing, state-of-the-art digital intraoral scans, and unmatched professionalism from the dental team. Seeing your simulated 3D teeth movement before starting gives immense confidence. Outstanding 5-star care!",
       "verified": true,
-      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+      "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
     },
     {
       "name": "Sneha Mukherjee",
@@ -370,9 +362,9 @@
       "date": "1 month ago",
       "treatment": "Teeth Whitening",
       "rating": 5,
-      "text": "I had severe dental anxiety before visiting House of Dental. The studio feels like a soothing wellness sanctuary rather than a clinical hospital. Dr. Agniss and the team made the cleaning and laser teeth whitening completely pain-free. My teeth look radiant and healthy!",
+      "text": "I had severe dental anxiety before visiting House of Dental. The studio feels like a soothing wellness sanctuary rather than a clinical hospital. Dr. Ashish and the team made the cleaning and laser teeth whitening completely pain-free. My teeth look radiant and healthy!",
       "verified": true,
-      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+      "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
     },
     {
       "name": "Rajesh Varma",
@@ -380,19 +372,19 @@
       "date": "1 month ago",
       "treatment": "Dental Implants",
       "rating": 5,
-      "text": "Exceptional precision and clinical care. Dr. Shweta and Dr. Agniss walked me through every detail of my dental implant with digital X-rays and zero rush. Very honest pricing with no hidden charges. Post-op recovery was seamless. North Bangalore's finest smile clinic.",
+      "text": "Exceptional precision and clinical care. Dr. Ashish walked me through every detail of my dental implant with digital X-rays and zero rush. Very honest pricing with no hidden charges. Post-op recovery was seamless. North Bangalore's finest smile clinic.",
       "verified": true,
-      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+      "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
     },
     {
       "name": "Ananya Sundaram",
-      "role": "Hennur Bande • Verified Google Review",
+      "role": "Bagalur Colony • Verified Google Review",
       "date": "2 months ago",
       "treatment": "Kids Dentistry",
       "rating": 5,
-      "text": "Brought my 6-year-old daughter for her dental check-up and fluoride application. Dr. Shweta was so friendly, warm, and playful that my daughter didn't cry once! The clinic is spotless and kid-friendly. We have definitely found our trusted family dentist in Hennur.",
+      "text": "Brought my 6-year-old daughter for her dental check-up and fluoride application. Dr. Ashish was so friendly, warm, and playful that my daughter didn't cry once! The clinic is spotless and kid-friendly. We have definitely found our trusted family dentist in Bagalur.",
       "verified": true,
-      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+      "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
     },
     {
       "name": "Karthik Balakrishnan",
@@ -402,7 +394,7 @@
       "rating": 5,
       "text": "Had a complicated impacted wisdom tooth removed. Was really nervous about pain, but the surgical team performed the extraction in under 20 minutes with zero discomfort during the procedure. Healing was fast with minimal swelling. Cleanest clinic in Bangalore with modern tech.",
       "verified": true,
-      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+      "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
     },
     {
       "name": "Meera Chandran",
@@ -412,7 +404,7 @@
       "rating": 5,
       "text": "Got custom zirconia crowns and aesthetic bonding done here. The craftsmanship and attention to natural tooth shade matching is remarkable. Warm and courteous staff, prompt appointments, and very soothing Japanese-minimalist interiors.",
       "verified": true,
-      "google_maps_url": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+      "google_maps_url": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
     }
   ],
   "social_media": [

@@ -152,20 +152,32 @@ const authorInitials = post.author.replace(/Dr\.?\s*/i, '').split(/\s+/).map(n =
 
             {/* Callout Box if present */}
             {sec.callout && (
-              <div class={`p-6 rounded-2xl border text-xs sm:text-sm leading-relaxed space-y-1 my-6 ${
+              <div class={`p-6 rounded-2xl border text-xs sm:text-sm leading-relaxed space-y-1.5 my-6 ${
                 sec.callout.type === 'warning'
-                  ? 'bg-amber-500/10 border-amber-500/30 text-amber-900 dark:text-amber-200'
+                  ? 'bg-amber-500/10 border-amber-500/30 text-amber-950 dark:text-amber-200'
                   : sec.callout.type === 'tip'
-                  ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-900 dark:text-emerald-200'
-                  : 'bg-japandi-moss/10 border-japandi-moss/30 text-japandi-charcoal dark:text-japandi-cream'
+                  ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-950 dark:text-emerald-200'
+                  : 'bg-japandi-moss/10 border-japandi-moss/30 text-stone-900 dark:text-japandi-cream'
               }`}>
-                <strong class="font-semibold block flex items-center gap-1.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-japandi-moss shrink-0">
+                <strong class={`font-bold flex items-center gap-2 ${
+                  sec.callout.type === 'warning'
+                    ? 'text-amber-950 dark:text-amber-100'
+                    : sec.callout.type === 'tip'
+                    ? 'text-emerald-950 dark:text-emerald-100'
+                    : 'text-stone-950 dark:text-japandi-cream'
+                }`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class={`w-4 h-4 shrink-0 ${
+                    sec.callout.type === 'warning'
+                      ? 'text-amber-700 dark:text-amber-400'
+                      : sec.callout.type === 'tip'
+                      ? 'text-emerald-700 dark:text-emerald-400'
+                      : 'text-japandi-moss dark:text-japandi-moss'
+                  }`}>
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" />
                   </svg>
-                  {sec.callout.title}
+                  <span>{sec.callout.title}</span>
                 </strong>
-                <span>{sec.callout.text}</span>
+                <span class="block">{sec.callout.text}</span>
               </div>
             )}
 
@@ -196,7 +208,7 @@ const authorInitials = post.author.replace(/Dr\.?\s*/i, '').split(/\s+/).map(n =
             <div>
               <span class="text-[10px] font-semibold text-japandi-moss uppercase tracking-wider block">Clinical Service</span>
               <h4 class="font-serif text-lg font-medium text-japandi-charcoal mt-0.5">Explore Our {post.relatedTreatmentName}</h4>
-              <p class="text-xs text-japandi-earth font-light mt-1">Read clinical comparisons, case journeys, and digital scan details at our Hennur studio.</p>
+              <p class="text-xs text-japandi-earth font-light mt-1">Read clinical comparisons, case journeys, and digital scan details at our Bagalur studio.</p>
             </div>
             <a 
               href={post.relatedTreatmentUrl}
@@ -250,7 +262,7 @@ const authorInitials = post.author.replace(/Dr\.?\s*/i, '').split(/\s+/).map(n =
       <!-- Bottom Consultation Card -->
       <div class="mt-14 p-8 sm:p-10 rounded-[2.5rem] bg-japandi-sand/65 border border-japandi-clay/60 shadow-lg shadow-japandi-charcoal/5 space-y-5 text-center sm:text-left">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-japandi-moss/10 text-japandi-moss text-[10px] font-semibold uppercase tracking-wider">
-          House of Dental Studio &bull; Hennur Bande
+          House of Dental Studio &bull; Bagalur
         </div>
         
         <h3 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium leading-snug">
@@ -258,7 +270,7 @@ const authorInitials = post.author.replace(/Dr\.?\s*/i, '').split(/\s+/).map(n =
         </h3>
 
         <p class="text-sm text-japandi-earth font-light leading-relaxed max-w-2xl">
-          {post.ctaText || "Visit House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp to schedule your clinical consultation."}
+          {post.ctaText || "Visit House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp to schedule your clinical consultation."}
         </p>
 
         <div class="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-4">
@@ -300,7 +312,7 @@ const authorInitials = post.author.replace(/Dr\.?\s*/i, '').split(/\s+/).map(n =
 
       <!-- Catchment Footer Note -->
       <div class="mt-12 text-center text-xs text-japandi-earth font-light">
-        <p>Conveniently located for patients across Hennur Bande, Horamavu Agara Road, Kalyan Nagar, Babusapalya, Thanisandra, Kothanur, and North Bengaluru.</p>
+        <p>Conveniently located for patients across Bagalur, Gummanahalli, Kalyan Nagar, Babusapalya, Thanisandra, Kothanur, and North Bengaluru.</p>
       </div>
 
     </div>

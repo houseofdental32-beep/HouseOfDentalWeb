@@ -8,10 +8,10 @@ export const prerender = false;
 const config = getConfig();
 
 const pageTitle = config.site_meta?.title ? `About Us | ${config.site_meta.title}` : "About Us | House of Dental";
-const pageDescription = config.site_meta?.description || "Learn about House of Dental. Led by Dr. Shweta Singh and Dr. Agniss Mishra, offering gentle, modern dental treatments.";
+const pageDescription = config.site_meta?.description || "House of Dental is a modern dental clinic in Bagaluru, Bengaluru. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.";
 const canonicalUrl = "https://aurevadental.com/about";
 const phoneCallUrl = `tel:${config.site_meta?.phone || "09113563040"}`;
-const whatsappUrl = `https://wa.me/${config.site_meta?.whatsapp_number || "919113563040"}?text=${encodeURIComponent(config.site_meta?.whatsapp_default_message || "Hello House of Dental, I would like to learn more about your clinic.")}`;
+const whatsappUrl = `https://wa.me/${config.site_meta?.whatsapp_number || "919113563040"}?text=${encodeURIComponent(config.site_meta?.whatsapp_default_message || "Hello, I would like to book an appointment at House of Dental.")}`;
 
 const breadcrumbs = [
   { name: "Home", url: "https://aurevadental.com/" },
@@ -21,7 +21,7 @@ const breadcrumbs = [
 const faqs = [
   {
     question: "Who founded House of Dental?",
-    answer: "House of Dental is led by Dr. Shweta Singh (BDS, Lead Aesthetic Architect & Clinical Director) and Dr. Agniss Mishra (BDS, Dental Surgeon), alumni of The Oxford Dental College, Bangalore."
+    answer: "House of Dental is led by Dr. Ashish (BDS, Lead Dental Surgeon & Clinical Director), providing gentle, precision-driven modern dental treatments."
   },
   {
     question: "What is the Japandi dental concept at House of Dental?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Which areas does House of Dental serve in Bangalore?",
-    answer: "Our clinic is located on Horamavu Agara Road near Nayara Petrol Bunk, Hennur Bande, serving patients across Hennur, Horamavu, Kalyan Nagar, HRBR Layout, Banaswadi, Kammanahalli, Babusapalya, Kothanur, and North Bengaluru."
+    answer: "Our clinic is located at 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149, serving patients across Bagaluru, Gummanahalli, New Airport Rd, Bettahalsoor, Yelahanka, Chikkajala, Devanahalli, and North Bengaluru."
   },
   {
     question: "What sterilization standards are followed?",
@@ -66,7 +66,7 @@ const seoProps = {
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-7 flex flex-col items-start space-y-6 animate-slow-fade">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-japandi-clay/60 bg-japandi-sand/70 text-[10px] font-semibold text-japandi-moss uppercase tracking-widest">
-          Calm Mind &bull; Healthy Smile &bull; Hennur, Bengaluru
+          Calm Mind &bull; Healthy Smile &bull; Bagalur, Bengaluru
         </div>
         
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-japandi-charcoal leading-tight font-medium tracking-tight">
@@ -75,7 +75,7 @@ const seoProps = {
         </h1>
 
         <p class="text-base sm:text-lg text-japandi-earth font-light leading-relaxed max-w-2xl">
-          House of Dental was created to challenge the notion that visiting the dentist must be stressful. In our Japandi-designed studio in Hennur, Bangalore, we pair gentle chairside empathy with hospital-grade dental engineering to safeguard your oral wellness for life.
+          House of Dental was created to challenge the notion that visiting the dentist must be stressful. In our Japandi-designed studio in Bagalur, Bangalore, we pair gentle chairside empathy with hospital-grade dental engineering to safeguard your oral wellness for life.
         </p>
 
         <!-- Direct Action CTA Buttons -->
@@ -105,14 +105,14 @@ const seoProps = {
       <div class="lg:col-span-5 relative">
         <div class="relative rounded-3xl overflow-hidden border border-japandi-clay/60 shadow-xl bg-japandi-sand/30 p-8 space-y-6">
           <span class="text-xs font-semibold uppercase tracking-widest text-japandi-moss">Clinical Leadership</span>
-          <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Dr. Shweta Singh &amp; Dr. Agniss Mishra</h3>
+          <h3 class="text-2xl font-serif text-japandi-charcoal font-medium">Dr. Ashish</h3>
           <p class="text-xs text-japandi-earth leading-relaxed font-light">
-            Alumni of The Oxford Dental College, Bangalore, bringing dedicated clinical focus to aesthetic architecture, preventive care, and family dental wellness.
+            Lead Dental Surgeon and Clinical Director of House of Dental, bringing dedicated clinical focus to aesthetic dentistry, gentle preventive care, and restorative wellness.
           </p>
           <div class="grid grid-cols-2 gap-3 pt-2">
             <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
               <span class="block text-xl font-serif text-japandi-moss font-semibold">10+ Yrs</span>
-              <span class="text-[11px] text-japandi-earth">Combined Experience</span>
+              <span class="text-[11px] text-japandi-earth">Clinical Experience</span>
             </div>
             <div class="p-3.5 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40">
               <span class="block text-xl font-serif text-japandi-moss font-semibold">5.0 ★</span>
@@ -121,7 +121,7 @@ const seoProps = {
           </div>
           <div class="p-4 rounded-2xl bg-japandi-sand/60 border border-japandi-clay/40 text-xs text-japandi-charcoal space-y-1">
             <p class="font-medium">Clinic Address:</p>
-            <p class="text-japandi-earth font-light">2nd Floor, SLV Nilaya, Horamavu Agara Road, Near Nayara Petrol Bunk, Hennur Bande, Bangalore 562149.</p>
+            <p class="text-japandi-earth font-light">1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149.</p>
           </div>
         </div>
       </div>
@@ -140,30 +140,22 @@ const seoProps = {
           At House of Dental, we believe that healthcare environments profoundly shape patient emotional responses. The traditional dental clinic—characterized by cold vinyl flooring, harsh overhead fluorescent tubes, pungent chemical odors, and buzzing handpieces—stimulates the sympathetic nervous system, causing heart rates to spike and pain thresholds to plummet before a dentist even looks inside the mouth.
         </p>
         <p class="text-sm sm:text-base text-japandi-earth font-light leading-relaxed">
-          We designed our Hennur studio as an intentional sanctuary. By marrying the understated simplicity of Japanese design (wabi-sabi) with the comforting, tactile warmth of Scandinavian minimalism (hygge), every element works in harmony to soothe sensory overload. Natural oak textures, muted earth palettes, acoustic sound-damping panels, and essential oil aromatherapy create an atmosphere reminiscent of a boutique spa rather than a surgical facility.
+          We designed our studio as an intentional sanctuary. By marrying the understated simplicity of Japanese design (wabi-sabi) with the comforting, tactile warmth of Scandinavian minimalism (hygge), every element works in harmony to soothe sensory overload. Natural oak textures, muted earth palettes, acoustic sound-damping panels, and essential oil aromatherapy create an atmosphere reminiscent of a boutique spa rather than a surgical facility.
         </p>
       </div>
 
       <!-- The Founders Section -->
       <div class="space-y-6">
         <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
-          Meet Our Clinical Leadership &amp; Dental Team
+          Meet Our Clinical Leadership
         </h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-3">
-            <h3 class="font-serif text-xl text-japandi-charcoal font-medium">Dr. Shweta Singh, BDS</h3>
-            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block">Lead Aesthetic Architect &bull; Clinical Director &bull; Founder</span>
+        <div class="max-w-2xl mx-auto">
+          <div class="p-6 sm:p-8 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-3">
+            <h3 class="font-serif text-xl sm:text-2xl text-japandi-charcoal font-medium">Dr. Ashish, BDS</h3>
+            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block">Lead Dental Surgeon &bull; Clinical Director &bull; Founder</span>
             <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
-              Dr. Shweta graduated from The Oxford Dental College, Bangalore, and holds active registration with the Karnataka State Dental Council. She specializes in Digital Smile Design, minimally invasive ceramic veneers, clear aligner orthodontics, and restorative cosmetic bonding. Her clinical eye emphasizes natural facial symmetry, golden proportions, and long-term biological harmony.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-japandi-cream/90 border border-japandi-clay/40 space-y-3">
-            <h3 class="font-serif text-xl text-japandi-charcoal font-medium">Dr. Agniss Mishra, BDS</h3>
-            <span class="text-xs font-semibold text-japandi-moss uppercase tracking-wider block">Dental Surgeon</span>
-            <p class="text-xs sm:text-sm text-japandi-earth font-light leading-relaxed">
-              Dr. Agniss graduated from The Oxford Dental College, Bangalore (BDS). Dedicated to gentle, communicative chairside care, he focuses on preventive dentistry, restorative care, and patient wellness in our serene studio environment.
+              Dr. Ashish specializes in painless single-sitting root canals, dental implants, clear aligners, and aesthetic smile design. Dedicated to gentle, communicative chairside care, he focuses on minimally invasive dentistry, biological harmony, and patient comfort in our serene studio environment.
             </p>
           </div>
         </div>
@@ -198,13 +190,13 @@ const seoProps = {
       <!-- Local Catchment & Transit -->
       <div class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-serif text-japandi-charcoal font-medium">
-          Serving Families Across Hennur, Kalyan Nagar &amp; North Bangalore
+          Serving Families Across Bagalur, Kalyan Nagar &amp; North Bangalore
         </h2>
         <p class="text-sm text-japandi-earth font-light leading-relaxed">
-          House of Dental is conveniently situated on Horamavu Agara Road near Nayara Petrol Bunk, Hennur Bande, Bengaluru 562149. We serve patients across:
+          House of Dental is conveniently situated at 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149. We serve patients across:
         </p>
         <div class="flex flex-wrap gap-2 text-xs text-japandi-charcoal">
-          {["Hennur", "Horamavu", "Kalyan Nagar", "HRBR Layout", "Banaswadi", "Kammanahalli", "Babusapalya", "Kothanur", "Byrathi", "North Bengaluru"].map(loc => (
+          {["Bagalur", "Gummanahalli", "Kalyan Nagar", "HRBR Layout", "Banaswadi", "Kammanahalli", "Babusapalya", "Kothanur", "Byrathi", "North Bengaluru"].map(loc => (
             <span class="px-3 py-1.5 rounded-full bg-japandi-sand/80 border border-japandi-clay/50 font-medium">
               {loc}
             </span>
@@ -218,8 +210,8 @@ const seoProps = {
           Explore Our Specialized Treatments &amp; Local Guides:
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-japandi-moss font-medium">
-          <a href="/dentist-in-hennur" class="hover:underline">&bull; Dentist in Hennur - Doctor Profiles</a>
-          <a href="/dental-clinic-in-hennur" class="hover:underline">&bull; Dental Clinic in Hennur Facility Guide</a>
+          <a href="/dentist-in-bagalur" class="hover:underline">&bull; Dentist in Bagalur - Doctor Profiles</a>
+          <a href="/dental-clinic-in-bagalur" class="hover:underline">&bull; Dental Clinic in Bagalur Facility Guide</a>
           <a href="/treatments/root-canal-treatment" class="hover:underline">&bull; Painless Root Canal Treatment</a>
           <a href="/treatments/dental-implants" class="hover:underline">&bull; Permanent Dental Implants</a>
           <a href="/treatments/clear-aligners" class="hover:underline">&bull; Clear &amp; Invisible Aligners</a>
@@ -261,7 +253,7 @@ const seoProps = {
   <section class="pb-24 px-6 lg:px-24">
     <div class="max-w-4xl mx-auto rounded-3xl bg-japandi-moss text-japandi-cream p-8 sm:p-12 text-center space-y-6 shadow-xl">
       <h2 class="text-2xl sm:text-4xl font-serif font-medium">
-        Experience Mindful Dental Care in Hennur
+        Experience Mindful Dental Care in Bagalur
       </h2>
       <p class="text-xs sm:text-sm text-japandi-cream/90 font-light max-w-xl mx-auto leading-relaxed">
         Schedule your comprehensive wellness examination at House of Dental today.

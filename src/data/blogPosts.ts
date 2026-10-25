@@ -48,9 +48,9 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Clear Aligners Cost in Bangalore | House of Dental",
     headline: "Clear Aligners Cost in Bangalore: The Complete 2026 Guide & What to Expect",
     metaDescription: "Transparent breakdown of clear aligners cost in Bangalore (₹55,000 to ₹2,50,000+), invisible braces brands, 3D scans & EMI options at House of Dental.",
-    author: "Dr. Shweta Singh, BDS",
+    author: "Dr. Ashish",
     authorRole: "Clinical Director & Dental Surgeon",
-    authorCredentials: "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+    authorCredentials: "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
     date: "September 2026",
     datePublished: "2026-09-01",
     dateModified: "2026-09-23",
@@ -61,7 +61,7 @@ export const BLOG_POSTS: BlogPost[] = [
     relatedTreatmentName: "Clear Aligners & Invisible Braces",
     introParagraphs: [
       "If you have been considering straightening your teeth or correcting minor crowding, traditional metal brackets and wires are no longer your only choice. Over the past few years, clear aligners (invisible braces) have become the premier orthodontic solution for working professionals, college students, and adults across Bangalore who desire a discreet, comfortable smile transformation.",
-      "However, the single most common question patients ask us during their first consultation at House of Dental in Hennur is: 'How much do clear aligners actually cost in Bangalore, and why is there such a wide price range?'",
+      "However, the single most common question patients ask us during their first consultation at House of Dental in Bagalur is: 'How much do clear aligners actually cost in Bangalore, and why is there such a wide price range?'",
       "In this comprehensive clinical guide, we break down transparent pricing, the anatomical and engineering factors that determine your investment, and how modern 3D digital orthodontics functions from your initial digital scan to your final retainer."
     ],
     sections: [
@@ -87,7 +87,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "2. Key Clinical Factors Determining Your Aligner Cost",
         paragraphs: [
-          "When you visit House of Dental on Horamavu Agara Road in Hennur Bande, your personalized treatment estimate is based on three scientific and anatomical factors:",
+          "When you visit House of Dental on Gummanahalli in Bagalur, your personalized treatment estimate is based on three scientific and anatomical factors:",
           "First, the total number of aligner trays: Mild anterior corrections may require only 12 to 16 sets of trays over 4 to 6 months, whereas complex molar movements require 35 to 50+ stages spanning 12 to 18 months.",
           "Second, material engineering and manufacturing: Premium multi-layer elastomeric materials provide gentle, constant biological force, ensuring efficient tooth movement with minimal discomfort.",
           "Third, digital 3D planning and smile simulations: State-of-the-art optical intraoral scanners capture thousands of 3D data points per second, eliminating uncomfortable putty impressions and allowing you to visualize your finished smile before wearing Tray #1."
@@ -100,11 +100,11 @@ export const BLOG_POSTS: BlogPost[] = [
         ]
       },
       {
-        heading: "3. Step-by-Step Clear Aligner Journey at House of Dental Hennur",
+        heading: "3. Step-by-Step Clear Aligner Journey at House of Dental Bagalur",
         paragraphs: [
           "We have standardized our orthodontic workflow to deliver complete clinical predictability:",
           "Step 1: Consultation & 3D Digital Scan — Intraoral examination and low-radiation digital RVG diagnostics to evaluate periodontal health and root structure.",
-          "Step 2: 3D Biomechanical Simulation — Custom computerized tooth movement plan created by Dr. Shweta Singh, showing exact tooth trajectory stage by stage.",
+          "Step 2: 3D Biomechanical Simulation — Custom computerized tooth movement plan created by Dr. Ashish, showing exact tooth trajectory stage by stage.",
           "Step 3: Tray Fabrication & Delivery — Custom medical-grade polyurethane trays delivered with precision attachments placed on teeth.",
           "Step 4: Wear Protocol — Trays are worn 20 to 22 hours per day, removing them only for meals, brushing, and hot beverages. Each tray is changed every 7 to 10 days.",
           "Step 5: Retention Phase — After achieving optimal alignment, clear retainers are worn nightly to prevent relapse while bone remodels around the roots."
@@ -129,7 +129,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Full-time retainer wear (20 hours daily) for the initial 6 to 8 weeks post-treatment",
           "Transition to night-only wear while sleeping for long-term lifelong stability",
           "Clean retainers with cool running water and mild antibacterial soap—never boiling water",
-          "Complimentary annual retention check-ups at House of Dental in Hennur to monitor bite stability"
+          "Complimentary annual retention check-ups at House of Dental in Bagalur to monitor bite stability"
         ]
       }
     ],
@@ -151,40 +151,40 @@ export const BLOG_POSTS: BlogPost[] = [
         answer: "Yes, we offer transparent milestone payments and accept all major Credit Cards, Debit Cards, and UPI. Credit card payments can be converted into flexible monthly EMIs directly via your banking app."
       },
       {
-        question: "Why choose House of Dental for clear aligners in Hennur?",
-        answer: "Our clinical director Dr. Shweta Singh (BDS) provides comprehensive digital smile design, personalized orthodontic oversight, and hospital-grade sterilization at our studio on Horamavu Agara Road in Hennur Bande."
+        question: "Why choose House of Dental for clear aligners in Bagalur?",
+        answer: "Our clinical director Dr. Ashish (BDS) provides comprehensive digital smile design, personalized orthodontic oversight, and hospital-grade sterilization at our modern clinic on New Airport Rd, Gummanahalli, Bagaluru."
       }
     ],
-    conclusion: "Investing in clear aligners is an investment in your lifelong dental health, facial balance, and self-confidence. Schedule your 3D digital scan at House of Dental in Hennur to start your journey.",
+    conclusion: "Investing in clear aligners is an investment in your lifelong dental health, facial balance, and self-confidence. Schedule your 3D digital scan at House of Dental in Bagalur to start your journey.",
     ctaHeadline: "Ready to Explore Clear Aligners in North Bengaluru?",
-    ctaText: "Visit House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp our clinical desk for your comprehensive 3D digital smile scan."
+    ctaText: "Visit House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp our clinical desk for your comprehensive 3D digital smile scan."
   },
   {
-    slug: "root-canal-treatment-cost-hennur",
-    title: "Root Canal Treatment Cost in Hennur | House of Dental",
-    headline: "Root Canal Treatment Cost in Hennur, Bangalore: Complete 2026 Price Guide",
-    metaDescription: "Comprehensive guide to root canal treatment cost in Hennur, Bangalore (₹4,000 to ₹10,000), single vs multi-sitting RCT, zirconia crowns & zero-pain care.",
-    author: "Dr. Shweta Singh, BDS",
+    slug: "root-canal-treatment-cost-bagalur",
+    title: "Root Canal Treatment Cost in Bagalur | House of Dental",
+    headline: "Root Canal Treatment Cost in Bagalur, Bangalore: Complete 2026 Price Guide",
+    metaDescription: "Comprehensive guide to root canal treatment cost in Bagalur, Bangalore (₹4,000 to ₹10,000), single vs multi-sitting RCT, zirconia crowns & zero-pain care.",
+    author: "Dr. Ashish",
     authorRole: "Clinical Director & Dental Surgeon",
-    authorCredentials: "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+    authorCredentials: "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
     date: "September 2026",
     datePublished: "2026-09-10",
     dateModified: "2026-09-23",
     category: "Endodontics & Restorative Dentistry",
     readTime: "8 min read",
-    excerpt: "A transparent breakdown of root canal treatment cost in Hennur, Bangalore (₹4,000 to ₹10,000), factors determining single vs. multi-sitting RCT, crown types, and what to expect during painless micro-endodontics.",
+    excerpt: "A transparent breakdown of root canal treatment cost in Bagalur, Bangalore (₹4,000 to ₹10,000), factors determining single vs. multi-sitting RCT, crown types, and what to expect during painless micro-endodontics.",
     relatedTreatmentUrl: "/treatments/root-canal-treatment",
     relatedTreatmentName: "Root Canal Treatment (RCT)",
     introParagraphs: [
       "A severe, throbbing toothache is one of the most agonizing experiences a person can endure. When bacterial decay penetrates through hard enamel and dentin into the vascular dental pulp, the nerve becomes acutely inflamed or necrotic. The gold standard treatment to relieve this pain and save your natural tooth from extraction is a Root Canal Treatment (RCT).",
       "Yet, many patients delay treatment out of two common concerns: fear of dental pain and uncertainty regarding the true cost of a root canal in Bangalore.",
-      "At House of Dental on Horamavu Agara Road in Hennur Bande, we believe in complete clinical transparency and gentle, anxiety-free dentistry. In this guide, we provide an exhaustive breakdown of root canal treatment costs in Hennur, explain why single-sitting micro-endodontics is virtually painless, and examine which post-RCT crown is right for your smile."
+      "At House of Dental on Gummanahalli in Bagalur, we believe in complete clinical transparency and gentle, anxiety-free dentistry. In this guide, we provide an exhaustive breakdown of root canal treatment costs in Bagalur, explain why single-sitting micro-endodontics is virtually painless, and examine which post-RCT crown is right for your smile."
     ],
     sections: [
       {
-        heading: "1. Root Canal Treatment Cost Breakdown in Hennur (2026 Pricing)",
+        heading: "1. Root Canal Treatment Cost Breakdown in Bagalur (2026 Pricing)",
         paragraphs: [
-          "At modern dental clinics in Hennur and North Bangalore, the cost of a root canal treatment typically ranges between ₹4,000 and ₹10,000 per tooth. The price is determined primarily by the anatomical position of the tooth and the number of micro-canals requiring cleaning and sealing."
+          "At modern dental clinics in Bagalur and North Bangalore, the cost of a root canal treatment typically ranges between ₹4,000 and ₹10,000 per tooth. The price is determined primarily by the anatomical position of the tooth and the number of micro-canals requiring cleaning and sealing."
         ],
         table: {
           headers: ["Tooth Position / Anatomy", "Typical Cost Range (INR)", "Clinical Complexity Details"],
@@ -236,7 +236,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "4. Is Modern Root Canal Treatment Painful?",
         paragraphs: [
           "The widespread myth that root canals are agonizing dates back to pre-digital dentistry decades ago. In reality, a root canal does not cause pain—it cures pain.",
-          "At House of Dental in Hennur, we employ computerized local anesthesia techniques and topical numbing gels. We verify total pulpal numbness with electric diagnostic tests before touching the tooth. Most patients report that receiving a rotary root canal feels no different than getting a standard composite filling, and many even doze off during the 50-minute appointment."
+          "At House of Dental in Bagalur, we employ computerized local anesthesia techniques and topical numbing gels. We verify total pulpal numbness with electric diagnostic tests before touching the tooth. Most patients report that receiving a rotary root canal feels no different than getting a standard composite filling, and many even doze off during the 50-minute appointment."
         ]
       },
       {
@@ -250,7 +250,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Avoid eating hard or crunchy foods until your permanent crown is bonded",
           "Continue normal brushing and flossing right up to the gumline without hesitation",
           "Attend routine 6-month check-ups with digital RVG monitoring to verify complete bone healing",
-          "Contact our Hennur clinic immediately if you experience persistent bite discomfort or swelling"
+          "Contact our Bagalur clinic immediately if you experience persistent bite discomfort or swelling"
         ]
       }
     ],
@@ -276,18 +276,18 @@ export const BLOG_POSTS: BlogPost[] = [
         answer: "Many corporate dental insurance plans and dental wellness policies (such as MediBuddy, Bajaj Finserv Health, and corporate health covers) provide partial reimbursement for root canals and diagnostic X-rays. We provide detailed itemized bills for seamless claim processing."
       }
     ],
-    conclusion: "Do not let tooth pain disrupt your life. Contact House of Dental in Hennur to save your natural tooth with painless single-sitting endodontics and durable zirconia crown restorations.",
-    ctaHeadline: "Suffering from Acute Tooth Pain in Hennur?",
-    ctaText: "House of Dental is located on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp our emergency desk for immediate same-day pain relief."
+    conclusion: "Do not let tooth pain disrupt your life. Contact House of Dental in Bagalur to save your natural tooth with painless single-sitting endodontics and durable zirconia crown restorations.",
+    ctaHeadline: "Suffering from Acute Tooth Pain in Bagalur?",
+    ctaText: "House of Dental is located on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp our emergency desk for immediate same-day pain relief."
   },
   {
     slug: "dental-implant-cost-bangalore",
     title: "Dental Implant Cost in Bangalore | House of Dental",
     headline: "Dental Implant Cost in Bangalore (2026 Guide): Titanium vs Zirconia Pricing",
-    metaDescription: "Detailed dental implant cost in Bangalore (₹28,000 to ₹65,000+), bone grafting, full-mouth implants, top implant brands & transparent pricing in Hennur.",
-    author: "Dr. Shweta Singh, BDS",
+    metaDescription: "Detailed dental implant cost in Bangalore (₹28,000 to ₹65,000+), bone grafting, full-mouth implants, top implant brands & transparent pricing in Bagalur.",
+    author: "Dr. Ashish",
     authorRole: "Clinical Director & Dental Surgeon",
-    authorCredentials: "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+    authorCredentials: "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
     date: "September 2026",
     datePublished: "2026-09-12",
     dateModified: "2026-09-23",
@@ -299,7 +299,7 @@ export const BLOG_POSTS: BlogPost[] = [
     introParagraphs: [
       "Missing teeth affect far more than just your appearance. A missing tooth compromises your chewing efficiency, causes adjacent natural teeth to tilt and shift into the vacant gap, and leads to progressive jawbone resorption over time. Among all restorative options available in modern dentistry, dental implants are universally recognized as the gold standard permanent solution.",
       "Because dental implants integrate directly with your living jawbone through biocompatible osseointegration, they look, feel, and function exactly like natural tooth roots.",
-      "However, patients seeking tooth replacement across Bangalore often encounter wildly conflicting price estimates ranging from ₹20,000 to over ₹80,000 per tooth. In this guide from House of Dental in Hennur, we provide a transparent, medically verified breakdown of dental implant pricing in Bangalore, explain what separates premium implant systems, and guide you through the clinical process."
+      "However, patients seeking tooth replacement across Bangalore often encounter wildly conflicting price estimates ranging from ₹20,000 to over ₹80,000 per tooth. In this guide from House of Dental in Bagalur, we provide a transparent, medically verified breakdown of dental implant pricing in Bangalore, explain what separates premium implant systems, and guide you through the clinical process."
     ],
     sections: [
       {
@@ -320,7 +320,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "2. The Three Components of a Dental Implant Investment",
         paragraphs: [
-          "When comparing dental implant estimates between clinics in Hennur, Horamavu, Kalyan Nagar, or Central Bangalore, it is vital to verify whether the quote is all-inclusive or covers only the surgical post. A complete implant restoration requires three distinct elements:",
+          "When comparing dental implant estimates between clinics in Bagalur, Gummanahalli, Kalyan Nagar, or Central Bangalore, it is vital to verify whether the quote is all-inclusive or covers only the surgical post. A complete implant restoration requires three distinct elements:",
           "1. The Implant Fixture (Post): A precision medical-grade titanium screw surgically placed into the alveolar bone beneath the gum line, functioning as an artificial tooth root.",
           "2. The Abutment: A precision titanium or ceramic connector secured into the internal chamber of the implant post once healing is complete.",
           "3. The Prosthetic Crown: The custom-crafted visible tooth crown, milled from monolithic CAD/CAM zirconia or ceramic to match the shade, contour, and translucency of your adjacent natural teeth."
@@ -367,7 +367,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Brush twice daily with a soft-bristled toothbrush and low-abrasive fluoridated toothpaste",
           "Use unwaxed superfloss or interdental brushes to cleanse the anatomical contour beneath the crown",
           "Incorporate an oral water flosser on medium pulse mode to flush out food particles from gum pockets",
-          "Visit House of Dental in Hennur every 6 months for occlusion balance checks and digital RVG monitoring"
+          "Visit House of Dental in Bagalur every 6 months for occlusion balance checks and digital RVG monitoring"
         ]
       }
     ],
@@ -390,21 +390,21 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         question: "How do I care for my dental implant after placement?",
-        answer: "You brush and floss your dental implant exactly like a natural tooth. Routine biannual scaling and clinical evaluations at House of Dental in Hennur ensure your surrounding gums remain firm and healthy."
+        answer: "You brush and floss your dental implant exactly like a natural tooth. Routine biannual scaling and clinical evaluations at House of Dental in Bagalur ensure your surrounding gums remain firm and healthy."
       }
     ],
-    conclusion: "Dental implants are a once-in-a-lifetime investment in your ability to eat your favorite foods, smile without hesitation, and preserve your youthful facial structure. Schedule your consultation at House of Dental Hennur today.",
-    ctaHeadline: "Restore Your Complete Smile with Dental Implants in Hennur",
-    ctaText: "Consult our dental implant specialists at House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp for a 3D digital implant assessment."
+    conclusion: "Dental implants are a once-in-a-lifetime investment in your ability to eat your favorite foods, smile without hesitation, and preserve your youthful facial structure. Schedule your consultation at House of Dental Bagalur today.",
+    ctaHeadline: "Restore Your Complete Smile with Dental Implants in Bagalur",
+    ctaText: "Consult our dental implant specialists at House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp for a 3D digital implant assessment."
   },
   {
     slug: "tooth-extraction-cost-bangalore",
     title: "Tooth Extraction Cost in Bangalore | House of Dental",
     headline: "Tooth Extraction Cost in Bangalore: Simple vs Surgical & Wisdom Teeth (2026)",
     metaDescription: "Transparent tooth extraction cost in Bangalore (₹1,500 to ₹9,000), simple vs surgical removal, wisdom tooth care & painless oral surgery at House of Dental.",
-    author: "Dr. Agniss Mishra, BDS",
+    author: "Dr. Ashish",
     authorRole: "Dental Surgeon",
-    authorCredentials: "Dr. Agniss Mishra, BDS — Dental Surgeon, House of Dental (Alumnus, The Oxford Dental College)",
+    authorCredentials: "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
     date: "September 2026",
     datePublished: "2026-09-15",
     dateModified: "2026-09-23",
@@ -416,7 +416,7 @@ export const BLOG_POSTS: BlogPost[] = [
     introParagraphs: [
       "At House of Dental, our fundamental clinical philosophy is conservative tooth preservation. We exhaust every available restorative modality—including rotary root canals, periodontal therapy, and protective ceramic crowns—to keep your natural tooth healthy in your mouth. However, when a tooth suffers severe vertical root fractures, catastrophic subgingival decay, advanced periodontitis bone loss, or painful wisdom tooth impaction, extraction becomes the safest biological necessity.",
       "Many patients facing tooth extraction are anxious about surgical pain, recovery timelines, and procedural costs across Bangalore dental clinics.",
-      "In this guide authored by Dr. Agniss Mishra, we provide a transparent price breakdown for simple and surgical extractions, explain atraumatic socket-preservation protocols, and provide practical instructions for a speedy, complications-free recovery."
+      "In this guide authored by Dr. Ashish, we provide a transparent price breakdown for simple and surgical extractions, explain atraumatic socket-preservation protocols, and provide practical instructions for a speedy, complications-free recovery."
     ],
     sections: [
       {
@@ -437,7 +437,7 @@ export const BLOG_POSTS: BlogPost[] = [
         callout: {
           type: "info",
           title: "Pre-Extraction Diagnostic RVG Imaging",
-          text: "At House of Dental in Hennur, every extraction is preceded by high-resolution digital RVG radiography (consultation ₹600) to trace root proximity to the inferior alveolar nerve canal or maxillary sinus, eliminating clinical guesswork."
+          text: "At House of Dental in Bagalur, every extraction is preceded by high-resolution digital RVG radiography (consultation ₹600) to trace root proximity to the inferior alveolar nerve canal or maxillary sinus, eliminating clinical guesswork."
         }
       },
       {
@@ -481,7 +481,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Immediate implant placement can often be performed during the same extraction visit",
           "Ridge preservation bone grafting keeps your jaw foundation stable for future restorations",
           "Never leave an extraction gap unaddressed for years to avoid bite collapse and facial sagging",
-          "Consult Dr. Agniss Mishra at House of Dental in Hennur to customize your post-extraction plan"
+          "Consult Dr. Ashish at House of Dental in Bagalur to customize your post-extraction plan"
         ]
       }
     ],
@@ -503,26 +503,26 @@ export const BLOG_POSTS: BlogPost[] = [
         answer: "In suitable cases with high primary bone stability, an immediate implant can be placed during the extraction visit. Alternatively, delayed placement occurs 8 to 12 weeks post-extraction once bone has consolidated."
       },
       {
-        question: "Are emergency same-day extractions available on weekends in Hennur?",
+        question: "Are emergency same-day extractions available on weekends in Bagalur?",
         answer: "Yes, House of Dental is open on Sundays from 9:30 AM to 9:00 PM for acute dental emergencies, broken teeth, and painful wisdom tooth infections."
       },
       {
         question: "Can I drive myself home after a tooth extraction in Bangalore?",
-        answer: "Yes. Routine extractions and surgical wisdom tooth removals at House of Dental are performed under targeted local anesthesia, which numbs only the specific jaw quadrant without impairing cognitive alertness or motor coordination. You are fully capable of driving or taking transit home across Hennur, Horamavu, Kalyan Nagar, or Babusapalya immediately following your visit."
+        answer: "Yes. Routine extractions and surgical wisdom tooth removals at House of Dental are performed under targeted local anesthesia, which numbs only the specific jaw quadrant without impairing cognitive alertness or motor coordination. You are fully capable of driving or taking transit home across Bagalur, Gummanahalli, Kalyan Nagar, or Babusapalya immediately following your visit."
       }
     ],
     conclusion: "When a tooth cannot be saved, gentle atraumatic extraction at House of Dental provides immediate relief while preserving your alveolar bone for future restorative options.",
-    ctaHeadline: "Need Gentle, Painless Tooth Extraction in Hennur?",
-    ctaText: "Visit House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp to schedule a consultation with our oral surgery team."
+    ctaHeadline: "Need Gentle, Painless Tooth Extraction in Bagalur?",
+    ctaText: "Visit House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp to schedule a consultation with our oral surgery team."
   },
   {
     slug: "braces-vs-clear-aligners",
     title: "Braces vs Clear Aligners Guide | House of Dental",
     headline: "Braces vs Clear Aligners: Comprehensive Comparison, Costs & Results (2026)",
-    metaDescription: "Braces vs clear aligners compared: cost (₹35,000 vs ₹55,000+), treatment time, comfort, aesthetics & orthodontic effectiveness at House of Dental in Hennur.",
-    author: "Dr. Shweta Singh, BDS",
+    metaDescription: "Braces vs clear aligners compared: cost (₹35,000 vs ₹55,000+), treatment time, comfort, aesthetics & orthodontic effectiveness at House of Dental in Bagalur.",
+    author: "Dr. Ashish",
     authorRole: "Clinical Director & Dental Surgeon",
-    authorCredentials: "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+    authorCredentials: "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
     date: "September 2026",
     datePublished: "2026-09-18",
     dateModified: "2026-09-23",
@@ -534,7 +534,7 @@ export const BLOG_POSTS: BlogPost[] = [
     introParagraphs: [
       "Crooked, crowded, or spaced teeth affect far more than your smile's visual harmony. Malaligned teeth are notoriously difficult to clean with regular brushing and flossing, leading to premature enamel wear, plaque accumulation, gum inflammation, and chronic temporomandibular joint (TMJ) discomfort.",
       "If you have decided to straighten your smile, you face a major clinical decision: Should you choose traditional bonded braces or modern removable clear aligners?",
-      "In this detailed orthodontic comparison from House of Dental in Hennur, Bangalore, Dr. Shweta Singh analyzes the scientific pros and cons, cost differences, treatment durations, and daily lifestyle considerations of braces versus invisible aligners to help you make an informed choice."
+      "In this detailed orthodontic comparison from House of Dental in Bagalur, Bangalore, Dr. Ashish analyzes the scientific pros and cons, cost differences, treatment durations, and daily lifestyle considerations of braces versus invisible aligners to help you make an informed choice."
     ],
     sections: [
       {
@@ -586,14 +586,14 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "4. The Daily Lifestyle Factor: Living with Braces vs Aligners",
         paragraphs: [
-          "For working professionals in Bangalore's corporate hubs (Manyata Tech Park, Whitefield, Outer Ring Road), clear aligners offer a profound quality-of-life benefit. You can present in boardrooms, speak on video calls, and attend social events without feeling self-conscious about visible metal brackets.",
+          "For working professionals in Bangalore's corporate hubs (Bagalur Colony, Whitefield, Outer Ring Road), clear aligners offer a profound quality-of-life benefit. You can present in boardrooms, speak on video calls, and attend social events without feeling self-conscious about visible metal brackets.",
           "Furthermore, aligners eliminate mouth ulcers caused by sharp metal brackets scraping against the delicate inner cheek and lips. Athletic patients also appreciate that clear aligners act like a thin protective mouthguard during recreational sports."
         ]
       },
       {
         heading: "5. Orthodontic Relapse: Fixing Teeth That Have Shifted Again",
         paragraphs: [
-          "A surprisingly common group of patients visiting House of Dental in Hennur are adults in their late 20s and 30s who wore traditional metal braces during high school, but stopped wearing their retainers years ago. As the periodontal ligament fibers naturally contract and facial bone matures, teeth gradually shift back toward crowded positions—a condition called Orthodontic Relapse.",
+          "A surprisingly common group of patients visiting House of Dental in Bagalur are adults in their late 20s and 30s who wore traditional metal braces during high school, but stopped wearing their retainers years ago. As the periodontal ligament fibers naturally contract and facial bone matures, teeth gradually shift back toward crowded positions—a condition called Orthodontic Relapse.",
           "For treating mild-to-moderate orthodontic relapse, clear aligners are the uncontested first choice. Rather than facing another two painful years of bonded metal brackets, adults can realign their teeth discreetly in as few as 4 to 8 months.",
           "At House of Dental, we utilize advanced digital intraoral scans to compare your current bite against your desired alignment, fabricating an accelerated course of custom aligners followed by dual retention (bonded lingual wires plus clear night guards) to guarantee your smile never shifts again."
         ],
@@ -624,25 +624,25 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         question: "How do I know whether I am a candidate for clear aligners?",
-        answer: "Visit House of Dental in Hennur for a comprehensive 3D digital intraoral scan. We generate a virtual 3D treatment simulation showing exact feasibility and finished alignment results before you decide."
+        answer: "Visit House of Dental in Bagalur for a comprehensive 3D digital intraoral scan. We generate a virtual 3D treatment simulation showing exact feasibility and finished alignment results before you decide."
       },
       {
         question: "How do I maintain optimal oral hygiene during orthodontic treatment?",
         answer: "With braces, you must brush meticulously after every meal using orthodontic V-trim toothbrushes, thread floss under each wire, and rinse with antibacterial mouthwash. With clear aligners, oral hygiene is substantially simpler: remove the trays to brush and floss your natural teeth normally, gently clean the inside of your aligners with cool water and a soft brush, and rinse before snapping them back in place."
       }
     ],
-    conclusion: "Both braces and clear aligners are proven orthodontic tools. Your optimal choice depends on your clinical malocclusion, lifestyle demands, and aesthetic priorities. Consult our smile specialists at House of Dental in Hennur to chart your treatment path.",
+    conclusion: "Both braces and clear aligners are proven orthodontic tools. Your optimal choice depends on your clinical malocclusion, lifestyle demands, and aesthetic priorities. Consult our smile specialists at House of Dental in Bagalur to chart your treatment path.",
     ctaHeadline: "Discover Which Smile Alignment Option is Right for You",
-    ctaText: "Schedule your orthodontic consultation and 3D digital smile simulation at House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp today."
+    ctaText: "Schedule your orthodontic consultation and 3D digital smile simulation at House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp today."
   },
   {
     slug: "teeth-whitening-cost-bangalore",
     title: "Teeth Whitening Cost in Bangalore | House of Dental",
     headline: "Teeth Whitening Cost in Bangalore (2026): In-Office Laser vs Home Trays",
-    metaDescription: "Transparent teeth whitening cost in Bangalore (₹7,000 to ₹16,000), professional laser bleaching vs home trays, safety & shade improvement in Hennur.",
-    author: "Dr. Shweta Singh, BDS",
+    metaDescription: "Transparent teeth whitening cost in Bangalore (₹7,000 to ₹16,000), professional laser bleaching vs home trays, safety & shade improvement in Bagalur.",
+    author: "Dr. Ashish",
     authorRole: "Clinical Director & Dental Surgeon",
-    authorCredentials: "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+    authorCredentials: "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
     date: "September 2026",
     datePublished: "2026-09-20",
     dateModified: "2026-09-23",
@@ -654,7 +654,7 @@ export const BLOG_POSTS: BlogPost[] = [
     introParagraphs: [
       "A bright, radiant smile conveys youthfulness, health, and vitality. However, daily consumption of coffee, South Indian filter coffee, tea, red wine, turmeric-rich curries, and natural aging gradually deposits stubborn chromogen stains within the microscopic porous tubules of your tooth enamel.",
       "If you are preparing for a wedding, graduation, job interview, or simply want to refresh your personal aesthetic, professional teeth whitening is the fastest, least invasive cosmetic dental treatment available.",
-      "In this guide from House of Dental in Hennur, Bangalore, Dr. Shweta Singh breaks down the true cost of in-office laser whitening versus take-home trays, explains how medical-grade bleaching works safely without damaging enamel, and shares guidelines to keep your smile glowing for years."
+      "In this guide from House of Dental in Bagalur, Bangalore, Dr. Ashish breaks down the true cost of in-office laser whitening versus take-home trays, explains how medical-grade bleaching works safely without damaging enamel, and shares guidelines to keep your smile glowing for years."
     ],
     sections: [
       {
@@ -687,7 +687,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ]
       },
       {
-        heading: "3. Step-by-Step In-Office Laser Whitening at House of Dental Hennur",
+        heading: "3. Step-by-Step In-Office Laser Whitening at House of Dental Bagalur",
         paragraphs: [
           "Our in-office whitening procedure takes approximately 60 minutes from start to finish:",
           "Step 1: Shade Assessment — We measure your initial tooth shade using a Vita digital shade guide and capture baseline photographs.",
@@ -715,13 +715,13 @@ export const BLOG_POSTS: BlogPost[] = [
         paragraphs: [
           "To understand why medical whitening is both safe and effective, one must examine enamel anatomy. Natural tooth enamel consists of tightly packed hydroxyapatite mineral crystals interwoven with organic protein matrices and microscopic fluid channels called enamel rods.",
           "Chromogens from food, beverages, and tobacco lodge deep within these enamel rods, absorbing light and causing dark, yellow, or grayish discoloration. Medical-grade bleaching gels produce free oxygen radicals that penetrate these microscopic tubules, breaking the complex double carbon bonds of chromogen molecules into smaller, colorless compounds without stripping enamel minerals.",
-          "At House of Dental in Hennur, we pair our laser whitening protocols with amorphous calcium phosphate (ACP) and fluoride remineralization therapy. This immediately re-hardens the enamel surface and seals the dentinal tubules, eliminating post-operative sensitivity while imparting a high-gloss, glass-smooth finish."
+          "At House of Dental in Bagalur, we pair our laser whitening protocols with amorphous calcium phosphate (ACP) and fluoride remineralization therapy. This immediately re-hardens the enamel surface and seals the dentinal tubules, eliminating post-operative sensitivity while imparting a high-gloss, glass-smooth finish."
         ],
         bulletPoints: [
           "Peroxide oxidation targets organic chromogens without dissolving inorganic mineral enamel",
           "pH-buffered formulations maintain enamel hardness throughout the 60-minute procedure",
           "Post-treatment remineralization restores optimal calcium-phosphate balance",
-          "Clinically supervised by Dr. Shweta Singh for maximum safety and aesthetic brilliance"
+          "Clinically supervised by Dr. Ashish for maximum safety and aesthetic brilliance"
         ]
       }
     ],
@@ -748,12 +748,12 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         question: "How frequently can I safely whiten my teeth in Bangalore?",
-        answer: "Professional in-office laser whitening can be performed safely once every 12 to 18 months without risking enamel erosion or micro-hardness changes. For patients who consume regular filter coffee or tea, we provide custom take-home touch-up trays with mild 10% carbamide peroxide gel, which can be applied for 1 to 2 evenings every six months following your routine ultrasonic scaling visit at House of Dental in Hennur."
+        answer: "Professional in-office laser whitening can be performed safely once every 12 to 18 months without risking enamel erosion or micro-hardness changes. For patients who consume regular filter coffee or tea, we provide custom take-home touch-up trays with mild 10% carbamide peroxide gel, which can be applied for 1 to 2 evenings every six months following your routine ultrasonic scaling visit at House of Dental in Bagalur."
       }
     ],
-    conclusion: "Transform your smile in under an hour with safe, advanced in-office laser whitening at House of Dental in Hennur. Book your consultation today to reveal your brightest, most confident smile.",
-    ctaHeadline: "Get a Radiant, Camera-Ready Smile in Hennur",
-    ctaText: "Visit House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp to book your laser teeth whitening session."
+    conclusion: "Transform your smile in under an hour with safe, advanced in-office laser whitening at House of Dental in Bagalur. Book your consultation today to reveal your brightest, most confident smile.",
+    ctaHeadline: "Get a Radiant, Camera-Ready Smile in Bagalur",
+    ctaText: "Visit House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp to book your laser teeth whitening session."
   }
 ,
 {
@@ -761,9 +761,9 @@ export const BLOG_POSTS: BlogPost[] = [
   "title": "Severe Throbbing Toothache at Night: Causes, Relief & When It's an Emergency | House of Dental",
   "headline": "Severe Throbbing Toothache at Night: Causes, Immediate Relief & When to See an Emergency Dentist",
   "metaDescription": "Waking up with a severe throbbing toothache at night? Understand acute irreversible pulpitis, practical night relief steps, and same-day root canal care at House of Dental Bangalore.",
-  "author": "Dr. Shweta Singh, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Clinical Director & Dental Surgeon",
-  "authorCredentials": "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-25",
   "dateModified": "2026-09-28",
@@ -774,7 +774,7 @@ export const BLOG_POSTS: BlogPost[] = [
   "relatedTreatmentName": "Single-Sitting Root Canal Treatment",
   "introParagraphs": [
     "There are few physical experiences as distressing as waking up in the dead of night to a severe, rhythmic, throbbing pain radiating through your jaw and temple. Nighttime toothaches are notoriously intense—pounding in sync with your heartbeat and resisting standard household painkillers.",
-    "At House of Dental in Hennur and Horamavu, Bangalore, nocturnal dental pain is the single most common reason patients reach out to our emergency helpline. This comprehensive clinical guide explains why dental pain surges when lying down, what your symptoms indicate, practical steps to survive the night, and the definitive dental care needed to save your natural tooth."
+    "At House of Dental in Bagalur and Gummanahalli, Bangalore, nocturnal dental pain is the single most common reason patients reach out to our emergency helpline. This comprehensive clinical guide explains why dental pain surges when lying down, what your symptoms indicate, practical steps to survive the night, and the definitive dental care needed to save your natural tooth."
   ],
   "sections": [
     {
@@ -878,7 +878,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     {
       "question": "Are emergency appointments available on Sundays at House of Dental?",
-      "answer": "Yes! House of Dental is fully operational on Sundays from 9:30 AM to 9:00 PM. We reserve emergency triage slots every single day for acute toothaches, chipped teeth, and swelling for patients in Hennur, Horamavu, Kalyan Nagar, and Manyata Tech Park."
+      "answer": "Yes! House of Dental is fully operational on Sundays from 9:30 AM to 9:00 PM. We reserve emergency triage slots every single day for acute toothaches, chipped teeth, and swelling for patients in Bagalur, Gummanahalli, Kalyan Nagar, and Bagalur Colony."
     },
     {
       "question": "How much does emergency root canal treatment cost in Bangalore?",
@@ -887,16 +887,16 @@ export const BLOG_POSTS: BlogPost[] = [
   ],
   "conclusion": "A severe throbbing toothache at night is your body's urgent distress call. Do not endure another sleepless night in pain—reach out to House of Dental for compassionate, same-day relief.",
   "ctaHeadline": "Stop Throbbing Night Tooth Pain Today",
-  "ctaText": "House of Dental is conveniently located on Horamavu Agara Road, Hennur Bande. Call 09113563040 or chat on WhatsApp for immediate priority dental triage."
+  "ctaText": "House of Dental is conveniently located on Gummanahalli, Bagalur. Call 09113563040 or chat on WhatsApp for immediate priority dental triage."
 },
 {
   "slug": "wisdom-tooth-pain-radiating-to-jaw-and-ear",
   "title": "Wisdom Tooth Pain Radiating to Jaw and Ear: Symptoms, Pericoronitis & Treatment | House of Dental",
   "headline": "Wisdom Tooth Pain Radiating to Jaw, Ear & Neck: Causes, Relief & Painless Removal",
   "metaDescription": "Experiencing shooting wisdom tooth pain radiating to your ear and jaw? Learn why pericoronitis and impaction cause nerve pain and how painless removal at House of Dental helps.",
-  "author": "Dr. Agniss Mishra, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Dental Surgeon & Oral Surgery Lead",
-  "authorCredentials": "Dr. Agniss Mishra, BDS — Dental Surgeon, House of Dental (Alumnus, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-26",
   "dateModified": "2026-09-28",
@@ -971,7 +971,7 @@ export const BLOG_POSTS: BlogPost[] = [
     {
       "heading": "Painless Wisdom Tooth Removal at House of Dental",
       "paragraphs": [
-        "At House of Dental in Hennur, Bangalore, we view tooth extraction as a comfortable, micro-surgical discipline. Before any procedure, we take digital RVG X-rays to assess root angulation and distance from the mandibular nerve canal.",
+        "At House of Dental in Bagalur, Bangalore, we view tooth extraction as a comfortable, micro-surgical discipline. Before any procedure, we take digital RVG X-rays to assess root angulation and distance from the mandibular nerve canal.",
         "We use modern atraumatic sectioning techniques: rather than applying heavy mechanical force, the tooth is divided into tiny segments and gently elevated with zero bone trauma. Our patients experience minimal post-operative swelling and are back to normal routines in 2 to 3 days."
       ]
     }
@@ -996,16 +996,16 @@ export const BLOG_POSTS: BlogPost[] = [
   ],
   "conclusion": "Radiating wisdom tooth pain that reaches your ear and jaw is a sign of advancing infection or nerve compression. Contact House of Dental today for gentle diagnosis and same-day relief.",
   "ctaHeadline": "Get Relief from Radiating Wisdom Tooth Pain",
-  "ctaText": "Visit House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp to schedule your evaluation."
+  "ctaText": "Visit House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp to schedule your evaluation."
 },
 {
   "slug": "pimple-on-gum-above-tooth",
   "title": "Pimple on Gum Above Tooth: Causes of Dental Fistula, Abscess & Treatment | House of Dental",
   "headline": "Pimple on Gum Above Tooth (Dental Fistula): What It Means, Dangers & Treatment Options",
   "metaDescription": "Noticed a small pimple, bump, or boil on your gum above a tooth? Discover what a parulis / dental fistula indicates, why popping it is dangerous, and how root canals cure it.",
-  "author": "Dr. Shweta Singh, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Clinical Director & Dental Surgeon",
-  "authorCredentials": "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-26",
   "dateModified": "2026-09-28",
@@ -1054,7 +1054,7 @@ export const BLOG_POSTS: BlogPost[] = [
     {
       "heading": "How House of Dental Diagnoses and Treats Gum Fistulas",
       "paragraphs": [
-        "At House of Dental in Hennur/Horamavu, Bangalore, diagnosing a sinus tract is quick and precise. We often perform a specialized 'fistulogram' by inserting a flexible, sterile gutta-percha point into the tract and taking a digital RVG X-ray. The point points directly to the infected root tip with 100% diagnostic accuracy.",
+        "At House of Dental in Bagalur/Gummanahalli, Bangalore, diagnosing a sinus tract is quick and precise. We often perform a specialized 'fistulogram' by inserting a flexible, sterile gutta-percha point into the tract and taking a digital RVG X-ray. The point points directly to the infected root tip with 100% diagnostic accuracy.",
         "In over 95% of cases, the tooth can be preserved through single-sitting root canal treatment. We thoroughly debride and sterilize the infected canals with ultrasonic sodium hypochlorite and seal them with biocompatible gutta-percha. Within 7 to 14 days following treatment, the gum pimple shrinks and completely vanishes as healthy jawbone regenerates."
       ]
     }
@@ -1079,16 +1079,16 @@ export const BLOG_POSTS: BlogPost[] = [
   ],
   "conclusion": "A pimple on your gum is clear clinical evidence of a tooth infection that requires prompt professional attention. Preserve your natural smile by booking a consultation at House of Dental.",
   "ctaHeadline": "Heal Gum Infections at the Source",
-  "ctaText": "House of Dental is conveniently located on Horamavu Agara Road, Hennur Bande. Call 09113563040 or message on WhatsApp for gentle, same-day diagnosis."
+  "ctaText": "House of Dental is conveniently located on Gummanahalli, Bagalur. Call 09113563040 or message on WhatsApp for gentle, same-day diagnosis."
 },
 {
   "slug": "chipped-front-tooth-repair",
   "title": "Chipped Front Tooth Repair: Options, Costs & Emergency Care in Bangalore | House of Dental",
   "headline": "Chipped Front Tooth Repair: Composite Bonding, Porcelain Veneers & Crown Options",
   "metaDescription": "Chipped or fractured a front tooth? Learn about emergency steps, same-day composite bonding, porcelain veneers, and crowns at House of Dental Bangalore.",
-  "author": "Dr. Shweta Singh, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Lead Aesthetic Architect & Clinical Director",
-  "authorCredentials": "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-27",
   "dateModified": "2026-09-28",
@@ -1099,7 +1099,7 @@ export const BLOG_POSTS: BlogPost[] = [
   "relatedTreatmentName": "Cosmetic Dentistry & Composite Bonding",
   "introParagraphs": [
     "A chipped front tooth is one of the most sudden and distressing dental events. Whether caused by biting into a hard olive pit, a sports collision, or accidental trauma, fracturing a visible front incisor instantly impacts your smile confidence and ability to speak naturally.",
-    "Fortunately, modern aesthetic dentistry offers several seamless, natural-looking solutions—often completed in a single clinic appointment. At House of Dental in Hennur and Horamavu, Bangalore, our Lead Aesthetic Architect Dr. Shweta Singh specializes in biomimetic composite bonding, porcelain veneers, and all-ceramic crowns to make your repaired tooth look indistinguishable from natural enamel."
+    "Fortunately, modern aesthetic dentistry offers several seamless, natural-looking solutions—often completed in a single clinic appointment. At House of Dental in Bagalur and Gummanahalli, Bangalore, our Lead Aesthetic Architect Dr. Ashish specializes in biomimetic composite bonding, porcelain veneers, and all-ceramic crowns to make your repaired tooth look indistinguishable from natural enamel."
   ],
   "sections": [
     {
@@ -1192,21 +1192,21 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     {
       "question": "What is the cost of repairing a chipped front tooth at House of Dental?",
-      "answer": "Composite bonding for a chipped front tooth at House of Dental Hennur ranges between Rs. 2,500 and Rs. 5,000 per tooth depending on the fracture volume. Transparent pricing is explained prior to beginning treatment."
+      "answer": "Composite bonding for a chipped front tooth at House of Dental Bagalur ranges between Rs. 2,500 and Rs. 5,000 per tooth depending on the fracture volume. Transparent pricing is explained prior to beginning treatment."
     }
   ],
-  "conclusion": "A chipped front tooth can be repaired quickly, comfortably, and beautifully. Restore your confident smile today at House of Dental in Hennur and Horamavu, Bangalore.",
+  "conclusion": "A chipped front tooth can be repaired quickly, comfortably, and beautifully. Restore your confident smile today at House of Dental in Bagalur and Gummanahalli, Bangalore.",
   "ctaHeadline": "Restore Your Chipped Smile Today",
-  "ctaText": "Visit House of Dental on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp to book your same-day smile restoration."
+  "ctaText": "Visit House of Dental on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp to book your same-day smile restoration."
 },
 {
   "slug": "root-canal-aftercare",
   "title": "Root Canal Aftercare: Recovery Timeline, Pain Management & Diet Guide | House of Dental",
   "headline": "Root Canal Aftercare Guide: What to Expect, Recovery Timeline & What to Eat",
   "metaDescription": "Complete patient aftercare guide following root canal treatment (RCT). Pain management, chewing restrictions, temporary filling care & crown placement advice by House of Dental.",
-  "author": "Dr. Shweta Singh, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Clinical Director & Dental Surgeon",
-  "authorCredentials": "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-27",
   "dateModified": "2026-09-28",
@@ -1235,7 +1235,7 @@ export const BLOG_POSTS: BlogPost[] = [
     {
       "heading": "Pain Management & Medication Protocol",
       "paragraphs": [
-        "Take all prescribed anti-inflammatory and pain medications exactly as directed by Dr. Shweta Singh or Dr. Agniss Mishra:",
+        "Take all prescribed anti-inflammatory and pain medications exactly as directed by Dr. Ashish:",
         "1. Scheduled Analgesics: If prescribed an NSAID (such as Ibuprofen or Paracetamol), taking the first dose before the numbness completely wears off significantly minimizes discomfort.",
         "2. Antibiotic Course: If antibiotics were prescribed due to pre-existing swelling or bone infection, complete the full course even if you feel 100% fine after two days. Stopping early can breed resistant bacteria.",
         "3. Avoid Home Poking: Do not poke the treated tooth with your tongue, fingers, or toothpicks."
@@ -1292,9 +1292,9 @@ export const BLOG_POSTS: BlogPost[] = [
   "title": "Wisdom Tooth Extraction Aftercare: Preventing Dry Socket & Fast Healing | House of Dental",
   "headline": "Wisdom Tooth Extraction Aftercare: Days 1 to 7 Recovery & How to Prevent Dry Socket",
   "metaDescription": "Essential wisdom tooth removal aftercare instructions. Swelling management, bleeding control, soft food list, and vital tips to prevent dry socket by House of Dental.",
-  "author": "Dr. Agniss Mishra, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Dental Surgeon & Oral Surgery Lead",
-  "authorCredentials": "Dr. Agniss Mishra, BDS — Dental Surgeon, House of Dental (Alumnus, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-27",
   "dateModified": "2026-09-28",
@@ -1368,7 +1368,7 @@ export const BLOG_POSTS: BlogPost[] = [
     }
   ],
   "conclusion": "Recovering from wisdom tooth extraction is smooth and straightforward when following these guidelines. Contact House of Dental whenever you need guidance.",
-  "ctaHeadline": "Need Post-Extraction Assistance in Hennur?",
+  "ctaHeadline": "Need Post-Extraction Assistance in Bagalur?",
   "ctaText": "Our clinic is open Tuesday to Sunday. Call 09113563040 or contact us on WhatsApp for any post-operative questions."
 },
 {
@@ -1376,9 +1376,9 @@ export const BLOG_POSTS: BlogPost[] = [
   "title": "Dental Implant Aftercare: Day-by-Day Recovery & Osseointegration Care | House of Dental",
   "headline": "Dental Implant Aftercare Guide: Recovery Timeline, Oral Hygiene & Long-Term Success",
   "metaDescription": "Comprehensive post-operative guide for dental implants. Swelling control, bleeding management, soft diet protocols & how to safeguard bone osseointegration by House of Dental.",
-  "author": "Dr. Shweta Singh, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Clinical Director & Dental Surgeon",
-  "authorCredentials": "Dr. Shweta Singh, BDS — Clinical Director, House of Dental (Alumna, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-28",
   "dateModified": "2026-09-28",
@@ -1447,17 +1447,17 @@ export const BLOG_POSTS: BlogPost[] = [
     }
   ],
   "conclusion": "With proper post-operative care and regular dental checkups, your dental implant can last a lifetime. Reach out to House of Dental for any questions during your recovery.",
-  "ctaHeadline": "Dedicated Dental Implant Care in Hennur",
-  "ctaText": "House of Dental is located on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp us for post-op guidance."
+  "ctaHeadline": "Dedicated Dental Implant Care in Bagalur",
+  "ctaText": "House of Dental is located on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp us for post-op guidance."
 },
 {
   "slug": "scaling-aftercare",
   "title": "Teeth Cleaning & Scaling Aftercare: What to Expect, Diet & Sensitivity | House of Dental",
   "headline": "Teeth Cleaning & Scaling Aftercare: Sensitivity Management & Gum Care Guide",
   "metaDescription": "What to expect after ultrasonic scaling and teeth cleaning. Understanding normal sensitivity, gum healing, foods to avoid, and flossing tips by House of Dental Bangalore.",
-  "author": "Dr. Agniss Mishra, BDS",
+  "author": "Dr. Ashish",
   "authorRole": "Dental Surgeon & Preventive Care Lead",
-  "authorCredentials": "Dr. Agniss Mishra, BDS — Dental Surgeon, House of Dental (Alumnus, The Oxford Dental College)",
+  "authorCredentials": "Dr. Ashish, BDS — Lead Dental Surgeon & Clinical Director, House of Dental",
   "date": "September 2026",
   "datePublished": "2026-09-28",
   "dateModified": "2026-09-28",
@@ -1528,8 +1528,8 @@ export const BLOG_POSTS: BlogPost[] = [
     }
   ],
   "conclusion": "Clean teeth and healthy pink gums are the cornerstone of a vibrant, confident smile. Keep up your daily brushing, and see you at House of Dental for your next six-month checkup!",
-  "ctaHeadline": "Keep Your Smile Fresh & Healthy in Hennur",
-  "ctaText": "House of Dental is conveniently located on Horamavu Agara Road, Hennur Bande. Call 09113563040 or WhatsApp to book your preventive cleaning visit."
+  "ctaHeadline": "Keep Your Smile Fresh & Healthy in Bagalur",
+  "ctaText": "House of Dental is conveniently located on Gummanahalli, Bagalur. Call 09113563040 or WhatsApp to book your preventive cleaning visit."
 }
 ];
 

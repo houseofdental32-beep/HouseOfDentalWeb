@@ -145,7 +145,7 @@ All clinic NAP (Name, Address, Phone) details, social links, local areas served,
 ```json
 {
   "site_meta": {
-    "title": "Dental Clinic in Bagaluru Bengaluru | House of Dental",
+    "title": "Dental Clinic in Gummanahalli Bengaluru | House of Dental",
     "description": "House of Dental is a modern dental clinic in Bagaluru, Bengaluru. Gentle root canals, dental implants, clear aligners & teeth whitening. Call 09113563040.",
     "phone": "09113563040",
     "address": "1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149",

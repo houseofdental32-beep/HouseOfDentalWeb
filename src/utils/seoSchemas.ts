@@ -14,15 +14,15 @@ export interface FaqItem {
 export const LOCAL_FAQS: FaqItem[] = [
   {
     question: "Where is House of Dental located?",
-    answer: "House of Dental is conveniently located at 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149. We serve patients across Hennur, Horamavu, Babusapalya, Kalyan Nagar, HRBR Layout, Kammanahalli, Kothanur, and North Bengaluru with dedicated patient parking."
+    answer: "House of Dental is conveniently located at 1st Floor, BMN complex, New Airport Rd, Gummanahalli, Bagaluru, Bengaluru, Karnataka 562149. We serve patients across Bagalur, Gummanahalli, Babusapalya, Kalyan Nagar, HRBR Layout, Kammanahalli, Kothanur, and North Bengaluru with dedicated patient parking."
   },
   {
     question: "Can I pay with credit card or EMI at House of Dental?",
     answer: "We accept all major Credit Cards, Debit Cards, UPI, and Net Banking. Patients wishing to split payments into monthly installments can seamlessly convert credit card transactions into flexible monthly EMIs directly via their bank's post-payment portal or net banking app."
   },
   {
-    question: "Who is the lead dentist at House of Dental Hennur?",
-    answer: "Dr. Shweta Singh, BDS (The Oxford Dental College, Bangalore; registered with the Karnataka State Dental Council) is the Lead Aesthetic Architect, Clinical Director, and Founder of House of Dental. Our clinical team also includes Dr. Agniss Mishra, BDS (The Oxford Dental College, Bangalore), Dental Surgeon providing gentle preventive and restorative dental care."
+    question: "Who is the lead dentist at House of Dental?",
+    answer: "Dr. Ashish, BDS is the Lead Dental Surgeon and Clinical Director of House of Dental, providing gentle preventive, restorative, and advanced dental care."
   },
   {
     question: "Does House of Dental accept walk-ins or emergency appointments on Sundays?",
@@ -66,8 +66,8 @@ export function generateDentalClinicSchema() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 13.0381741,
-      "longitude": 77.6416031
+      "latitude": 13.1384696,
+      "longitude": 77.6703123
     },
     "openingHoursSpecification": [
       {
@@ -111,9 +111,9 @@ export function generateWebSiteSchema() {
     "alternateName": [
       "House of Dental",
       "House of Dental Studio",
-      "House of Dental Hennur"
+      "House of Dental Bagalur"
     ],
-    "description": "Premium Dental Clinic & Smile Studio in Hennur, Bangalore",
+    "description": "Premium Dental Clinic & Smile Studio in Bagalur, Bangalore",
     "inLanguage": "en-IN",
     "publisher": {
       "@id": "https://aurevadental.com/#dentist"
@@ -124,10 +124,9 @@ export function generateWebSiteSchema() {
 export function generateDentistSchema(config: any = {}, includeFullCatalog: boolean = false) {
   const socialLinks = config?.social_media?.map((s: any) => s.url) || [];
   const allProfiles = [
-    "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA",
-    "https://www.google.com/maps?cid=10332859477033504351",
+    "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18",
+    "https://www.google.com/maps?cid=12360058863640243236",
     "https://www.instagram.com/houseofdental/?hl=en",
-    "",
     "https://www.practo.com/bangalore/clinic/aureva-dental-clinic-hennur",
     ...socialLinks
   ].filter((v, i, a) => typeof v === 'string' && v.length > 0 && a.indexOf(v) === i);
@@ -140,8 +139,8 @@ export function generateDentistSchema(config: any = {}, includeFullCatalog: bool
     "legalName": "House of Dental",
     "alternateName": [
       "House of Dental",
-      "House of Dental Hennur",
-      "House of Dental Horamavu",
+      "House of Dental Bagalur",
+      "House of Dental Gummanahalli",
       "House of Dental Bengaluru"
     ],
     "url": "https://aurevadental.com/",
@@ -179,10 +178,10 @@ export function generateDentistSchema(config: any = {}, includeFullCatalog: bool
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 13.0381741,
-      "longitude": 77.6416031
+      "latitude": 13.1384696,
+      "longitude": 77.6703123
     },
-    "hasMap": "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA",
+    "hasMap": "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18",
     "openingHours": [
       "Mo 16:00-21:00",
       "Tu-Su 09:30-21:00"
@@ -227,17 +226,17 @@ export function generateDentistSchema(config: any = {}, includeFullCatalog: bool
     "areaServed": [
       {
         "@type": "AdministrativeArea",
-        "name": "Hennur, Bengaluru",
+        "name": "Bagalur, Bengaluru",
         "postalCode": "562149"
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Horamavu, Bengaluru",
+        "name": "Gummanahalli, Bengaluru",
         "postalCode": "562149"
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Hennur Bande, Bengaluru",
+        "name": "Bagalur, Bengaluru",
         "postalCode": "562149"
       },
       {
@@ -346,12 +345,8 @@ export function generateDentistSchema(config: any = {}, includeFullCatalog: bool
     "employee": [
       {
         "@type": "Dentist",
-        "name": "Dr. Shweta Singh, BDS",
-        "jobTitle": "Lead Aesthetic Architect & Founder",
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "The Oxford Dental College, Bangalore"
-        },
+        "name": "Dr. Ashish, BDS",
+        "jobTitle": "Lead Dental Surgeon & Clinical Director",
         "hasCredential": [
           {
             "@type": "EducationalOccupationalCredential",
@@ -360,33 +355,11 @@ export function generateDentistSchema(config: any = {}, includeFullCatalog: bool
           }
         ],
         "medicalSpecialty": [
+          "Dentistry",
           "CosmeticDentistry",
-          "Orthodontics"
+          "Endodontics"
         ],
-        "description": "Specialist in cosmetic smile design, clear aligners, and aesthetic restorative dentistry. Registered with Karnataka State Dental Council.",
-        "worksFor": {
-          "@id": "https://aurevadental.com/#dentist"
-        }
-      },
-      {
-        "@type": "Dentist",
-        "name": "Dr. Agniss Mishra, BDS",
-        "jobTitle": "Dental Surgeon",
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "The Oxford Dental College, Bangalore"
-        },
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "degree",
-            "name": "Bachelor of Dental Surgery (BDS)"
-          }
-        ],
-        "medicalSpecialty": [
-          "Dentistry"
-        ],
-        "description": "Dental Surgeon providing gentle preventive and restorative dental care at House of Dental.",
+        "description": "Lead Dental Surgeon & Clinical Director at House of Dental providing gentle, precision dental care.",
         "worksFor": {
           "@id": "https://aurevadental.com/#dentist"
         }
@@ -483,8 +456,8 @@ export function generateTreatmentServiceSchema(params: {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 13.0381741,
-        "longitude": 77.6416031
+        "latitude": 13.1384696,
+        "longitude": 77.6703123
       }
     }
   };

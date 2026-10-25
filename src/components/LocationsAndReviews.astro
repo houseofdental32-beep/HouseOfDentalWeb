@@ -4,7 +4,7 @@ import { supabase } from '../lib/supabase';
 
 const config = getConfig();
 const { locations_section, social_proof, google_reviews, site_meta } = config;
-const phoneDisplay = locPhone => locPhone || site_meta?.phone || "09113563040";
+const phoneDisplay = (locPhone?: string) => locPhone || site_meta?.phone || "09113563040";
 const whatsappNumber = site_meta?.whatsapp_number || "919113563040";
 const defaultAreas = site_meta?.local_areas_served || [
   "Bagaluru",
@@ -40,53 +40,53 @@ try {
 const defaultReviews = [
   {
     name: "Priya Ramesh",
-    role: "Local Guide • 14 reviews • Hennur",
+    role: "Local Guide • 14 reviews • Bagalur",
     treatment: "Root Canal Treatment",
     date: "2 weeks ago",
-    text: "Absolutely the best dental clinic experience in Hennur! Dr. Shweta was so gentle and patient during my root canal treatment. Zero pain, completely sterile diagnostic instruments, and the serene Japandi studio atmosphere instantly relieved all my dental anxiety. Highly recommend House of Dental!",
+    text: "Absolutely the best dental clinic experience in Bagalur! Dr. Ashish was so gentle and patient during my root canal treatment. Zero pain, completely sterile diagnostic instruments, and the serene Japandi studio atmosphere instantly relieved all my dental anxiety. Highly recommend House of Dental!",
     rating: 5,
     verified: true,
-    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   },
   {
     name: "Vikram Nambiar",
-    role: "Horamavu Resident • Verified Google Review",
+    role: "Gummanahalli Resident • Verified Google Review",
     treatment: "Clear Aligners",
     date: "3 weeks ago",
     text: "Got my smile consultation and clear aligners planned at House of Dental. Completely transparent pricing, state-of-the-art digital intraoral scans, and unmatched professionalism from the dental team. Seeing your simulated 3D teeth movement before starting gives immense confidence. Outstanding 5-star care!",
     rating: 5,
     verified: true,
-    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   },
   {
     name: "Sneha Mukherjee",
     role: "Kalyan Nagar • Verified Google Review",
     treatment: "Teeth Whitening",
     date: "1 month ago",
-    text: "I had severe dental anxiety before visiting House of Dental. The studio feels like a soothing wellness sanctuary rather than a clinical hospital. Dr. Agniss and the team made the cleaning and laser teeth whitening completely pain-free. My teeth look radiant and healthy!",
+    text: "I had severe dental anxiety before visiting House of Dental. The studio feels like a soothing wellness sanctuary rather than a clinical hospital. Dr. Ashish and the team made the cleaning and laser teeth whitening completely pain-free. My teeth look radiant and healthy!",
     rating: 5,
     verified: true,
-    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   },
   {
     name: "Rajesh Varma",
     role: "Local Guide • 29 reviews",
     treatment: "Dental Implants",
     date: "1 month ago",
-    text: "Exceptional precision and clinical care. Dr. Shweta and Dr. Agniss walked me through every detail of my dental implant with digital X-rays and zero rush. Very honest pricing with no hidden charges. Post-op recovery was seamless. North Bangalore's finest smile clinic.",
+    text: "Exceptional precision and clinical care. Dr. Ashish walked me through every detail of my dental implant with digital X-rays and zero rush. Very honest pricing with no hidden charges. Post-op recovery was seamless. North Bangalore's finest smile clinic.",
     rating: 5,
     verified: true,
-    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   },
   {
     name: "Ananya Sundaram",
-    role: "Hennur Bande • Verified Google Review",
+    role: "Bagalur • Verified Google Review",
     treatment: "Kids Dentistry",
     date: "2 months ago",
-    text: "Brought my 6-year-old daughter for her dental check-up and fluoride application. Dr. Shweta was so friendly, warm, and playful that my daughter didn't cry once! The clinic is spotless and kid-friendly. We have definitely found our trusted family dentist in Hennur.",
+    text: "Brought my 6-year-old daughter for her dental check-up and fluoride application. Dr. Ashish was so friendly, warm, and playful that my daughter didn't cry once! The clinic is spotless and kid-friendly. We have definitely found our trusted family dentist in Bagalur.",
     rating: 5,
     verified: true,
-    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   },
   {
     name: "Karthik Balakrishnan",
@@ -96,7 +96,7 @@ const defaultReviews = [
     text: "Had a complicated impacted wisdom tooth removed. Was really nervous about pain, but the surgical team performed the extraction in under 20 minutes with zero discomfort during the procedure. Healing was fast with minimal swelling. Cleanest clinic in Bangalore with modern tech.",
     rating: 5,
     verified: true,
-    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   },
   {
     name: "Meera Chandran",
@@ -106,7 +106,7 @@ const defaultReviews = [
     text: "Got custom zirconia crowns and aesthetic bonding done here. The craftsmanship and attention to natural tooth shade matching is remarkable. Warm and courteous staff, prompt appointments, and very soothing Japanese-minimalist interiors.",
     rating: 5,
     verified: true,
-    google_maps_url: "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA"
+    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
   }
 ];
 
@@ -118,7 +118,7 @@ const displayReviews = reviews && reviews.length > 0 ? reviews : configuredRevie
 
 const googleRating = social_proof?.google_rating || config.site_meta?.rating_value || 5.0;
 const reviewCount = social_proof?.review_count || config.site_meta?.review_count || 29;
-const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.locations_list[0]?.google_maps_url || "https://maps.app.goo.gl/dhU4UySs9WFkHAzYA";
+const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section?.locations_list?.[0]?.google_maps_url || "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18";
 ---
 
 <section id="location" class="py-24 px-6 lg:px-24 bg-transparent border-t border-japandi-clay/40 relative">
@@ -135,15 +135,15 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
       <div class="lg:col-span-5 flex flex-col space-y-10 animate-slow-fade">
         <div>
           <p class="text-xs font-semibold text-japandi-earth uppercase tracking-widest mb-3">
-            {locations_section.subtitle}
+            {locations_section?.subtitle}
           </p>
           <h2 class="text-3xl sm:text-4xl font-serif text-japandi-charcoal font-medium tracking-tight">
-            {locations_section.title}
+            {locations_section?.title}
           </h2>
         </div>
 
         <div class="flex flex-col gap-6">
-          {locations_section.locations_list.map((loc) => (
+          {locations_section?.locations_list?.map((loc: any) => (
             <div class="bg-japandi-sand/55 border border-japandi-clay/45 rounded-3xl p-8 hover:bg-japandi-sand transition-all duration-300 hover:shadow-lg hover:shadow-japandi-charcoal/5">
               <div class="flex items-center justify-between gap-4 mb-3">
                 <h3 class="text-xl font-serif text-japandi-charcoal font-medium">{loc.name}</h3>
@@ -175,7 +175,7 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
               <div class="mt-4 mb-5 rounded-2xl overflow-hidden border border-japandi-clay/60 shadow-inner aspect-[16/10] w-full relative bg-japandi-clay/20 group/map">
                 <iframe
                   title="House of Dental Studio Google Maps Location"
-                  src={`https://maps.google.com/maps?q=${loc.latitude || 13.0381741},${loc.longitude || 77.6416031}+(House of Dental+Dental)&t=&z=16&ie=UTF8&iwloc=B&output=embed`}
+                  src={`https://maps.google.com/maps?q=${loc.latitude || 13.1384696},${loc.longitude || 77.6703123}+(House of Dental+Dental)&t=&z=16&ie=UTF8&iwloc=B&output=embed`}
                   width="100%"
                   height="100%"
                   style="border:0;"
@@ -188,7 +188,7 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
               <!-- Quick Action Navigation Buttons -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
                 <a
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${loc.latitude || 13.0381741},${loc.longitude || 77.6416031}`}
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${loc.latitude || 13.1384696},${loc.longitude || 77.6703123}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-japandi-sand/80 border border-japandi-clay text-xs font-medium text-japandi-charcoal hover:bg-japandi-moss hover:text-japandi-cream transition-all duration-300 group"
@@ -219,7 +219,7 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
                   </svg>
                   <a 
                     href={`tel:${phoneDisplay(loc.phone)}`}
-                    onclick={`return gtag_report_conversion('tel:${phoneDisplay(loc.phone)}');`} 
+                    onclick={`return typeof gtag_report_conversion === 'function' ? gtag_report_conversion('tel:${phoneDisplay(loc.phone)}') : true;`} 
                     class="hover:text-japandi-moss font-semibold transition-colors"
                   >{phoneDisplay(loc.phone)}</a>
                 </div>
@@ -264,19 +264,19 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
                 </div>
               </div>
 
-              <!-- Hennur Local Dental Care Guides -->
+              <!-- Bagalur Local Dental Care Guides -->
               <div class="mt-6 pt-5 border-t border-japandi-clay/35">
                 <p class="text-[10px] font-semibold text-japandi-earth uppercase tracking-wider mb-2.5">
-                  Specialized Dental Care Guides in Hennur:
+                  Specialized Dental Care Guides in Bagalur:
                 </p>
                 <div class="flex flex-wrap gap-2 text-xs">
-                  <a href="/dentist-in-hennur" class="text-japandi-moss hover:underline font-medium">Dentist in Hennur &rarr;</a>
-                  <a href="/dental-clinic-in-hennur" class="text-japandi-moss hover:underline font-medium">Dental Clinic in Hennur &rarr;</a>
-                  <a href="/root-canal-treatment-hennur" class="text-japandi-moss hover:underline font-medium">Root Canal Hennur &rarr;</a>
-                  <a href="/dental-implants-hennur" class="text-japandi-moss hover:underline font-medium">Dental Implants Hennur &rarr;</a>
-                  <a href="/invisible-aligners-hennur" class="text-japandi-moss hover:underline font-medium">Invisible Aligners &rarr;</a>
-                  <a href="/teeth-whitening-hennur" class="text-japandi-moss hover:underline font-medium">Teeth Whitening &rarr;</a>
-                  <a href="/wisdom-tooth-removal-hennur" class="text-japandi-moss hover:underline font-medium">Wisdom Tooth Removal &rarr;</a>
+                  <a href="/dentist-in-bagalur" class="text-japandi-moss hover:underline font-medium">Dentist in Bagalur &rarr;</a>
+                  <a href="/dental-clinic-in-bagalur" class="text-japandi-moss hover:underline font-medium">Dental Clinic in Bagalur &rarr;</a>
+                  <a href="/root-canal-treatment-bagalur" class="text-japandi-moss hover:underline font-medium">Root Canal Bagalur &rarr;</a>
+                  <a href="/dental-implants-bagalur" class="text-japandi-moss hover:underline font-medium">Dental Implants Bagalur &rarr;</a>
+                  <a href="/invisible-aligners-bagalur" class="text-japandi-moss hover:underline font-medium">Invisible Aligners &rarr;</a>
+                  <a href="/teeth-whitening-bagalur" class="text-japandi-moss hover:underline font-medium">Teeth Whitening &rarr;</a>
+                  <a href="/wisdom-tooth-removal-bagalur" class="text-japandi-moss hover:underline font-medium">Wisdom Tooth Removal &rarr;</a>
                 </div>
               </div>
             </div>
@@ -345,7 +345,7 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section.l
                   </span>
                 </div>
                 <p class="text-xs text-japandi-earth">
-                  All reviews verified by real patients on Google Maps • Hennur, Bangalore
+                  All reviews verified by real patients on Google Maps • Bagalur, Bangalore
                 </p>
               </div>
             </div>
