@@ -15,11 +15,13 @@ export interface StoredReviewsData {
 
 export async function getKvReviewsData(): Promise<StoredReviewsData | null> {
   const url = 
-    (typeof process !== 'undefined' ? process.env?.KV_REST_API_URL : '') || 
-    import.meta.env.KV_REST_API_URL || '';
+    (typeof process !== 'undefined' ? (process.env?.KV_REST_API_URL || process.env?.UPSTASH_REDIS_REST_URL) : '') || 
+    import.meta.env.KV_REST_API_URL || 
+    import.meta.env.UPSTASH_REDIS_REST_URL || '';
   const token = 
-    (typeof process !== 'undefined' ? process.env?.KV_REST_API_TOKEN : '') || 
-    import.meta.env.KV_REST_API_TOKEN || '';
+    (typeof process !== 'undefined' ? (process.env?.KV_REST_API_TOKEN || process.env?.UPSTASH_REDIS_REST_TOKEN) : '') || 
+    import.meta.env.KV_REST_API_TOKEN || 
+    import.meta.env.UPSTASH_REDIS_REST_TOKEN || '';
 
   // 1. If Vercel KV credentials are set, fetch from cloud
   if (url && token) {
@@ -66,11 +68,13 @@ export async function getKvReviewsData(): Promise<StoredReviewsData | null> {
 
 export async function setKvReviewsData(data: StoredReviewsData): Promise<boolean> {
   const url = 
-    (typeof process !== 'undefined' ? process.env?.KV_REST_API_URL : '') || 
-    import.meta.env.KV_REST_API_URL || '';
+    (typeof process !== 'undefined' ? (process.env?.KV_REST_API_URL || process.env?.UPSTASH_REDIS_REST_URL) : '') || 
+    import.meta.env.KV_REST_API_URL || 
+    import.meta.env.UPSTASH_REDIS_REST_URL || '';
   const token = 
-    (typeof process !== 'undefined' ? process.env?.KV_REST_API_TOKEN : '') || 
-    import.meta.env.KV_REST_API_TOKEN || '';
+    (typeof process !== 'undefined' ? (process.env?.KV_REST_API_TOKEN || process.env?.UPSTASH_REDIS_REST_TOKEN) : '') || 
+    import.meta.env.KV_REST_API_TOKEN || 
+    import.meta.env.UPSTASH_REDIS_REST_TOKEN || '';
 
   let cloudSuccess = false;
 
