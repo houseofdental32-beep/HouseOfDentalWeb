@@ -20,14 +20,20 @@ function inferTreatment(text: string): string | undefined {
 }
 
 export const GET: APIRoute = async ({ request }) => {
-  // 1. Verify Vercel Cron Secret (if configured)
+  // 1. Verify Vercel Cron Secret (supports Authorization header from Vercel Cron OR ?secret= query param from browser)
   const authHeader = request.headers.get('authorization');
+  const url = new URL(request.url);
+  const querySecret = url.searchParams.get('secret') || url.searchParams.get('key');
   const cronSecret = 
     (typeof process !== 'undefined' ? process.env?.CRON_SECRET : '') || 
     import.meta.env.CRON_SECRET;
 
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
-    return new Response(JSON.stringify({ error: 'Unauthorized: Invalid cron secret' }), {
+  const isAuthorized = !cronSecret || authHeader === `Bearer ${cronSecret}` || querySecret === cronSecret;
+
+  if (!isAuthorized) {
+    return new Response(JSON.stringify({ 
+      error: 'Unauthorized: Invalid cron secret. Pass ?secret=YOUR_CRON_SECRET in the URL or send Authorization header.' 
+    }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
     });
