@@ -1,6 +1,6 @@
 ---
 import { getConfig } from '../utils/getConfig';
-import { supabase } from '../lib/supabase';
+import { getKvReviewsData } from '../lib/kv';
 
 const config = getConfig();
 const { locations_section, social_proof, google_reviews, site_meta } = config;
@@ -17,107 +17,20 @@ const defaultAreas = site_meta?.local_areas_served || [
   "North Bengaluru"
 ];
 
-let reviews: any[] = [];
-try {
-  if (supabase) {
-    const { data, error } = await supabase
-      .from('reviews')
-      .select('*')
-      .order('created_at', { ascending: false });
-      
-    if (error) {
-      throw new Error(error.message);
-    }
-    
-    if (data && data.length > 0) {
-      reviews = data;
-    }
-  }
-} catch (err) {
-  console.error("Failed to fetch reviews", err);
-}
+// Display Google Reviews, Rating, and Review Count from Vercel KV (auto-updated by Cron)
+const kvData = await getKvReviewsData();
+const displayReviews = (kvData?.reviews && kvData.reviews.length > 0) 
+  ? kvData.reviews 
+  : (google_reviews && google_reviews.length > 0 ? google_reviews : []);
 
-const defaultReviews = [
-  {
-    name: "Priya Ramesh",
-    role: "Local Guide • 14 reviews • Bagalur",
-    treatment: "Root Canal Treatment",
-    date: "2 weeks ago",
-    text: "Absolutely the best dental clinic experience in Bagalur! Dr. Ashish was so gentle and patient during my root canal treatment. Zero pain, completely sterile diagnostic instruments, and the serene Japandi studio atmosphere instantly relieved all my dental anxiety. Highly recommend House of Dental!",
-    rating: 5,
-    verified: true,
-    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
-  },
-  {
-    name: "Vikram Nambiar",
-    role: "Gummanahalli Resident • Verified Google Review",
-    treatment: "Clear Aligners",
-    date: "3 weeks ago",
-    text: "Got my smile consultation and clear aligners planned at House of Dental. Completely transparent pricing, state-of-the-art digital intraoral scans, and unmatched professionalism from the dental team. Seeing your simulated 3D teeth movement before starting gives immense confidence. Outstanding 5-star care!",
-    rating: 5,
-    verified: true,
-    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
-  },
-  {
-    name: "Sneha Mukherjee",
-    role: "Kalyan Nagar • Verified Google Review",
-    treatment: "Teeth Whitening",
-    date: "1 month ago",
-    text: "I had severe dental anxiety before visiting House of Dental. The studio feels like a soothing wellness sanctuary rather than a clinical hospital. Dr. Ashish and the team made the cleaning and laser teeth whitening completely pain-free. My teeth look radiant and healthy!",
-    rating: 5,
-    verified: true,
-    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
-  },
-  {
-    name: "Rajesh Varma",
-    role: "Local Guide • 29 reviews",
-    treatment: "Dental Implants",
-    date: "1 month ago",
-    text: "Exceptional precision and clinical care. Dr. Ashish walked me through every detail of my dental implant with digital X-rays and zero rush. Very honest pricing with no hidden charges. Post-op recovery was seamless. North Bangalore's finest smile clinic.",
-    rating: 5,
-    verified: true,
-    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
-  },
-  {
-    name: "Ananya Sundaram",
-    role: "Bagalur • Verified Google Review",
-    treatment: "Kids Dentistry",
-    date: "2 months ago",
-    text: "Brought my 6-year-old daughter for her dental check-up and fluoride application. Dr. Ashish was so friendly, warm, and playful that my daughter didn't cry once! The clinic is spotless and kid-friendly. We have definitely found our trusted family dentist in Bagalur.",
-    rating: 5,
-    verified: true,
-    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
-  },
-  {
-    name: "Karthik Balakrishnan",
-    role: "HRBR Layout • Verified Google Review",
-    treatment: "Wisdom Tooth Removal",
-    date: "2 months ago",
-    text: "Had a complicated impacted wisdom tooth removed. Was really nervous about pain, but the surgical team performed the extraction in under 20 minutes with zero discomfort during the procedure. Healing was fast with minimal swelling. Cleanest clinic in Bangalore with modern tech.",
-    rating: 5,
-    verified: true,
-    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
-  },
-  {
-    name: "Meera Chandran",
-    role: "Babusapalya • Verified Google Review",
-    treatment: "Cosmetic Dentistry",
-    date: "3 months ago",
-    text: "Got custom zirconia crowns and aesthetic bonding done here. The craftsmanship and attention to natural tooth shade matching is remarkable. Warm and courteous staff, prompt appointments, and very soothing Japanese-minimalist interiors.",
-    rating: 5,
-    verified: true,
-    google_maps_url: "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"
-  }
-];
+const googleRating = typeof kvData?.rating === 'number' 
+  ? kvData.rating 
+  : (social_proof?.google_rating || config.site_meta?.rating_value || 5.0);
 
-const configuredReviews = google_reviews && google_reviews.length > 0 
-  ? google_reviews 
-  : (social_proof?.reviews && social_proof.reviews.length > 0 ? social_proof.reviews : defaultReviews);
+const reviewCount = typeof kvData?.reviewCount === 'number' 
+  ? kvData.reviewCount 
+  : (social_proof?.review_count || config.site_meta?.review_count || 174);
 
-const displayReviews = reviews && reviews.length > 0 ? reviews : configuredReviews;
-
-const googleRating = social_proof?.google_rating || config.site_meta?.rating_value || 5.0;
-const reviewCount = social_proof?.review_count || config.site_meta?.review_count || 29;
 const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section?.locations_list?.[0]?.google_maps_url || "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18";
 ---
 
@@ -523,22 +436,15 @@ const googleMapsReviewUrl = social_proof?.google_maps_url || locations_section?.
               href={googleMapsReviewUrl}
               target="_blank" 
               rel="noopener noreferrer" 
-              class="inline-flex items-center gap-1 text-japandi-moss hover:text-japandi-charcoal font-medium underline underline-offset-4 transition-colors"
+              class="inline-flex items-center gap-1.5 text-japandi-moss hover:text-japandi-charcoal font-medium underline underline-offset-4 transition-colors"
             >
-              <svg class="w-3 h-3" viewBox="0 0 24 24">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
               </svg>
-              <span>Review on Google</span>
-            </a>
-            <span>•</span>
-            <a 
-              href="/feedback" 
-              class="text-japandi-earth hover:text-japandi-moss font-medium underline underline-offset-4 transition-colors"
-            >
-              Share Website Feedback
+              <span>Review Us on Google</span>
             </a>
           </div>
         </div>

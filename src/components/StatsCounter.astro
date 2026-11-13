@@ -1,14 +1,30 @@
 ---
 import { getConfig } from '../utils/getConfig';
+import { getKvReviewsData } from '../lib/kv';
 
 const config = getConfig();
 const { stats_section } = config;
+
+// Read dynamic review metrics from Vercel KV if available
+const kvData = await getKvReviewsData();
+const dynamicRating = typeof kvData?.rating === 'number' ? kvData.rating : 5;
+const dynamicCount = typeof kvData?.reviewCount === 'number' ? kvData.reviewCount : 174;
+
+const dynamicStats = stats_section.map(stat => {
+  if (stat.label.toLowerCase().includes('review')) {
+    return { ...stat, value: dynamicCount };
+  }
+  if (stat.label.toLowerCase().includes('rating')) {
+    return { ...stat, value: Math.floor(dynamicRating) };
+  }
+  return stat;
+});
 ---
 
 <section class="py-14 px-4 sm:px-6 lg:px-16 bg-japandi-sand/40 dark:bg-japandi-sand/20 border-t border-b border-japandi-clay/35 relative">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
-      {stats_section.map((stat, index) => (
+      {dynamicStats.map((stat, index) => (
         <div class="p-6 rounded-3xl bg-japandi-cream/70 dark:bg-japandi-sand/40 border border-japandi-clay/40 soft-glow flex flex-col items-center justify-center space-y-2 hover:border-japandi-moss/40 transition-all duration-300">
           <div class="flex items-baseline text-4xl sm:text-5xl font-serif font-medium text-japandi-moss">
             <span 

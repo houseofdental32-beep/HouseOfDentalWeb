@@ -37,16 +37,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://aurevadental.com/feedback</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://aurevadental.com/og-image.jpg</image:loc>
-      <image:title>Patient Reviews &amp; Feedback</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://aurevadental.com/privacy-policy</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>yearly</changefreq>

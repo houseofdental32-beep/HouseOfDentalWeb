@@ -16,7 +16,6 @@ const STATIC_ROUTES: StaticRoute[] = [
   { url: 'https://aurevadental.com/', changefreq: 'weekly', priority: '1.0', lastmod: '2026-09-29', title: 'House of Dental - Premium Dental Clinic in Bagalur, Bangalore' },
   { url: 'https://aurevadental.com/about', changefreq: 'monthly', priority: '0.8', lastmod: '2026-09-29', title: 'About House of Dental' },
   { url: 'https://aurevadental.com/contact', changefreq: 'monthly', priority: '0.8', lastmod: '2026-09-29', title: 'Contact House of Dental' },
-  { url: 'https://aurevadental.com/feedback', changefreq: 'weekly', priority: '0.7', lastmod: '2026-09-29', title: 'Patient Reviews & Feedback' },
   { url: 'https://aurevadental.com/privacy-policy', changefreq: 'yearly', priority: '0.3', lastmod: '2026-09-29', title: 'Privacy Policy' },
   { url: 'https://aurevadental.com/terms-and-conditions', changefreq: 'yearly', priority: '0.3', lastmod: '2026-09-29', title: 'Terms and Conditions' },
   { url: 'https://aurevadental.com/blog', changefreq: 'daily', priority: '0.8', lastmod: '2026-09-29', title: 'Dental Health Blog & Clinical Guides' },

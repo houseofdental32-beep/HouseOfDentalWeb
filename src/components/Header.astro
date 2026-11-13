@@ -8,6 +8,7 @@ const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "";
 const servicesLink = isHome ? "#services" : "/#services";
 const teamLink = isHome ? "#team" : "/#team";
 const locationsLink = isHome ? "#locations" : "/#locations";
+const reviewsLink = isHome ? "#reviews" : "/#reviews";
 const faqLink = isHome ? "#faq" : "/#faq";
 
 const phoneDisplay = site_meta?.phone || "09113563040";
@@ -190,9 +191,9 @@ const treatments = [
           >FAQ</a
         >
         <a
-          href="/feedback"
+          href={reviewsLink}
           class="hover:text-japandi-charcoal transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-japandi-moss hover:after:w-full after:transition-all after:duration-300"
-          >Feedback</a
+          >Reviews</a
         >
       </div>
 
@@ -410,9 +411,9 @@ const treatments = [
         class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors">FAQ</a
       >
       <a
-        href="/feedback"
+        href={reviewsLink}
         class="px-2 py-1.5 hover:text-japandi-charcoal transition-colors"
-        >Feedback</a
+        >Reviews</a
       >
       <div class="pt-2 grid grid-cols-2 gap-2">
         <a

@@ -1,8 +1,14 @@
 ---
 import { getConfig } from '../utils/getConfig';
+import { getKvReviewsData } from '../lib/kv';
 
 const config = getConfig();
 const { hero_section, site_meta } = config;
+
+// Read dynamic review metrics from Vercel KV if available
+const kvData = await getKvReviewsData();
+const dynamicRating = typeof kvData?.rating === 'number' ? kvData.rating : (site_meta.rating_value || 5.0);
+const dynamicCount = typeof kvData?.reviewCount === 'number' ? kvData.reviewCount : (site_meta.review_count || 174);
 
 // Formulating the WhatsApp deep link
 const whatsappBase = "https://wa.me/";
@@ -47,14 +53,14 @@ const whatsappUrl = `${whatsappBase}${site_meta.whatsapp_number}?text=${encodedM
             href={site_meta.google_maps_url || "https://maps.app.goo.gl/YGLmx9b7MjJN9ua18"} 
             target="_blank" 
             rel="noopener noreferrer" 
-            title={`View ${site_meta.review_count || 29} 5-star reviews on Google Maps`}
+            title={`View ${dynamicCount} 5-star reviews on Google Maps`}
             class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-japandi-clay/60 bg-japandi-cream/90 dark:bg-japandi-sand/80 hover:border-japandi-moss text-xs font-semibold text-japandi-moss transition-all duration-300 shadow-sm hover:shadow"
           >
             <span class="flex items-center text-amber-500 text-xs tracking-tight">
               ★ ★ ★ ★ ★
             </span>
-            <span class="font-bold text-japandi-charcoal">{site_meta.rating_value ? site_meta.rating_value.toFixed(1) : "5.0"}/5</span>
-            <span class="text-japandi-earth font-light">({site_meta.review_count || 29} Verified Google Reviews)</span>
+            <span class="font-bold text-japandi-charcoal">{dynamicRating.toFixed(1)}/5</span>
+            <span class="text-japandi-earth font-light">({dynamicCount} Verified Google Reviews)</span>
           </a>
 
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-600 bg-gradient-to-r from-emerald-700 via-emerald-800 to-teal-800 text-white text-[11px] font-bold shadow-md shadow-emerald-900/20">
