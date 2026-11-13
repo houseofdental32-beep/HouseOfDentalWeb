@@ -20,36 +20,32 @@ export interface KvSaveResult {
 }
 
 function getKvCredentials() {
-  const getEnv = (key: string): string => {
-    if (typeof process !== 'undefined' && process.env && process.env[key]) {
-      return String(process.env[key]);
-    }
-    const meta = import.meta as any;
-    if (meta?.env && meta.env[key]) {
-      return String(meta.env[key]);
-    }
-    return '';
-  };
+  const p = typeof process !== 'undefined' ? process.env : undefined;
 
   const rawUrl = 
-    getEnv('KV_REST_API_URL') || 
-    getEnv('UPSTASH_REDIS_REST_URL') || 
-    getEnv('KV_URL') || 
+    p?.KV_REST_API_URL || 
+    p?.UPSTASH_REDIS_REST_URL || 
+    p?.KV_URL || 
+    import.meta.env.KV_REST_API_URL || 
+    import.meta.env.UPSTASH_REDIS_REST_URL || 
+    import.meta.env.KV_URL || 
     '';
 
   const rawToken = 
-    getEnv('KV_REST_API_TOKEN') || 
-    getEnv('UPSTASH_REDIS_REST_TOKEN') || 
+    p?.KV_REST_API_TOKEN || 
+    p?.UPSTASH_REDIS_REST_TOKEN || 
+    import.meta.env.KV_REST_API_TOKEN || 
+    import.meta.env.UPSTASH_REDIS_REST_TOKEN || 
     '';
 
-  let cleanUrl = rawUrl.trim().replace(/\/+$/, '');
+  let cleanUrl = String(rawUrl).trim().replace(/\/+$/, '');
   if (cleanUrl.startsWith('redis://') || cleanUrl.startsWith('rediss://')) {
     cleanUrl = cleanUrl.replace(/^rediss?:\/\//, 'https://');
   }
 
   return {
     url: cleanUrl,
-    token: rawToken.trim()
+    token: String(rawToken).trim()
   };
 }
 
