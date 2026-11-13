@@ -137,6 +137,12 @@ export interface ThemeConfig {
   dark: ThemeColors;
 }
 
+export interface StatItem {
+  label: string;
+  value: number;
+  suffix: string;
+}
+
 export interface AppConfig {
   site_meta: SiteMeta;
   theme_colors: ThemeConfig;
@@ -149,5 +155,6 @@ export interface AppConfig {
   social_proof: SocialProof;
   google_reviews?: GoogleReview[];
   show_stats_section?: boolean;
+  stats_section?: StatItem[];
   [key: string]: any;
 }
